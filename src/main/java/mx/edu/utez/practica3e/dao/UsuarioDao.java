@@ -16,7 +16,7 @@ public class UsuarioDao {
     //con el fin de hacer el inicio de sesión
     public Usuario getOne(String nombre_usuario, String contra){
         Usuario u = new Usuario();
-        String query = "select * from usuario where nombre_usuario = ? and contra = ?";
+        String query = "select * from usuario where nombre_usuario = ? and contra = sha2(?,256)";
 
         try{
             //1) conectarnos a la BD
@@ -40,6 +40,26 @@ public class UsuarioDao {
             e.printStackTrace();
         }
         return u;
+    }
+
+    public boolean insert(Usuario u){
+        boolean flag = false;
+        String query = "insert into usuario(nombre_usuario,contra,correo,tipo_usuario,estado) values(?,sha2(?,256),?,?,?) ";
+        try{
+            Connection con = DatabaseConnectionManager.getConnection();
+            PreparedStatement ps = con.prepareStatement(query);
+            ps.setString(1,u.getNombre_usuario());
+            ps.setString(2,u.getContra());
+            ps.setString(3,u.getCorreo());
+            ps.setInt(4,u.getTipo_usuario());
+            ps.setBoolean(5,u.isEstado());
+            if(ps.executeUpdate()==1){
+                flag = true;//Porque significa que si se inserto en la BD
+            }
+        }catch(SQLException e){
+            e.printStackTrace();
+        }
+        return flag;
     }
 
 
