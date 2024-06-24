@@ -16,23 +16,23 @@ public class UsuarioServlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         //1) Obtener la información del formulario
-        String nombre_usuario = req.getParameter("nombre_usuario");
-        String contra = req.getParameter("contra");
-        String ruta = "index.jsp";
+        String correo = req.getParameter("correo");
+        String contrasena = req.getParameter("contrasena");
+        String ruta = "iniciarSesion.jsp";
 
         //2) conectarme a la base de datos y buscar al usuario segun
         // las credenciales del form
         UsuarioDao dao = new UsuarioDao();
-        Usuario u = dao.getOne(nombre_usuario,contra);
+        Usuario u = dao.getOne(correo,contrasena);
 
-        if(u.getNombre_usuario() == null){
+        if(u.getCorreo() == null){
             //No existe el usuario en la base de datos
             HttpSession sesion = req.getSession();
             sesion.setAttribute("mensaje","El usuario no existe en la BD");
             resp.sendRedirect(ruta);
         }else{
             //Si existe el usuario
-            ruta="bienvenido.jsp";
+            ruta="index.jsp";
             HttpSession sesion = req.getSession();
             sesion.setAttribute("usuario",u);
             resp.sendRedirect(ruta);

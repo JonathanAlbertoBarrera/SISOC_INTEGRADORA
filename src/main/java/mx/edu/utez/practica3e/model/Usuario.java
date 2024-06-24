@@ -4,50 +4,47 @@ import java.io.Serializable;
 
 //Debe de implemntar las convenciones de Java Bean
 public class Usuario implements Serializable {
-    //Debe de representar exactamente la estructura de la
-    //tabla de la base de datos
-
-    private int id;
-    private String nombre_usuario;
-    private String contra;
+    private int id_usuario;
+    private int id_persona;
+    private int rol;
     private String correo;
-    private int tipo_usuario;
-    private boolean estado;
+    private String contrasena;
+    private boolean estatus;
 
     public Usuario() {
     }
 
-    public Usuario(int id, String nombre_usuario, String contra, String correo, int tipo_usuario, boolean estado) {
-        this.id = id;
-        this.nombre_usuario = nombre_usuario;
-        this.contra = contra;
+    public Usuario(int id_usuario, int id_persona, int rol, String correo, String contrasena, boolean estatus) {
+        this.id_usuario = id_usuario;
+        this.id_persona = id_persona;
+        this.rol = rol;
         this.correo = correo;
-        this.tipo_usuario = tipo_usuario;
-        this.estado = estado;
+        this.contrasena = contrasena;
+        this.estatus = estatus;
     }
 
-    public int getId() {
-        return id;
+    public int getId_usuario() {
+        return id_usuario;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setId_usuario(int id_usuario) {
+        this.id_usuario = id_usuario;
     }
 
-    public String getNombre_usuario() {
-        return nombre_usuario;
+    public int getId_persona() {
+        return id_persona;
     }
 
-    public void setNombre_usuario(String nombre_usuario) {
-        this.nombre_usuario = nombre_usuario;
+    public void setId_persona(int id_persona) {
+        this.id_persona = id_persona;
     }
 
-    public String getContra() {
-        return contra;
+    public int getRol() {
+        return rol;
     }
 
-    public void setContra(String contra) {
-        this.contra = contra;
+    public void setRol(int rol) {
+        this.rol = rol;
     }
 
     public String getCorreo() {
@@ -58,19 +55,20 @@ public class Usuario implements Serializable {
         this.correo = correo;
     }
 
-    public int getTipo_usuario() {
-        return tipo_usuario;
+    public String getContrasena() {
+        return contrasena;
     }
 
-    public void setTipo_usuario(int tipo_usuario) {
-        this.tipo_usuario = tipo_usuario;
+    public void setContrasena(String contrasena) {
+        this.contrasena = contrasena;
     }
 
-    public boolean isEstado() {
-        return estado;
+    public boolean isEstatus() {
+        return estatus;
     }
 
-    public void setEstado(boolean estado) {
-        this.estado = estado;
+    public void setEstatus(boolean estatus) {
+        this.estatus = estatus;
     }
+
 }

@@ -1,0 +1,61 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0; /* Color de fondo chido */
+    text-align: center;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+h1 {
+    font-size: 28px;
+    color: #555; /* Color de encabezado */
+}
+
+p {
+    font-size: 16px;
+}
+
+img {
+    max-width: 300px; /* Establece el ancho máximo de la imagen */
+    height: auto; /* Ajusta automáticamente la altura para mantener la proporción */
+}
+
+/* Estilos para la lista ordenada */
+ol {
+    list-style-type: decimal;
+    padding-left: 20p;
+}
+
+/* Estilos para la tabla */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+td, th {
+    border: 1px solid #ccc; /* Color del borde */
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background-color: #f2f2f2; /* Color de fondo del encabezado de la tabla */
+}
+
+/* Estilos para el enlace */
+a {
+    color: #007bff; /* Color del enlace */
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
