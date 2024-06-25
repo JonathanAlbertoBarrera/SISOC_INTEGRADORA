@@ -2,38 +2,65 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Title</title>
+    <meta charset="UTF-8">
+    <title>Registro de Usuario</title>
+    <!-- Bootstrap CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+        }
+        .barra {
+            background-color: #F4AB2C;
+        }
+        .botonesApp {
+            background-color: #F4AB2C;
+            border-color: #F4AB2C;
+        }
+    </style>
 </head>
 <body>
-    <!-- un formulario para insertar el usuario -->
-    <form method="post" action="sign_in">
-        <label>Ingrese su correo: </label>
-        <input type="email" name="correo">
-        <br><br>
-        <label>Ingrese su contraseña: </label>
-        <input type="password" name="pass1">
-        <br><br>
-        <label>Confirme su contraseña: </label>
-        <input type="password" name="pass2">
-        <br>
-        <br>
-        <%
-            HttpSession sesion1 = request.getSession();
-            String mensaje2 = (String) sesion1.getAttribute("mensaje2");
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <h2 class="text-center mt-5">Registrarse</h2>
+            <form method="post" action="sign_in" class="mt-4">
+                <div class="form-group mb-3">
+                    <label for="correo">Ingrese su correo:</label>
+                    <input type="email" class="form-control" id="correo" name="correo" required>
+                </div>
+                <div class="form-group mb-3">
+                    <label for="pass1">Ingrese su contraseña:</label>
+                    <input type="password" class="form-control" id="pass1" name="pass1" required>
+                </div>
+                <div class="form-group mb-3">
+                    <label for="pass2">Confirme su contraseña:</label>
+                    <input type="password" class="form-control" id="pass2" name="pass2" required>
+                </div>
+                <%
+                    HttpSession sesion1 = request.getSession();
+                    String mensaje2 = (String) sesion1.getAttribute("mensaje2");
 
-            if(mensaje2 !=null){ %>
-        <p style="color: red;"><%=mensaje2%></p>
-        <% } %>
-        <input type="submit" value="Registrarse" >
-        <%
-            HttpSession sesion2 = request.getSession();
-            String mensaje3 = (String) sesion2.getAttribute("mensaje3");
+                    if(mensaje2 != null){ %>
+                <p class="text-danger"><%=mensaje2%></p>
+                <% } %>
+                <button type="submit" class="btn btn-dark botonesApp btn-block">Registrarse</button>
+                <%
+                    HttpSession sesion2 = request.getSession();
+                    String mensaje3 = (String) sesion2.getAttribute("mensaje3");
 
-            if(mensaje3 !=null){ %>
-        <p style="color: red;"><%=mensaje3%></p>
-        <% } %>
-    </form>
-    <br><br>
-    <a href="iniciarSesion.jsp">Ingresar</a>
+                    if(mensaje3 != null){ %>
+                <p class="text-danger"><%=mensaje3%></p>
+                <% } %>
+            </form>
+            <div class="text-center mt-3">
+                <a href="iniciarSesion.jsp" class="btn btn-link">Ingresar</a>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>
