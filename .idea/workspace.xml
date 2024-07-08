@@ -10,10 +10,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6f44def4-2bd3-4c79-8a6b-cc536cc2ffae" name="Changes" comment="formulario Registrarse Otmar">
+    <list default="true" id="6f44def4-2bd3-4c79-8a6b-cc536cc2ffae" name="Changes" comment="modelos Usuario, Rol y Persona Leobardo">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/controller/RegistrarUsuarioServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/controller/RegistrarUsuarioServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/model/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/model/Usuario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/dao/UsuarioDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/dao/UsuarioDao.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -197,7 +196,7 @@
       <workItem from="1719194961350" duration="6304000" />
       <workItem from="1719202881349" duration="805000" />
       <workItem from="1719203746694" duration="468000" />
-      <workItem from="1720405381250" duration="6255000" />
+      <workItem from="1720405381250" duration="7172000" />
     </task>
     <task id="LOCAL-00001" summary="Inicio de sesion por Yoni, (problemas con InteliJ)">
       <option name="closed" value="true" />
@@ -223,7 +222,15 @@
       <option name="project" value="LOCAL" />
       <updated>1720410225483</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="modelos Usuario, Rol y Persona Leobardo">
+      <option name="closed" value="true" />
+      <created>1720411762078</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1720411762078</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -233,6 +240,7 @@
     <MESSAGE value="Inicio de sesion por Yoni, (problemas con InteliJ)" />
     <MESSAGE value="inicio sesion Yoni" />
     <MESSAGE value="formulario Registrarse Otmar" />
-    <option name="LAST_COMMIT_MESSAGE" value="formulario Registrarse Otmar" />
+    <MESSAGE value="modelos Usuario, Rol y Persona Leobardo" />
+    <option name="LAST_COMMIT_MESSAGE" value="modelos Usuario, Rol y Persona Leobardo" />
   </component>
 </project>

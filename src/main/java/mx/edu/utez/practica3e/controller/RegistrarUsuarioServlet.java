@@ -7,6 +7,8 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import mx.edu.utez.practica3e.dao.UsuarioDao;
+import mx.edu.utez.practica3e.model.Persona;
+import mx.edu.utez.practica3e.model.Rol;
 import mx.edu.utez.practica3e.model.Usuario;
 
 import java.io.IOException;
@@ -15,37 +17,50 @@ import java.io.IOException;
 @WebServlet(name="RegistrarUsuarioServlet", value="/sign_in")
 public class RegistrarUsuarioServlet extends HttpServlet {
 
-    //1) Primero configurar la clase para que sea servlet
-    //2) Manejar el método doPost para obtener la información del formulario de registro de persona
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        // Obtener datos del formulario
+        String nombre = req.getParameter("nombre");
+        String apellidos = req.getParameter("apellidos");
+        String telefono = req.getParameter("telefono");
+        String sexo = req.getParameter("sexo");
         String correo = req.getParameter("correo");
         String pass1 = req.getParameter("pass1");
         String pass2 = req.getParameter("pass2");
-        boolean estatus = true;
-        String ruta = "iniciarSesion.jsp";
+        boolean estatus = true; //por defecto el estatus es true
+        int rolId = 2; // Se asigna el rol de Cliente por defecto
+
+        String ruta = "registrarUsuario.jsp";
+
         if (pass1.equals(pass2)) {
-            pass1 = pass2;
-            UsuarioDao dao = new UsuarioDao();
+            // Crear objetos Persona y Usuario
+            Persona p = new Persona();
+            p.setNombre(nombre);
+            p.setApellidos(apellidos);
+            p.setTelefono(telefono);
+            p.setSexo(sexo);
+
             Usuario u = new Usuario();
-            {
-                u.setCorreo(correo);
-                u.setContrasena(pass1);
-            };
-            boolean insert = dao.insert(u);
-            //4) una vez insertada la persona redirigir el usuario hacia el index.jsp
+            u.setCorreo(correo);
+            u.setContrasena(pass1);
+            u.setEstatus(estatus);
+            u.setRol(new Rol(rolId, null)); // Rol por defecto: Cliente
+
+            UsuarioDao dao = new UsuarioDao();
+            boolean insert = dao.insert(u, p);
+
             if (insert) {
                 HttpSession sesion = req.getSession();
-                resp.sendRedirect(ruta);
-                sesion.setAttribute("mensaje2","REGISTRADO");
-            }else{
+                sesion.setAttribute("mensaje2", "REGISTRADO");
+                resp.sendRedirect("iniciarSesion.jsp");
+            } else {
                 HttpSession sesion = req.getSession();
-                sesion.setAttribute("mensaje3","El usuario no se registro correctamente");
+                sesion.setAttribute("mensaje3", "El usuario no se registró correctamente");
+                resp.sendRedirect(ruta);
             }
-        }else{
+        } else {
             HttpSession sesion = req.getSession();
-            sesion.setAttribute("mensaje2","Las contraseñas no coinciden");
-            resp.sendRedirect("registrarUsuario.jsp");
+            sesion.setAttribute("mensaje2", "Las contraseñas no coinciden");
+            resp.sendRedirect(ruta);
         }
     }
-
 }
