@@ -78,7 +78,7 @@ public class GmailSender {
         }
     }
     public static void main(String[] args) throws Exception {
-        new GmailSender().sendMail("20233tn118@utez.edu.mx","Correo Jonas Brothers",
+        new GmailSender().sendMail("20233tn110@utez.edu.mx","Correo Jonas Brothers",
                 "<h1>Barrera Calderon Jonathan Alberto, Bertadillo Villalobos Leobardo Daniel," +
                         "Hernandez Trujillo Otmar, Catarino Merino Fredy Julian, Vargas Lopez Yoni Gabriel</h1>");
     }

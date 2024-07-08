@@ -153,14 +153,12 @@ public class UsuarioDao {
     //Modificar usuario
     public boolean update(Usuario u) {
         boolean flag = false;
-        String query = "UPDATE usuario SET correo = ?, contrasena = ?, estatus = ? WHERE id_usuario = ?";
+        String query = "UPDATE usuario SET contrasena = sha2(?, 256),codigo=null WHERE id_usuario = ?";
         try {
             Connection con = DatabaseConnectionManager.getConnection();
             PreparedStatement ps = con.prepareStatement(query);
-            ps.setString(1, u.getCorreo());
-            ps.setString(2, u.getContrasena());
-            ps.setBoolean(3, u.isEstatus());
-            ps.setInt(4, u.getIdUsuario());
+            ps.setString(1, u.getContrasena());
+            ps.setInt(2, u.getIdUsuario());
 
             if (ps.executeUpdate() > 0) {
                 flag = true;
@@ -184,7 +182,7 @@ public class UsuarioDao {
             ResultSet rs = ps.executeQuery();
             if (rs.next()) {
                 u = new Usuario();
-                u.setIdUsuario(rs.getInt("id"));
+                u.setIdUsuario(rs.getInt("id_usuario"));
                 u.setCorreo(rs.getString("correo"));
                 u.setCodigo_recuperacion(rs.getString("codigo_recuperacion"));
             }
@@ -196,7 +194,7 @@ public class UsuarioDao {
 
     public boolean updateCodigoRecuperacion(Usuario u) {
         boolean flag = false;
-        String query = "update usuario set codigo = ? where id = ?";
+        String query = "update usuario set codigo = ? where id_usuario = ?";
         try {
             Connection con = DatabaseConnectionManager.getConnection();
             PreparedStatement ps = con.prepareStatement(query);
@@ -221,7 +219,7 @@ public class UsuarioDao {
             ResultSet rs = ps.executeQuery();
             if (rs.next()) {
                 u = new Usuario();
-                u.setIdUsuario(rs.getInt("id"));
+                u.setIdUsuario(rs.getInt("id_usuario"));
                 u.setCorreo(rs.getString("correo"));
                 u.setCodigo_recuperacion(rs.getString("codigo_recuperacion"));
             }

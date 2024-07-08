@@ -19,7 +19,7 @@ public class SimpleRandomStringGenerator {
     }
 
     public static void main(String[] args) {
-        int length = 10; // Especificar la longitud deseada
+        int length = 20; // Especificar la longitud deseada
         String randomString = generateRandomString(length);
         System.out.println("Cadena aleatoria: " + randomString);
     }
