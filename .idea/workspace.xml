@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="SISOC:war" />
-      <artifact name="SISOC:war exploded" />
+      <artifact name="practica3e:war" />
+      <artifact name="practica3e:war exploded" />
     </artifacts-to-build>
   </component>
   <component name="AutoImportSettings">
@@ -11,50 +11,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6f44def4-2bd3-4c79-8a6b-cc536cc2ffae" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/css/bootstrap.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/css/styles.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/img/CESAR.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/img/Contemporary-New-RB-Artists-to-Watch-2023-removebg-preview (1).png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/img/Drake.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/img/Imagen1spidy.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/img/SPIDY1.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/img/calacachida.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/img/carritoLogo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/img/chilaquilesVerdes.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/img/chokis.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/img/coca.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/img/doritos.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/img/emperador.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/img/fanta.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/img/gifotmar.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/img/images.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/img/img1rdr2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/img/img2rdr2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/img/login.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/img/logo.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/img/messi-cr7_1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/img/orden.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/img/search.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/img/spidy2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/img/tlou.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/img/tlou2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/img/tortaJamon.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/iniciarSesion.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/bootstrap.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/mostrarProductos.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/controller/RegistrarUsuarioServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/controller/RegistrarUsuarioServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/controller/UsuarioServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/controller/UsuarioServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/dao/UsuarioDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/dao/UsuarioDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/model/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/model/Usuario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/utils/DatabaseConnectionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/utils/DatabaseConnectionManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/iniciarSesion.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/iniciarSesion.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/registrarUsuario.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/registrarUsuario.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -98,7 +58,7 @@
     "Tomcat Server.Tomcat 10.1.8.executor": "Run",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/adrian jacobo/IdeaProjects/SISOCJSP",
+    "last_opened_file_path": "C:/Users/adrian jacobo/Documents/3CuatriUTEZ/APLICACIONES WEB/versionesIntegradora/CON INTELIJ/SISOC_INTEGRADORA",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -123,12 +83,12 @@
     <configuration name="Tomcat 10.1.8" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 10.1.8" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="11" nameIsGenerated="true">
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
-        <artifact name="SISOC:war exploded">
+        <artifact name="practica3e:war exploded">
           <settings>
             <option name="CONTEXT_PATH" value="/practica3e_war_exploded" />
           </settings>
         </artifact>
-        <artifact name="SISOC:war">
+        <artifact name="practica3e:war">
           <settings>
             <option name="CONTEXT_PATH" value="/practica3e_war" />
           </settings>
@@ -210,6 +170,8 @@
         <option name="BuildArtifacts" enabled="true">
           <artifact name="SISOC:war exploded" />
           <artifact name="SISOC:war" />
+          <artifact name="practica3e:war exploded" />
+          <artifact name="practica3e:war" />
         </option>
       </method>
     </configuration>
@@ -236,6 +198,7 @@
       <workItem from="1719194961350" duration="6304000" />
       <workItem from="1719202881349" duration="805000" />
       <workItem from="1719203746694" duration="468000" />
+      <workItem from="1720405381250" duration="2632000" />
     </task>
     <servers />
   </component>

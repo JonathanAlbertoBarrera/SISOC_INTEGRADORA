@@ -29,11 +29,11 @@
             <form method="post" action="login" class="mt-4">
                 <div class="form-group mb-3">
                     <label for="correo">Ingrese su correo:</label>
-                    <input type="email" class="form-control" id="correo" name="correo" required>
+                    <input type="email" class="form-control" id="correo" name="correo" value="<%= request.getAttribute("correo") != null ? request.getAttribute("correo") : "" %>" required>
                 </div>
                 <div class="form-group mb-3">
                     <label for="contrasena">Ingrese contraseña:</label>
-                    <input type="password" class="form-control" id="contrasena" name="contrasena" required>
+                    <input type="password" class="form-control" id="contrasena" name="contrasena"  value="<%= request.getAttribute("contrasena") != null ? request.getAttribute("contrasena") : "" %>" required>
                 </div>
                 <%
                     HttpSession sesion = request.getSession();
@@ -42,7 +42,10 @@
                     if(mensaje != null){ %>
                 <p class="text-danger"><%=mensaje%></p>
                 <% } %>
-                <button type="submit" class="btn btn-dark botonesApp btn-block">Iniciar sesión</button>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-dark botonesApp btn-block">Iniciar sesión</button>
+                </div>
+
             </form>
             <div class="text-center mt-3">
                 <a href="registrarUsuario.jsp" class="btn btn-link">Registrarme</a>

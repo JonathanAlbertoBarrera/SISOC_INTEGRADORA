@@ -15,29 +15,28 @@ import java.io.IOException;
 public class UsuarioServlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        //1) Obtener la información del formulario
+        // 1) Obtener la información del formulario
         String correo = req.getParameter("correo");
         String contrasena = req.getParameter("contrasena");
         String ruta = "iniciarSesion.jsp";
 
-        //2) conectarme a la base de datos y buscar al usuario segun
-        // las credenciales del form
+        // 2) Conectarme a la base de datos y buscar al usuario según las credenciales del form
         UsuarioDao dao = new UsuarioDao();
-        Usuario u = dao.getOne(correo,contrasena);
+        Usuario u = dao.getOne(correo, contrasena);
 
-        if(u.getCorreo() == null){
-            //No existe el usuario en la base de datos
+        if (u.getCorreo() == null) {
+            // No existe el usuario en la base de datos
             HttpSession sesion = req.getSession();
-            sesion.setAttribute("mensaje","El usuario no existe en la BD");
-            resp.sendRedirect(ruta);
-        }else{
-            //Si existe el usuario
-            ruta="index.jsp";
+            sesion.setAttribute("mensaje", "El usuario no existe en la BD o la contraseña es incorrecta. Vuelve a intentar");
+            req.setAttribute("correo", correo); // Guardar el correo ingresado
+            req.setAttribute("contrasena", contrasena); // Guardar la contraseña ingresada
+            req.getRequestDispatcher(ruta).forward(req, resp); // Usar forward en vez de sendRedirect
+        } else {
+            // Si existe el usuario
+            ruta = "index.jsp";
             HttpSession sesion = req.getSession();
-            sesion.setAttribute("usuario",u);
+            sesion.setAttribute("usuario", u);
             resp.sendRedirect(ruta);
         }
-
-
     }
 }
