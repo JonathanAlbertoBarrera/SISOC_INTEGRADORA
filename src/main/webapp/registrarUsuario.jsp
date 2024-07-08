@@ -28,8 +28,32 @@
         <div class="col-md-6">
             <h2 class="text-center mt-5">Registrarse</h2>
             <form method="post" action="sign_in" class="mt-4">
+                <h3 class="text-center mt-5">Datos personales</h3>
                 <div class="form-group mb-3">
-                    <label for="correo">Ingrese su correo:</label>
+                    <label for="correo">Ingrese su nombre(s):</label>
+                    <input type="text" class="form-control" id="nombre" name="nombre" required>
+                </div>
+                <div class="form-group mb-3">
+                    <label for="apellidos">Ingrese sus apellidos:</label>
+                    <input type="text" class="form-control" id="apellidos" name="apellidos" required>
+                </div>
+                <div class="form-group mb-3">
+                    <label for="telefono">Ingrese su número de teléfono:</label>
+                    <input type="text" class="form-control" id="telefono" name="telefono" required>
+                </div>
+                <div class="form-group mb-3">
+                    <label for="telefono">Ingrese su sexo (opcional):</label>
+                    <br>
+                    <select name="sexo" class="form-select">
+                        <option selected></option>
+                        <option value="Hombre">Hombre</option>
+                        <option value="Mujer">Mujer</option>
+                        <option value="NA">Prefiero no especificarlo</option>
+                    </select>
+                </div>
+                <h3 class="text-center mt-5">Datos de la cuenta</h3>
+                <div class="form-group mb-3">
+                    <label for="nombre">Ingrese su correo:</label>
                     <input type="email" class="form-control" id="correo" name="correo" required>
                 </div>
                 <div class="form-group mb-3">
@@ -47,7 +71,10 @@
                     if(mensaje2 != null){ %>
                 <p class="text-danger"><%=mensaje2%></p>
                 <% } %>
-                <button type="submit" class="btn btn-dark botonesApp btn-block">Registrarse</button>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-dark botonesApp btn-block">Registrarse</button>
+                </div>
+
                 <%
                     HttpSession sesion2 = request.getSession();
                     String mensaje3 = (String) sesion2.getAttribute("mensaje3");
@@ -57,8 +84,9 @@
                 <% } %>
             </form>
             <div class="text-center mt-3">
-                <a href="iniciarSesion.jsp" class="btn btn-link">Ingresar</a>
+                <a href="iniciarSesion.jsp" class="btn btn-link">Ir a inicio de sesión</a>
             </div>
+            <br>
         </div>
     </div>
 </div>
