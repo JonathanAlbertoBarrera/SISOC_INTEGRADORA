@@ -55,12 +55,26 @@ public class RegistrarUsuarioServlet extends HttpServlet {
             } else {
                 HttpSession sesion = req.getSession();
                 sesion.setAttribute("mensaje3", "El usuario no se registró correctamente");
-                resp.sendRedirect(ruta);
+                req.setAttribute("nombre", nombre);
+                req.setAttribute("apellidos", apellidos);
+                req.setAttribute("telefono", telefono);
+                req.setAttribute("sexo", sexo);
+                req.setAttribute("correo", correo);
+                req.setAttribute("pass1", pass1);
+                req.setAttribute("pass2", pass2);
+                req.getRequestDispatcher(ruta).forward(req, resp);
             }
         } else {
             HttpSession sesion = req.getSession();
             sesion.setAttribute("mensaje2", "Las contraseñas no coinciden");
-            resp.sendRedirect(ruta);
+            req.setAttribute("nombre", nombre);
+            req.setAttribute("apellidos", apellidos);
+            req.setAttribute("telefono", telefono);
+            req.setAttribute("sexo", sexo);
+            req.setAttribute("correo", correo);
+            req.setAttribute("pass1", pass1);
+            req.setAttribute("pass2", pass2);
+            req.getRequestDispatcher(ruta).forward(req, resp);
         }
     }
 }
