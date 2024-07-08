@@ -38,7 +38,6 @@
                 <%
                     HttpSession sesion = request.getSession();
                     String mensaje = (String) sesion.getAttribute("mensaje");
-
                     if(mensaje != null){ %>
                 <p class="text-danger"><%=mensaje%></p>
                 <% } %>
@@ -48,7 +47,7 @@
 
             </form>
             <div class="text-center mt-3">
-                <a href="registrarUsuario.jsp" class="btn btn-link">Registrarme</a>
+                <a href="registrarUsuario.jsp" class="btn btn-link" >Registrarme</a>
             </div>
         </div>
     </div>

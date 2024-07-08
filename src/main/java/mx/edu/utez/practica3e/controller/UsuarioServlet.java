@@ -30,7 +30,7 @@ public class UsuarioServlet extends HttpServlet {
             sesion.setAttribute("mensaje", "El usuario no existe en la BD o la contraseña es incorrecta. Vuelve a intentar");
             req.setAttribute("correo", correo); // Guardar el correo ingresado
             req.setAttribute("contrasena", contrasena); // Guardar la contraseña ingresada
-            req.getRequestDispatcher(ruta).forward(req, resp); // Usar forward en vez de sendRedirect
+            req.getRequestDispatcher(ruta).forward(req, resp);
         } else {
             // Si existe el usuario
             ruta = "index.jsp";
