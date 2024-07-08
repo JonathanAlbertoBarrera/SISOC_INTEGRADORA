@@ -48,6 +48,7 @@
             </form>
             <div class="text-center mt-3">
                 <a href="registrarUsuario.jsp" class="btn btn-link" >Registrarme</a>
+                <a href="solicitudRecuperacion.jsp" class="btn btn-link" >¿Olvidaste tu contraseña?</a>
             </div>
         </div>
     </div>

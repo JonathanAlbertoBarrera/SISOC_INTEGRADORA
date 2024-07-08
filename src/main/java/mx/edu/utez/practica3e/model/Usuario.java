@@ -11,6 +11,8 @@ public class Usuario {
     private String correo;
     private String contrasena;
     private boolean estatus;
+    private String codigo_recuperacion;
+
 
     public Usuario() {
     }
@@ -70,5 +72,13 @@ public class Usuario {
 
     public void setEstatus(boolean estatus) {
         this.estatus = estatus;
+    }
+
+    public String getCodigo_recuperacion() {
+        return codigo_recuperacion;
+    }
+
+    public void setCodigo_recuperacion(String codigo_recuperacion) {
+        this.codigo_recuperacion = codigo_recuperacion;
     }
 }

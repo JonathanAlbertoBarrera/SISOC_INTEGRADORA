@@ -10,10 +10,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6f44def4-2bd3-4c79-8a6b-cc536cc2ffae" name="Changes" comment="correcion bd en conexion">
+    <list default="true" id="6f44def4-2bd3-4c79-8a6b-cc536cc2ffae" name="Changes" comment="correcion para que en caso de mensaje de error al no coincidir contrasenas, no se pierdan los datos llenados">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/controller/RegistrarUsuarioServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/controller/RegistrarUsuarioServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/registrarUsuario.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/registrarUsuario.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/dao/UsuarioDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/dao/UsuarioDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/model/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/model/Usuario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/iniciarSesion.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/iniciarSesion.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,8 +24,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Jsp File" />
         <option value="Class" />
+        <option value="Jsp File" />
       </list>
     </option>
   </component>
@@ -57,7 +58,7 @@
     "Tomcat Server.Tomcat 10.1.8.executor": "Run",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/adrian jacobo/Documents/3CuatriUTEZ/APLICACIONES WEB/versionesIntegradora/CON INTELIJ/SISOC_INTEGRADORA",
+    "last_opened_file_path": "C:/Users/adrian jacobo/Documents/3CuatriUTEZ/APLICACIONES WEB/versionesIntegradora/CON INTELIJ/SISOC_INTEGRADORA/src/main/webapp/WEB-INF",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -71,11 +72,16 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\adrian jacobo\Documents\3CuatriUTEZ\APLICACIONES WEB\versionesIntegradora\CON INTELIJ\SISOC_INTEGRADORA\src\main\webapp\WEB-INF" />
       <recent name="C:\Users\adrian jacobo\IdeaProjects\SISOCJSP\src\main\webapp" />
       <recent name="C:\Users\adrian jacobo\IdeaProjects\SISOCJSP\src\main\webapp\WEB-INF" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\adrian jacobo\Documents\3CuatriUTEZ\APLICACIONES WEB\versionesIntegradora\CON INTELIJ\SISOC_INTEGRADORA\src\main\webapp" />
       <recent name="C:\Users\adrian jacobo\IdeaProjects\SISOCJSP\src\main\webapp" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="mx.edu.utez.practica3e.controller" />
     </key>
   </component>
   <component name="RunManager">
@@ -197,7 +203,7 @@
       <workItem from="1719194961350" duration="6304000" />
       <workItem from="1719202881349" duration="805000" />
       <workItem from="1719203746694" duration="468000" />
-      <workItem from="1720405381250" duration="9902000" />
+      <workItem from="1720405381250" duration="13785000" />
     </task>
     <task id="LOCAL-00001" summary="Inicio de sesion por Yoni, (problemas con InteliJ)">
       <option name="closed" value="true" />
@@ -263,7 +269,15 @@
       <option name="project" value="LOCAL" />
       <updated>1720414178027</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="correcion para que en caso de mensaje de error al no coincidir contrasenas, no se pierdan los datos llenados">
+      <option name="closed" value="true" />
+      <created>1720415546489</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1720415546489</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -278,6 +292,7 @@
     <MESSAGE value="Servlet Registrar Usuario" />
     <MESSAGE value="Funcion getAll dao Usuario" />
     <MESSAGE value="correcion bd en conexion" />
-    <option name="LAST_COMMIT_MESSAGE" value="correcion bd en conexion" />
+    <MESSAGE value="correcion para que en caso de mensaje de error al no coincidir contrasenas, no se pierdan los datos llenados" />
+    <option name="LAST_COMMIT_MESSAGE" value="correcion para que en caso de mensaje de error al no coincidir contrasenas, no se pierdan los datos llenados" />
   </component>
 </project>

@@ -150,4 +150,84 @@ public class UsuarioDao {
         return flag;
     }
 
+    //Modificar usuario
+    public boolean update(Usuario u) {
+        boolean flag = false;
+        String query = "UPDATE usuario SET correo = ?, contrasena = ?, estatus = ? WHERE id_usuario = ?";
+        try {
+            Connection con = DatabaseConnectionManager.getConnection();
+            PreparedStatement ps = con.prepareStatement(query);
+            ps.setString(1, u.getCorreo());
+            ps.setString(2, u.getContrasena());
+            ps.setBoolean(3, u.isEstatus());
+            ps.setInt(4, u.getIdUsuario());
+
+            if (ps.executeUpdate() > 0) {
+                flag = true;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return flag;
+    }
+
+
+
+    //PARA RECUPERACION CONTRA
+    public Usuario getByEmail(String email) {
+        Usuario u = null;
+        String query = "select * from usuario where correo = ?";
+        try {
+            Connection con = DatabaseConnectionManager.getConnection();
+            PreparedStatement ps = con.prepareStatement(query);
+            ps.setString(1, email);
+            ResultSet rs = ps.executeQuery();
+            if (rs.next()) {
+                u = new Usuario();
+                u.setIdUsuario(rs.getInt("id"));
+                u.setCorreo(rs.getString("correo"));
+                u.setCodigo_recuperacion(rs.getString("codigo_recuperacion"));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return u;
+    }
+
+    public boolean updateCodigoRecuperacion(Usuario u) {
+        boolean flag = false;
+        String query = "update usuario set codigo = ? where id = ?";
+        try {
+            Connection con = DatabaseConnectionManager.getConnection();
+            PreparedStatement ps = con.prepareStatement(query);
+            ps.setString(1, u.getCodigo_recuperacion());
+            ps.setInt(2, u.getIdUsuario());
+            if (ps.executeUpdate() > 0) {
+                flag = true;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return flag;
+    }
+
+    public Usuario getByCodigoRecuperacion(String codigo) {
+        Usuario u = null;
+        String query = "select * from usuario where codigo = ?";
+        try {
+            Connection con = DatabaseConnectionManager.getConnection();
+            PreparedStatement ps = con.prepareStatement(query);
+            ps.setString(1, codigo);
+            ResultSet rs = ps.executeQuery();
+            if (rs.next()) {
+                u = new Usuario();
+                u.setIdUsuario(rs.getInt("id"));
+                u.setCorreo(rs.getString("correo"));
+                u.setCodigo_recuperacion(rs.getString("codigo_recuperacion"));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return u;
+    }
 }
