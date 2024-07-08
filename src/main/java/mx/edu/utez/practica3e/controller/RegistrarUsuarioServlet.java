@@ -48,8 +48,4 @@ public class RegistrarUsuarioServlet extends HttpServlet {
         }
     }
 
-
-
-
-
 }

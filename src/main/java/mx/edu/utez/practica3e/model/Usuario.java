@@ -3,10 +3,11 @@ package mx.edu.utez.practica3e.model;
 import java.io.Serializable;
 
 //Debe de implemntar las convenciones de Java Bean
-public class Usuario implements Serializable {
-    private int id_usuario;
-    private int id_persona;
-    private int rol;
+
+public class Usuario {
+    private int idUsuario;
+    private Persona persona;
+    private Rol rol;
     private String correo;
     private String contrasena;
     private boolean estatus;
@@ -14,36 +15,36 @@ public class Usuario implements Serializable {
     public Usuario() {
     }
 
-    public Usuario(int id_usuario, int id_persona, int rol, String correo, String contrasena, boolean estatus) {
-        this.id_usuario = id_usuario;
-        this.id_persona = id_persona;
+    public Usuario(int idUsuario, Persona persona, Rol rol, String correo, String contrasena, boolean estatus) {
+        this.idUsuario = idUsuario;
+        this.persona = persona;
         this.rol = rol;
         this.correo = correo;
         this.contrasena = contrasena;
         this.estatus = estatus;
     }
 
-    public int getId_usuario() {
-        return id_usuario;
+    public int getIdUsuario() {
+        return idUsuario;
     }
 
-    public void setId_usuario(int id_usuario) {
-        this.id_usuario = id_usuario;
+    public void setIdUsuario(int idUsuario) {
+        this.idUsuario = idUsuario;
     }
 
-    public int getId_persona() {
-        return id_persona;
+    public Persona getPersona() {
+        return persona;
     }
 
-    public void setId_persona(int id_persona) {
-        this.id_persona = id_persona;
+    public void setPersona(Persona persona) {
+        this.persona = persona;
     }
 
-    public int getRol() {
+    public Rol getRol() {
         return rol;
     }
 
-    public void setRol(int rol) {
+    public void setRol(Rol rol) {
         this.rol = rol;
     }
 
@@ -70,5 +71,4 @@ public class Usuario implements Serializable {
     public void setEstatus(boolean estatus) {
         this.estatus = estatus;
     }
-
 }
