@@ -32,7 +32,10 @@
                 <br>
                 <input type="hidden" name="codigo" value="<%= request.getParameter("codigo") %>">
                 <br>
-                <input type="submit" value="Cambiar">
+                <div class="text-center">
+                    <input type="submit"  class="btn btn-dark botonesApp btn-block" value="Cambiar">
+                </div>
+
             </form>
 
         </div>
