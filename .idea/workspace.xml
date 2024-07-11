@@ -10,12 +10,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6f44def4-2bd3-4c79-8a6b-cc536cc2ffae" name="Changes" comment="">
+    <list default="true" id="6f44def4-2bd3-4c79-8a6b-cc536cc2ffae" name="Changes" comment="servlet y dependencia para generar pdf de usuarios">
       <change afterPath="$PROJECT_DIR$/src/main/resources/credentials.json" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/resources/tokens/StoredCredential" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/SISOC.jasper" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/UsuariosSISOC.jasper" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/controller/PdfUsuariosInactivosServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/controller/PdfUsuariosInactivosServlet.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,30 +55,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.GmailSender.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;Tomcat Server.Tomcat 10.1.8.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/adrian jacobo/Documents/3CuatriUTEZ/APLICACIONES WEB/versionesIntegradora/CON INTELIJ/SISOC_INTEGRADORA&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.GmailSender.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Tomcat Server.Tomcat 10.1.8.executor": "Run",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/adrian jacobo/Documents/3CuatriUTEZ/APLICACIONES WEB/versionesIntegradora/CON INTELIJ/SISOC_INTEGRADORA/src/main/webapp/WEB-INF",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Artifacts",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\adrian jacobo\Documents\3CuatriUTEZ\APLICACIONES WEB\versionesIntegradora\CON INTELIJ\SISOC_INTEGRADORA\src\main" />
       <recent name="C:\Users\adrian jacobo\Documents\3CuatriUTEZ\APLICACIONES WEB\versionesIntegradora\CON INTELIJ\SISOC_INTEGRADORA\src\main\webapp\WEB-INF" />
+      <recent name="C:\Users\adrian jacobo\Documents\3CuatriUTEZ\APLICACIONES WEB\versionesIntegradora\CON INTELIJ\SISOC_INTEGRADORA\src\main" />
       <recent name="C:\Users\adrian jacobo\IdeaProjects\SISOCJSP\src\main\webapp" />
       <recent name="C:\Users\adrian jacobo\IdeaProjects\SISOCJSP\src\main\webapp\WEB-INF" />
     </key>
@@ -232,7 +234,7 @@
       <workItem from="1719203746694" duration="468000" />
       <workItem from="1720405381250" duration="16698000" />
       <workItem from="1720480091074" duration="3410000" />
-      <workItem from="1720661737829" duration="1712000" />
+      <workItem from="1720661737829" duration="3836000" />
     </task>
     <task id="LOCAL-00001" summary="Inicio de sesion por Yoni, (problemas con InteliJ)">
       <option name="closed" value="true" />
@@ -346,7 +348,15 @@
       <option name="project" value="LOCAL" />
       <updated>1720483346024</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="servlet y dependencia para generar pdf de usuarios">
+      <option name="closed" value="true" />
+      <created>1720663519137</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1720663519137</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -366,6 +376,7 @@
     <MESSAGE value="Dependencias para correo" />
     <MESSAGE value="push para agregar cambios de modificacion contra sin errores" />
     <MESSAGE value="bootrap para jsp recuperacion de contra" />
-    <option name="LAST_COMMIT_MESSAGE" value="bootrap para jsp recuperacion de contra" />
+    <MESSAGE value="servlet y dependencia para generar pdf de usuarios" />
+    <option name="LAST_COMMIT_MESSAGE" value="servlet y dependencia para generar pdf de usuarios" />
   </component>
 </project>
