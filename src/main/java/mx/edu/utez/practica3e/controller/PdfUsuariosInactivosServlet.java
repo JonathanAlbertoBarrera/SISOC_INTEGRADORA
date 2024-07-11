@@ -16,19 +16,21 @@ import mx.edu.utez.practica3e.utils.DatabaseConnectionManager;
 import net.sf.jasperreports.engine.JasperRunManager;
 
 
-@WebServlet(name = "PdfServlet", value = "/pdf")
+@WebServlet(name = "PdfUsuariosInactivosServlet", value = "/pdf")
 public class PdfUsuariosInactivosServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         //Seleccinar una imagen de los assets (logo)
-        FileInputStream archivo = new FileInputStream(req.getSession().getServletContext().getResource("/img/logo.PNG").getFile());
+        String archivo = "/img/logo.PNG";
+        File file2 = new File(getServletContext().getRealPath(archivo));
+        FileInputStream input2 = new FileInputStream(file2);
         //Obtener ubicación y bytes del reporte
-        String report = "/WEB-INF/reporte.jasper";
+        String report = "/WEB-INF/UsuariosSISOC.jasper";
         File file = new File(getServletContext().getRealPath(report));
         InputStream input = new FileInputStream(file);
         //Colocar los parametros del reporte
         Map mapa = new HashMap();
-        mapa.put("Logo", archivo);
+        mapa.put("logo", input2);
         //obtener una coneccion a los datos
         Connection con = null;
         try { con = DatabaseConnectionManager.getConnection();}
