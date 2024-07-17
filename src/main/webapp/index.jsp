@@ -54,7 +54,7 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="iniciarSesion.jsp">Iniciar Sesión</a></li>
-                            <li><a class="dropdown-item" href="#">Cambiar contraseña</a></li>
+                            <li><a class="dropdown-item" href="solicitudRecuperacion.jsp">Cambiar contraseña</a></li>
                         </ul>
                     </li>
                 </div>

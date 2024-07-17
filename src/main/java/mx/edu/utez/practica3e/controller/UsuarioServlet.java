@@ -24,7 +24,7 @@ public class UsuarioServlet extends HttpServlet {
         UsuarioDao dao = new UsuarioDao();
         Usuario u = dao.getOne(correo, contrasena);
 
-        if (u.getCorreo() == null) {
+        if (u == null || u.getCorreo() == null) {
             // No existe el usuario en la base de datos
             HttpSession sesion = req.getSession();
             sesion.setAttribute("mensaje", "El usuario no existe en la BD o la contraseña es incorrecta. Vuelve a intentar");
@@ -40,3 +40,4 @@ public class UsuarioServlet extends HttpServlet {
         }
     }
 }
+
