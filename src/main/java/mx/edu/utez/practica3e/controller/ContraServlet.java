@@ -44,7 +44,6 @@ public class ContraServlet extends HttpServlet {
             e.printStackTrace();
         }
 
-        request.getSession().setAttribute("mensaje", "Correo enviado.");
         response.sendRedirect("index.jsp");
     }
 

@@ -34,6 +34,7 @@
                 <%
                     HttpSession sesion = request.getSession();
                     String mensaje = (String) sesion.getAttribute("mensaje");
+                    sesion.setAttribute("mensaje", null);
 
                     if(mensaje != null){ %>
                 <p class="text-danger"><%=mensaje%></p>

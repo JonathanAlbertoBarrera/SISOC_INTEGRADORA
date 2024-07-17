@@ -10,10 +10,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6f44def4-2bd3-4c79-8a6b-cc536cc2ffae" name="Changes" comment="servlet y dependencia para generar pdf de usuarios">
+    <list default="true" id="6f44def4-2bd3-4c79-8a6b-cc536cc2ffae" name="Changes" comment="arregle errores mensajes de error">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/credentials.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/tokens/StoredCredential" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/controller/ContraServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/controller/ContraServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/controller/UsuarioServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/controller/UsuarioServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/iniciarSesion.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/iniciarSesion.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/solicitudRecuperacion.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/solicitudRecuperacion.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,7 +63,7 @@
     "Tomcat Server.Tomcat 10.1.8.executor": "Run",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/adrian jacobo/Documents/3CuatriUTEZ/APLICACIONES WEB/versionesIntegradora/SISOC_INTEGRADORA",
+    "last_opened_file_path": "C:/Users/adrian jacobo/Documents/3CuatriUTEZ/APLICACIONES WEB/versionesIntegradora/SISOC_INTEGRADORA/src/main",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -73,10 +77,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\adrian jacobo\Documents\3CuatriUTEZ\APLICACIONES WEB\versionesIntegradora\SISOC_INTEGRADORA\src\main" />
+      <recent name="C:\Users\adrian jacobo\Documents\3CuatriUTEZ\APLICACIONES WEB\versionesIntegradora\SISOC_INTEGRADORA\src\main\java" />
       <recent name="C:\Users\adrian jacobo\Documents\3CuatriUTEZ\APLICACIONES WEB\versionesIntegradora\CON INTELIJ\SISOC_INTEGRADORA\src\main\webapp\WEB-INF" />
       <recent name="C:\Users\adrian jacobo\Documents\3CuatriUTEZ\APLICACIONES WEB\versionesIntegradora\CON INTELIJ\SISOC_INTEGRADORA\src\main" />
       <recent name="C:\Users\adrian jacobo\IdeaProjects\SISOCJSP\src\main\webapp" />
-      <recent name="C:\Users\adrian jacobo\IdeaProjects\SISOCJSP\src\main\webapp\WEB-INF" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\adrian jacobo\Documents\3CuatriUTEZ\APLICACIONES WEB\versionesIntegradora\CON INTELIJ\SISOC_INTEGRADORA\src\main\webapp" />
@@ -87,7 +92,7 @@
       <recent name="mx.edu.utez.practica3e.controller" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.GmailSender">
+  <component name="RunManager" selected="Tomcat Server.Tomcat 10.1.8">
     <configuration name="GmailSender" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="mx.edu.utez.practica3e.utils.GmailSender" />
       <module name="practica3e" />
@@ -232,7 +237,7 @@
       <workItem from="1720480091074" duration="3410000" />
       <workItem from="1720661737829" duration="3836000" />
       <workItem from="1720808552133" duration="2335000" />
-      <workItem from="1721182030918" duration="1782000" />
+      <workItem from="1721182030918" duration="3902000" />
     </task>
     <task id="LOCAL-00001" summary="Inicio de sesion por Yoni, (problemas con InteliJ)">
       <option name="closed" value="true" />
@@ -354,7 +359,15 @@
       <option name="project" value="LOCAL" />
       <updated>1720663519137</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="arregle errores mensajes de error">
+      <option name="closed" value="true" />
+      <created>1721184234691</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1721184234691</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -375,7 +388,8 @@
     <MESSAGE value="push para agregar cambios de modificacion contra sin errores" />
     <MESSAGE value="bootrap para jsp recuperacion de contra" />
     <MESSAGE value="servlet y dependencia para generar pdf de usuarios" />
-    <option name="LAST_COMMIT_MESSAGE" value="servlet y dependencia para generar pdf de usuarios" />
+    <MESSAGE value="arregle errores mensajes de error" />
+    <option name="LAST_COMMIT_MESSAGE" value="arregle errores mensajes de error" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

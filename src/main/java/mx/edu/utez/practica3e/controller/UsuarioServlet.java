@@ -38,6 +38,7 @@ public class UsuarioServlet extends HttpServlet {
             sesion.setAttribute("usuario", u);
             resp.sendRedirect(ruta);
         }
+
     }
 }
 
