@@ -114,7 +114,7 @@
             <tbody>
             <%
                 UsuarioDao dao3 = new UsuarioDao();
-                ArrayList<Usuario> lista3 = (ArrayList<Usuario>) dao3.getAll();
+                ArrayList<Usuario> lista3 = (ArrayList<Usuario>) dao3.getAllSinAdmin();
                 for(Usuario u : lista3) {
             %>
             <tr>
