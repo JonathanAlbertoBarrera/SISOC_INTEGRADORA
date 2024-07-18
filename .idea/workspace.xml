@@ -10,14 +10,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6f44def4-2bd3-4c79-8a6b-cc536cc2ffae" name="Changes" comment="arregle errores mensajes de error">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/credentials.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/tokens/StoredCredential" afterDir="false" />
+    <list default="true" id="6f44def4-2bd3-4c79-8a6b-cc536cc2ffae" name="Changes" comment="MAS CORRECION DE MENSAJES DE ERROR REZAGADOS">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/controller/ContraServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/controller/ContraServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/controller/UsuarioServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/controller/UsuarioServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/iniciarSesion.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/iniciarSesion.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/solicitudRecuperacion.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/solicitudRecuperacion.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,8 +22,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Jsp File" />
         <option value="Class" />
+        <option value="Jsp File" />
       </list>
     </option>
   </component>
@@ -63,7 +57,7 @@
     "Tomcat Server.Tomcat 10.1.8.executor": "Run",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/adrian jacobo/Documents/3CuatriUTEZ/APLICACIONES WEB/versionesIntegradora/SISOC_INTEGRADORA/src/main",
+    "last_opened_file_path": "C:/Users/adrian jacobo/Documents/3CuatriUTEZ/APLICACIONES WEB/versionesIntegradora/SISOC_INTEGRADORA",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -84,6 +78,7 @@
       <recent name="C:\Users\adrian jacobo\IdeaProjects\SISOCJSP\src\main\webapp" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\adrian jacobo\Documents\3CuatriUTEZ\APLICACIONES WEB\versionesIntegradora\SISOC_INTEGRADORA\src\main\webapp" />
       <recent name="C:\Users\adrian jacobo\Documents\3CuatriUTEZ\APLICACIONES WEB\versionesIntegradora\CON INTELIJ\SISOC_INTEGRADORA\src\main\webapp" />
       <recent name="C:\Users\adrian jacobo\IdeaProjects\SISOCJSP\src\main\webapp" />
     </key>
@@ -237,7 +232,8 @@
       <workItem from="1720480091074" duration="3410000" />
       <workItem from="1720661737829" duration="3836000" />
       <workItem from="1720808552133" duration="2335000" />
-      <workItem from="1721182030918" duration="3902000" />
+      <workItem from="1721182030918" duration="4920000" />
+      <workItem from="1721268766385" duration="1735000" />
     </task>
     <task id="LOCAL-00001" summary="Inicio de sesion por Yoni, (problemas con InteliJ)">
       <option name="closed" value="true" />
@@ -367,7 +363,15 @@
       <option name="project" value="LOCAL" />
       <updated>1721184234691</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="MAS CORRECION DE MENSAJES DE ERROR REZAGADOS">
+      <option name="closed" value="true" />
+      <created>1721186164090</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1721186164090</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -389,7 +393,8 @@
     <MESSAGE value="bootrap para jsp recuperacion de contra" />
     <MESSAGE value="servlet y dependencia para generar pdf de usuarios" />
     <MESSAGE value="arregle errores mensajes de error" />
-    <option name="LAST_COMMIT_MESSAGE" value="arregle errores mensajes de error" />
+    <MESSAGE value="MAS CORRECION DE MENSAJES DE ERROR REZAGADOS" />
+    <option name="LAST_COMMIT_MESSAGE" value="MAS CORRECION DE MENSAJES DE ERROR REZAGADOS" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
