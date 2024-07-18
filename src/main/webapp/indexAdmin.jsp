@@ -15,23 +15,43 @@
     <link rel="stylesheet" href="css/bootstrap.css">
     <style>
         .barra {
-            background-color:#F4AB2C;
+            background-color: #F4AB2C;
         }
+
         main {
             text-align: center;
         }
+
         body {
             font-family: 'Montserrat', sans-serif;
         }
+
         .hidden {
             display: none;
         }
-        .botonesApp{
+
+        .botonesApp {
             background-color: #F4AB2C;
-            border-color:#F4AB2C;
+            border-color: #F4AB2C;
+            margin: 0 10px; /* Añadir margen para asegurar que los botones estén espaciados */
         }
+
+        .botonesApp.activo {
+            background-color: black; /* Color de fondo negro para el botón activo */
+            color: white; /* Texto blanco para el botón activo */
+        }
+
+        #tablaEncargados,
+        #tablaClientes{
+            display: none; /* Asegurar que todas las tablas estén ocultas inicialmente */
+        }
+
+        #tablaAllUsuarios {
+            display: block; /* Mostrar la tabla de 'todos los usuarios' por defecto */
+        }
+
     </style>
-    <script src="js/mostrarProductos.js" defer></script>
+    <script src="js/mostrarOcultarCosas.js" defer></script>
 </head>
 <body>
 <!-- BARRA NAVEGACION -->
@@ -67,10 +87,71 @@
 </header>
 
 <main>
+    <!-- OPCIONES DE TABLAS -->
+    <div class="text-center mt-3 mb-3 text-align-center">
+        <button class="btn btn-dark botonesApp activo" id="opcTodosUsuarios" onclick="mostrarTablaAllUsuarios()">Ver todos los usuarios</button>
+        <button class="btn btn-dark botonesApp" id="opcEncargados" onclick="mostrarTablaEncargados()">Ver encargados</button>
+        <button class="btn btn-dark botonesApp" id="opcClientes" onclick="mostrarTablaClientes()">Ver clientes</button>
+    </div>
+
+
+    <!-- TABLA TODOS LOS USUARIOS -->
+    <div class="table-responsive" id="tablaAllUsuarios">
+        <h3>Tabla de todos los usuarios</h3>
+        <table id="example3" class="table table-striped table-hover" style="width: 100%">
+            <thead>
+            <tr>
+                <th>ID usuario</th>
+                <th>Nombre(s)</th>
+                <th>Apellidos</th>
+                <th>Correo</th>
+                <th>Tipo</th>
+                <th>Estatus</th>
+                <th>Actualizar</th>
+                <th>Cambiar estatus</th>
+            </tr>
+            </thead>
+            <tbody>
+            <%
+                UsuarioDao dao3 = new UsuarioDao();
+                ArrayList<Usuario> lista3 = (ArrayList<Usuario>) dao3.getAll();
+                for(Usuario u : lista3) {
+            %>
+            <tr>
+                <td><%= u.getIdUsuario() %></td>
+                <td><%= u.getPersona().getNombre() %></td>
+                <td><%= u.getPersona().getApellidos() %></td>
+                <td><%= u.getCorreo() %></td>
+                <td><%= u.getRol().getTipoRol() %></td>
+                <td><%=u.isEstatus() ? "Activo" : "Inactivo"%></td>
+                <td><a href="login?id=<%= u.getIdUsuario() %>">Actualizar</a></td>
+                <td>
+                    <form method="post" action="desactivar">
+                        <input type="hidden" name="id" value="<%= u.getIdUsuario() %>">
+                        <input type="hidden" name="estado" value="<%= u.isEstatus() %>">
+                        <input type="submit" value="<%= u.isEstatus() ? "Desactivar" : "Activar" %>">
+                    </form>
+                </td>
+                <%
+                    HttpSession sesion = request.getSession();
+                    String mensaje = (String) sesion.getAttribute("mensaje");
+                    if (mensaje != null) {
+                %>
+                <p style="color: red;"><%= mensaje %></p>
+                <%
+                        sesion.removeAttribute("mensaje");
+                    }
+                %>
+            </tr>
+            <% } %>
+            </tbody>
+        </table>
+    </div>
+
     <!-- TABLA CLIENTES -->
-    <h3>Tabla de clientes</h3>
-    <div class="table-responsive">
-        <table id="example2" class="table table-striped table-hover">
+    <div class="table-responsive" id="tablaClientes">
+        <h3>Tabla de clientes</h3>
+        <table id="example2" class="table table-striped table-hover" style="width: 100%">
             <thead>
             <tr>
                 <th>ID usuario</th>
@@ -119,10 +200,11 @@
             </tbody>
         </table>
     </div>
+
     <!-- TABLA ENCARGADOS -->
-    <h3>Tabla de encargados</h3>
-    <div class="table-responsive">
-        <table id="example" class="table table-striped table-hover">
+    <div class="table-responsive" id="tablaEncargados">
+        <h3>Tabla de encargados</h3>
+        <table id="example" class="table table-striped table-hover" style="width: 100%">
             <thead>
             <tr>
                 <th>ID usuario</th>
@@ -192,10 +274,15 @@
                 url: '${pageContext.request.contextPath}/JS/es-MX.json'
             }
         });
+        const table3 = document.getElementById('example3');
+        new DataTable(table3, {
+            language: {
+                url: '${pageContext.request.contextPath}/JS/es-MX.json'
+            }
+        });
     });
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js"></script>
 <script src="js/bootstrap.js"></script>
 </body>
 </html>
-s

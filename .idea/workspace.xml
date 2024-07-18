@@ -10,9 +10,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6f44def4-2bd3-4c79-8a6b-cc536cc2ffae" name="Changes" comment="FREDY TABLAS ADMIN USUARIOS">
+    <list default="true" id="6f44def4-2bd3-4c79-8a6b-cc536cc2ffae" name="Changes" comment="FREDY, JONA FUNCION CAMBIAR ESTADO">
+      <change beforePath="$PROJECT_DIR$/.idea/webContexts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/dao/UsuarioDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/dao/UsuarioDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/indexAdmin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/indexAdmin.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -26,6 +26,7 @@
       <list>
         <option value="Jsp File" />
         <option value="Class" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -59,7 +60,7 @@
     "Tomcat Server.Tomcat 10.1.8.executor": "Run",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/adrian jacobo/Documents/3CuatriUTEZ/APLICACIONES WEB/versionesIntegradora/SISOC_INTEGRADORA/src/main/webapp/js",
+    "last_opened_file_path": "C:/Users/adrian jacobo/Documents/3CuatriUTEZ/APLICACIONES WEB/versionesIntegradora/SISOC_INTEGRADORA",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -235,7 +236,8 @@
       <workItem from="1720661737829" duration="3836000" />
       <workItem from="1720808552133" duration="2335000" />
       <workItem from="1721182030918" duration="4920000" />
-      <workItem from="1721268766385" duration="7879000" />
+      <workItem from="1721268766385" duration="8268000" />
+      <workItem from="1721329023612" duration="6396000" />
     </task>
     <task id="LOCAL-00001" summary="Inicio de sesion por Yoni, (problemas con InteliJ)">
       <option name="closed" value="true" />
@@ -389,7 +391,15 @@
       <option name="project" value="LOCAL" />
       <updated>1721274219262</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="FREDY, JONA FUNCION CAMBIAR ESTADO">
+      <option name="closed" value="true" />
+      <created>1721276837711</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1721276837711</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -414,7 +424,8 @@
     <MESSAGE value="MAS CORRECION DE MENSAJES DE ERROR REZAGADOS" />
     <MESSAGE value="OTMAR PAGINA ACCESO DENEGADO" />
     <MESSAGE value="FREDY TABLAS ADMIN USUARIOS" />
-    <option name="LAST_COMMIT_MESSAGE" value="FREDY TABLAS ADMIN USUARIOS" />
+    <MESSAGE value="FREDY, JONA FUNCION CAMBIAR ESTADO" />
+    <option name="LAST_COMMIT_MESSAGE" value="FREDY, JONA FUNCION CAMBIAR ESTADO" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
