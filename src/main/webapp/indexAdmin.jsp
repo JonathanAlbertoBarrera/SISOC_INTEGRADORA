@@ -73,12 +73,14 @@
         <table id="example2" class="table table-striped table-hover">
             <thead>
             <tr>
-                <th>id</th>
-                <th>nombre</th>
-                <th>correo</th>
-                <th>tipo</th>
-                <th>actualizar</th>
-                <th>eliminar</th>
+                <th>ID usuario</th>
+                <th>Nombre(s)</th>
+                <th>Apellidos</th>
+                <th>Correo</th>
+                <th>Tipo</th>
+                <th>Estatus</th>
+                <th>Actualizar</th>
+                <th>Cambiar estatus</th>
             </tr>
             </thead>
             <tbody>
@@ -90,8 +92,10 @@
             <tr>
                 <td><%= u.getIdUsuario() %></td>
                 <td><%= u.getPersona().getNombre() %></td>
+                <td><%= u.getPersona().getApellidos() %></td>
                 <td><%= u.getCorreo() %></td>
                 <td><%= u.getRol().getTipoRol() %></td>
+                <td><%=u.isEstatus() ? "Activo" : "Inactivo"%></td>
                 <td><a href="login?id=<%= u.getIdUsuario() %>">Actualizar</a></td>
                 <td>
                     <form method="post" action="desactivar">
@@ -121,12 +125,14 @@
         <table id="example" class="table table-striped table-hover">
             <thead>
             <tr>
-                <th>id</th>
-                <th>nombre</th>
-                <th>correo</th>
-                <th>tipo</th>
-                <th>actualizar</th>
-                <th>eliminar</th>
+                <th>ID usuario</th>
+                <th>Nombre(s)</th>
+                <th>Apellidos</th>
+                <th>Correo</th>
+                <th>Tipo</th>
+                <th>Estatus</th>
+                <th>Actualizar</th>
+                <th>Cambiar estatus</th>
             </tr>
             </thead>
             <tbody>
@@ -138,8 +144,10 @@
             <tr>
                 <td><%= u.getIdUsuario() %></td>
                 <td><%= u.getPersona().getNombre() %></td>
+                <td><%= u.getPersona().getApellidos() %></td>
                 <td><%= u.getCorreo() %></td>
                 <td><%= u.getRol().getTipoRol() %></td>
+                <td><%=u.isEstatus() ? "Activo" : "Inactivo"%></td>
                 <td><a href="login?id=<%= u.getIdUsuario() %>">Actualizar</a></td>
                 <td>
                     <form method="post" action="desactivar">

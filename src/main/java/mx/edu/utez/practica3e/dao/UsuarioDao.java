@@ -315,4 +315,22 @@ public class UsuarioDao {
         return u;
     }
 
+    //funcion para desactivar usuarios que usa el admin
+    public boolean desactivar(Usuario u) {
+        boolean flag = false;
+        String query = "UPDATE usuario SET estatus = ? WHERE id_usuario = ?";
+        try {
+            Connection con = DatabaseConnectionManager.getConnection();
+            PreparedStatement ps = con.prepareStatement(query);
+            ps.setBoolean(1,u.isEstatus());
+            ps.setInt(2, u.getIdUsuario());
+            if(ps.executeUpdate() > 0){
+                flag = true;
+            }
+        } catch(SQLException e) {
+            e.printStackTrace();
+        }
+        return flag;
+    }
+
 }
