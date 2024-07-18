@@ -1,3 +1,6 @@
+<%@ page import="mx.edu.utez.practica3e.dao.UsuarioDao" %>
+<%@ page import="mx.edu.utez.practica3e.model.Usuario" %>
+<%@ page import="java.util.ArrayList" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html>
@@ -13,84 +16,22 @@
     <style>
         .barra {
             background-color:#F4AB2C;
-            width: 200px;
-            height: 100vh;
-            position: fixed;
-            top: 0;
-            left: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding-top: 20px; /* Añadir espacio en la parte superior */
         }
         main {
-            margin-left: 220px; /* Space for the sidebar */
             text-align: center;
         }
         body {
             font-family: 'Montserrat', sans-serif;
-            background-color: #f8f9fa; /* Color de fondo general */
-        }
-        .container {
-            background-color: #ffca2c; /* Color de fondo del contenedor */
-            padding: 10px;
-            border-radius: 10px;
-            margin-top: 20px;
-            width: 200px; /* Ajusta el ancho del contenedor */
-            margin-left: 0; /* Alinea el contenedor a la izquierda */
-            position: absolute;
-            top: 20px;
-            left: 220px; /* Ajusta el margen izquierdo para alinear con la barra */
-            text-align: center; /* Alinea el texto a la izquierda */
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center; /* Alinea los elementos al centro del contenedor */
-        }
-        .container h2, .container p {
-            text-align: center; /* Centra el texto del h2 y p dentro del contenedor */
         }
         .hidden {
             display: none;
         }
-        .botonesApp {
+        .botonesApp{
             background-color: #F4AB2C;
             border-color:#F4AB2C;
         }
-        .navbar-nav {
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .nav-link {
-            color: white !important;
-            width: 100%;
-            padding: 10px 15px;
-        }
-        .nav-link.active {
-            background-color: #D9951E;
-
-        }
-        .btn-custom {
-            background-color: #F4AB2C;
-            border-color: #F4AB2C;
-            color: white;
-            margin-top: 20px;
-        }
-        .btn-group {
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: start;
-        }
-        .btn-group .btn {
-            background-color: #D9951E;
-            border-color: #D9951E;
-            color: white;
-            width: 100%;
-        }
     </style>
+    <script src="js/mostrarProductos.js" defer></script>
 </head>
 <body>
 <!-- BARRA NAVEGACION -->
@@ -98,30 +39,155 @@
     <nav class="navbar navbar-expand-lg barra">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">Cafetería</a>
-            <div class="navbar-nav mt-3">
-                <li class="nav-item dropdown" style="top:30px; right: 100px">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <img src="img/login.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top"> Cuenta
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav mx-auto">
+                    <a class="nav-link active" aria-current="page" onclick="regresarMasVendidos()" href="#">Inicio</a>
+                    <a class="nav-link" href="carrito.html">
+                        <img src="img/carritoLogo.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top"> Carrito de compra
                     </a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="iniciarSesion.jsp">Cerrar Sesion</a></li>
-                        <li><a class="dropdown-item" href="recuperacion.jsp">Cambiar contraseña</a></li>
-                    </ul>
-                </li>
+                    <a class="nav-link" href="#">
+                        <img src="img/orden.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top"> Órdenes
+                    </a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <img src="img/login.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top"> Cuenta
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="iniciarSesion.jsp">Iniciar Sesión</a></li>
+                            <li><a class="dropdown-item" href="solicitudRecuperacion.jsp">Cambiar contraseña</a></li>
+                        </ul>
+                    </li>
+                </div>
             </div>
         </div>
     </nav>
 </header>
 
 <main>
-    <div class="container">
-        <h2>Gestión de Usuarios</h2>
-        <p>Utiliza el botón de abajo para visualizar a los usuarios registrados.</p>
-        <a href="gestionUsuarios.jsp" class="btn btn-custom">Administrar Usuarios</a>
+    <!-- TABLA CLIENTES -->
+    <h3>Tabla de clientes</h3>
+    <div class="table-responsive">
+        <table id="example2" class="table table-striped table-hover">
+            <thead>
+            <tr>
+                <th>id</th>
+                <th>nombre</th>
+                <th>correo</th>
+                <th>tipo</th>
+                <th>actualizar</th>
+                <th>eliminar</th>
+            </tr>
+            </thead>
+            <tbody>
+            <%
+                UsuarioDao dao2 = new UsuarioDao();
+                ArrayList<Usuario> lista2 = (ArrayList<Usuario>) dao2.getAllClientes();
+                for(Usuario u : lista2) {
+            %>
+            <tr>
+                <td><%= u.getIdUsuario() %></td>
+                <td><%= u.getPersona().getNombre() %></td>
+                <td><%= u.getCorreo() %></td>
+                <td><%= u.getRol().getTipoRol() %></td>
+                <td><a href="login?id=<%= u.getIdUsuario() %>">Actualizar</a></td>
+                <td>
+                    <form method="post" action="desactivar">
+                        <input type="hidden" name="id" value="<%= u.getIdUsuario() %>">
+                        <input type="hidden" name="estado" value="<%= u.isEstatus() %>">
+                        <input type="submit" value="<%= u.isEstatus() ? "Desactivar" : "Activar" %>">
+                    </form>
+                </td>
+                <%
+                    HttpSession sesion = request.getSession();
+                    String mensaje = (String) sesion.getAttribute("mensaje");
+                    if (mensaje != null) {
+                %>
+                <p style="color: red;"><%= mensaje %></p>
+                <%
+                        sesion.removeAttribute("mensaje");
+                    }
+                %>
+            </tr>
+            <% } %>
+            </tbody>
+        </table>
+    </div>
+    <!-- TABLA ENCARGADOS -->
+    <h3>Tabla de encargados</h3>
+    <div class="table-responsive">
+        <table id="example" class="table table-striped table-hover">
+            <thead>
+            <tr>
+                <th>id</th>
+                <th>nombre</th>
+                <th>correo</th>
+                <th>tipo</th>
+                <th>actualizar</th>
+                <th>eliminar</th>
+            </tr>
+            </thead>
+            <tbody>
+            <%
+                UsuarioDao dao = new UsuarioDao();
+                ArrayList<Usuario> lista = (ArrayList<Usuario>) dao.getAllEncargados();
+                for(Usuario u : lista) {
+            %>
+            <tr>
+                <td><%= u.getIdUsuario() %></td>
+                <td><%= u.getPersona().getNombre() %></td>
+                <td><%= u.getCorreo() %></td>
+                <td><%= u.getRol().getTipoRol() %></td>
+                <td><a href="login?id=<%= u.getIdUsuario() %>">Actualizar</a></td>
+                <td>
+                    <form method="post" action="desactivar">
+                        <input type="hidden" name="id" value="<%= u.getIdUsuario() %>">
+                        <input type="hidden" name="estado" value="<%= u.isEstatus() %>">
+                        <input type="submit" value="<%= u.isEstatus() ? "Desactivar" : "Activar" %>">
+                    </form>
+                </td>
+                <%
+                    HttpSession sesion = request.getSession();
+                    String mensaje = (String) sesion.getAttribute("mensaje");
+                    if (mensaje != null) {
+                %>
+                <p style="color: red;"><%= mensaje %></p>
+                <%
+                        sesion.removeAttribute("mensaje");
+                    }
+                %>
+            </tr>
+            <% } %>
+            </tbody>
+        </table>
     </div>
 </main>
 
+<script src="${pageContext.request.contextPath}/JS/bootstrap.js"></script>
+<script src="${pageContext.request.contextPath}/JS/jquery-3.7.0.js"></script>
+<script src="${pageContext.request.contextPath}/JS/datatables.js"></script>
+<script src="${pageContext.request.contextPath}/JS/dataTables.bootstrap5.js"></script>
+<script src="${pageContext.request.contextPath}/JS/es-MX.json"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const table = document.getElementById('example');
+        new DataTable(table, {
+            language: {
+                url: '${pageContext.request.contextPath}/JS/es-MX.json'
+            }
+        });
+        const table2 = document.getElementById('example2');
+        new DataTable(table2, {
+            language: {
+                url: '${pageContext.request.contextPath}/JS/es-MX.json'
+            }
+        });
+    });
+</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js"></script>
 <script src="js/bootstrap.js"></script>
 </body>
 </html>
+s

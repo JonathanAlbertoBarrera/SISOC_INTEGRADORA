@@ -101,6 +101,92 @@ public class UsuarioDao {
         return usuarios;
     }
 
+    //get all pero solo encargados
+    public List<Usuario> getAllEncargados() {
+        List<Usuario> usuarios = new ArrayList<>();
+        String query = "SELECT u.id_usuario, u.correo, u.contrasena, u.estatus, " +
+                "p.id_persona, p.nombre, p.apellidos, p.telefono, p.sexo, " +
+                "r.id, r.tipoRol " +
+                "FROM usuario u " +
+                "JOIN persona p ON u.id_persona = p.id_persona " +
+                "JOIN roles r ON u.id_rol = r.id WHERE u.id_rol=3"; //el id 3 de rol corresponde a encargados
+
+        try (Connection con = DatabaseConnectionManager.getConnection();
+             PreparedStatement ps = con.prepareStatement(query);
+             ResultSet rs = ps.executeQuery()) {
+
+            while (rs.next()) {
+                Persona persona = new Persona();
+                persona.setIdPersona(rs.getInt("id_persona"));
+                persona.setNombre(rs.getString("nombre"));
+                persona.setApellidos(rs.getString("apellidos"));
+                persona.setTelefono(rs.getString("telefono"));
+                persona.setSexo(rs.getString("sexo"));
+
+                Rol rol = new Rol();
+                rol.setId(rs.getInt("id"));
+                rol.setTipoRol(rs.getString("tipoRol"));
+
+                Usuario usuario = new Usuario();
+                usuario.setIdUsuario(rs.getInt("id_usuario"));
+                usuario.setCorreo(rs.getString("correo"));
+                usuario.setContrasena(rs.getString("contrasena"));
+                usuario.setEstatus(rs.getBoolean("estatus"));
+                usuario.setPersona(persona);
+                usuario.setRol(rol);
+
+                usuarios.add(usuario);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return usuarios;
+    }
+
+    //get all pero solo clientes
+    public List<Usuario> getAllClientes() {
+        List<Usuario> usuarios = new ArrayList<>();
+        String query = "SELECT u.id_usuario, u.correo, u.contrasena, u.estatus, " +
+                "p.id_persona, p.nombre, p.apellidos, p.telefono, p.sexo, " +
+                "r.id, r.tipoRol " +
+                "FROM usuario u " +
+                "JOIN persona p ON u.id_persona = p.id_persona " +
+                "JOIN roles r ON u.id_rol = r.id WHERE u.id_rol=2"; //el id 2 de rol corresponde a clientes
+
+        try (Connection con = DatabaseConnectionManager.getConnection();
+             PreparedStatement ps = con.prepareStatement(query);
+             ResultSet rs = ps.executeQuery()) {
+
+            while (rs.next()) {
+                Persona persona = new Persona();
+                persona.setIdPersona(rs.getInt("id_persona"));
+                persona.setNombre(rs.getString("nombre"));
+                persona.setApellidos(rs.getString("apellidos"));
+                persona.setTelefono(rs.getString("telefono"));
+                persona.setSexo(rs.getString("sexo"));
+
+                Rol rol = new Rol();
+                rol.setId(rs.getInt("id"));
+                rol.setTipoRol(rs.getString("tipoRol"));
+
+                Usuario usuario = new Usuario();
+                usuario.setIdUsuario(rs.getInt("id_usuario"));
+                usuario.setCorreo(rs.getString("correo"));
+                usuario.setContrasena(rs.getString("contrasena"));
+                usuario.setEstatus(rs.getBoolean("estatus"));
+                usuario.setPersona(persona);
+                usuario.setRol(rol);
+
+                usuarios.add(usuario);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return usuarios;
+    }
+
     //Se inserta tanto en la tabla usuario como en persona
     public boolean insert(Usuario u, Persona p) {
         boolean flag = false;
