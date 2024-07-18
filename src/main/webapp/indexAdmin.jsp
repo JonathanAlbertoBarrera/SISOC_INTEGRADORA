@@ -106,8 +106,8 @@
                 <th>Apellidos</th>
                 <th>Correo</th>
                 <th>Tipo</th>
+                <th>Teléfono</th>
                 <th>Estatus</th>
-                <th>Actualizar</th>
                 <th>Cambiar estatus</th>
             </tr>
             </thead>
@@ -123,14 +123,36 @@
                 <td><%= u.getPersona().getApellidos() %></td>
                 <td><%= u.getCorreo() %></td>
                 <td><%= u.getRol().getTipoRol() %></td>
-                <td><%=u.isEstatus() ? "Activo" : "Inactivo"%></td>
-                <td><a href="login?id=<%= u.getIdUsuario() %>">Actualizar</a></td>
+                <td><%= u.getPersona().getTelefono() %></td>
+                <td><%= u.isEstatus() ? "Activo" : "Inactivo" %></td>
                 <td>
-                    <form method="post" action="desactivar">
-                        <input type="hidden" name="id" value="<%= u.getIdUsuario() %>">
-                        <input type="hidden" name="estado" value="<%= u.isEstatus() %>">
-                        <input type="submit" value="<%= u.isEstatus() ? "Desactivar" : "Activar" %>">
-                    </form>
+                    <button type="button" class="btn btn-dark botonesApp" data-bs-toggle="modal" data-bs-target="#modalDesac-<%= u.getIdUsuario() %>">
+                        <%= u.isEstatus() ? "Desactivar" : "Activar" %>
+                    </button>
+                    <!-- Modal -->
+                    <div class="modal fade" id="modalDesac-<%= u.getIdUsuario() %>" tabindex="-1" aria-labelledby="exampleModalLabel-<%= u.getIdUsuario() %>" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="desacModalLabel-<%= u.getIdUsuario() %>">Confirmar acción</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    ¿Estás seguro de que deseas <%= u.isEstatus() ? "DESACTIVAR" : "ACTIVAR" %> al usuario
+                                    <%= u.getPersona().getNombre() %>  <%= u.getPersona().getApellidos() %> con id de usuario
+                                    <%= u.getIdUsuario() %>?
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                    <form method="post" action="desactivar">
+                                        <input type="hidden" name="id" value="<%= u.getIdUsuario() %>">
+                                        <input type="hidden" name="estado" value="<%= u.isEstatus() %>">
+                                        <button type="submit" class="btn btn-primary botonesApp">Confirmar</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </td>
                 <%
                     HttpSession sesion = request.getSession();
@@ -159,8 +181,8 @@
                 <th>Apellidos</th>
                 <th>Correo</th>
                 <th>Tipo</th>
+                <th>Teléfono</th>
                 <th>Estatus</th>
-                <th>Actualizar</th>
                 <th>Cambiar estatus</th>
             </tr>
             </thead>
@@ -176,14 +198,36 @@
                 <td><%= u.getPersona().getApellidos() %></td>
                 <td><%= u.getCorreo() %></td>
                 <td><%= u.getRol().getTipoRol() %></td>
+                <td><%= u.getPersona().getTelefono() %></td>
                 <td><%=u.isEstatus() ? "Activo" : "Inactivo"%></td>
-                <td><a href="login?id=<%= u.getIdUsuario() %>">Actualizar</a></td>
                 <td>
-                    <form method="post" action="desactivar">
-                        <input type="hidden" name="id" value="<%= u.getIdUsuario() %>">
-                        <input type="hidden" name="estado" value="<%= u.isEstatus() %>">
-                        <input type="submit" value="<%= u.isEstatus() ? "Desactivar" : "Activar" %>">
-                    </form>
+                    <button type="button" class="btn btn-dark botonesApp" data-bs-toggle="modal" data-bs-target="#modalDesac2-<%= u.getIdUsuario() %>">
+                        <%= u.isEstatus() ? "Desactivar" : "Activar" %>
+                    </button>
+                    <!-- Modal -->
+                    <div class="modal fade" id="modalDesac2-<%= u.getIdUsuario() %>" tabindex="-1" aria-labelledby="exampleModalLabel-<%= u.getIdUsuario() %>" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="desacModalLabel-<%= u.getIdUsuario() %>">Confirmar acción</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    ¿Estás seguro de que deseas <%= u.isEstatus() ? "DESACTIVAR" : "ACTIVAR" %> al usuario
+                                    <%= u.getPersona().getNombre() %>  <%= u.getPersona().getApellidos() %> con id de usuario
+                                    <%= u.getIdUsuario() %>?
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                    <form method="post" action="desactivar">
+                                        <input type="hidden" name="id" value="<%= u.getIdUsuario() %>">
+                                        <input type="hidden" name="estado" value="<%= u.isEstatus() %>">
+                                        <button type="submit" class="btn btn-primary botonesApp">Confirmar</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </td>
                 <%
                     HttpSession sesion = request.getSession();
@@ -232,11 +276,33 @@
                 <td><%=u.isEstatus() ? "Activo" : "Inactivo"%></td>
                 <td><a href="login?id=<%= u.getIdUsuario() %>">Actualizar</a></td>
                 <td>
-                    <form method="post" action="desactivar">
-                        <input type="hidden" name="id" value="<%= u.getIdUsuario() %>">
-                        <input type="hidden" name="estado" value="<%= u.isEstatus() %>">
-                        <input type="submit" value="<%= u.isEstatus() ? "Desactivar" : "Activar" %>">
-                    </form>
+                    <button type="button" class="btn btn-dark botonesApp" data-bs-toggle="modal" data-bs-target="#modalDesac3-<%= u.getIdUsuario() %>">
+                        <%= u.isEstatus() ? "Desactivar" : "Activar" %>
+                    </button>
+                    <!-- Modal -->
+                    <div class="modal fade" id="modalDesac3-<%= u.getIdUsuario() %>" tabindex="-1" aria-labelledby="exampleModalLabel-<%= u.getIdUsuario() %>" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="desacModalLabel-<%= u.getIdUsuario() %>">Confirmar acción</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    ¿Estás seguro de que deseas <%= u.isEstatus() ? "DESACTIVAR" : "ACTIVAR" %> al usuario
+                                    <%= u.getPersona().getNombre() %>  <%= u.getPersona().getApellidos() %> con id de usuario
+                                    <%= u.getIdUsuario() %>?
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                    <form method="post" action="desactivar">
+                                        <input type="hidden" name="id" value="<%= u.getIdUsuario() %>">
+                                        <input type="hidden" name="estado" value="<%= u.isEstatus() %>">
+                                        <button type="submit" class="btn btn-primary botonesApp">Confirmar</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </td>
                 <%
                     HttpSession sesion = request.getSession();
