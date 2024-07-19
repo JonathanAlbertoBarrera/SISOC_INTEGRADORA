@@ -77,8 +77,8 @@
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav mx-auto">
                     <a class="nav-link" aria-current="page"  href="indexAdmin.jsp">Inicio</a>
-                    <a class="nav-link" href="#">
-                        <img src="img/iconoMarca.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top"> Marcas
+                    <a class="nav-link" href="marcas.jsp">
+                        <img src="img/iconoMarcas.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top"> Marcas
                     </a>
                     <a class="nav-link" href="#">
                         <img src="img/iconoCategoria.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top"> Categorias
