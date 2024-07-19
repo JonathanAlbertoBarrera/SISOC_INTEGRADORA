@@ -10,7 +10,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6f44def4-2bd3-4c79-8a6b-cc536cc2ffae" name="Changes" comment="Agregamos modales antes de cambiar estatus de un usuario. Se modificaron el contenido de las tablas segun los requerimientos. Solo se puede ver y desactivar a los clientes, de igual forma para los encargados pero a ellos si se les puede hacer modificaciones">
+    <list default="true" id="6f44def4-2bd3-4c79-8a6b-cc536cc2ffae" name="Changes" comment="se agrego en el dao una funcion para obtener a los usuarios excepto al administrador, la cual se usa para llenar la tabla de todos los usuarios en la vista del index del administrador. para asi cumplir el requerimiento que nos dio el cliente de visualizar a todos los usuarios menos el admin">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/dao/UsuarioDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/dao/UsuarioDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/indexAdmin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/indexAdmin.jsp" afterDir="false" />
@@ -25,8 +25,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Jsp File" />
-        <option value="Class" />
         <option value="JavaScript File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -237,7 +237,7 @@
       <workItem from="1720808552133" duration="2335000" />
       <workItem from="1721182030918" duration="4920000" />
       <workItem from="1721268766385" duration="8268000" />
-      <workItem from="1721329023612" duration="14484000" />
+      <workItem from="1721329023612" duration="22327000" />
     </task>
     <task id="LOCAL-00001" summary="Inicio de sesion por Yoni, (problemas con InteliJ)">
       <option name="closed" value="true" />
@@ -415,7 +415,15 @@
       <option name="project" value="LOCAL" />
       <updated>1721345726967</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="se agrego en el dao una funcion para obtener a los usuarios excepto al administrador, la cual se usa para llenar la tabla de todos los usuarios en la vista del index del administrador. para asi cumplir el requerimiento que nos dio el cliente de visualizar a todos los usuarios menos el admin">
+      <option name="closed" value="true" />
+      <created>1721346858992</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1721346858992</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -443,7 +451,8 @@
     <MESSAGE value="FREDY, JONA FUNCION CAMBIAR ESTADO" />
     <MESSAGE value="TABLA TODOS LOS USUARIOS Y BOTONES CON JS PARA MOSTRAR LA TABLA DESEADA" />
     <MESSAGE value="Agregamos modales antes de cambiar estatus de un usuario. Se modificaron el contenido de las tablas segun los requerimientos. Solo se puede ver y desactivar a los clientes, de igual forma para los encargados pero a ellos si se les puede hacer modificaciones" />
-    <option name="LAST_COMMIT_MESSAGE" value="Agregamos modales antes de cambiar estatus de un usuario. Se modificaron el contenido de las tablas segun los requerimientos. Solo se puede ver y desactivar a los clientes, de igual forma para los encargados pero a ellos si se les puede hacer modificaciones" />
+    <MESSAGE value="se agrego en el dao una funcion para obtener a los usuarios excepto al administrador, la cual se usa para llenar la tabla de todos los usuarios en la vista del index del administrador. para asi cumplir el requerimiento que nos dio el cliente de visualizar a todos los usuarios menos el admin" />
+    <option name="LAST_COMMIT_MESSAGE" value="se agrego en el dao una funcion para obtener a los usuarios excepto al administrador, la cual se usa para llenar la tabla de todos los usuarios en la vista del index del administrador. para asi cumplir el requerimiento que nos dio el cliente de visualizar a todos los usuarios menos el admin" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

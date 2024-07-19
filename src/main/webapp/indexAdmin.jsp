@@ -274,17 +274,76 @@
                 <td><%= u.getCorreo() %></td>
                 <td><%= u.getRol().getTipoRol() %></td>
                 <td><%=u.isEstatus() ? "Activo" : "Inactivo"%></td>
-                <td><a href="login?id=<%= u.getIdUsuario() %>">Actualizar</a></td>
+                <td>
+                    <button type="button" class="btn btn-dark botonesApp" data-bs-toggle="modal" data-bs-target="#modalModiEncargado-<%= u.getIdUsuario() %>">
+                        Actualizar
+                    </button>
+                    <!-- Modal PARA MODIFICAR ENCARGADO-->
+                    <div class="modal fade" id="modalModiEncargado-<%= u.getIdUsuario() %>" tabindex="-1" aria-labelledby="exampleModalLabel-<%= u.getIdUsuario() %>" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="desacModalLabel-<%= u.getIdUsuario() %>">Actualizar Encargado</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <form method="post" action="modiEncargado">
+                                        <div class="container">
+                                            <div class="row justify-content-center">
+                                                <div class="col-md-6">
+                                                    <h2 class="text-center mt-5">Modificar Encargado</h2>
+                                                    <h3 class="text-center mt-5">Datos personales</h3>
+                                                    <div class="form-group mb-3">
+                                                        <label for="nombre">Nombre(s):</label>
+                                                        <input type="text" class="form-control" id="nombre" name="nombre" value="<%= u.getPersona().getNombre() %>" required>
+                                                    </div>
+                                                    <div class="form-group mb-3">
+                                                        <label for="apellidos">Apellidos:</label>
+                                                        <input type="text" class="form-control" id="apellidos" name="apellidos" value="<%= u.getPersona().getApellidos() %>" required>
+                                                    </div>
+                                                    <div class="form-group mb-3">
+                                                        <label for="telefono">Número de teléfono:</label>
+                                                        <input type="text" class="form-control" id="telefono" name="telefono"  value="<%= u.getPersona().getTelefono() %>" required>
+                                                    </div>
+                                                    <div class="form-group mb-3">
+                                                        <label>Sexo:</label>
+                                                        <br>
+                                                        <select name="sexo" class="form-select">
+                                                            <option selected value="<%= u.getPersona().getSexo() %>"><%= u.getPersona().getSexo() %></option>
+                                                            <option value="Hombre">Hombre</option>
+                                                            <option value="Mujer">Mujer</option>
+                                                            <option value="NA">Prefiero no especificarlo</option>
+                                                        </select>
+                                                    </div>
+                                                    <h3 class="text-center mt-5">Datos de la cuenta</h3>
+                                                    <div class="form-group mb-3">
+                                                        <label for="correo">Correo:</label>
+                                                        <input type="email" class="form-control" id="correo" name="correo" value="<%= u.getCorreo() %>" required>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                            <input type="hidden" name="id_usuario" value="<%= u.getIdUsuario() %>">
+                                            <button type="submit" class="btn btn-primary botonesApp">Confirmar</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </td>
                 <td>
                     <button type="button" class="btn btn-dark botonesApp" data-bs-toggle="modal" data-bs-target="#modalDesac3-<%= u.getIdUsuario() %>">
                         <%= u.isEstatus() ? "Desactivar" : "Activar" %>
                     </button>
-                    <!-- Modal -->
+                    <!-- Modal PARA ESTATUS -->
                     <div class="modal fade" id="modalDesac3-<%= u.getIdUsuario() %>" tabindex="-1" aria-labelledby="exampleModalLabel-<%= u.getIdUsuario() %>" aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h1 class="modal-title fs-5" id="desacModalLabel-<%= u.getIdUsuario() %>">Confirmar acción</h1>
+                                    <h1 class="modal-title fs-5" id="desacModalLabel-<%= u.getIdUsuario() %>">Confirmar cambio de estatus</h1>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
@@ -319,6 +378,7 @@
             </tbody>
         </table>
     </div>
+
 </main>
 
 <script src="${pageContext.request.contextPath}/JS/bootstrap.js"></script>

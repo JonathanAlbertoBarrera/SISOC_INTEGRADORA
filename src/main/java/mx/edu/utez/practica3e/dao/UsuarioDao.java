@@ -280,7 +280,30 @@ public class UsuarioDao {
         return flag;
     }
 
-    //Modificar usuario
+    //Modificar USUARIO COMPLETO
+    public boolean updateUsuario(Usuario u) {
+        boolean flag = false;
+        String query = "UPDATE usuario u JOIN persona p ON u.id_persona = p.id_persona SET p.nombre = ?, p.apellidos = ?, p.telefono = ?, p.sexo= ?, u.correo = ? WHERE u.id_usuario = ?";
+        try {
+            Connection con = DatabaseConnectionManager.getConnection();
+            PreparedStatement ps = con.prepareStatement(query);
+            ps.setString(1, u.getPersona().getNombre());
+            ps.setString(2, u.getPersona().getApellidos());
+            ps.setString(3, u.getPersona().getTelefono());
+            ps.setString(4, u.getPersona().getSexo());
+            ps.setString(5, u.getCorreo());
+            ps.setInt(6, u.getIdUsuario());
+
+            if (ps.executeUpdate() > 0) {
+                flag = true;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return flag;
+    }
+
+    //Modificar usuario SOLO CONTRASENA
     public boolean update(Usuario u) {
         boolean flag = false;
         String query = "UPDATE usuario SET contrasena = sha2(?, 256),codigo=null WHERE id_usuario = ?";
