@@ -248,6 +248,7 @@
     <!-- TABLA ENCARGADOS -->
     <div class="table-responsive" id="tablaEncargados">
         <h3>Tabla de encargados</h3>
+        
         <table id="example" class="table table-striped table-hover" style="width: 100%">
             <thead>
             <tr>
