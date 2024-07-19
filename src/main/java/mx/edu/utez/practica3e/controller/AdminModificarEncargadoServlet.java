@@ -12,7 +12,7 @@ import mx.edu.utez.practica3e.model.Usuario;
 import java.io.IOException;
 
 @WebServlet(name="AdminModificarEncargado", value = "/modiEncargado")
-public class AdminModificarEncargado extends HttpServlet {
+public class AdminModificarEncargadoServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -42,15 +42,15 @@ public class AdminModificarEncargado extends HttpServlet {
             boolean actualizado = usuarioDao.updateUsuario(usuario);
 
             if (actualizado) {
-                req.getSession().setAttribute("mensaje", "Usuario actualizado exitosamente");
+                req.getSession().setAttribute("mensaje2A", "Usuario actualizado exitosamente");
             } else {
-                req.getSession().setAttribute("mensaje", "Error al actualizar el usuario");
+                req.getSession().setAttribute("mensaje2A", "Error al actualizar el usuario");
             }
 
         } catch (NumberFormatException e) {
-            req.getSession().setAttribute("mensaje", "Error al convertir el ID del usuario");
+            req.getSession().setAttribute("mensaje2A", "Error al convertir el ID del usuario");
         } catch (Exception e) {
-            req.getSession().setAttribute("mensaje", "Error inesperado: " + e.getMessage());
+            req.getSession().setAttribute("mensaje2A", "Error inesperado: " + e.getMessage());
         }
 
         // Redireccionar de vuelta a la página con la tabla de usuarios

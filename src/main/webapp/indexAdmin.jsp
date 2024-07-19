@@ -15,7 +15,19 @@
     <link rel="stylesheet" href="css/bootstrap.css">
     <style>
         .barra {
-            background-color: #F4AB2C;
+            background-color: #000000;
+        }
+
+        .barra a{
+            color:#ffffff;
+        }
+
+        .barra a:hover{
+            color:#F4AB2C;
+        }
+
+        .barra a:focus{
+            color:#F4AB2C;
         }
 
         main {
@@ -58,18 +70,27 @@
 <header>
     <nav class="navbar navbar-expand-lg barra">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Cafetería</a>
+            <a class="navbar-brand" href="#">Cafetería (ADMIN)</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav mx-auto">
-                    <a class="nav-link active" aria-current="page" onclick="regresarMasVendidos()" href="#">Inicio</a>
-                    <a class="nav-link" href="carrito.html">
-                        <img src="img/carritoLogo.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top"> Carrito de compra
+                    <a class="nav-link" aria-current="page"  href="indexAdmin.jsp">Inicio</a>
+                    <a class="nav-link" href="#">
+                        <img src="img/iconoMarca.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top"> Marcas
                     </a>
                     <a class="nav-link" href="#">
-                        <img src="img/orden.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top"> Órdenes
+                        <img src="img/iconoCategoria.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top"> Categorias
+                    </a>
+                    <a class="nav-link" href="#">
+                        <img src="img/iconoProductos.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top"> Productos
+                    </a>
+                    <a class="nav-link" href="#">
+                        <img src="img/iconoCompras.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top"> Compras
+                    </a>
+                    <a class="nav-link" href="#">
+                        <img src="img/iconoVentas.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top"> Ventas
                     </a>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -98,6 +119,7 @@
     <!-- TABLA TODOS LOS USUARIOS -->
     <div class="table-responsive" id="tablaAllUsuarios">
         <h3>Tabla de todos los usuarios</h3>
+        <img src="img/iconoUsuarios.png" width="5%" height="5%">
         <table id="example3" class="table table-striped table-hover" style="width: 100%">
             <thead>
             <tr>
@@ -126,6 +148,7 @@
                 <td><%= u.getPersona().getTelefono() %></td>
                 <td><%= u.isEstatus() ? "Activo" : "Inactivo" %></td>
                 <td>
+                    <img src="img/iconoCambiarEstatus.png" width="10%" height="10%">
                     <button type="button" class="btn btn-dark botonesApp" data-bs-toggle="modal" data-bs-target="#modalDesac-<%= u.getIdUsuario() %>">
                         <%= u.isEstatus() ? "Desactivar" : "Activar" %>
                     </button>
@@ -173,6 +196,7 @@
     <!-- TABLA CLIENTES -->
     <div class="table-responsive" id="tablaClientes">
         <h3>Tabla de clientes</h3>
+        <img src="img/iconoClientes.png" width="5%" height="5%">
         <table id="example2" class="table table-striped table-hover" style="width: 100%">
             <thead>
             <tr>
@@ -201,6 +225,7 @@
                 <td><%= u.getPersona().getTelefono() %></td>
                 <td><%=u.isEstatus() ? "Activo" : "Inactivo"%></td>
                 <td>
+                    <img src="img/iconoCambiarEstatus.png" width="20%" height="20%">
                     <button type="button" class="btn btn-dark botonesApp" data-bs-toggle="modal" data-bs-target="#modalDesac2-<%= u.getIdUsuario() %>">
                         <%= u.isEstatus() ? "Desactivar" : "Activar" %>
                     </button>
@@ -248,7 +273,77 @@
     <!-- TABLA ENCARGADOS -->
     <div class="table-responsive" id="tablaEncargados">
         <h3>Tabla de encargados</h3>
-        
+        <img src="img/agregarEncargado.png" width="5%" height="5%">
+        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalNuevoEncargado">
+            Agregar un nuevo encargado
+        </button>
+
+        <!-- Modal PARA AGREGAR UN ENCARGADO-->
+        <div class="modal fade" id="modalNuevoEncargado" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="desacModalLabel">Agregar un usuario de tipo Encargado</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form method="post" action="addEncargado">
+                            <div class="container">
+                                <div class="row justify-content-center">
+                                    <div class="col-md-6">
+                                        <h2 class="text-center mt-5">Agregar Encargado</h2>
+                                        <h3 class="text-center mt-5">Datos personales</h3>
+                                        <div class="form-group mb-3">
+                                            <label for="nombre">Nombre(s):</label>
+                                            <input type="text" class="form-control"  name="nombre" required>
+                                        </div>
+                                        <div class="form-group mb-3">
+                                            <label for="apellidos">Apellidos:</label>
+                                            <input type="text" class="form-control"  name="apellidos" required>
+                                        </div>
+                                        <div class="form-group mb-3">
+                                            <label for="telefono">Número de teléfono:</label>
+                                            <input type="text" class="form-control" name="telefono" required>
+                                        </div>
+                                        <div class="form-group mb-3">
+                                            <label>Sexo:</label>
+                                            <br>
+                                            <select name="sexo" class="form-select">
+                                                <option selected ></option>
+                                                <option value="Hombre">Hombre</option>
+                                                <option value="Mujer">Mujer</option>
+                                                <option value="NA">Prefiero no especificarlo</option>
+                                            </select>
+                                        </div>
+                                        <h3 class="text-center mt-5">Datos de la cuenta</h3>
+                                        <div class="form-group mb-3">
+                                            <label for="correo">Correo:</label>
+                                            <input type="email" class="form-control"  name="correo" required>
+                                        </div>
+                                        <div class="form-group mb-3">
+                                            <label for="pass1">Contraseña:</label>
+                                            <input type="password" class="form-control" id="pass1" name="pass1" required>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                <button type="submit" class="btn btn-primary botonesApp">Confirmar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <%
+            HttpSession sesion1 = request.getSession();
+            String mensaje2A = (String) sesion1.getAttribute("mensaje2A");
+
+            if(mensaje2A != null){ %>
+        <p class="text-danger"><%=mensaje2A%></p>
+        <% } %>
+
         <table id="example" class="table table-striped table-hover" style="width: 100%">
             <thead>
             <tr>
@@ -276,6 +371,7 @@
                 <td><%= u.getRol().getTipoRol() %></td>
                 <td><%=u.isEstatus() ? "Activo" : "Inactivo"%></td>
                 <td>
+                    <img src="img/iconoModificar.png" width="20%" height="20%">
                     <button type="button" class="btn btn-dark botonesApp" data-bs-toggle="modal" data-bs-target="#modalModiEncargado-<%= u.getIdUsuario() %>">
                         Actualizar
                     </button>
@@ -336,6 +432,7 @@
                     </div>
                 </td>
                 <td>
+                    <img src="img/iconoCambiarEstatus.png" width="20%" height="20%">
                     <button type="button" class="btn btn-dark botonesApp" data-bs-toggle="modal" data-bs-target="#modalDesac3-<%= u.getIdUsuario() %>">
                         <%= u.isEstatus() ? "Desactivar" : "Activar" %>
                     </button>
