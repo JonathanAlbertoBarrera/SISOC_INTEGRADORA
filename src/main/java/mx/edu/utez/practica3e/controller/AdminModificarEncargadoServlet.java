@@ -11,7 +11,7 @@ import mx.edu.utez.practica3e.model.Usuario;
 
 import java.io.IOException;
 
-@WebServlet(name="AdminModificarEncargado", value = "/modiEncargado")
+@WebServlet(name="AdminModificarEncargadoServlet", value = "/modiEncargado")
 public class AdminModificarEncargadoServlet extends HttpServlet {
 
     @Override

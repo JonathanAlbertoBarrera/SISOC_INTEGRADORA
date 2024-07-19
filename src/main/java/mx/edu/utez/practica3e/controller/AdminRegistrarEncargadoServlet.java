@@ -54,6 +54,7 @@ public class AdminRegistrarEncargadoServlet extends HttpServlet {
         } else {
             HttpSession sesion = req.getSession();
             sesion.setAttribute("mensaje2A", "El usuario no se registró correctamente. Vuelve a intentar");
+            resp.sendRedirect("indexAdmin.jsp");
         }
     }
 }

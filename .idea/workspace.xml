@@ -10,10 +10,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6f44def4-2bd3-4c79-8a6b-cc536cc2ffae" name="Changes" comment="funcion para agregar Encargados mediante modal ademas de iconos para barra de navegacion">
+    <list default="true" id="6f44def4-2bd3-4c79-8a6b-cc536cc2ffae" name="Changes" comment="correcion icono marca y jsp para crud de marcas">
+      <change beforePath="$PROJECT_DIR$/.idea/webContexts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/img/iconoMarca.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/indexAdmin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/indexAdmin.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/controller/AdminModificarEncargadoServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/controller/AdminModificarEncargadoServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/controller/AdminRegistrarEncargadoServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/controller/AdminRegistrarEncargadoServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/marcas.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/marcas.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,8 +27,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
-        <option value="Class" />
         <option value="Jsp File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -238,7 +240,7 @@
       <workItem from="1721182030918" duration="4920000" />
       <workItem from="1721268766385" duration="8268000" />
       <workItem from="1721329023612" duration="33562000" />
-      <workItem from="1721415659213" duration="1997000" />
+      <workItem from="1721415659213" duration="13948000" />
     </task>
     <task id="LOCAL-00001" summary="Inicio de sesion por Yoni, (problemas con InteliJ)">
       <option name="closed" value="true" />
@@ -448,14 +450,21 @@
       <option name="project" value="LOCAL" />
       <updated>1721368721167</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="correcion icono marca y jsp para crud de marcas">
+      <option name="closed" value="true" />
+      <created>1721418827763</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1721418827763</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Inicio de sesion por Yoni, (problemas con InteliJ)" />
     <MESSAGE value="inicio sesion Yoni" />
     <MESSAGE value="formulario Registrarse Otmar" />
     <MESSAGE value="modelos Usuario, Rol y Persona Leobardo" />
@@ -480,7 +489,8 @@
     <MESSAGE value="funcion modificar Encargado, mediante modal y agregacion de su correspondiente funcion en el dao ademas de su servlet" />
     <MESSAGE value="quite imagenes" />
     <MESSAGE value="funcion para agregar Encargados mediante modal ademas de iconos para barra de navegacion" />
-    <option name="LAST_COMMIT_MESSAGE" value="funcion para agregar Encargados mediante modal ademas de iconos para barra de navegacion" />
+    <MESSAGE value="correcion icono marca y jsp para crud de marcas" />
+    <option name="LAST_COMMIT_MESSAGE" value="correcion icono marca y jsp para crud de marcas" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
