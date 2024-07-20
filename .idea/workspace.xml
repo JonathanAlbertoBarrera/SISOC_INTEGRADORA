@@ -10,9 +10,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6f44def4-2bd3-4c79-8a6b-cc536cc2ffae" name="Changes" comment="modelo y dao de categoria">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/indexAdmin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/indexAdmin.jsp" afterDir="false" />
+    <list default="true" id="6f44def4-2bd3-4c79-8a6b-cc536cc2ffae" name="Changes" comment="se empezo categorias jsp">
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/marcas.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/marcas.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -237,7 +236,7 @@
       <workItem from="1721182030918" duration="4920000" />
       <workItem from="1721268766385" duration="8268000" />
       <workItem from="1721329023612" duration="33562000" />
-      <workItem from="1721415659213" duration="16801000" />
+      <workItem from="1721415659213" duration="17089000" />
     </task>
     <task id="LOCAL-00001" summary="Inicio de sesion por Yoni, (problemas con InteliJ)">
       <option name="closed" value="true" />
@@ -471,14 +470,21 @@
       <option name="project" value="LOCAL" />
       <updated>1721441001043</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="se empezo categorias jsp">
+      <option name="closed" value="true" />
+      <created>1721441658969</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1721441658969</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="modelos Usuario, Rol y Persona Leobardo" />
     <MESSAGE value="Funciones getOne e Insert DAO" />
     <MESSAGE value="Servlet Registrar Usuario" />
     <MESSAGE value="Funcion getAll dao Usuario" />
@@ -503,7 +509,8 @@
     <MESSAGE value="correcion icono marca y jsp para crud de marcas" />
     <MESSAGE value="Se agrega el modelo y dao de Marca, con ello se hizo su jsp donde se hace su CRUD,con ello se agregan tambien los servlets para modificar, registrar y desactivar a una marca" />
     <MESSAGE value="modelo y dao de categoria" />
-    <option name="LAST_COMMIT_MESSAGE" value="modelo y dao de categoria" />
+    <MESSAGE value="se empezo categorias jsp" />
+    <option name="LAST_COMMIT_MESSAGE" value="se empezo categorias jsp" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
