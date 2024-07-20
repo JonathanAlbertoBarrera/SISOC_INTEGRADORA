@@ -1,5 +1,5 @@
-<%@ page import="mx.edu.utez.practica3e.dao.MarcaDao" %>
-<%@ page import="mx.edu.utez.practica3e.model.Marca" %>
+<%@ page import="mx.edu.utez.practica3e.dao.CategoriaDao" %>
+<%@ page import="mx.edu.utez.practica3e.model.Categoria" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
@@ -101,7 +101,7 @@
 
 <main>
 
-    <!-- TABLA TODOS LOS USUARIOS -->
+    <!-- TABLA TODAS LAS CATEGORIAS -->
     <div class="table-responsive" id="tablaCategorias">
         <h3>Categorias</h3>
         <img src="img/iconoCategoria.png" width="5%" height="5%">
@@ -156,7 +156,7 @@
         <table id="example3" class="table table-striped table-hover" style="width: 100%">
             <thead>
             <tr>
-                <th>ID marca</th>
+                <th>ID categoria</th>
                 <th>Nombre</th>
                 <th>Descripción</th>
                 <th>Estatus</th>
@@ -166,49 +166,49 @@
             </thead>
             <tbody>
             <%
-                MarcaDao dao = new MarcaDao();
-                ArrayList<Marca> lista = (ArrayList<Marca>) dao.getAll();
-                for(Marca m : lista) {
+                CategoriaDao dao = new CategoriaDao();
+                ArrayList<Categoria> lista = (ArrayList<Categoria>) dao.getAll();
+                for(Categoria c : lista) {
             %>
             <tr>
-                <td><%= m.getId_marca() %></td>
-                <td><%= m.getNombre() %></td>
-                <td><%= m.getDescripcion() %></td>
-                <td><%= m.isEstatus() ? "Activo" : "Inactivo" %></td>
-                <!-- td para modificar marca-->
+                <td><%= c.getId_categoria() %></td>
+                <td><%= c.getNombre() %></td>
+                <td><%= c.getDescripcion() %></td>
+                <td><%= c.isEstatus() ? "Activo" : "Inactivo" %></td>
+                <!-- td para modificar categoria-->
                 <td>
                     <img src="img/iconoModificar.png" width="8%" height="8%">
-                    <button type="button" class="btn btn-dark botonesApp" data-bs-toggle="modal" data-bs-target="#modalModiMarca-<%= m.getId_marca() %>">
-                        Actualizar marca
+                    <button type="button" class="btn btn-dark botonesApp" data-bs-toggle="modal" data-bs-target="#modalModiMarca-<%= c.getId_categoria() %>">
+                        Actualizar categoria
                     </button>
-                    <!-- Modal PARA MODIFICAR ENCARGADO-->
-                    <div class="modal fade" id="modalModiMarca-<%= m.getId_marca() %>" tabindex="-1" aria-labelledby="exampleModalLabel-<%= m.getId_marca() %>" aria-hidden="true">
+                    <!-- Modal PARA MODIFICAR CATEGORIA-->
+                    <div class="modal fade" id="modalModiMarca-<%= c.getId_categoria() %>" tabindex="-1" aria-labelledby="exampleModalLabel-<%= c.getId_categoria() %>" aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h1 class="modal-title fs-5" id="modiModalLabel-<%= m.getId_marca() %>">Actualizar Marca</h1>
+                                    <h1 class="modal-title fs-5" id="modiModalLabel-<%= c.getId_categoria() %>">Actualizar Categoria</h1>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
-                                    <form method="post" action="modiMarca">
+                                    <form method="post" action="modiCategoria">
                                         <div class="container">
                                             <div class="row justify-content-center">
                                                 <div class="col-md-6">
-                                                    <h2 class="text-center mt-5">Modificar Marca</h2>
+                                                    <h2 class="text-center mt-5">Modificar Categoria</h2>
                                                     <div class="form-group mb-3">
                                                         <label for="nombre">Nombre:</label>
-                                                        <input type="text" class="form-control" id="nombre" name="nombre" value="<%= m.getNombre() %>" required>
+                                                        <input type="text" class="form-control" id="nombre" name="nombre" value="<%= c.getNombre() %>" required>
                                                     </div>
                                                     <div class="form-group mb-3">
                                                         <label>Descripción:</label>
-                                                        <textarea name="descripcion" required><%= m.getDescripcion() %></textarea>
+                                                        <textarea name="descripcion" required><%= c.getDescripcion() %></textarea>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                                            <input type="hidden" name="id_marca" value="<%= m.getId_marca() %>">
+                                            <input type="hidden" name="id_categoria" value="<%= c.getId_categoria() %>">
                                             <button type="submit" class="btn btn-primary botonesApp">Confirmar</button>
                                         </div>
                                     </form>
@@ -220,26 +220,26 @@
                 <!-- td para cambiar estatus-->
                 <td>
                     <img src="img/iconoCambiarEstatus.png" width="10%" height="10%">
-                    <button type="button" class="btn btn-dark botonesApp" data-bs-toggle="modal" data-bs-target="#modalDesac-<%= m.getId_marca() %>">
-                        <%= m.isEstatus() ? "Desactivar" : "Activar" %>
+                    <button type="button" class="btn btn-dark botonesApp" data-bs-toggle="modal" data-bs-target="#modalDesac-<%= c.getId_categoria() %>">
+                        <%= c.isEstatus() ? "Desactivar" : "Activar" %>
                     </button>
                     <!-- Modal -->
-                    <div class="modal fade" id="modalDesac-<%= m.getId_marca() %>" tabindex="-1" aria-labelledby="exampleModalLabel-<%= m.getId_marca() %>" aria-hidden="true">
+                    <div class="modal fade" id="modalDesac-<%= c.getId_categoria() %>" tabindex="-1" aria-labelledby="exampleModalLabel-<%= c.getId_categoria() %>" aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h1 class="modal-title fs-5" id="desacModalLabel-<%= m.getId_marca() %>">Confirmar cambio de estatus</h1>
+                                    <h1 class="modal-title fs-5" id="desacModalLabel-<%= c.getId_categoria() %>">Confirmar cambio de estatus</h1>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
-                                    ¿Estás seguro de que deseas <%= m.isEstatus() ? "DESACTIVAR" : "ACTIVAR" %> a la marca
-                                    <%= m.getNombre() %>?
+                                    ¿Estás seguro de que deseas <%= c.isEstatus() ? "DESACTIVAR" : "ACTIVAR" %> a la marca
+                                    <%= c.getNombre() %>?
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                                    <form method="post" action="desactivarMarca">
-                                        <input type="hidden" name="id_marca" value="<%= m.getId_marca() %>">
-                                        <input type="hidden" name="estatus" value="<%= m.isEstatus() %>">
+                                    <form method="post" action="desactivarCategoria">
+                                        <input type="hidden" name="id_categoria" value="<%= c.getId_categoria() %>">
+                                        <input type="hidden" name="estatus" value="<%= c.isEstatus() %>">
                                         <button type="submit" class="btn btn-primary botonesApp">Confirmar</button>
                                     </form>
                                 </div>

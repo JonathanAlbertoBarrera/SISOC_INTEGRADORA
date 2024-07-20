@@ -343,6 +343,9 @@
             if(mensaje2A != null){ %>
         <p class="text-danger"><%=mensaje2A%></p>
         <% } %>
+        <%
+            sesion1.removeAttribute("mensaje2A");
+        %>
 
         <table id="example" class="table table-striped table-hover" style="width: 100%">
             <thead>

@@ -101,7 +101,7 @@
 
 <main>
 
-    <!-- TABLA TODOS LOS USUARIOS -->
+    <!-- TABLA TODOS LAS MARCAS -->
     <div class="table-responsive" id="tablaMarcas">
         <h3>Marcas</h3>
         <img src="img/iconoMarcas.png" width="5%" height="5%">

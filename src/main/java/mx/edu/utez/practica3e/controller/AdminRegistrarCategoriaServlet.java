@@ -6,14 +6,14 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
-import mx.edu.utez.practica3e.dao.MarcaDao;
-import mx.edu.utez.practica3e.model.Marca;
+import mx.edu.utez.practica3e.dao.CategoriaDao;
+import mx.edu.utez.practica3e.model.Categoria;
 
 import java.io.IOException;
 
 
-@WebServlet(name="AdminRegistrarMarcaServlet", value="/addMarca")
-public class AdminRegistrarMarcaServlet extends HttpServlet {
+@WebServlet(name="AdminRegistrarCategoriaServlet", value="/addCategoria")
+public class AdminRegistrarCategoriaServlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         // Obtener datos del formulario
@@ -21,26 +21,26 @@ public class AdminRegistrarMarcaServlet extends HttpServlet {
         String descripcion = req.getParameter("descripcion");
         boolean estatus = true; //por defecto el estatus es true
 
-        String ruta = "marcas.jsp";
+        String ruta = "categorias.jsp";
 
 
-        // Crear objeto de Marca
-        Marca m = new Marca();
-        m.setNombre(nombre);
-        m.setDescripcion(descripcion);
-        m.setEstatus(estatus);
+        // Crear objetos de Categoria
+        Categoria c = new Categoria();
+        c.setNombre(nombre);
+        c.setDescripcion(descripcion);
+        c.setEstatus(estatus);
 
-        MarcaDao dao = new MarcaDao();
-        boolean insert = dao.insert(m);
+        CategoriaDao dao = new CategoriaDao();
+        boolean insert = dao.insert(c);
 
         if (insert) {
             HttpSession sesion = req.getSession();
-            sesion.setAttribute("mensaje2A", "SE REGISTRÓ LA NUEVA MARCA");
-            resp.sendRedirect("marcas.jsp");
+            sesion.setAttribute("mensaje2A", "SE REGISTRÓ LA NUEVA CATEGORÍA");
+            resp.sendRedirect("categorias.jsp");
         } else {
             HttpSession sesion = req.getSession();
-            sesion.setAttribute("mensaje2A", "La marca no se registró correctamente. Vuelve a intentar");
-            resp.sendRedirect("marcas.jsp");
+            sesion.setAttribute("mensaje2A", "La categoría no se registró correctamente. Vuelve a intentar");
+            resp.sendRedirect("categorias.jsp");
         }
     }
 }

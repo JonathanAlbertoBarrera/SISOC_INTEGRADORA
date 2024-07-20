@@ -39,7 +39,7 @@ public class AdminModificarMarcaServlet extends HttpServlet {
             }
 
         } catch (NumberFormatException e) {
-            req.getSession().setAttribute("mensaje2A", "Error al convertir el ID del usuario");
+            req.getSession().setAttribute("mensaje2A", "Error al convertir el ID");
         } catch (Exception e) {
             req.getSession().setAttribute("mensaje2A", "Error inesperado: " + e.getMessage());
         }
