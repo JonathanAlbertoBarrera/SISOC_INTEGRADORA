@@ -80,7 +80,7 @@
                     <a class="nav-link" href="marcas.jsp">
                         <img src="img/iconoMarcas.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top"> Marcas
                     </a>
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="categorias.jsp">
                         <img src="img/iconoCategoria.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top"> Categorias
                     </a>
                     <a class="nav-link" href="#">
