@@ -10,12 +10,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6f44def4-2bd3-4c79-8a6b-cc536cc2ffae" name="Changes" comment="correcion icono marca y jsp para crud de marcas">
+    <list default="true" id="6f44def4-2bd3-4c79-8a6b-cc536cc2ffae" name="Changes" comment="Se agrega el modelo y dao de Marca, con ello se hizo su jsp donde se hace su CRUD,con ello se agregan tambien los servlets para modificar, registrar y desactivar a una marca">
       <change beforePath="$PROJECT_DIR$/.idea/webContexts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/controller/AdminModificarEncargadoServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/controller/AdminModificarEncargadoServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/controller/AdminRegistrarEncargadoServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/controller/AdminRegistrarEncargadoServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/marcas.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/marcas.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -240,7 +237,7 @@
       <workItem from="1721182030918" duration="4920000" />
       <workItem from="1721268766385" duration="8268000" />
       <workItem from="1721329023612" duration="33562000" />
-      <workItem from="1721415659213" duration="13948000" />
+      <workItem from="1721415659213" duration="16193000" />
     </task>
     <task id="LOCAL-00001" summary="Inicio de sesion por Yoni, (problemas con InteliJ)">
       <option name="closed" value="true" />
@@ -458,14 +455,21 @@
       <option name="project" value="LOCAL" />
       <updated>1721418827763</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="Se agrega el modelo y dao de Marca, con ello se hizo su jsp donde se hace su CRUD,con ello se agregan tambien los servlets para modificar, registrar y desactivar a una marca">
+      <option name="closed" value="true" />
+      <created>1721431297891</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1721431297891</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="inicio sesion Yoni" />
     <MESSAGE value="formulario Registrarse Otmar" />
     <MESSAGE value="modelos Usuario, Rol y Persona Leobardo" />
     <MESSAGE value="Funciones getOne e Insert DAO" />
@@ -490,7 +494,8 @@
     <MESSAGE value="quite imagenes" />
     <MESSAGE value="funcion para agregar Encargados mediante modal ademas de iconos para barra de navegacion" />
     <MESSAGE value="correcion icono marca y jsp para crud de marcas" />
-    <option name="LAST_COMMIT_MESSAGE" value="correcion icono marca y jsp para crud de marcas" />
+    <MESSAGE value="Se agrega el modelo y dao de Marca, con ello se hizo su jsp donde se hace su CRUD,con ello se agregan tambien los servlets para modificar, registrar y desactivar a una marca" />
+    <option name="LAST_COMMIT_MESSAGE" value="Se agrega el modelo y dao de Marca, con ello se hizo su jsp donde se hace su CRUD,con ello se agregan tambien los servlets para modificar, registrar y desactivar a una marca" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
