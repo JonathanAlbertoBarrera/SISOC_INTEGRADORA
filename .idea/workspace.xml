@@ -10,11 +10,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6f44def4-2bd3-4c79-8a6b-cc536cc2ffae" name="Changes" comment="Agregamos el jsp de productos mas el link en los menus">
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/img/add.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/img/search2.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/img/search3.gif" afterDir="false" />
+    <list default="true" id="6f44def4-2bd3-4c79-8a6b-cc536cc2ffae" name="Changes" comment="cards opciones productos">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/mostrarOcultarCosas.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/js/mostrarOcultarCosas.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/productosAdmin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/productosAdmin.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -241,7 +239,7 @@
       <workItem from="1721268766385" duration="8268000" />
       <workItem from="1721329023612" duration="33562000" />
       <workItem from="1721415659213" duration="23330000" />
-      <workItem from="1721523326201" duration="7562000" />
+      <workItem from="1721523326201" duration="9879000" />
     </task>
     <task id="LOCAL-00001" summary="Inicio de sesion por Yoni, (problemas con InteliJ)">
       <option name="closed" value="true" />
@@ -507,14 +505,21 @@
       <option name="project" value="LOCAL" />
       <updated>1721526087675</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="cards opciones productos">
+      <option name="closed" value="true" />
+      <created>1721533022604</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1721533022604</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="correcion bd en conexion" />
     <MESSAGE value="correcion para que en caso de mensaje de error al no coincidir contrasenas, no se pierdan los datos llenados" />
     <MESSAGE value="Se agrega lo necesario para modificar contra" />
     <MESSAGE value="Dependencias para correo" />
@@ -539,7 +544,8 @@
     <MESSAGE value="links de menu" />
     <MESSAGE value="CRUD DE CATEGORIAS (3 SERVLETS:DESACTIVAR,MODIFICAR Y REGISTRAR) Y CORRECCION DE COMENTARIOS EN OTROS ARCHIVOS Y REMOVE A COMENTARIO DE LA TABLA DE USUARIOS DE TIPO ENCARGADO" />
     <MESSAGE value="Agregamos el jsp de productos mas el link en los menus" />
-    <option name="LAST_COMMIT_MESSAGE" value="Agregamos el jsp de productos mas el link en los menus" />
+    <MESSAGE value="cards opciones productos" />
+    <option name="LAST_COMMIT_MESSAGE" value="cards opciones productos" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -53,9 +53,11 @@
             color: white; /* Texto blanco para el botón activo */
         }
 
+        #vistaAddProducto, #vistaCrudProducto {
+            display: none;
+        }
 
     </style>
-
 </head>
 <body>
 <!-- BARRA NAVEGACION -->
@@ -68,7 +70,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav mx-auto">
-                    <a class="nav-link" aria-current="page"  href="indexAdmin.jsp">Inicio</a>
+                    <a class="nav-link" aria-current="page" href="indexAdmin.jsp">Inicio</a>
                     <a class="nav-link" href="marcas.jsp">
                         <img src="img/iconoMarcas.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top"> Marcas
                     </a>
@@ -105,6 +107,7 @@
         <h3>Productos</h3>
         <img src="img/iconoProductos.png" width="5%" height="5%">
 
+        <!--CARDS DE OPCIONES -->
         <div class="text-center mt-3 card-group" id="opcProducto">
             <div class="card ms-3 me-3" id="add" style="width: 18rem; border: 3px solid #F4AB2C; border-radius: 15px;">
                 <div class="d-flex justify-content-center align-items-center" style="height: 150px;">
@@ -113,27 +116,56 @@
                 </div>
                 <div class="card-body">
                     <p class="card-text">Agregar un nuevo producto.</p>
-                    <button class="btn btn-dark botonesApp activo" id="agregarPro">Ir</button>
+                    <button class="btn btn-dark botonesApp" id="agregarPro" onclick="mostrarAdd()">Agregar Producto</button>
                 </div>
             </div>
             <div class="card ms-3 me-3" id="crud" style="width: 18rem; border: 3px solid #F4AB2C; border-radius: 15px;">
                 <div class="d-flex justify-content-center align-items-center" style="height: 150px;">
-                    <img src="img/search2.gif" class="card-img-top" alt="..." style="width: 10%; height: auto;">
+                    <img src="img/search2.gif" class="card-img-top" alt="..." style="width: 15%; height: auto;">
                     <img src="img/search3.gif" class="card-img-top" alt="..." style="width: 20%; height: auto;">
                 </div>
                 <div class="card-body">
                     <p class="card-text">Ver productos existentes, modificar sus datos o desactivarlos.</p>
-                    <button class="btn btn-dark botonesApp activo" id="crudPro">Ir</button>
+                    <button class="btn btn-dark botonesApp" id="crudPro" onclick="mostrarCrud()">Ir a productos regsitrados</button>
                 </div>
             </div>
         </div>
 
+        <!--VISTA PARA AGREGAR PRODUCTO -->
+        <div id="vistaAddProducto">
+            <br>
+            <button class="btn btn-dark botonesApp" onclick="mostrarCrud()">Ir a productos registrados</button>
+            <br>
+            <h3>Agregar un nuevo Producto</h3>
 
+        </div>
+
+        <!--VISTA PARA CRUD CON DATATABLE -->
+        <div id="vistaCrudProducto">
+            <br>
+            <button class="btn btn-dark botonesApp" onclick="mostrarAdd()">Agregar Producto</button>
+            <br>
+            <h3>Productos en existencia</h3>
+
+        </div>
 
     </div>
 
 </main>
 
+<script>
+    function mostrarAdd(){
+        document.getElementById('opcProducto').style.display="none";
+        document.getElementById('vistaCrudProducto').style.display="none";
+        document.getElementById('vistaAddProducto').style.display="block";
+    }
+
+    function mostrarCrud(){
+        document.getElementById('opcProducto').style.display="none";
+        document.getElementById('vistaAddProducto').style.display="none";
+        document.getElementById('vistaCrudProducto').style.display="block";
+    }
+</script>
+
 </body>
 </html>
-

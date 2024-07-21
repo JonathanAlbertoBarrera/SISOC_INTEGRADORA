@@ -1,3 +1,4 @@
+//PARA CRUD DE USUARIOS EN JSP INDEXADMIN
 function mostrarTablaEncargados() {
     document.getElementById('tablaClientes').style.display = "none";
     document.getElementById('tablaAllUsuarios').style.display = "none";
@@ -26,4 +27,3 @@ function actualizarBotonActivo(botonId) {
     });
     document.getElementById(botonId).classList.add('activo'); // Añadir clase 'activo' al botón correspondiente
 }
-
