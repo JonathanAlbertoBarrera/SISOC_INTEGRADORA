@@ -126,7 +126,7 @@
                 </div>
                 <div class="card-body">
                     <p class="card-text">Ver productos existentes, modificar sus datos o desactivarlos.</p>
-                    <button class="btn btn-dark botonesApp" id="crudPro" onclick="mostrarCrud()">Ir a productos regsitrados</button>
+                    <button class="btn btn-dark botonesApp" id="crudPro" onclick="mostrarCrud()">Ir a productos regsitrados   </button>
                 </div>
             </div>
         </div>
@@ -137,6 +137,61 @@
             <button class="btn btn-dark botonesApp" onclick="mostrarCrud()">Ir a productos registrados</button>
             <br>
             <h3>Agregar un nuevo Producto</h3>
+
+            <!--FORMULARIO AGREGAR PRODUCTO -->
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-6 bg-dark text-white p-4 rounded-circle">
+                        <form method="post" action="addProducto" class="mt-4">
+                            <div class="form-group mb-3">
+                                <label for="sku">SKU (ID) producto:</label>
+                                <input type="text" class="form-control bg-dark text-white" id="sku" name="sku" value="<%= request.getAttribute("sku") != null ? request.getAttribute("sku") : "" %>" required>
+                            </div>
+                            <div class="form-group mb-3">
+                                <label for="nombre">Nombre del producto:</label>
+                                <input type="text" class="form-control bg-dark text-white" id="nombre" name="nombre" value="<%= request.getAttribute("nombre") != null ? request.getAttribute("nombre") : "" %>" required>
+                            </div>
+                            <div class="form-group mb-3">
+                                <label>Categoría:</label>
+                                <br>
+                                <select name="categoria" class="form-select bg-dark text-white" value="<%= request.getAttribute("categoria") != null ? request.getAttribute("categoria") : "" %>">
+                                    <option selected></option>
+                                    <option value=""></option>
+                                </select>
+                            </div>
+                            <div class="form-group mb-3">
+                                <label>Marca:</label>
+                                <br>
+                                <select name="marca" class="form-select bg-dark text-white" value="<%= request.getAttribute("marca") != null ? request.getAttribute("marca") : "" %>">
+                                    <option selected></option>
+                                    <option value=""></option>
+                                </select>
+                            </div>
+                            <div class="form-group mb-3">
+                                <label for="precio">Precio del producto:</label>
+                                <input type="number" class="form-control bg-dark text-white" id="precio" name="precio" value="<%= request.getAttribute("precio") != null ? request.getAttribute("precio") : "" %>" required>
+                            </div>
+                            <div class="form-group mb-3">
+                                <label for="cantidad">Cantidad inicial de existencias del producto:</label>
+                                <input type="number" class="form-control bg-dark text-white" id="cantidad" name="cantidad" value="<%= request.getAttribute("cantidad") != null ? request.getAttribute("cantidad") : "" %>" required>
+                            </div>
+                            <%
+                                HttpSession sesion1 = request.getSession();
+                                String mensaje2 = (String) sesion1.getAttribute("mensaje2");
+
+                                if(mensaje2 != null){ %>
+                            <p class="text-danger"><%=mensaje2%></p>
+                            <% } %>
+
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-dark botonesApp btn-block">Registrar Producto</button>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+
 
         </div>
 
