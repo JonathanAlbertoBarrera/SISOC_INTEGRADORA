@@ -83,7 +83,7 @@
                     <a class="nav-link" href="categorias.jsp">
                         <img src="img/iconoCategoria.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top"> Categorias
                     </a>
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="productosAdmin.jsp">
                         <img src="img/iconoProductos.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top"> Productos
                     </a>
                     <a class="nav-link" href="#">

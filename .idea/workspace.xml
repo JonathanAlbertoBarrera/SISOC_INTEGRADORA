@@ -10,11 +10,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6f44def4-2bd3-4c79-8a6b-cc536cc2ffae" name="Changes" comment="links de menu">
+    <list default="true" id="6f44def4-2bd3-4c79-8a6b-cc536cc2ffae" name="Changes" comment="CRUD DE CATEGORIAS (3 SERVLETS:DESACTIVAR,MODIFICAR Y REGISTRAR) Y CORRECCION DE COMENTARIOS EN OTROS ARCHIVOS Y REMOVE A COMENTARIO DE LA TABLA DE USUARIOS DE TIPO ENCARGADO">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/controller/AdminModificarMarcaServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/controller/AdminModificarMarcaServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/controller/AdminRegistrarMarcaServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/controller/AdminRegistrarMarcaServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/categorias.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/categorias.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/indexAdmin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/indexAdmin.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/marcas.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/marcas.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -27,8 +26,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
-        <option value="Jsp File" />
         <option value="Class" />
+        <option value="Jsp File" />
       </list>
     </option>
   </component>
@@ -240,7 +239,8 @@
       <workItem from="1721182030918" duration="4920000" />
       <workItem from="1721268766385" duration="8268000" />
       <workItem from="1721329023612" duration="33562000" />
-      <workItem from="1721415659213" duration="21377000" />
+      <workItem from="1721415659213" duration="23330000" />
+      <workItem from="1721523326201" duration="1663000" />
     </task>
     <task id="LOCAL-00001" summary="Inicio de sesion por Yoni, (problemas con InteliJ)">
       <option name="closed" value="true" />
@@ -490,14 +490,21 @@
       <option name="project" value="LOCAL" />
       <updated>1721441878029</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="CRUD DE CATEGORIAS (3 SERVLETS:DESACTIVAR,MODIFICAR Y REGISTRAR) Y CORRECCION DE COMENTARIOS EN OTROS ARCHIVOS Y REMOVE A COMENTARIO DE LA TABLA DE USUARIOS DE TIPO ENCARGADO">
+      <option name="closed" value="true" />
+      <created>1721448955069</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1721448955069</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Servlet Registrar Usuario" />
     <MESSAGE value="Funcion getAll dao Usuario" />
     <MESSAGE value="correcion bd en conexion" />
     <MESSAGE value="correcion para que en caso de mensaje de error al no coincidir contrasenas, no se pierdan los datos llenados" />
@@ -522,7 +529,8 @@
     <MESSAGE value="modelo y dao de categoria" />
     <MESSAGE value="se empezo categorias jsp" />
     <MESSAGE value="links de menu" />
-    <option name="LAST_COMMIT_MESSAGE" value="links de menu" />
+    <MESSAGE value="CRUD DE CATEGORIAS (3 SERVLETS:DESACTIVAR,MODIFICAR Y REGISTRAR) Y CORRECCION DE COMENTARIOS EN OTROS ARCHIVOS Y REMOVE A COMENTARIO DE LA TABLA DE USUARIOS DE TIPO ENCARGADO" />
+    <option name="LAST_COMMIT_MESSAGE" value="CRUD DE CATEGORIAS (3 SERVLETS:DESACTIVAR,MODIFICAR Y REGISTRAR) Y CORRECCION DE COMENTARIOS EN OTROS ARCHIVOS Y REMOVE A COMENTARIO DE LA TABLA DE USUARIOS DE TIPO ENCARGADO" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
