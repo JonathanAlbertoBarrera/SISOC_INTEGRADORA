@@ -100,12 +100,38 @@
 </header>
 
 <main>
-    <!-- TABLA TODAS LAS CATEGORIAS -->
+
     <div class="table-responsive" id="tablaCategorias">
         <h3>Productos</h3>
         <img src="img/iconoProductos.png" width="5%" height="5%">
 
+        <div class="text-center mt-3 card-group" id="opcProducto">
+            <div class="card ms-3 me-3" id="add" style="width: 18rem; border: 3px solid #F4AB2C; border-radius: 15px;">
+                <div class="d-flex justify-content-center align-items-center" style="height: 150px;">
+                    <img src="img/add.gif" class="card-img-top" alt="gif icono agregar" style="width: 10%; height: auto;">
+                    <img src="img/addProducto.gif" class="card-img-top" alt="gif creando producto" style="width: 20%; height: auto;">
+                </div>
+                <div class="card-body">
+                    <p class="card-text">Agregar un nuevo producto.</p>
+                    <button class="btn btn-dark botonesApp activo" id="agregarPro">Ir</button>
+                </div>
+            </div>
+            <div class="card ms-3 me-3" id="crud" style="width: 18rem; border: 3px solid #F4AB2C; border-radius: 15px;">
+                <div class="d-flex justify-content-center align-items-center" style="height: 150px;">
+                    <img src="img/search2.gif" class="card-img-top" alt="..." style="width: 10%; height: auto;">
+                    <img src="img/search3.gif" class="card-img-top" alt="..." style="width: 20%; height: auto;">
+                </div>
+                <div class="card-body">
+                    <p class="card-text">Ver productos existentes, modificar sus datos o desactivarlos.</p>
+                    <button class="btn btn-dark botonesApp activo" id="crudPro">Ir</button>
+                </div>
+            </div>
+        </div>
+
+
+
     </div>
+
 </main>
 
 </body>
