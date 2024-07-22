@@ -1,5 +1,6 @@
 package mx.edu.utez.practica3e.controller;
 
+import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -15,8 +16,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-@WebServlet(name="AdminJSTLCategoriasServlet",value = "/mandarCategorias")
-public class AdminJSTLCategoriasServlet extends HttpServlet {
+@WebServlet(name="AdminJSTLCategoriasYmarcasServlet",value = "/mandarCategoriasYmarcas")
+public class AdminJSTLCategoriasYmarcasServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         HttpSession session = req.getSession();
@@ -33,6 +34,7 @@ public class AdminJSTLCategoriasServlet extends HttpServlet {
         session.setAttribute("categorias",lista);
         session.setAttribute("marcas",lista2);
 
-        resp.sendRedirect("agregarProductos.jsp");
+        RequestDispatcher dispatcher = req.getRequestDispatcher("productosAdmin.jsp");
+        dispatcher.forward(req, resp);
     }
 }
