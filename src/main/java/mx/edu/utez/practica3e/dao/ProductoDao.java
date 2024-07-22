@@ -11,7 +11,7 @@ public class ProductoDao {
     //Se obtienen todos los productos
     public List<Producto> getAll() {
         List<Producto> productos = new ArrayList<>();
-        String query = "SELECT p.sku, p.nombre, p.precio, p.cantidad,p.estatus " +
+        String query = "SELECT p.sku, p.nombre, p.descripcion, p.precio, p.cantidad,p.estatus " +
                 "c.id_categoria, c.nombre, c.descripcion, c.estatus " +
                 "m.id_categoria, m.nombre, m.descripcion, m.estatus" +
                 "FROM producto p " +
@@ -38,6 +38,7 @@ public class ProductoDao {
                 Producto producto = new Producto();
                 producto.setSku(rs.getString("sku"));
                 producto.setNombre(rs.getString("nombre"));
+                producto.setNombre(rs.getString("descripcion"));
                 producto.setPrecio(rs.getDouble("precio"));
                 producto.setCantidad(rs.getInt("cantidad"));
                 producto.setEstatus(rs.getBoolean("estatus"));

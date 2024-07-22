@@ -5,6 +5,7 @@ public class Producto {
     private Categoria categoria;
     private Marca marca;
     private String nombre;
+    private String descripcion;
     private double precio;
     private int cantidad;
     private boolean estatus;
@@ -12,11 +13,12 @@ public class Producto {
     public Producto() {
     }
 
-    public Producto(String sku, Categoria categoria, Marca marca, String nombre, double precio, int cantidad, boolean estatus) {
+    public Producto(String sku, Categoria categoria, Marca marca, String nombre, String descripcion, double precio, int cantidad, boolean estatus) {
         this.sku = sku;
         this.categoria = categoria;
         this.marca = marca;
         this.nombre = nombre;
+        this.descripcion = descripcion;
         this.precio = precio;
         this.cantidad = cantidad;
         this.estatus = estatus;
@@ -52,6 +54,14 @@ public class Producto {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
     }
 
     public double getPrecio() {
