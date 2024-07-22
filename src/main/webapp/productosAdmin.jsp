@@ -186,6 +186,9 @@
                             <p class="text-danger"><%=mensaje2%></p>
                             <% } %>
 
+                            <%
+                                sesion1.removeAttribute("mensaje2");
+                            %>
                             <div class="text-center">
                                 <button type="submit" class="btn btn-dark botonesApp btn-block">Registrar Producto</button>
                             </div>
