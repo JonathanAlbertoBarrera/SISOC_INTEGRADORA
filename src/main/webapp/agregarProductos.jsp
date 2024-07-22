@@ -54,10 +54,6 @@
             color: white; /* Texto blanco para el botón activo */
         }
 
-        #vistaAddProducto, #vistaCrudProducto {
-            display: none;
-        }
-
     </style>
 </head>
 <body>
@@ -108,44 +104,79 @@
         <h3>Productos</h3>
         <img src="img/iconoProductos.png" width="5%" height="5%">
 
-        <!--CARDS DE OPCIONES -->
-        <div class="text-center mt-3 card-group" id="opcProducto">
-            <div class="card ms-3 me-3" id="add" style="width: 10rem; border: 3px solid #F4AB2C; border-radius: 15px;">
-                <div class="d-flex justify-content-center align-items-center" style="height: 150px;">
-                    <img src="img/add.gif" class="card-img-top" alt="gif icono agregar" style="width: 10%; height: auto;">
-                    <img src="img/addProducto.gif" class="card-img-top" alt="gif creando producto" style="width: 20%; height: auto;">
-                </div>
-                <div class="card-body">
-                    <form method="get" action="mandarCategorias">
-                        <p class="card-text">Agregar un nuevo producto.</p>
-                        <button type="submit" class="btn btn-dark botonesApp" id="agregarPro">Agregar Producto</button>
-                    </form>
+
+        <!--VISTA PARA AGREGAR PRODUCTO -->
+        <div id="vistaAddProducto">
+            <br>
+            <button class="btn btn-dark botonesApp" onclick="mostrarCrud()">Ir a productos registrados</button>
+            <br>
+            <h3>Agregar un nuevo Producto</h3>
+
+            <!--FORMULARIO AGREGAR PRODUCTO -->
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-6 bg-dark text-white p-4 rounded-circle">
+                        <form method="post" action="addProducto" class="mt-4">
+                            <div class="form-group mb-3">
+                                <label for="sku">SKU (ID) producto:</label>
+                                <input type="text" class="form-control bg-dark text-white" id="sku" name="sku" value="<%= request.getAttribute("sku") != null ? request.getAttribute("sku") : "" %>" required>
+                            </div>
+                            <div class="form-group mb-3">
+                                <label for="nombre">Nombre del producto:</label>
+                                <input type="text" class="form-control bg-dark text-white" id="nombre" name="nombre" value="<%= request.getAttribute("nombre") != null ? request.getAttribute("nombre") : "" %>" required>
+                            </div>
+                            <div class="form-group mb-3">
+                                <label>Categoría:</label>
+                                <br>
+                                <select name="categorias" id="categorias" class="form-select bg-dark text-white" value="<%= request.getAttribute("categorias") != null ? request.getAttribute("categorias") : "" %>">
+                                    <option value="" selected disabled>Selecciona una categoría</option>
+                                    <c:forEach items="${categorias}" var="c">
+                                        <option value="${c.id_categoria}" selected disabled>${c.nombre}</option>
+                                    </c:forEach>
+                                </select>
+                            </div>
+                            <div class="form-group mb-3">
+                                <label>Marca:</label>
+                                <br>
+                                <select name="marcas" id="marcas" class="form-select bg-dark text-white" value="<%= request.getAttribute("marcas") != null ? request.getAttribute("marcas") : "" %>">
+                                    <option value="" selected disabled>Selecciona una marca</option>
+                                    <c:forEach items="${marcas}" var="m">
+                                        <option value="${m.id_marca}" selected disabled>${m.nombre}</option>
+                                    </c:forEach>
+                                </select>
+                            </div>
+
+                            <div class="form-group mb-3">
+                                <label for="precio">Precio del producto:</label>
+                                <input type="number" class="form-control bg-dark text-white" id="precio" name="precio" value="<%= request.getAttribute("precio") != null ? request.getAttribute("precio") : "" %>" required>
+                            </div>
+                            <div class="form-group mb-3">
+                                <label for="cantidad">Cantidad inicial de existencias del producto:</label>
+                                <input type="number" class="form-control bg-dark text-white" id="cantidad" name="cantidad" value="<%= request.getAttribute("cantidad") != null ? request.getAttribute("cantidad") : "" %>" required>
+                            </div>
+                            <%
+                                HttpSession sesion1 = request.getSession();
+                                String mensaje2 = (String) sesion1.getAttribute("mensaje2");
+
+                                if(mensaje2 != null){ %>
+                            <p class="text-danger"><%=mensaje2%></p>
+                            <% } %>
+
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-dark botonesApp btn-block">Registrar Producto</button>
+                            </div>
+
+                        </form>
+                    </div>
                 </div>
             </div>
-            <div class="card ms-3 me-3" id="crud" style="width: 10rem; border: 3px solid #F4AB2C; border-radius: 15px;">
-                <div class="d-flex justify-content-center align-items-center" style="height: 150px;">
-                    <img src="img/search2.gif" class="card-img-top" alt="..." style="width: 15%; height: auto;">
-                    <img src="img/search3.gif" class="card-img-top" alt="..." style="width: 20%; height: auto;">
-                </div>
-                <div class="card-body">
-                    <p class="card-text">Ver productos existentes, modificar sus datos o desactivarlos.</p>
-                    <button class="btn btn-dark botonesApp" id="crudPro" >Ir a productos regsitrados   </button>
-                </div>
-            </div>
-        </div>
-
-
-        <!--VISTA PARA CRUD CON DATATABLE -->
-        <div id="vistaCrudProducto">
-            <br>
-            <button class="btn btn-dark botonesApp" onclick="mostrarAdd()">Agregar Producto</button>
-            <br>
-            <h3>Productos en existencia</h3>
-
         </div>
 
     </div>
 
 </main>
+
+
 </body>
 </html>
+

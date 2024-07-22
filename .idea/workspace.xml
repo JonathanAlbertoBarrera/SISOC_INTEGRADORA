@@ -10,8 +10,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6f44def4-2bd3-4c79-8a6b-cc536cc2ffae" name="Changes" comment="js para opciones productos">
+    <list default="true" id="6f44def4-2bd3-4c79-8a6b-cc536cc2ffae" name="Changes" comment="iniciando formulario de productos">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/productosAdmin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/productosAdmin.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -238,7 +239,7 @@
       <workItem from="1721268766385" duration="8268000" />
       <workItem from="1721329023612" duration="33562000" />
       <workItem from="1721415659213" duration="23330000" />
-      <workItem from="1721523326201" duration="14075000" />
+      <workItem from="1721523326201" duration="20194000" />
     </task>
     <task id="LOCAL-00001" summary="Inicio de sesion por Yoni, (problemas con InteliJ)">
       <option name="closed" value="true" />
@@ -520,14 +521,21 @@
       <option name="project" value="LOCAL" />
       <updated>1721535548696</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="iniciando formulario de productos">
+      <option name="closed" value="true" />
+      <created>1721596442183</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1721596442183</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Se agrega lo necesario para modificar contra" />
     <MESSAGE value="Dependencias para correo" />
     <MESSAGE value="push para agregar cambios de modificacion contra sin errores" />
     <MESSAGE value="bootrap para jsp recuperacion de contra" />
@@ -552,7 +560,8 @@
     <MESSAGE value="Agregamos el jsp de productos mas el link en los menus" />
     <MESSAGE value="cards opciones productos" />
     <MESSAGE value="js para opciones productos" />
-    <option name="LAST_COMMIT_MESSAGE" value="js para opciones productos" />
+    <MESSAGE value="iniciando formulario de productos" />
+    <option name="LAST_COMMIT_MESSAGE" value="iniciando formulario de productos" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
