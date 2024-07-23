@@ -192,7 +192,7 @@
                             </div>
                             <div class="form-group mb-3">
                                 <label for="precio">Precio del producto:</label>
-                                <input type="number" class="form-control bg-dark text-white" id="precio" name="precio"  required>
+                                <input type="number" class="form-control bg-dark text-white" id="precio" name="precio" step="0.01" min="1" required>
                             </div>
                             <div class="form-group mb-3">
                                 <label for="cantidad">Cantidad inicial de existencias del producto:</label>

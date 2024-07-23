@@ -75,7 +75,7 @@ public class AdminRegistrarProductoServlet extends HttpServlet {
 
         if (isSaved) {
             // Redirigir a la página de administración con un mensaje de éxito
-            request.getSession().setAttribute("mensaje2", "El producto:"+nombre+"se registró correctamente.");
+            request.getSession().setAttribute("mensaje2", "El producto: "+nombre+" ,se registró correctamente.");
             response.sendRedirect("productosAdmin.jsp");
         } else {
             // Manejar el error mostrando un mensaje de error en la misma página
