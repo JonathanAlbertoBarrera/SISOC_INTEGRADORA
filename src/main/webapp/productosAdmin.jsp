@@ -225,7 +225,7 @@
             <p class="text-danger"><%=mensaje2A%></p>
             <% } %>
 
-            <!--TABLA DE CATEGORIAS -->
+            <!--TABLA DE PRODUCTOS -->
             <table id="example3" class="table table-striped table-hover" style="width: 100%">
                 <thead>
                 <tr>
