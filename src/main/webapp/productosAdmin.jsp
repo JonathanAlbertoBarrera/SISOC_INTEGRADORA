@@ -54,7 +54,7 @@
             color: white; /* Texto blanco para el botón activo */
         }
 
-        #vistaAddProducto, #vistaCrudProducto {
+         #vistaCrudProducto {
             display: none;
         }
 
@@ -132,6 +132,18 @@
             </div>
         </div>
 
+        <%
+            HttpSession sesion1 = request.getSession();
+            String mensaje2 = (String) sesion1.getAttribute("mensaje2");
+
+            if(mensaje2 != null){ %>
+        <p class="text-danger"><%=mensaje2%></p>
+        <% } %>
+
+        <%
+            sesion1.removeAttribute("mensaje2");
+        %>
+
         <!--VISTA PARA AGREGAR PRODUCTO -->
         <div id="vistaAddProducto">
             <br>
@@ -141,19 +153,23 @@
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-md-6 bg-dark text-white p-4 rounded-circle">
-                        <form method="post" action="addProducto" class="mt-4">
+                        <form method="post" action="addProducto"  enctype="multipart/form-data" class="mt-4">
                             <div class="form-group mb-3">
                                 <label for="sku">SKU (ID) producto:</label>
-                                <input type="text" class="form-control bg-dark text-white" id="sku" name="sku" value="<%= request.getAttribute("sku") != null ? request.getAttribute("sku") : "" %>" required>
+                                <input type="text" class="form-control bg-dark text-white" id="sku" name="sku" required>
                             </div>
                             <div class="form-group mb-3">
                                 <label for="nombre">Nombre del producto:</label>
-                                <input type="text" class="form-control bg-dark text-white" id="nombre" name="nombre" value="<%= request.getAttribute("nombre") != null ? request.getAttribute("nombre") : "" %>" required>
+                                <input type="text" class="form-control bg-dark text-white" id="nombre" name="nombre" required>
+                            </div>
+                            <div class="form-group mb-3">
+                                <label for="imagen_producto">Subir imagen del producto:</label>
+                                <input type="file" class="form-control bg-dark text-white" id="imagen_producto" name="imagen_producto"  required>
                             </div>
                             <div class="form-group mb-3">
                                 <label>Categoría:</label>
                                 <br>
-                                <select name="categorias" id="categorias" class="form-select bg-dark text-white" value="<%= request.getAttribute("categorias") != null ? request.getAttribute("categorias") : "" %>">
+                                <select name="categorias" id="categorias" class="form-select bg-dark text-white"  required>
                                     <option value="" selected disabled>Selecciona una categoría</option>
                                     <c:forEach items="${categorias}" var="c">
                                         <option value="${c.id_categoria}">${c.nombre}</option>
@@ -163,7 +179,7 @@
                             <div class="form-group mb-3">
                                 <label>Marca:</label>
                                 <br>
-                                <select name="marcas" id="marcas" class="form-select bg-dark text-white" value="<%= request.getAttribute("marcas") != null ? request.getAttribute("marcas") : "" %>">
+                                <select name="marcas" id="marcas" class="form-select bg-dark text-white" required>
                                     <option value="" selected disabled>Selecciona una marca</option>
                                     <c:forEach items="${marcas}" var="m">
                                         <option value="${m.id_marca}" >${m.nombre}</option>
@@ -171,24 +187,18 @@
                                 </select>
                             </div>
                             <div class="form-group mb-3">
+                                <label for="descripcion">Descripción:</label>
+                                <input type="text" class="form-control bg-dark text-white" id="descripcion" name="descripcion" required>
+                            </div>
+                            <div class="form-group mb-3">
                                 <label for="precio">Precio del producto:</label>
-                                <input type="number" class="form-control bg-dark text-white" id="precio" name="precio" value="<%= request.getAttribute("precio") != null ? request.getAttribute("precio") : "" %>" required>
+                                <input type="number" class="form-control bg-dark text-white" id="precio" name="precio"  required>
                             </div>
                             <div class="form-group mb-3">
                                 <label for="cantidad">Cantidad inicial de existencias del producto:</label>
-                                <input type="number" class="form-control bg-dark text-white" id="cantidad" name="cantidad" value="<%= request.getAttribute("cantidad") != null ? request.getAttribute("cantidad") : "" %>" required>
+                                <input type="number" class="form-control bg-dark text-white" id="cantidad" name="cantidad"  required>
                             </div>
-                            <%
-                                HttpSession sesion1 = request.getSession();
-                                String mensaje2 = (String) sesion1.getAttribute("mensaje2");
 
-                                if(mensaje2 != null){ %>
-                            <p class="text-danger"><%=mensaje2%></p>
-                            <% } %>
-
-                            <%
-                                sesion1.removeAttribute("mensaje2");
-                            %>
                             <div class="text-center">
                                 <button type="submit" class="btn btn-dark botonesApp btn-block">Registrar Producto</button>
                             </div>

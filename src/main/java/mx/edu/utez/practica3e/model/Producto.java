@@ -6,6 +6,7 @@ public class Producto {
     private Marca marca;
     private String nombre;
     private String descripcion;
+    private String urlImagen;
     private double precio;
     private int cantidad;
     private boolean estatus;
@@ -13,12 +14,13 @@ public class Producto {
     public Producto() {
     }
 
-    public Producto(String sku, Categoria categoria, Marca marca, String nombre, String descripcion, double precio, int cantidad, boolean estatus) {
+    public Producto(String sku, Categoria categoria, Marca marca, String nombre, String descripcion, String urlImagen,double precio, int cantidad, boolean estatus) {
         this.sku = sku;
         this.categoria = categoria;
         this.marca = marca;
         this.nombre = nombre;
         this.descripcion = descripcion;
+        this.urlImagen=urlImagen;
         this.precio = precio;
         this.cantidad = cantidad;
         this.estatus = estatus;
@@ -62,6 +64,14 @@ public class Producto {
 
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
+    }
+
+    public String getUrlImagen() {
+        return urlImagen;
+    }
+
+    public void setUrlImagen(String urlImagen) {
+        this.urlImagen = urlImagen;
     }
 
     public double getPrecio() {
