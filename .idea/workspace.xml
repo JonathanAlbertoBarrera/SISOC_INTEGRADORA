@@ -10,9 +10,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6f44def4-2bd3-4c79-8a6b-cc536cc2ffae" name="Changes" comment="registro de Producto ya correcto, tanto url como los demas datos. Correcion del dao y modelo de producto">
+    <list default="true" id="6f44def4-2bd3-4c79-8a6b-cc536cc2ffae" name="Changes" comment="Correccion para permitir input tipo number, numeros decimales">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/controller/AdminRegistrarProductoServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/controller/AdminRegistrarProductoServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/dao/ProductoDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/dao/ProductoDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/productosAdmin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/productosAdmin.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -42,6 +42,9 @@
     <option name="FILTER_INFO" value="true" />
     <option name="FILTER_DEBUG" value="true" />
     <option name="CUSTOM_FILTER" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -240,7 +243,7 @@
       <workItem from="1721329023612" duration="33562000" />
       <workItem from="1721415659213" duration="23330000" />
       <workItem from="1721523326201" duration="30085000" />
-      <workItem from="1721670710899" duration="24920000" />
+      <workItem from="1721670710899" duration="29316000" />
     </task>
     <task id="LOCAL-00001" summary="Inicio de sesion por Yoni, (problemas con InteliJ)">
       <option name="closed" value="true" />
@@ -570,14 +573,21 @@
       <option name="project" value="LOCAL" />
       <updated>1721701976373</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="Correccion para permitir input tipo number, numeros decimales">
+      <option name="closed" value="true" />
+      <created>1721702854847</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1721702854847</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="MAS CORRECION DE MENSAJES DE ERROR REZAGADOS" />
     <MESSAGE value="OTMAR PAGINA ACCESO DENEGADO" />
     <MESSAGE value="FREDY TABLAS ADMIN USUARIOS" />
     <MESSAGE value="FREDY, JONA FUNCION CAMBIAR ESTADO" />
@@ -602,7 +612,8 @@
     <MESSAGE value="modelo de producto y funcion getAll en el dao de producto" />
     <MESSAGE value="agregue descripcion en el dao y modelo de producto" />
     <MESSAGE value="registro de Producto ya correcto, tanto url como los demas datos. Correcion del dao y modelo de producto" />
-    <option name="LAST_COMMIT_MESSAGE" value="registro de Producto ya correcto, tanto url como los demas datos. Correcion del dao y modelo de producto" />
+    <MESSAGE value="Correccion para permitir input tipo number, numeros decimales" />
+    <option name="LAST_COMMIT_MESSAGE" value="Correccion para permitir input tipo number, numeros decimales" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

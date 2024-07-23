@@ -11,9 +11,9 @@ public class ProductoDao {
     //Se obtienen todos los productos
     public List<Producto> getAll() {
         List<Producto> productos = new ArrayList<>();
-        String query = "SELECT p.sku, p.nombre, p.descripcion, p.precio, p.cantidad,p.estatus " +
-                "c.id_categoria, c.nombre, c.descripcion, c.estatus " +
-                "m.id_categoria, m.nombre, m.descripcion, m.estatus" +
+        String query = "SELECT p.sku, p.nombre AS producto_nombre, p.descripcion AS producto_descripcion, p.urlImagen, p.precio, p.cantidad, p.estatus AS producto_estatus, " +
+                "c.id_categoria, c.nombre AS categoria_nombre, c.descripcion AS categoria_descripcion, c.estatus AS categoria_estatus, " +
+                "m.id_marca, m.nombre AS marca_nombre, m.descripcion AS marca_descripcion, m.estatus AS marca_estatus " +
                 "FROM producto p " +
                 "JOIN categoria c ON p.id_categoria = c.id_categoria " +
                 "JOIN marca m ON p.id_marca = m.id_marca";
@@ -25,23 +25,24 @@ public class ProductoDao {
             while (rs.next()) {
                 Categoria categoria = new Categoria();
                 categoria.setId_categoria(rs.getInt("id_categoria"));
-                categoria.setNombre(rs.getString("nombre"));
-                categoria.setNombre(rs.getString("descripcion"));
-                categoria.setEstatus(rs.getBoolean("estatus"));
+                categoria.setNombre(rs.getString("categoria_nombre"));
+                categoria.setDescripcion(rs.getString("categoria_descripcion"));
+                categoria.setEstatus(rs.getBoolean("categoria_estatus"));
 
                 Marca marca = new Marca();
                 marca.setId_marca(rs.getInt("id_marca"));
-                marca.setNombre(rs.getString("nombre"));
-                marca.setNombre(rs.getString("descripcion"));
-                marca.setEstatus(rs.getBoolean("estatus"));
+                marca.setNombre(rs.getString("marca_nombre"));
+                marca.setDescripcion(rs.getString("marca_descripcion"));
+                marca.setEstatus(rs.getBoolean("marca_estatus"));
 
                 Producto producto = new Producto();
                 producto.setSku(rs.getString("sku"));
-                producto.setNombre(rs.getString("nombre"));
-                producto.setNombre(rs.getString("descripcion"));
+                producto.setNombre(rs.getString("producto_nombre"));
+                producto.setDescripcion(rs.getString("producto_descripcion"));
+                producto.setUrlImagen(rs.getString("urlImagen"));
                 producto.setPrecio(rs.getDouble("precio"));
                 producto.setCantidad(rs.getInt("cantidad"));
-                producto.setEstatus(rs.getBoolean("estatus"));
+                producto.setEstatus(rs.getBoolean("producto_estatus"));
 
                 producto.setCategoria(categoria);
                 producto.setMarca(marca);
@@ -54,6 +55,7 @@ public class ProductoDao {
 
         return productos;
     }
+
 
     //insertar producto
     public boolean insert(Producto producto,Categoria c, Marca m) {
