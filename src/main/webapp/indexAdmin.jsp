@@ -86,7 +86,7 @@
                     <a class="nav-link" href="productosAdmin.jsp">
                         <img src="img/iconoProductos.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top"> Productos
                     </a>
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="comprasAdmin.jsp">
                         <img src="img/iconoCompras.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top"> Compras
                     </a>
                     <a class="nav-link" href="#">

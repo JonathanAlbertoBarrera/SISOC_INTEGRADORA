@@ -11,17 +11,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6f44def4-2bd3-4c79-8a6b-cc536cc2ffae" name="Changes" comment="pequenos cambios para Datatables">
+      <change beforePath="$PROJECT_DIR$/.idea/webContexts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/agregarProductos.jsp" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/categorias.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/categorias.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/indexAdmin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/indexAdmin.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/JS/bootstrap.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/dataTables.bootstrap5.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/JS/dataTables.bootstrap5.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/datatables.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/JS/datatables.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/es-MX.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/JS/es-MX.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/jquery-3.7.0.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/JS/jquery-3.7.0.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/mostrarOcultarCosas.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/JS/mostrarOcultarCosas.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/mostrarProductos.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/JS/mostrarProductos.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/marcas.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/marcas.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/productosAdmin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/productosAdmin.jsp" afterDir="false" />
     </list>
@@ -35,8 +28,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
-        <option value="Jsp File" />
         <option value="Class" />
+        <option value="Jsp File" />
       </list>
     </option>
   </component>
@@ -255,7 +248,7 @@
       <workItem from="1721523326201" duration="30085000" />
       <workItem from="1721670710899" duration="31465000" />
       <workItem from="1721758673257" duration="4114000" />
-      <workItem from="1721790445124" duration="1179000" />
+      <workItem from="1721790445124" duration="6283000" />
     </task>
     <task id="LOCAL-00001" summary="Inicio de sesion por Yoni, (problemas con InteliJ)">
       <option name="closed" value="true" />
@@ -617,7 +610,15 @@
       <option name="project" value="LOCAL" />
       <updated>1721788107030</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="pequenos cambios para Datatables">
+      <option name="closed" value="true" />
+      <created>1721791889057</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1721791889057</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
