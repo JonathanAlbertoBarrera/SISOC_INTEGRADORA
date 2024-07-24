@@ -56,6 +56,20 @@
             color: white; /* Texto blanco para el botón activo */
         }
 
+        .form-check {
+            display: flex;
+            align-items: center;
+        }
+
+        .form-check-input {
+            width: 1.5em;
+            height: 1.5em;
+        }
+
+        .form-check-label {
+            margin-left: 0.5em;
+        }
+
     </style>
 </head>
 <body>
@@ -106,24 +120,36 @@
         <h3>Comprar inventario</h3>
         <img src="img/iconoCompras.png" width="5%" height="5%">
 
-        <%
+            <%
             HttpSession sesion1 = request.getSession();
             String mensaje2 = (String) sesion1.getAttribute("mensaje2");
 
             if(mensaje2 != null){ %>
         <p class="text-danger"><%=mensaje2%></p>
-        <% } %>
+            <% } %>
 
-        <%
+            <%
             sesion1.removeAttribute("mensaje2");
         %>
 
-        <select name="categorias" id="categorias" class="form-select bg-dark text-white"  required>
-            <option value="" selected disabled>Selecciona el producto</option>
-            <c:forEach items="${productos}" var="p">
-                <option value="${p.sku}">${p.nombre}</option>
-            </c:forEach>
-        </select>
+
+        <div class="container mt-5">
+            <h1 class="mb-4">Lista de Productos</h1>
+            <form id="Listaproduct" action="" method="POST">
+                <div class="form-group">
+                    <c:forEach items="${productos}" var="p">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="productosSeleccionados" value="${p.sku}" id="producto_${p.sku}">
+                            <label class="form-check-label" for="producto_${p.sku}">
+                                    ${p.nombre}
+                            </label>
+                        </div>
+                    </c:forEach>
+                </div>
+                <button type="submit" class="btn btn-primary botonesApp">Agregar Seleccionados</button>
+            </form>
+        </div>
+
 </main>
 
 </body>
