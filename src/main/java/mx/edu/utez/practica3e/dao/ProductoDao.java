@@ -83,4 +83,22 @@ public class ProductoDao {
     }
 
 
+    //desactivar un producto
+    public boolean desactivar(Producto p) {
+        boolean flag = false;
+        String query = "UPDATE producto SET estatus = ? WHERE sku = ?";
+        try {
+            Connection con = DatabaseConnectionManager.getConnection();
+            PreparedStatement ps = con.prepareStatement(query);
+            ps.setBoolean(1,p.isEstatus());
+            ps.setString(2, p.getSku());
+            if(ps.executeUpdate() > 0){
+                flag = true;
+            }
+        } catch(SQLException e) {
+            e.printStackTrace();
+        }
+        return flag;
+    }
+
 }

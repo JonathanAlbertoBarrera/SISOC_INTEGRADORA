@@ -355,7 +355,7 @@
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                                        <form method="post" action="desactivarCategoria">
+                                        <form method="post" action="desactivarProducto">
                                             <input type="hidden" name="sku" value="<%= p.getSku() %>">
                                             <input type="hidden" name="estatus" value="<%= p.isEstatus() %>">
                                             <button type="submit" class="btn btn-primary botonesApp">Confirmar</button>
