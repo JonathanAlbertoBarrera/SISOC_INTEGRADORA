@@ -198,7 +198,7 @@
                             </div>
                             <div class="form-group mb-3">
                                 <label for="cantidad">Cantidad inicial de existencias del producto:</label>
-                                <input type="number" class="form-control bg-dark text-white" id="cantidad" name="cantidad"  required>
+                                <input type="number" class="form-control bg-dark text-white" id="cantidad" name="cantidad" min="1" required>
                             </div>
 
                             <div class="text-center">
@@ -225,7 +225,7 @@
             <p class="text-danger"><%=mensaje2A%></p>
             <% } %>
 
-            <!--TABLA DE PRODUCTOS -->
+            <!-- TABLA DE PRODUCTOS -->
             <table id="example3" class="table table-striped table-hover" style="width: 100%">
                 <thead>
                 <tr>
@@ -244,10 +244,10 @@
                 <%
                     ProductoDao dao = new ProductoDao();
                     ArrayList<Producto> lista = (ArrayList<Producto>) dao.getAll();
-                    for(Producto p : lista) {
+                    for (Producto p : lista) {
                 %>
                 <tr>
-                    <td><img src="<%= p.getUrlImagen() %>" alt="imagen del producto"></td>
+                    <td><img src="<%= request.getContextPath() %>/image?sku=<%= p.getSku() %>" alt="imagen del producto" width="100%"></td>
                     <td><%= p.getSku() %></td>
                     <td><%= p.getNombre() %></td>
                     <td><%= p.getDescripcion() %></td>
@@ -260,6 +260,7 @@
                         <button type="button" class="btn btn-dark botonesApp" data-bs-toggle="modal" data-bs-target="#modalModiProducto-<%= p.getSku() %>">
                             Actualizar Producto
                         </button>
+
                         <!-- Modal PARA MODIFICAR PRODUCTO-->
                         <div class="modal fade" id="modalModiProducto-<%= p.getSku() %>" tabindex="-1" aria-labelledby="exampleModalLabel-<%= p.getSku() %>" aria-hidden="true">
                             <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
@@ -269,28 +270,25 @@
                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
-                                        <form method="post" action="modiProducto">
+                                        <form method="post" action="modiProducto" enctype="multipart/form-data">
                                             <div class="container">
                                                 <div class="row justify-content-center">
                                                     <div class="col-md-6">
                                                         <h2 class="text-center mt-5">Modificar Producto</h2>
 
                                                         <div class="form-group mb-3">
-                                                            <label for="sku">SKU (ID) producto:</label>
-                                                            <input type="text" class="form-control bg-dark text-white" id="sku2" name="sku2" value="<%= p.getSku() %>" required>
-                                                        </div>
-                                                        <div class="form-group mb-3">
                                                             <label for="nombre">Nombre del producto:</label>
                                                             <input type="text" class="form-control bg-dark text-white" id="nombre2" name="nombre2" value="<%= p.getNombre() %>" required>
                                                         </div>
                                                         <div class="form-group mb-3">
-                                                            <label for="imagen_producto">Subir imagen del producto:</label>
-                                                            <input type="file" class="form-control bg-dark text-white" id="imagen_producto2" name="imagen_producto2" value="<%= p.getUrlImagen() %>" required>
+                                                            <label for="imagen_actual">Imagen actual:</label>
+                                                            <img src="<%= request.getContextPath() %>/image?sku=<%= p.getSku() %>" alt="imagen del producto" class="img-thumbnail" id="imagen_actual">
+                                                            <label for="imagen_producto2">Cambiar imagen del producto:</label>
+                                                            <input type="file" class="form-control bg-dark text-white" id="imagen_producto2" name="imagen_producto2">
                                                         </div>
                                                         <div class="form-group mb-3">
                                                             <label>Categoría:</label>
-                                                            <br>
-                                                            <select name="categorias2" id="categorias2" class="form-select bg-dark text-white" value="<%= p.getCategoria() %>" required>
+                                                            <select name="categorias2" id="categorias2-<%= p.getSku() %>" class="form-select bg-dark text-white" required>
                                                                 <option value="" selected disabled>Selecciona una categoría</option>
                                                                 <c:forEach items="${categorias}" var="c">
                                                                     <option value="${c.id_categoria}">${c.nombre}</option>
@@ -299,11 +297,10 @@
                                                         </div>
                                                         <div class="form-group mb-3">
                                                             <label>Marca:</label>
-                                                            <br>
-                                                            <select name="marcas2" id="marcas2" class="form-select bg-dark text-white" value="<%= p.getMarca() %>" required>
+                                                            <select name="marcas2" id="marcas2-<%= p.getSku() %>" class="form-select bg-dark text-white" required>
                                                                 <option value="" selected disabled>Selecciona una marca</option>
                                                                 <c:forEach items="${marcas}" var="m">
-                                                                    <option value="${m.id_marca}" >${m.nombre}</option>
+                                                                    <option value="${m.id_marca}">${m.nombre}</option>
                                                                 </c:forEach>
                                                             </select>
                                                         </div>
@@ -317,9 +314,8 @@
                                                         </div>
                                                         <div class="form-group mb-3">
                                                             <label for="cantidad">Cantidad inicial de existencias del producto:</label>
-                                                            <input type="number" class="form-control bg-dark text-white" id="cantidad2" name="cantidad2" value="<%= p.getCantidad() %>" required>
+                                                            <input type="number" class="form-control bg-dark text-white" id="cantidad2" min="1" name="cantidad2" value="<%= p.getCantidad() %>" required>
                                                         </div>
-
 
                                                     </div>
                                                 </div>
@@ -350,8 +346,7 @@
                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
-                                        ¿Estás seguro de que deseas <%= p.isEstatus() ? "DESACTIVAR" : "ACTIVAR" %> al producto
-                                        <%= p.getNombre() %>?
+                                        ¿Estás seguro de que deseas <%= p.isEstatus() ? "DESACTIVAR" : "ACTIVAR" %> al producto <%= p.getNombre() %>?
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
@@ -370,12 +365,21 @@
                 </tbody>
             </table>
 
-
         </div>
 
     </div>
 
 </main>
+
+<!-- JavaScript para poner las opciones seleccionadas  en los selects de modal de modificar -->
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        <% for (Producto p : lista) { %>
+        document.getElementById("categorias2-<%= p.getSku() %>").value = "<%= p.getCategoria().getId_categoria() %>";
+        document.getElementById("marcas2-<%= p.getSku() %>").value = "<%= p.getMarca().getId_marca() %>";
+        <% } %>
+    });
+</script>
 
 <script>
     function mostrarAdd(){

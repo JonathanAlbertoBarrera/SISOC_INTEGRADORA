@@ -10,9 +10,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6f44def4-2bd3-4c79-8a6b-cc536cc2ffae" name="Changes" comment="modificacion del filtro para que cargue los datos tambien en compras, ademas de que el servlet tambien mande lista de productos">
+    <list default="true" id="6f44def4-2bd3-4c79-8a6b-cc536cc2ffae" name="Changes" comment="mostrando productos en lista">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/comprasAdmin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/comprasAdmin.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/controller/AdminRegistrarProductoServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/controller/AdminRegistrarProductoServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/dao/ProductoDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/dao/ProductoDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/model/Producto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/model/Producto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/productosAdmin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/productosAdmin.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,8 +27,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
-        <option value="Class" />
         <option value="Jsp File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -244,7 +247,8 @@
       <workItem from="1721523326201" duration="30085000" />
       <workItem from="1721670710899" duration="31465000" />
       <workItem from="1721758673257" duration="4114000" />
-      <workItem from="1721790445124" duration="9165000" />
+      <workItem from="1721790445124" duration="9399000" />
+      <workItem from="1721852314672" duration="11149000" />
     </task>
     <task id="LOCAL-00001" summary="Inicio de sesion por Yoni, (problemas con InteliJ)">
       <option name="closed" value="true" />
@@ -630,14 +634,21 @@
       <option name="project" value="LOCAL" />
       <updated>1721799109442</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="mostrando productos en lista">
+      <option name="closed" value="true" />
+      <created>1721800104379</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1721800104379</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="funcion modificar Encargado, mediante modal y agregacion de su correspondiente funcion en el dao ademas de su servlet" />
     <MESSAGE value="quite imagenes" />
     <MESSAGE value="funcion para agregar Encargados mediante modal ademas de iconos para barra de navegacion" />
     <MESSAGE value="correcion icono marca y jsp para crud de marcas" />
@@ -662,7 +673,8 @@
     <MESSAGE value="pequenos cambios para Datatables" />
     <MESSAGE value="creacion de jsp de compras del admin y colocacion de enlaces en las barras de navegacion" />
     <MESSAGE value="modificacion del filtro para que cargue los datos tambien en compras, ademas de que el servlet tambien mande lista de productos" />
-    <option name="LAST_COMMIT_MESSAGE" value="modificacion del filtro para que cargue los datos tambien en compras, ademas de que el servlet tambien mande lista de productos" />
+    <MESSAGE value="mostrando productos en lista" />
+    <option name="LAST_COMMIT_MESSAGE" value="mostrando productos en lista" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
