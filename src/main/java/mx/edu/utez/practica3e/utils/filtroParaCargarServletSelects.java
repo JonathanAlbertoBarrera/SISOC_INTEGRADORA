@@ -11,7 +11,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebFilter("/productosAdmin.jsp")
+@WebFilter({"/productosAdmin.jsp", "/comprasAdmin.jsp"})
 public class filtroParaCargarServletSelects implements Filter {
 
     @Override
@@ -25,7 +25,10 @@ public class filtroParaCargarServletSelects implements Filter {
         HttpServletRequest req = (HttpServletRequest) request;
         HttpServletResponse resp = (HttpServletResponse) response;
 
-        req.getRequestDispatcher("/mandarCategoriasYmarcas").forward(req, resp);
+        req.getRequestDispatcher("/mandarCategoriasYmarcas").include(req, resp);
+
+        // Continuar con el procesamiento normal de la solicitud
+        chain.doFilter(request, response);
     }
 
     @Override
@@ -33,4 +36,3 @@ public class filtroParaCargarServletSelects implements Filter {
         // No cleanup needed
     }
 }
-

@@ -117,6 +117,13 @@
         <%
             sesion1.removeAttribute("mensaje2");
         %>
+
+        <select name="categorias" id="categorias" class="form-select bg-dark text-white"  required>
+            <option value="" selected disabled>Selecciona el producto</option>
+            <c:forEach items="${productos}" var="p">
+                <option value="${p.sku}">${p.nombre}</option>
+            </c:forEach>
+        </select>
 </main>
 
 </body>
