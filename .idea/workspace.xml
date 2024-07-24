@@ -10,9 +10,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6f44def4-2bd3-4c79-8a6b-cc536cc2ffae" name="Changes" comment="no se que agregamos pero fueron cambios peque;os">
+    <list default="true" id="6f44def4-2bd3-4c79-8a6b-cc536cc2ffae" name="Changes" comment="pequenos cambios para Datatables">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/dao/ProductoDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/dao/ProductoDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/agregarProductos.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/categorias.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/categorias.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/indexAdmin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/indexAdmin.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/JS/bootstrap.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/dataTables.bootstrap5.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/JS/dataTables.bootstrap5.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/datatables.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/JS/datatables.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/es-MX.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/JS/es-MX.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/jquery-3.7.0.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/JS/jquery-3.7.0.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/mostrarOcultarCosas.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/JS/mostrarOcultarCosas.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/mostrarProductos.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/JS/mostrarProductos.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/marcas.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/marcas.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/productosAdmin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/productosAdmin.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -244,7 +254,8 @@
       <workItem from="1721415659213" duration="23330000" />
       <workItem from="1721523326201" duration="30085000" />
       <workItem from="1721670710899" duration="31465000" />
-      <workItem from="1721758673257" duration="2715000" />
+      <workItem from="1721758673257" duration="4114000" />
+      <workItem from="1721790445124" duration="1179000" />
     </task>
     <task id="LOCAL-00001" summary="Inicio de sesion por Yoni, (problemas con InteliJ)">
       <option name="closed" value="true" />
@@ -598,15 +609,21 @@
       <option name="project" value="LOCAL" />
       <updated>1721709029167</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="funcion en el dao y servlet para DESACTIVAR UN PRODUCTO">
+      <option name="closed" value="true" />
+      <created>1721788107030</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1721788107030</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="FREDY, JONA FUNCION CAMBIAR ESTADO" />
-    <MESSAGE value="TABLA TODOS LOS USUARIOS Y BOTONES CON JS PARA MOSTRAR LA TABLA DESEADA" />
     <MESSAGE value="Agregamos modales antes de cambiar estatus de un usuario. Se modificaron el contenido de las tablas segun los requerimientos. Solo se puede ver y desactivar a los clientes, de igual forma para los encargados pero a ellos si se les puede hacer modificaciones" />
     <MESSAGE value="se agrego en el dao una funcion para obtener a los usuarios excepto al administrador, la cual se usa para llenar la tabla de todos los usuarios en la vista del index del administrador. para asi cumplir el requerimiento que nos dio el cliente de visualizar a todos los usuarios menos el admin" />
     <MESSAGE value="funcion modificar Encargado, mediante modal y agregacion de su correspondiente funcion en el dao ademas de su servlet" />
@@ -630,7 +647,9 @@
     <MESSAGE value="Correccion para permitir input tipo number, numeros decimales" />
     <MESSAGE value="mostrarTabla con crud de Productos" />
     <MESSAGE value="no se que agregamos pero fueron cambios peque;os" />
-    <option name="LAST_COMMIT_MESSAGE" value="no se que agregamos pero fueron cambios peque;os" />
+    <MESSAGE value="funcion en el dao y servlet para DESACTIVAR UN PRODUCTO" />
+    <MESSAGE value="pequenos cambios para Datatables" />
+    <option name="LAST_COMMIT_MESSAGE" value="pequenos cambios para Datatables" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

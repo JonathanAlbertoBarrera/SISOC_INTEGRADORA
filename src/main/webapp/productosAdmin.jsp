@@ -256,7 +256,7 @@
                     <td><%= p.isEstatus() ? "Activo" : "Inactivo" %></td>
                     <!-- td para modificar PRODUCTO-->
                     <td>
-                        <img src="img/iconoModificar.png" width="8%" height="8%">
+                        <img src="img/iconoModificar.png" width="14%" height="14%">
                         <button type="button" class="btn btn-dark botonesApp" data-bs-toggle="modal" data-bs-target="#modalModiProducto-<%= p.getSku() %>">
                             Actualizar Producto
                         </button>
@@ -395,15 +395,16 @@
 <script src="${pageContext.request.contextPath}/JS/dataTables.bootstrap5.js"></script>
 <script src="${pageContext.request.contextPath}/JS/es-MX.json"></script>
 <script>
-    const table3 = document.getElementById('example3');
-    new DataTable(table3, {
-        language: {
-            url: '${pageContext.request.contextPath}/JS/es-MX.json'
-        }
+    document.addEventListener('DOMContentLoaded', () => {
+        const table3 = document.getElementById('example3');
+        new DataTable(table3, {
+            language: {
+                url: '${pageContext.request.contextPath}/JS/es-MX.json'
+            }
+        });
     });
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js"></script>
-<script src="js/bootstrap.js"></script>
 <%
     sesion.removeAttribute("mensaje2A");
 %>
