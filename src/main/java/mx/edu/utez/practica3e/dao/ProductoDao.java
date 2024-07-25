@@ -56,7 +56,6 @@ public class ProductoDao {
         return productos;
     }
 
-
     //insertar producto
     public boolean insert(Producto producto, Categoria c, Marca m) {
         boolean flag = false;

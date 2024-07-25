@@ -10,9 +10,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6f44def4-2bd3-4c79-8a6b-cc536cc2ffae" name="Changes" comment="SELECTS QUE SIRVEN PARA FILTRO DE CATEGORIA Y MARCA. SIN FUNCIONALIDAD, SOLO LLENADO DESDE LA BD">
+    <list default="true" id="6f44def4-2bd3-4c79-8a6b-cc536cc2ffae" name="Changes" comment="pusimos la tabla de crud por defecto para mostrar los mensajes de las operaciones directamente, y agregar producto none por defecto">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/productosAdmin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/productosAdmin.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/controller/AdminModificarCategoriaServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/controller/AdminModificarCategoriaServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/dao/ProductoDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/dao/ProductoDao.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -245,15 +246,7 @@
       <workItem from="1721670710899" duration="31465000" />
       <workItem from="1721758673257" duration="4114000" />
       <workItem from="1721790445124" duration="9399000" />
-      <workItem from="1721852314672" duration="14918000" />
-    </task>
-    <task id="LOCAL-00003" summary="formulario Registrarse Otmar">
-      <option name="closed" value="true" />
-      <created>1720410225483</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1720410225483</updated>
+      <workItem from="1721852314672" duration="16064000" />
     </task>
     <task id="LOCAL-00004" summary="modelos Usuario, Rol y Persona Leobardo">
       <option name="closed" value="true" />
@@ -639,14 +632,21 @@
       <option name="project" value="LOCAL" />
       <updated>1721873672009</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="pusimos la tabla de crud por defecto para mostrar los mensajes de las operaciones directamente, y agregar producto none por defecto">
+      <option name="closed" value="true" />
+      <created>1721874452009</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1721874452009</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="correcion icono marca y jsp para crud de marcas" />
     <MESSAGE value="Se agrega el modelo y dao de Marca, con ello se hizo su jsp donde se hace su CRUD,con ello se agregan tambien los servlets para modificar, registrar y desactivar a una marca" />
     <MESSAGE value="modelo y dao de categoria" />
     <MESSAGE value="se empezo categorias jsp" />
@@ -671,6 +671,7 @@
     <MESSAGE value="mostrando productos en lista" />
     <MESSAGE value="POR FIN SIRVEN LAS IMAGENES. SE MODIFICO EL MODELO Y DAO CONSIDERANDO QUE EN LA BD SE GUARDA DE TIPO BLOB. SE HIZO EL SERVLET DE REGISTRAR  Y MODIFICAR AL PRODUCTO INCLUYENDO LA IMAGEN EN AMBOS" />
     <MESSAGE value="SELECTS QUE SIRVEN PARA FILTRO DE CATEGORIA Y MARCA. SIN FUNCIONALIDAD, SOLO LLENADO DESDE LA BD" />
-    <option name="LAST_COMMIT_MESSAGE" value="SELECTS QUE SIRVEN PARA FILTRO DE CATEGORIA Y MARCA. SIN FUNCIONALIDAD, SOLO LLENADO DESDE LA BD" />
+    <MESSAGE value="pusimos la tabla de crud por defecto para mostrar los mensajes de las operaciones directamente, y agregar producto none por defecto" />
+    <option name="LAST_COMMIT_MESSAGE" value="pusimos la tabla de crud por defecto para mostrar los mensajes de las operaciones directamente, y agregar producto none por defecto" />
   </component>
 </project>

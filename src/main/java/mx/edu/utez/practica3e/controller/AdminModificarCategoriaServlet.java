@@ -30,6 +30,7 @@ public class AdminModificarCategoriaServlet extends HttpServlet {
 
             // Llamar al DAO para actualizar la categoria
             CategoriaDao categoriaDao = new CategoriaDao();
+
             boolean actualizado = categoriaDao.updateCategoria(categoria);
 
             if (actualizado) {
