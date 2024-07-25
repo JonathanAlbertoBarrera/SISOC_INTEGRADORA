@@ -29,7 +29,7 @@
             border-color:#F4AB2C;
         }
     </style>
-    <script src="js/mostrarProductos.js" defer></script>
+
 </head>
 <body>
 <!-- BARRA NAVEGACION -->
@@ -93,9 +93,32 @@
 
     <!-- DIV PRODUCTOS -->
     <div class="container mt-2">
-        <h2 id="titSeccion">Productos Más Vendidos</h2>
+        <h2 id="titSeccion">Productos</h2>
         <div class="row" id="product-cards-container">
             <!-- Aquí se añadirán dinámicamente las tarjetas de productos -->
+            <c:forEach items="${productos}" var="p">
+            <div class="col-md-3 mb-2">
+                <div class="card h-100">
+                    <img src="<%= request.getContextPath() %>/image?sku=${p.sku}" class="card-img-top" height="60%" alt="${p.nombre}">
+                    <div class="card-body">
+                        <h3 class="card-title">${p.nombre}</h3>
+                        <p class="card-text">$${p.precio}</p>
+                        <p class="card-text">${p.descripcion}</p>
+                        <div class="container mt-3">
+                            <div class="row justify-content-center">
+                                <button class="btn btn-success col-md-3 mb-2 me-2 botonMas">+</button>
+                                <input type="number" class="col-md-3 mb-2 me-2 inputCantidad ${hiddenClass}" name="cantidad_${index}" value="${cantidad}" ${disabledAttr}>
+                                <button class="btn btn-danger col-md-3 mb-2 botonMenos ${hiddenClass}">-</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Inputs ocultos para enviar el sku y el precio -->
+                <input type="hidden" name="title_${p.sku}" value="${p.sku}">
+                <input type="hidden" name="price_${p.precio}" value="${p.precio}">
+            </div>
+            </c:forEach>
+
         </div>
     </div>
 
