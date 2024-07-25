@@ -56,7 +56,7 @@
             color: white; /* Texto blanco para el botón activo */
         }
 
-         #vistaCrudProducto {
+         #vistaAddProducto {
             display: none;
         }
 
