@@ -50,14 +50,20 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav mx-auto">
-                    <a class="nav-link active" aria-current="page"  href="index.jsp">Inicio</a>
+                    <a class="nav-link active" aria-current="page"  href="indexCliente.jsp">Inicio</a>
+                    <a class="nav-link" href="carrito.html">
+                        <img src="img/carritoLogo.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top"> Carrito de compra
+                    </a>
+                    <a class="nav-link" href="#">
+                        <img src="img/orden.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top"> Órdenes
+                    </a>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             <img src="img/login.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top"> ${sessionScope.nombre_usuario != null ? sessionScope.nombre_usuario : 'Cuenta'}
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="iniciarSesion.jsp">Iniciar Sesión</a></li>
-                            <li><a class="dropdown-item" href="registrarUsuario.jsp">Registrarse</a></li>
+                            <li><a class="dropdown-item" href="${pageContext.request.contextPath}/logout">Cerrar Sesión</a></li>
+                            <li><a class="dropdown-item" href="solicitudRecuperacion.jsp">Cambiar contraseña</a></li>
                         </ul>
                     </li>
                 </div>
@@ -119,12 +125,19 @@
                                                 <h1 class="modal-title fs-5" id="desacModalLabel-${p.sku}">Agregar al carrito</h1>
                                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                             </div>
+                                            <form method="post" action="agregarCarrito">
                                             <div class="modal-body">
-                                                Lo sentimos, para poder agregar productos al carrito necesitas registrarte.
+                                                Ingresa la cantidad que quieres agregar de tu producto ${p.nombre}:
+
+                                                    <input type="number" name="addCant" min="1">
+                                                    <input type="hidden" name="id_usuario" value="${sessionScope.id_usuario}">
+                                                    <input type="hidden" name="sku" value="${p.sku}">
                                             </div>
                                             <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary botonesApp" data-bs-dismiss="modal">OK</button>
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                                                    <button type="submit" class="btn btn-primary botonesApp">Confirmar</button>
                                             </div>
+                                            </form>
                                         </div>
                                     </div>
                                 </div>

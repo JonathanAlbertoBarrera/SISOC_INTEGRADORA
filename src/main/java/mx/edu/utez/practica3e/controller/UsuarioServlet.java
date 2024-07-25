@@ -33,9 +33,26 @@ public class UsuarioServlet extends HttpServlet {
             req.getRequestDispatcher(ruta).forward(req, resp);
         } else {
             // Si existe el usuario
-            ruta = "index.jsp";
+
             HttpSession sesion = req.getSession();
             sesion.setAttribute("usuario", u);
+            sesion.setAttribute("id_usuario", u.getIdUsuario());
+            sesion.setAttribute("nombre_usuario", u.getPersona().getNombre());
+            int id_rol=u.getRol().getId();
+            switch(id_rol){
+                case 1: // es administrador
+                    ruta="indexAdmin.jsp";
+                    break;
+                case 2: // es cliente registrado
+                    ruta="indexCliente.jsp";
+                    break;
+                case 3: // es Encargado
+                    ruta="indexEncargado.jsp";
+                    break;
+                default:
+                    ruta="iniciarSesion.jsp";
+                    break;
+            }
             resp.sendRedirect(ruta);
         }
 
