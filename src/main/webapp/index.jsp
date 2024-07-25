@@ -1,4 +1,5 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -64,29 +65,28 @@
 </header>
 
 <main>
-    <!-- DIV PARA BUSCAR -->
+    <!-- DIV PARA BUSCAR y FILTROS -->
     <div class="container mt-3">
         <div class="row justify-content-center">
             <div class="col-md-3 mb-2 d-flex">
                 <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
                 <button class="btn" type="submit"><img src="img/search.png" alt="Icono de Busqueda" width="30" height="24"></button>
             </div>
-            <div class="col-md-3 mb-2 d-flex">
-                <select class="form-select" aria-label="Default select example" id="SelectCategoria">
-                    <option selected disabled hidden>Categoría</option>
-                    <option value="Bebidas">Bebidas</option>
-                    <option value="Galletas">Galletas</option>
-                    <option value="Botanas">Botanas</option>
+            <div class="col-md-3 mb-2">
+                <select name="categorias" id="categorias" class="form-select bg-dark text-white" >
+                    <option value="" selected disabled>Selecciona una categoría</option>
+                    <c:forEach items="${categorias}" var="c">
+                        <option value="${c.id_categoria}">${c.nombre}</option>
+                    </c:forEach>
                 </select>
             </div>
-            <div class="col-md-3 mb-2 d-flex">
-                <select class="form-select me-2" aria-label="Default select example" id="SelectMarca">
-                    <option selected disabled hidden>Marca</option>
-                    <option value="Gamesa">Gamesa</option>
-                    <option value="Coca-cola">Coca-cola</option>
-                    <option value="Doritos">Doritos</option>
+            <div class="col-md-3 mb-2 ">
+                <select name="marcas" id="marcas" class="form-select bg-dark text-white" required>
+                    <option value="" selected disabled>Selecciona una marca</option>
+                    <c:forEach items="${marcas}" var="m">
+                        <option value="${m.id_marca}" >${m.nombre}</option>
+                    </c:forEach>
                 </select>
-                <button class="btn btn-dark botonesApp" onclick="mostrarSeleccionados()">Enviar Productos</button>
             </div>
         </div>
     </div>

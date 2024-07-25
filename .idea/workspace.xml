@@ -10,12 +10,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6f44def4-2bd3-4c79-8a6b-cc536cc2ffae" name="Changes" comment="mostrando productos en lista">
+    <list default="true" id="6f44def4-2bd3-4c79-8a6b-cc536cc2ffae" name="Changes" comment="POR FIN SIRVEN LAS IMAGENES. SE MODIFICO EL MODELO Y DAO CONSIDERANDO QUE EN LA BD SE GUARDA DE TIPO BLOB. SE HIZO EL SERVLET DE REGISTRAR  Y MODIFICAR AL PRODUCTO INCLUYENDO LA IMAGEN EN AMBOS">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/controller/AdminRegistrarProductoServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/controller/AdminRegistrarProductoServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/dao/ProductoDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/dao/ProductoDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/model/Producto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/model/Producto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/productosAdmin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/productosAdmin.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/utils/filtroParaCargarServletSelects.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/utils/filtroParaCargarServletSelects.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -248,15 +246,7 @@
       <workItem from="1721670710899" duration="31465000" />
       <workItem from="1721758673257" duration="4114000" />
       <workItem from="1721790445124" duration="9399000" />
-      <workItem from="1721852314672" duration="11149000" />
-    </task>
-    <task id="LOCAL-00001" summary="Inicio de sesion por Yoni, (problemas con InteliJ)">
-      <option name="closed" value="true" />
-      <created>1720408319436</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1720408319436</updated>
+      <workItem from="1721852314672" duration="14178000" />
     </task>
     <task id="LOCAL-00002" summary="inicio sesion Yoni">
       <option name="closed" value="true" />
@@ -642,14 +632,21 @@
       <option name="project" value="LOCAL" />
       <updated>1721800104379</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="POR FIN SIRVEN LAS IMAGENES. SE MODIFICO EL MODELO Y DAO CONSIDERANDO QUE EN LA BD SE GUARDA DE TIPO BLOB. SE HIZO EL SERVLET DE REGISTRAR  Y MODIFICAR AL PRODUCTO INCLUYENDO LA IMAGEN EN AMBOS">
+      <option name="closed" value="true" />
+      <created>1721863815596</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1721863815597</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="quite imagenes" />
     <MESSAGE value="funcion para agregar Encargados mediante modal ademas de iconos para barra de navegacion" />
     <MESSAGE value="correcion icono marca y jsp para crud de marcas" />
     <MESSAGE value="Se agrega el modelo y dao de Marca, con ello se hizo su jsp donde se hace su CRUD,con ello se agregan tambien los servlets para modificar, registrar y desactivar a una marca" />
@@ -674,17 +671,7 @@
     <MESSAGE value="creacion de jsp de compras del admin y colocacion de enlaces en las barras de navegacion" />
     <MESSAGE value="modificacion del filtro para que cargue los datos tambien en compras, ademas de que el servlet tambien mande lista de productos" />
     <MESSAGE value="mostrando productos en lista" />
-    <option name="LAST_COMMIT_MESSAGE" value="mostrando productos en lista" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/webapp/index.jsp</url>
-          <line>57</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="POR FIN SIRVEN LAS IMAGENES. SE MODIFICO EL MODELO Y DAO CONSIDERANDO QUE EN LA BD SE GUARDA DE TIPO BLOB. SE HIZO EL SERVLET DE REGISTRAR  Y MODIFICAR AL PRODUCTO INCLUYENDO LA IMAGEN EN AMBOS" />
+    <option name="LAST_COMMIT_MESSAGE" value="POR FIN SIRVEN LAS IMAGENES. SE MODIFICO EL MODELO Y DAO CONSIDERANDO QUE EN LA BD SE GUARDA DE TIPO BLOB. SE HIZO EL SERVLET DE REGISTRAR  Y MODIFICAR AL PRODUCTO INCLUYENDO LA IMAGEN EN AMBOS" />
   </component>
 </project>
