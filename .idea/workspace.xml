@@ -10,9 +10,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6f44def4-2bd3-4c79-8a6b-cc536cc2ffae" name="Changes" comment="nada">
+    <list default="true" id="6f44def4-2bd3-4c79-8a6b-cc536cc2ffae" name="Changes" comment="ya se muestran en el index los productos de La base de datos">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/JS/mostrarProductos.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/JS/mostrarProductos.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -55,26 +54,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.GmailSender.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;Tomcat Server.Tomcat 10.1.8.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/adrian jacobo/Documents/3CuatriUTEZ/APLICACIONES WEB/versionesIntegradora/SISOC_INTEGRADORA&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.GmailSender.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Tomcat Server.Tomcat 10.1.8.executor": "Run",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/adrian jacobo/Documents/3CuatriUTEZ/APLICACIONES WEB/versionesIntegradora/SISOC_INTEGRADORA/src/main/webapp/img",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Artifacts",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\adrian jacobo\Documents\3CuatriUTEZ\APLICACIONES WEB\versionesIntegradora\SISOC_INTEGRADORA\src\main\webapp\img" />
@@ -247,15 +246,7 @@
       <workItem from="1721758673257" duration="4114000" />
       <workItem from="1721790445124" duration="9399000" />
       <workItem from="1721852314672" duration="16828000" />
-      <workItem from="1721931773968" duration="3126000" />
-    </task>
-    <task id="LOCAL-00005" summary="Funciones getOne e Insert DAO">
-      <option name="closed" value="true" />
-      <created>1720412843877</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1720412843877</updated>
+      <workItem from="1721931773968" duration="8131000" />
     </task>
     <task id="LOCAL-00006" summary="Servlet Registrar Usuario">
       <option name="closed" value="true" />
@@ -641,14 +632,21 @@
       <option name="project" value="LOCAL" />
       <updated>1721875452930</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="ya se muestran en el index los productos de La base de datos">
+      <option name="closed" value="true" />
+      <created>1721937122910</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1721937122910</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="modelo y dao de categoria" />
     <MESSAGE value="se empezo categorias jsp" />
     <MESSAGE value="links de menu" />
     <MESSAGE value="CRUD DE CATEGORIAS (3 SERVLETS:DESACTIVAR,MODIFICAR Y REGISTRAR) Y CORRECCION DE COMENTARIOS EN OTROS ARCHIVOS Y REMOVE A COMENTARIO DE LA TABLA DE USUARIOS DE TIPO ENCARGADO" />
@@ -673,6 +671,7 @@
     <MESSAGE value="SELECTS QUE SIRVEN PARA FILTRO DE CATEGORIA Y MARCA. SIN FUNCIONALIDAD, SOLO LLENADO DESDE LA BD" />
     <MESSAGE value="pusimos la tabla de crud por defecto para mostrar los mensajes de las operaciones directamente, y agregar producto none por defecto" />
     <MESSAGE value="nada" />
-    <option name="LAST_COMMIT_MESSAGE" value="nada" />
+    <MESSAGE value="ya se muestran en el index los productos de La base de datos" />
+    <option name="LAST_COMMIT_MESSAGE" value="ya se muestran en el index los productos de La base de datos" />
   </component>
 </project>

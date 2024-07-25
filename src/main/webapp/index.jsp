@@ -28,6 +28,14 @@
             background-color: #F4AB2C;
             border-color:#F4AB2C;
         }
+        .row img{
+            width: 60%;
+        }
+        .row #icAddCar{
+            width: 40%;
+        }
+
+
     </style>
 
 </head>
@@ -42,7 +50,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav mx-auto">
-                    <a class="nav-link active" aria-current="page" onclick="regresarMasVendidos()" href="#">Inicio</a>
+                    <a class="nav-link active" aria-current="page"  href="index.jsp">Inicio</a>
                     <a class="nav-link" href="carrito.html">
                         <img src="img/carritoLogo.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top"> Carrito de compra
                     </a>
@@ -98,27 +106,45 @@
             <!-- Aquí se añadirán dinámicamente las tarjetas de productos -->
             <c:forEach items="${productos}" var="p">
             <div class="col-md-3 mb-2">
-                <div class="card h-100">
-                    <img src="<%= request.getContextPath() %>/image?sku=${p.sku}" class="card-img-top" height="60%" alt="${p.nombre}">
+                <div class="card h-100 text-center align-content-center">
+                    <img src="<%= request.getContextPath() %>/image?sku=${p.sku}" class="card-img-top mx-auto" height="60%" alt="${p.nombre}">
                     <div class="card-body">
                         <h3 class="card-title">${p.nombre}</h3>
                         <p class="card-text">$${p.precio}</p>
                         <p class="card-text">${p.descripcion}</p>
-                        <div class="container mt-3">
-                            <div class="row justify-content-center">
-                                <button class="btn btn-success col-md-3 mb-2 me-2 botonMas">+</button>
-                                <input type="number" class="col-md-3 mb-2 me-2 inputCantidad ${hiddenClass}" name="cantidad_${index}" value="${cantidad}" ${disabledAttr}>
-                                <button class="btn btn-danger col-md-3 mb-2 botonMenos ${hiddenClass}">-</button>
+                        <div class="container" id="cajaBoton">
+                            <div class="row flex-column text-center">
+                                <img src="img/gifAddCarrito.gif" alt="gif agregar al carrito" class="mx-auto" id="icAddCar">
+                                <a class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#modalcantProducto-${p.sku}">Agregar al Carrito</a>
+
+                                <!-- Modal para cantidad-->
+                                <div class="modal fade" id="modalcantProducto-${p.sku}" tabindex="-1" aria-labelledby="exampleModalLabel-${p.sku}" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h1 class="modal-title fs-5" id="desacModalLabel-${p.sku}">Agregar al carrito</h1>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <form method="post" action="agregarCarrito">
+                                            <div class="modal-body">
+                                                Ingresa la cantidad que quieres agregar de tu producto ${p.nombre}:
+                                                    <input type="number" name="addCant" min="1">
+                                                    <input type="hidden" name="sku" value="${p.sku}">
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                                                    <button type="submit" class="btn btn-primary botonesApp">Confirmar</button>
+                                            </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- Inputs ocultos para enviar el sku y el precio -->
-                <input type="hidden" name="title_${p.sku}" value="${p.sku}">
-                <input type="hidden" name="price_${p.precio}" value="${p.precio}">
             </div>
             </c:forEach>
-
         </div>
     </div>
 
