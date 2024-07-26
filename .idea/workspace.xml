@@ -10,9 +10,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6f44def4-2bd3-4c79-8a6b-cc536cc2ffae" name="Changes" comment="filtros para no poder acceder a jsp o servlets que no correspondan a los tipos de sesion">
+    <list default="true" id="6f44def4-2bd3-4c79-8a6b-cc536cc2ffae" name="Changes" comment="si">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/controller/CerrarSesionServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/controller/CerrarSesionServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/indexAdmin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/indexAdmin.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/indexCliente.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/indexCliente.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,8 +26,8 @@
       <list>
         <option value="JavaScript File" />
         <option value="Jsp File" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -63,7 +64,7 @@
     "Tomcat Server.Tomcat 10.1.8.executor": "Run",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/adrian jacobo/Documents/3CuatriUTEZ/APLICACIONES WEB/versionesIntegradora/SISOC_INTEGRADORA/src/main/webapp",
+    "last_opened_file_path": "C:/Users/adrian jacobo/Desktop/manosmexicanas",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -250,15 +251,8 @@
       <workItem from="1721758673257" duration="4114000" />
       <workItem from="1721790445124" duration="9399000" />
       <workItem from="1721852314672" duration="16828000" />
-      <workItem from="1721931773968" duration="23364000" />
-    </task>
-    <task id="LOCAL-00009" summary="correcion para que en caso de mensaje de error al no coincidir contrasenas, no se pierdan los datos llenados">
-      <option name="closed" value="true" />
-      <created>1720415546489</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1720415546489</updated>
+      <workItem from="1721931773968" duration="24361000" />
+      <workItem from="1722015146526" duration="6249000" />
     </task>
     <task id="LOCAL-00010" summary="Se agrega lo necesario para modificar contra">
       <option name="closed" value="true" />
@@ -644,14 +638,21 @@
       <option name="project" value="LOCAL" />
       <updated>1721968326693</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="si">
+      <option name="closed" value="true" />
+      <created>1721968889442</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1721968889442</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Agregamos el jsp de productos mas el link en los menus" />
     <MESSAGE value="cards opciones productos" />
     <MESSAGE value="js para opciones productos" />
     <MESSAGE value="iniciando formulario de productos" />
@@ -676,6 +677,7 @@
     <MESSAGE value="cambio para que solo sea un boton agregar, y despues indicar la cantidad para procesar esa agregacion al carrito de compra" />
     <MESSAGE value="dando acceso al index correspondiente, se dejo al index por defecto como el de cliente 0 donde solo puede ver y registrarse o inciar sesion. si el usuario es cliente ya manda al indexcliente donde si puede hacer sus funciones. igual en administrador y encargado" />
     <MESSAGE value="filtros para no poder acceder a jsp o servlets que no correspondan a los tipos de sesion" />
-    <option name="LAST_COMMIT_MESSAGE" value="filtros para no poder acceder a jsp o servlets que no correspondan a los tipos de sesion" />
+    <MESSAGE value="si" />
+    <option name="LAST_COMMIT_MESSAGE" value="si" />
   </component>
 </project>

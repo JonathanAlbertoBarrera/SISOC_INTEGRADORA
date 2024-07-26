@@ -129,7 +129,7 @@
                                             <div class="modal-body">
                                                 Ingresa la cantidad que quieres agregar de tu producto ${p.nombre}:
 
-                                                    <input type="number" name="addCant" min="1">
+                                                    <input type="number" name="addCant" min="1" required>
                                                     <input type="hidden" name="id_usuario" value="${sessionScope.id_usuario}">
                                                     <input type="hidden" name="sku" value="${p.sku}">
                                             </div>
