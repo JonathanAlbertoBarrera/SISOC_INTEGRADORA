@@ -51,7 +51,7 @@
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav mx-auto">
                     <a class="nav-link active" aria-current="page"  href="indexCliente.jsp">Inicio</a>
-                    <a class="nav-link" href="carrito.html">
+                    <a class="nav-link" href="carrito.jsp">
                         <img src="img/carritoLogo.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top"> Carrito de compra
                     </a>
                     <a class="nav-link" href="#">
@@ -179,7 +179,7 @@
 </footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js"></script>
-<script src="js/bootstrap.js"></script>
+<script src="JS/bootstrap.js"></script>
 
 </body>
 </html>

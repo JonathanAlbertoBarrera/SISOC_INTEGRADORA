@@ -10,10 +10,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6f44def4-2bd3-4c79-8a6b-cc536cc2ffae" name="Changes" comment="si">
+    <list default="true" id="6f44def4-2bd3-4c79-8a6b-cc536cc2ffae" name="Changes" comment="Funcion de agregar productos al  carrito. Con ello el servlet que ocupa la funcion del carritodao para saber si hay un carrito no confirmado,en ese caso agrega los productos en ese carrito usando la funcion del carritoproductodao. Si no tiene alguno por confirmar, lo crea y apartir de ese carrito registra">
+      <change beforePath="$PROJECT_DIR$/.idea/webContexts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/indexAdmin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/indexAdmin.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/dao/CarritoDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/dao/CarritoDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/utils/FiltroClienteSesion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/utils/FiltroClienteSesion.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/indexCliente.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/indexCliente.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/productosAdmin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/productosAdmin.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,9 +28,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
-        <option value="Jsp File" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="Jsp File" />
       </list>
     </option>
   </component>
@@ -252,15 +255,7 @@
       <workItem from="1721790445124" duration="9399000" />
       <workItem from="1721852314672" duration="16828000" />
       <workItem from="1721931773968" duration="24361000" />
-      <workItem from="1722015146526" duration="6249000" />
-    </task>
-    <task id="LOCAL-00010" summary="Se agrega lo necesario para modificar contra">
-      <option name="closed" value="true" />
-      <created>1720419705232</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1720419705232</updated>
+      <workItem from="1722015146526" duration="16503000" />
     </task>
     <task id="LOCAL-00011" summary="Se agrega lo necesario para modificar contra">
       <option name="closed" value="true" />
@@ -646,14 +641,21 @@
       <option name="project" value="LOCAL" />
       <updated>1721968889442</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="Funcion de agregar productos al  carrito. Con ello el servlet que ocupa la funcion del carritodao para saber si hay un carrito no confirmado,en ese caso agrega los productos en ese carrito usando la funcion del carritoproductodao. Si no tiene alguno por confirmar, lo crea y apartir de ese carrito registra">
+      <option name="closed" value="true" />
+      <created>1722025222019</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1722025222020</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="cards opciones productos" />
     <MESSAGE value="js para opciones productos" />
     <MESSAGE value="iniciando formulario de productos" />
     <MESSAGE value="carga de marcas y categorias pero falta corregir detalles" />
@@ -678,6 +680,7 @@
     <MESSAGE value="dando acceso al index correspondiente, se dejo al index por defecto como el de cliente 0 donde solo puede ver y registrarse o inciar sesion. si el usuario es cliente ya manda al indexcliente donde si puede hacer sus funciones. igual en administrador y encargado" />
     <MESSAGE value="filtros para no poder acceder a jsp o servlets que no correspondan a los tipos de sesion" />
     <MESSAGE value="si" />
-    <option name="LAST_COMMIT_MESSAGE" value="si" />
+    <MESSAGE value="Funcion de agregar productos al  carrito. Con ello el servlet que ocupa la funcion del carritodao para saber si hay un carrito no confirmado,en ese caso agrega los productos en ese carrito usando la funcion del carritoproductodao. Si no tiene alguno por confirmar, lo crea y apartir de ese carrito registra" />
+    <option name="LAST_COMMIT_MESSAGE" value="Funcion de agregar productos al  carrito. Con ello el servlet que ocupa la funcion del carritodao para saber si hay un carrito no confirmado,en ese caso agrega los productos en ese carrito usando la funcion del carritoproductodao. Si no tiene alguno por confirmar, lo crea y apartir de ese carrito registra" />
   </component>
 </project>

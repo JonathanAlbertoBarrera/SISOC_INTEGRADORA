@@ -1,6 +1,8 @@
 package mx.edu.utez.practica3e.dao;
 
 import mx.edu.utez.practica3e.model.Carrito;
+import mx.edu.utez.practica3e.model.Carrito_Producto;
+import mx.edu.utez.practica3e.model.Producto;
 import mx.edu.utez.practica3e.model.Usuario;
 import mx.edu.utez.practica3e.utils.DatabaseConnectionManager;
 import java.sql.*;
@@ -28,6 +30,9 @@ public class CarritoDao {
                     carrito.setUsuario(usuario);
 
                     carrito.setConfirmado(rs.getBoolean("confirmado"));
+
+                } else {
+                    System.out.println("No se encontró un carrito no confirmado para el usuario ID: " + id_usuario);
                 }
             }
         } catch (SQLException e) {
@@ -35,6 +40,7 @@ public class CarritoDao {
         }
         return carrito;
     }
+
 
     //creacion de carrito
     public void crearCarrito(Carrito carrito) {
@@ -55,5 +61,50 @@ public class CarritoDao {
             e.printStackTrace();
         }
     }
+
+    //para obtener todos los productos registrados mediante un cierto carrito
+    // Para obtener todos los productos registrados mediante un cierto carrito
+    public List<Carrito_Producto> getAllPorCarrito(int id_carrito) {
+        List<Carrito_Producto> lista = new ArrayList<>();
+        String query = "SELECT cp.id_carrito_producto, cp.id_carrito, cp.sku, cp.cantidad, cp.totalProducto, " +
+                "p.nombre, p.descripcion, p.imagen " +
+                "FROM carrito_producto cp " +
+                "JOIN producto p ON cp.sku = p.sku " +
+                "WHERE cp.id_carrito = ?";
+
+        try (Connection con = DatabaseConnectionManager.getConnection();
+             PreparedStatement ps = con.prepareStatement(query)) {
+            ps.setInt(1, id_carrito);
+
+            try (ResultSet rs = ps.executeQuery()) {
+                while (rs.next()) {
+                    Carrito_Producto carritoProducto = new Carrito_Producto();
+                    carritoProducto.setId_carrito_producto(rs.getInt("id_carrito_producto"));
+
+                    // Inicializa los objetos antes de usarlos
+                    Carrito carrito = new Carrito();
+                    carrito.setId_carrito(rs.getInt("id_carrito"));
+                    carritoProducto.setCarrito(carrito);
+
+                    Producto producto = new Producto();
+                    producto.setSku(rs.getString("sku"));
+                    producto.setNombre(rs.getString("nombre"));
+                    producto.setDescripcion(rs.getString("descripcion"));
+                    producto.setImagen(rs.getBytes("imagen"));
+                    carritoProducto.setProducto(producto);
+
+                    carritoProducto.setCantidad(rs.getInt("cantidad"));
+                    carritoProducto.setTotalProducto(rs.getDouble("totalProducto"));
+
+                    lista.add(carritoProducto);
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            System.out.println("Error al obtener productos del carrito: " + e.getMessage());
+        }
+        return lista;
+    }
+
 
 }
