@@ -131,6 +131,7 @@
 
                                                     <input type="number" name="addCant" min="1" required>
                                                     <input type="hidden" name="id_usuario" value="${sessionScope.id_usuario}">
+                                                    <input type="hidden" name="precio" value="${p.precio}" step="0.01">
                                                     <input type="hidden" name="sku" value="${p.sku}">
                                             </div>
                                             <div class="modal-footer">

@@ -10,13 +10,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6f44def4-2bd3-4c79-8a6b-cc536cc2ffae" name="Changes" comment="Funcion de agregar productos al  carrito. Con ello el servlet que ocupa la funcion del carritodao para saber si hay un carrito no confirmado,en ese caso agrega los productos en ese carrito usando la funcion del carritoproductodao. Si no tiene alguno por confirmar, lo crea y apartir de ese carrito registra">
-      <change beforePath="$PROJECT_DIR$/.idea/webContexts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
+    <list default="true" id="6f44def4-2bd3-4c79-8a6b-cc536cc2ffae" name="Changes" comment="Agregar al carrito pero con detalles, falta boton hacer solicitud, opciones cambiar cantidad, eliminar del carrito, corregir precio porque sale mal. checar decimales, y cambiar en el index el boton de agregar por eliminar una vez esten en el carrito">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/controller/AgregarAlCarritoServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/controller/AgregarAlCarritoServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/dao/CarritoDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/dao/CarritoDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/utils/FiltroClienteSesion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/utils/FiltroClienteSesion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/dao/CarritoProductoDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/dao/CarritoProductoDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/dao/ProductoDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/dao/ProductoDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/model/Carrito_Producto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/model/Carrito_Producto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/utils/filtroParaCargarServletSelects.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/utils/filtroParaCargarServletSelects.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/carrito.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/carrito.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/indexCliente.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/indexCliente.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/productosAdmin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/productosAdmin.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,8 +32,8 @@
       <list>
         <option value="JavaScript File" />
         <option value="Interface" />
-        <option value="Class" />
         <option value="Jsp File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -67,7 +70,7 @@
     "Tomcat Server.Tomcat 10.1.8.executor": "Run",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/adrian jacobo/Desktop/manosmexicanas",
+    "last_opened_file_path": "C:/Users/adrian jacobo/Documents/3CuatriUTEZ/APLICACIONES WEB/versionesIntegradora/SISOC_INTEGRADORA/src/main/webapp/img",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -81,8 +84,8 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\adrian jacobo\Documents\3CuatriUTEZ\APLICACIONES WEB\versionesIntegradora\SISOC_INTEGRADORA\src\main\webapp" />
       <recent name="C:\Users\adrian jacobo\Documents\3CuatriUTEZ\APLICACIONES WEB\versionesIntegradora\SISOC_INTEGRADORA\src\main\webapp\img" />
+      <recent name="C:\Users\adrian jacobo\Documents\3CuatriUTEZ\APLICACIONES WEB\versionesIntegradora\SISOC_INTEGRADORA\src\main\webapp" />
       <recent name="C:\Users\adrian jacobo\Documents\3CuatriUTEZ\APLICACIONES WEB\versionesIntegradora\SISOC_INTEGRADORA\src\main\webapp\js" />
       <recent name="C:\Users\adrian jacobo\Documents\3CuatriUTEZ\APLICACIONES WEB\versionesIntegradora\SISOC_INTEGRADORA\src\main" />
       <recent name="C:\Users\adrian jacobo\Documents\3CuatriUTEZ\APLICACIONES WEB\versionesIntegradora\SISOC_INTEGRADORA\src\main\java" />
@@ -255,15 +258,7 @@
       <workItem from="1721790445124" duration="9399000" />
       <workItem from="1721852314672" duration="16828000" />
       <workItem from="1721931773968" duration="24361000" />
-      <workItem from="1722015146526" duration="16503000" />
-    </task>
-    <task id="LOCAL-00011" summary="Se agrega lo necesario para modificar contra">
-      <option name="closed" value="true" />
-      <created>1720419729271</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1720419729271</updated>
+      <workItem from="1722015146526" duration="36255000" />
     </task>
     <task id="LOCAL-00012" summary="Dependencias para correo">
       <option name="closed" value="true" />
@@ -649,14 +644,21 @@
       <option name="project" value="LOCAL" />
       <updated>1722025222020</updated>
     </task>
-    <option name="localTasksCounter" value="60" />
+    <task id="LOCAL-00060" summary="Agregar al carrito pero con detalles, falta boton hacer solicitud, opciones cambiar cantidad, eliminar del carrito, corregir precio porque sale mal. checar decimales, y cambiar en el index el boton de agregar por eliminar una vez esten en el carrito">
+      <option name="closed" value="true" />
+      <created>1722034928027</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1722034928027</updated>
+    </task>
+    <option name="localTasksCounter" value="61" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="js para opciones productos" />
     <MESSAGE value="iniciando formulario de productos" />
     <MESSAGE value="carga de marcas y categorias pero falta corregir detalles" />
     <MESSAGE value="se hizo el filtro para corregir errores en el llenado de los selects, con el filtro se asegura que el servlet llene los selects sin tener que ejecutar manualmente el servlet" />
@@ -681,6 +683,7 @@
     <MESSAGE value="filtros para no poder acceder a jsp o servlets que no correspondan a los tipos de sesion" />
     <MESSAGE value="si" />
     <MESSAGE value="Funcion de agregar productos al  carrito. Con ello el servlet que ocupa la funcion del carritodao para saber si hay un carrito no confirmado,en ese caso agrega los productos en ese carrito usando la funcion del carritoproductodao. Si no tiene alguno por confirmar, lo crea y apartir de ese carrito registra" />
-    <option name="LAST_COMMIT_MESSAGE" value="Funcion de agregar productos al  carrito. Con ello el servlet que ocupa la funcion del carritodao para saber si hay un carrito no confirmado,en ese caso agrega los productos en ese carrito usando la funcion del carritoproductodao. Si no tiene alguno por confirmar, lo crea y apartir de ese carrito registra" />
+    <MESSAGE value="Agregar al carrito pero con detalles, falta boton hacer solicitud, opciones cambiar cantidad, eliminar del carrito, corregir precio porque sale mal. checar decimales, y cambiar en el index el boton de agregar por eliminar una vez esten en el carrito" />
+    <option name="LAST_COMMIT_MESSAGE" value="Agregar al carrito pero con detalles, falta boton hacer solicitud, opciones cambiar cantidad, eliminar del carrito, corregir precio porque sale mal. checar decimales, y cambiar en el index el boton de agregar por eliminar una vez esten en el carrito" />
   </component>
 </project>

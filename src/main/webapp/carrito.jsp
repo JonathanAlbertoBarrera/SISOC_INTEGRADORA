@@ -33,9 +33,10 @@
             background-color: #F4AB2C;
             border-color:#F4AB2C;
         }
-        .row img{
+        .imgProductos{
             width: 60%;
         }
+
         .row #icAddCar{
             width: 40%;
         }
@@ -73,11 +74,14 @@
         </div>
     </nav>
 </header>
+
 <%
     // Obtiene el ID del usuario de la sesión
     Integer idUsuario = (Integer) session.getAttribute("id_usuario");
     CarritoDao carritoDAO = new CarritoDao();
     Carrito carrito = carritoDAO.getCarritoNoConfirmado(idUsuario);
+    CarritoProductoDao carritoProductoDao = new CarritoProductoDao();
+    double totalCarrito = carrito != null ? carritoProductoDao.getTotalCarrito(carrito.getId_carrito()) : 0.0;
 %>
 
 <main>
@@ -90,13 +94,18 @@
             Regresar a comprar más productos
         </button>
 
+        <br>
+        <br>
+        <h3>Total del Carrito: $<%= String.format("%.2f", totalCarrito) %></h3>
+
         <!--TABLA DE PRODUCTOS DEL CARRITO -->
         <% if (carrito != null) { %>
-        <table id="example3" class="table table-striped table-hover" style="width: 100%">
+        <table id="example3" class="table table-striped table-hover table-responsive table-light table-borderless" style="width: 100%">
             <thead>
             <tr>
                 <th>Imagen</th>
                 <th>SKU</th>
+                <th>Nombre</th>
                 <th>Descripción</th>
                 <th>Cantidad</th>
                 <th>Precio</th>
@@ -109,11 +118,16 @@
             <%
                 List<Carrito_Producto> lista = carritoDAO.getAllPorCarrito(carrito.getId_carrito());
                 if (lista != null && !lista.isEmpty()) {
-                    for (Carrito_Producto cp : lista) {
             %>
+            <form method="post" action="hacerSolicitud">
+                <input type="hidden" name="id_carrito" value="<%= carrito.getId_carrito() %>">
+                <button type="submit" name="enviarSoli" class="btn btn-success">Hacer solicitud</button>
+            </form>
+            <% for (Carrito_Producto cp : lista) { %>
             <tr>
-                <td> <img src="<%= request.getContextPath() %>/image?sku=<%= cp.getProducto().getSku() %>" width="100px" alt="<%= cp.getProducto().getNombre() %>"></td>
+                <td> <img src="<%= request.getContextPath() %>/image?sku=<%= cp.getProducto().getSku() %>" class="imgProductos" alt="<%= cp.getProducto().getNombre() %>"></td>
                 <td><%= cp.getProducto().getSku() %></td>
+                <td><%= cp.getProducto().getNombre() %></td>
                 <td><%= cp.getProducto().getDescripcion() %></td>
                 <td><%= cp.getCantidad() %></td>
                 <td><%= cp.getProducto().getPrecio() %></td>
@@ -121,17 +135,70 @@
 
                 <!-- td para modificar cantidad-->
                 <td>
-                    <p>si</p>
+                    <button type="button" class="btn botonesApp" data-bs-toggle="modal" data-bs-target="#modalSetCant-<%= cp.getId_carrito_producto() %>">
+                        Cambiar cantidad
+                    </button>
+                    <!-- Modal -->
+                    <div class="modal fade" id="modalSetCant-<%= cp.getId_carrito_producto() %>" tabindex="-1" aria-labelledby="exampleModalLabel-<%= cp.getId_carrito_producto() %>" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="desacModalLabel-<%= cp.getId_carrito_producto() %>">Cambiar cantidad</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <form method="post" action="cambiarCantidadCarrito">
+                                    <div class="modal-body">
+                                        <div class="form-group mb-3">
+                                            <label for="cantidad2">Nueva cantidad deseada:</label>
+                                            <input type="number" class="form-control" id="cantidad2" min="1" name="cantidad2" required>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                        <input type="hidden" name="id_carrito_producto" value="<%= cp.getId_carrito_producto() %>">
+                                        <input type="hidden" name="sku" value="<%= cp.getProducto().getSku() %>">
+                                        <button type="submit" class="btn btn-primary botonesApp">Confirmar</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
                 </td>
                 <!-- td para eliminar del carrito-->
                 <td>
-                    <p>no</p>
+                    <img src="img/DELETEICONO.gif" width="20%" height="20%">
+                    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modalQuitarCarrito-<%= cp.getId_carrito_producto() %>">
+                        Quitar del carrito
+                    </button>
+
+                    <!-- Modal Para quitar del carrito -->
+                    <div class="modal fade" id="modalQuitarCarrito-<%= cp.getId_carrito_producto() %>" tabindex="-1" aria-labelledby="exampleModalLabel-<%= cp.getId_carrito_producto() %>" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="desacModalLabel-<%= cp.getId_carrito_producto() %>">Confirmar eliminación</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    ¿Estás seguro de que deseas quitar del carrito al producto
+                                    <%= cp.getProducto().getNombre() %>?
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                    <form method="post" action="borrarDelCarrito">
+                                        <input type="hidden" name="id_carrito_producto" value="<%= cp.getId_carrito_producto() %>">
+                                        <button type="submit" class="btn btn-primary botonesApp">Confirmar</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </td>
             </tr>
-            <% }
-            } else { %>
+            <% } %>
+            <% } else { %>
             <tr>
-                <td colspan="8">No hay productos en el carrito.</td>
+                <td colspan="9">No hay productos en el carrito.</td>
             </tr>
             <% } %>
             </tbody>
@@ -141,7 +208,6 @@
         <% } %>
     </div>
 </main>
-
 
 <script src="${pageContext.request.contextPath}/JS/bootstrap.js"></script>
 <script src="${pageContext.request.contextPath}/JS/jquery-3.7.0.js"></script>

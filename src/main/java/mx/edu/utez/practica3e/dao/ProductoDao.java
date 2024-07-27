@@ -102,7 +102,6 @@ public class ProductoDao {
     }
 
 
-    // Obtener un producto por SKU
     public Producto getProductoBySku(String sku) {
         Producto producto = null;
         String query = "SELECT p.sku, p.nombre AS producto_nombre, p.descripcion AS producto_descripcion, p.imagen, p.precio, p.cantidad, p.estatus AS producto_estatus, " +
@@ -122,7 +121,7 @@ public class ProductoDao {
                     producto.setNombre(rs.getString("producto_nombre"));
                     producto.setDescripcion(rs.getString("producto_descripcion"));
                     producto.setImagen(rs.getBytes("imagen"));
-                    producto.setPrecio(rs.getDouble("precio"));
+                    producto.setPrecio(rs.getDouble("precio"));  // Verificar que esta línea obtiene el precio correcto
                     producto.setCantidad(rs.getInt("cantidad"));
                     producto.setEstatus(rs.getBoolean("producto_estatus"));
 

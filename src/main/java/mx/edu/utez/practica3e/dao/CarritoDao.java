@@ -62,11 +62,11 @@ public class CarritoDao {
         }
     }
 
-    //para obtener todos los productos registrados mediante un cierto carrito
+
     // Para obtener todos los productos registrados mediante un cierto carrito
     public List<Carrito_Producto> getAllPorCarrito(int id_carrito) {
         List<Carrito_Producto> lista = new ArrayList<>();
-        String query = "SELECT cp.id_carrito_producto, cp.id_carrito, cp.sku, cp.cantidad, cp.totalProducto, " +
+        String query = "SELECT cp.id_carrito_producto, cp.id_carrito, cp.sku, cp.cantidad,cp.precio, cp.totalProducto, " +
                 "p.nombre, p.descripcion, p.imagen " +
                 "FROM carrito_producto cp " +
                 "JOIN producto p ON cp.sku = p.sku " +
@@ -91,9 +91,11 @@ public class CarritoDao {
                     producto.setNombre(rs.getString("nombre"));
                     producto.setDescripcion(rs.getString("descripcion"));
                     producto.setImagen(rs.getBytes("imagen"));
+                    producto.setPrecio(rs.getDouble("precio"));
                     carritoProducto.setProducto(producto);
 
                     carritoProducto.setCantidad(rs.getInt("cantidad"));
+                    carritoProducto.setPrecio(rs.getInt("precio"));
                     carritoProducto.setTotalProducto(rs.getDouble("totalProducto"));
 
                     lista.add(carritoProducto);

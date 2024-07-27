@@ -21,6 +21,7 @@ public class AgregarAlCarritoServlet extends HttpServlet {
         String sku = request.getParameter("sku");
         int cantidad = Integer.parseInt(request.getParameter("addCant"));
 
+
         CarritoDao carritoDAO = new CarritoDao();
         CarritoProductoDao carritoProductoDAO = new CarritoProductoDao();
 
@@ -46,7 +47,9 @@ public class AgregarAlCarritoServlet extends HttpServlet {
         carritoProducto.setCarrito(carrito);
         carritoProducto.setProducto(producto);
         carritoProducto.setCantidad(cantidad);
-        double totalProducto = producto.getPrecio() * cantidad;
+        carritoProducto.setPrecio(producto.getPrecio());
+        System.out.println(carritoProducto.getPrecio());
+        double totalProducto = (producto.getPrecio()) * cantidad;
         carritoProducto.setTotalProducto(totalProducto);
 
         carritoProductoDAO.agregarProductoAlCarrito(carritoProducto);
