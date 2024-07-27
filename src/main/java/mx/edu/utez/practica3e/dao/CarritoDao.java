@@ -31,8 +31,6 @@ public class CarritoDao {
 
                     carrito.setConfirmado(rs.getBoolean("confirmado"));
 
-                } else {
-                    System.out.println("No se encontró un carrito no confirmado para el usuario ID: " + id_usuario);
                 }
             }
         } catch (SQLException e) {
@@ -108,5 +106,22 @@ public class CarritoDao {
         return lista;
     }
 
+    //para cambiar el estado del carrito a confirmado (true)
+    public static boolean actualizarCarrito(Carrito carrito) {
+        boolean resultado = false;
+        String query = "UPDATE carrito SET confirmado = ? WHERE id_carrito = ?";
+
+        try (Connection con = DatabaseConnectionManager.getConnection();
+             PreparedStatement ps = con.prepareStatement(query)) {
+            ps.setBoolean(1, carrito.isConfirmado());
+            ps.setInt(2, carrito.getId_carrito());
+
+            resultado = ps.executeUpdate() > 0;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return resultado;
+    }
 
 }

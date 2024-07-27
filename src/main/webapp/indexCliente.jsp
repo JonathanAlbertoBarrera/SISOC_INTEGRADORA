@@ -54,8 +54,8 @@
                     <a class="nav-link" href="carrito.jsp">
                         <img src="img/carritoLogo.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top"> Carrito de compra
                     </a>
-                    <a class="nav-link" href="#">
-                        <img src="img/orden.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top"> Órdenes
+                    <a class="nav-link" href="solicitudes.jsp">
+                        <img src="img/orden.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top"> Solicitudes
                     </a>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">

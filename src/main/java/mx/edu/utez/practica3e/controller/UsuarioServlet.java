@@ -38,6 +38,7 @@ public class UsuarioServlet extends HttpServlet {
             sesion.setAttribute("usuario", u);
             sesion.setAttribute("id_usuario", u.getIdUsuario());
             sesion.setAttribute("nombre_usuario", u.getPersona().getNombre());
+            sesion.setAttribute("apellido_usuario", u.getPersona().getApellidos());
             sesion.setAttribute("tipoRol", u.getRol().getTipoRol());
             int id_rol=u.getRol().getId();
             switch(id_rol){

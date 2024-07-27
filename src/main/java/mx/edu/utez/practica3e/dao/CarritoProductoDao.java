@@ -87,4 +87,35 @@ public class CarritoProductoDao {
         return actualizado;
     }
 
+    //obtener productos de un carrito especifico
+    public List<Carrito_Producto> obtenerProductosPorCarrito(int id_carrito) {
+        List<Carrito_Producto> productosEnCarrito = new ArrayList<>();
+        String query = "SELECT * FROM carrito_producto WHERE id_carrito = ?";
+        try (Connection con = DatabaseConnectionManager.getConnection();
+             PreparedStatement ps = con.prepareStatement(query)) {
+            ps.setInt(1, id_carrito);
+            try (ResultSet rs = ps.executeQuery()) {
+                while (rs.next()) {
+                    Carrito_Producto cp = new Carrito_Producto();
+                    cp.setId_carrito_producto(rs.getInt("id_carrito_producto"));
+                    cp.setPrecio(rs.getInt("precio"));
+                    cp.setCantidad(rs.getInt("cantidad"));
+                    cp.setTotalProducto(rs.getDouble("totalProducto"));
+
+                    Producto producto = new Producto();
+                    producto.setSku(rs.getString("sku"));
+                    cp.setProducto(producto);
+
+                    Carrito carrito=new Carrito();
+                    carrito.setId_carrito(rs.getInt("id_carrito"));
+                    cp.setCarrito(carrito);
+
+                    productosEnCarrito.add(cp);
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return productosEnCarrito;
+    }
 }

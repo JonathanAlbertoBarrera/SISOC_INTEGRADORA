@@ -57,8 +57,8 @@
                     <a class="nav-link" href="carrito.jsp">
                         <img src="img/carritoLogo.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top"> Carrito de compra
                     </a>
-                    <a class="nav-link" href="#">
-                        <img src="img/orden.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top"> Órdenes
+                    <a class="nav-link" href="solicitudes.jsp">
+                        <img src="img/orden.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top"> Solicitudes
                     </a>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -97,6 +97,16 @@
         <br>
         <br>
         <h3>Total del Carrito: $<%= String.format("%.2f", totalCarrito) %></h3>
+        <form method="post" action="hacerSolicitud">
+            <input type="submit" value="Hacer Solicitud" class="btn btn-success">
+        </form>
+
+        <br>
+        <% if (request.getAttribute("mensaje") != null) { %>
+        <div class="alert alert-info">
+            <%= request.getAttribute("mensaje") %>
+        </div>
+        <% } %>
 
         <!--TABLA DE PRODUCTOS DEL CARRITO -->
         <% if (carrito != null) { %>
@@ -119,10 +129,7 @@
                 List<Carrito_Producto> lista = carritoDAO.getAllPorCarrito(carrito.getId_carrito());
                 if (lista != null && !lista.isEmpty()) {
             %>
-            <form method="post" action="hacerSolicitud">
-                <input type="hidden" name="id_carrito" value="<%= carrito.getId_carrito() %>">
-                <button type="submit" name="enviarSoli" class="btn btn-success">Hacer solicitud</button>
-            </form>
+
             <% for (Carrito_Producto cp : lista) { %>
             <tr>
                 <td> <img src="<%= request.getContextPath() %>/image?sku=<%= cp.getProducto().getSku() %>" class="imgProductos" alt="<%= cp.getProducto().getNombre() %>"></td>
@@ -226,7 +233,7 @@
 <script src="JS/bootstrap.js"></script>
 <%
     // Elimina el mensaje de la sesión después de usarlo
-    session.removeAttribute("mensaje2A");
+    session.removeAttribute("mensaje");
 %>
 
 </body>

@@ -172,4 +172,23 @@ public class ProductoDao {
         return flag;
     }
 
+    // Actualizar cantidad del producto
+    public boolean updateCantidadProducto(Producto producto) {
+        boolean flag = false;
+        String query = "UPDATE producto SET cantidad = ? WHERE sku = ?";
+        try (Connection con = DatabaseConnectionManager.getConnection();
+             PreparedStatement ps = con.prepareStatement(query)) {
+
+            ps.setInt(1, producto.getCantidad());
+            ps.setString(2, producto.getSku());
+
+            if (ps.executeUpdate() > 0) {
+                flag = true;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return flag;
+    }
+
 }
