@@ -10,7 +10,6 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpSession;
 import java.io.IOException;
 import java.sql.Date;
 import java.util.List;
@@ -20,7 +19,7 @@ public class AgregarSolicitudServlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Usuario usuario = (Usuario) request.getSession().getAttribute("usuario");
-        CarritoDao carritoDao=new CarritoDao();
+        CarritoDao carritoDao = new CarritoDao();
         Carrito carrito = carritoDao.getCarritoNoConfirmado(usuario.getIdUsuario());
 
         if (carrito == null) {
@@ -29,27 +28,46 @@ public class AgregarSolicitudServlet extends HttpServlet {
             return;
         }
 
-        CarritoProductoDao carritoProductoDao=new CarritoProductoDao();
+        CarritoProductoDao carritoProductoDao = new CarritoProductoDao();
         List<Carrito_Producto> productosEnCarrito = carritoProductoDao.obtenerProductosPorCarrito(carrito.getId_carrito());
-        boolean stockSuficiente = true;
-        String mensajeError = "";
-        ProductoDao productoDao=new ProductoDao();
+        ProductoDao productoDao = new ProductoDao();
 
-        for (Carrito_Producto cp : productosEnCarrito) {
+        boolean stockSuficiente = true;
+        StringBuilder mensajeError = new StringBuilder();
+
+        // Sumar cantidades por SKU y verificar el stock
+        for (int i = 0; i < productosEnCarrito.size(); i++) {
+            Carrito_Producto cp = productosEnCarrito.get(i);
             Producto producto = productoDao.getProductoBySku(cp.getProducto().getSku());
-            if (producto.getCantidad() < cp.getCantidad()) {
+            int cantidadTotal = cp.getCantidad();
+
+            for (int j = i + 1; j < productosEnCarrito.size(); j++) {
+                Carrito_Producto cp2 = productosEnCarrito.get(j);
+                if (cp2.getProducto().getSku().equals(cp.getProducto().getSku())) {
+                    cantidadTotal += cp2.getCantidad();
+                }
+            }
+
+            if (producto.getCantidad() < cantidadTotal) {
                 stockSuficiente = false;
-                mensajeError += "El producto " + producto.getNombre() + " solo tiene " + producto.getCantidad() + " unidades disponibles. ";
+                mensajeError.append("El producto ")
+                        .append(producto.getNombre())
+                        .append(" solo tiene ")
+                        .append(producto.getCantidad())
+                        .append(" unidades disponibles. ");
+                break;  // No need to continue if we already found insufficient stock
             }
         }
 
         if (!stockSuficiente) {
-            request.setAttribute("mensaje", mensajeError);
+            request.setAttribute("mensaje", mensajeError.toString());
             request.getRequestDispatcher("carrito.jsp").forward(request, response);
             return;
         }
 
         double totalSolicitud = 0;
+
+        // Actualizar la cantidad de productos y calcular el total de la solicitud
         for (Carrito_Producto cp : productosEnCarrito) {
             Producto producto = productoDao.getProductoBySku(cp.getProducto().getSku());
             totalSolicitud += cp.getTotalProducto();
@@ -64,7 +82,7 @@ public class AgregarSolicitudServlet extends HttpServlet {
         solicitud.setEstado("Pendiente");
         solicitud.setTotal(totalSolicitud);
 
-        SolicitudDao solicitudDao=new SolicitudDao();
+        SolicitudDao solicitudDao = new SolicitudDao();
         boolean solicitudGuardada = solicitudDao.guardarSolicitud(solicitud);
 
         if (solicitudGuardada) {
@@ -77,5 +95,4 @@ public class AgregarSolicitudServlet extends HttpServlet {
 
         request.getRequestDispatcher("carrito.jsp").forward(request, response);
     }
-
 }

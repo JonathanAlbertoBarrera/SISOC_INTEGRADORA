@@ -10,15 +10,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6f44def4-2bd3-4c79-8a6b-cc536cc2ffae" name="Changes" comment="cambios para hacer crud de carrito, tanto en modelos, daos,servlets y jsp carrito">
-      <change beforePath="$PROJECT_DIR$/.idea/webContexts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
+    <list default="true" id="6f44def4-2bd3-4c79-8a6b-cc536cc2ffae" name="Changes" comment="ya se hacen las solicitudes. Si no hay carrito para hacer solicitud, se manda mensaje de error. Si hay carrito, se verifica que el stock por producto sea suficiente, se manda mensaje indicando cuanto hay. Si hay suficiente stock, se convierte el carrito en confirmado y se crea la solicitud con estado de pendiente y en su campo total se suma todos los totales de los productos del carrito.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/controller/UsuarioServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/controller/UsuarioServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/dao/CarritoDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/dao/CarritoDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/dao/CarritoProductoDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/dao/CarritoProductoDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/dao/ProductoDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/dao/ProductoDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/carrito.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/carrito.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/indexCliente.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/indexCliente.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/controller/AgregarSolicitudServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/controller/AgregarSolicitudServlet.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -258,15 +252,7 @@
       <workItem from="1721852314672" duration="16828000" />
       <workItem from="1721931773968" duration="24361000" />
       <workItem from="1722015146526" duration="36507000" />
-      <workItem from="1722105233282" duration="13731000" />
-    </task>
-    <task id="LOCAL-00013" summary="push para agregar cambios de modificacion contra sin errores">
-      <option name="closed" value="true" />
-      <created>1720482878168</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1720482878168</updated>
+      <workItem from="1722105233282" duration="15370000" />
     </task>
     <task id="LOCAL-00014" summary="bootrap para jsp recuperacion de contra">
       <option name="closed" value="true" />
@@ -652,14 +638,21 @@
       <option name="project" value="LOCAL" />
       <updated>1722058224835</updated>
     </task>
-    <option name="localTasksCounter" value="62" />
+    <task id="LOCAL-00062" summary="ya se hacen las solicitudes. Si no hay carrito para hacer solicitud, se manda mensaje de error. Si hay carrito, se verifica que el stock por producto sea suficiente, se manda mensaje indicando cuanto hay. Si hay suficiente stock, se convierte el carrito en confirmado y se crea la solicitud con estado de pendiente y en su campo total se suma todos los totales de los productos del carrito.">
+      <option name="closed" value="true" />
+      <created>1722121111317</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1722121111317</updated>
+    </task>
+    <option name="localTasksCounter" value="63" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="carga de marcas y categorias pero falta corregir detalles" />
     <MESSAGE value="se hizo el filtro para corregir errores en el llenado de los selects, con el filtro se asegura que el servlet llene los selects sin tener que ejecutar manualmente el servlet" />
     <MESSAGE value="modelo de producto y funcion getAll en el dao de producto" />
     <MESSAGE value="agregue descripcion en el dao y modelo de producto" />
@@ -684,6 +677,7 @@
     <MESSAGE value="Funcion de agregar productos al  carrito. Con ello el servlet que ocupa la funcion del carritodao para saber si hay un carrito no confirmado,en ese caso agrega los productos en ese carrito usando la funcion del carritoproductodao. Si no tiene alguno por confirmar, lo crea y apartir de ese carrito registra" />
     <MESSAGE value="Agregar al carrito pero con detalles, falta boton hacer solicitud, opciones cambiar cantidad, eliminar del carrito, corregir precio porque sale mal. checar decimales, y cambiar en el index el boton de agregar por eliminar una vez esten en el carrito" />
     <MESSAGE value="cambios para hacer crud de carrito, tanto en modelos, daos,servlets y jsp carrito" />
-    <option name="LAST_COMMIT_MESSAGE" value="cambios para hacer crud de carrito, tanto en modelos, daos,servlets y jsp carrito" />
+    <MESSAGE value="ya se hacen las solicitudes. Si no hay carrito para hacer solicitud, se manda mensaje de error. Si hay carrito, se verifica que el stock por producto sea suficiente, se manda mensaje indicando cuanto hay. Si hay suficiente stock, se convierte el carrito en confirmado y se crea la solicitud con estado de pendiente y en su campo total se suma todos los totales de los productos del carrito." />
+    <option name="LAST_COMMIT_MESSAGE" value="ya se hacen las solicitudes. Si no hay carrito para hacer solicitud, se manda mensaje de error. Si hay carrito, se verifica que el stock por producto sea suficiente, se manda mensaje indicando cuanto hay. Si hay suficiente stock, se convierte el carrito en confirmado y se crea la solicitud con estado de pendiente y en su campo total se suma todos los totales de los productos del carrito." />
   </component>
 </project>
