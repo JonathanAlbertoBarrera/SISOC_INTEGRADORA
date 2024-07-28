@@ -10,12 +10,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6f44def4-2bd3-4c79-8a6b-cc536cc2ffae" name="Changes" comment="se ven los productos de las solicitudes que toma el encargado">
-      <change beforePath="$PROJECT_DIR$/.idea/webContexts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
+    <list default="true" id="6f44def4-2bd3-4c79-8a6b-cc536cc2ffae" name="Changes" comment="gestion de toma de solicitudes, cambio de estado y cancelacion (con regreso de unidades al stock)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/dao/SolicitudDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/dao/SolicitudDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/dao/SolicitudEncargadoDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/dao/SolicitudEncargadoDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/controlSolicitudes.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/controlSolicitudes.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/indexEncargado.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/indexEncargado.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -257,15 +253,7 @@
       <workItem from="1721931773968" duration="24361000" />
       <workItem from="1722015146526" duration="36507000" />
       <workItem from="1722105233282" duration="49978000" />
-      <workItem from="1722190355325" duration="10761000" />
-    </task>
-    <task id="LOCAL-00021" summary="TABLA TODOS LOS USUARIOS Y BOTONES CON JS PARA MOSTRAR LA TABLA DESEADA">
-      <option name="closed" value="true" />
-      <created>1721335630441</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1721335630441</updated>
+      <workItem from="1722190355325" duration="11471000" />
     </task>
     <task id="LOCAL-00022" summary="Agregamos modales antes de cambiar estatus de un usuario. Se modificaron el contenido de las tablas segun los requerimientos. Solo se puede ver y desactivar a los clientes, de igual forma para los encargados pero a ellos si se les puede hacer modificaciones">
       <option name="closed" value="true" />
@@ -651,14 +639,21 @@
       <option name="project" value="LOCAL" />
       <updated>1722194395817</updated>
     </task>
-    <option name="localTasksCounter" value="70" />
+    <task id="LOCAL-00070" summary="gestion de toma de solicitudes, cambio de estado y cancelacion (con regreso de unidades al stock)">
+      <option name="closed" value="true" />
+      <created>1722201390243</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1722201390243</updated>
+    </task>
+    <option name="localTasksCounter" value="71" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="funcion en el dao y servlet para DESACTIVAR UN PRODUCTO" />
     <MESSAGE value="pequenos cambios para Datatables" />
     <MESSAGE value="creacion de jsp de compras del admin y colocacion de enlaces en las barras de navegacion" />
     <MESSAGE value="modificacion del filtro para que cargue los datos tambien en compras, ademas de que el servlet tambien mande lista de productos" />
@@ -683,6 +678,7 @@
     <MESSAGE value="se cargan detalles de las solicitudes pendientes" />
     <MESSAGE value="se ven las solicitudes que ha tomado el encargado" />
     <MESSAGE value="se ven los productos de las solicitudes que toma el encargado" />
-    <option name="LAST_COMMIT_MESSAGE" value="se ven los productos de las solicitudes que toma el encargado" />
+    <MESSAGE value="gestion de toma de solicitudes, cambio de estado y cancelacion (con regreso de unidades al stock)" />
+    <option name="LAST_COMMIT_MESSAGE" value="gestion de toma de solicitudes, cambio de estado y cancelacion (con regreso de unidades al stock)" />
   </component>
 </project>
