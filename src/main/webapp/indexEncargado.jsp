@@ -75,6 +75,17 @@
 <main>
     <div class="container mt-2">
         <h2 id="titSeccion">Solicitudes Pendientes</h2>
+        <!-- Mostrar el mensaje -->
+        <c:if test="${not empty sessionScope.mensaje}">
+            <div class="alert alert-success">
+                    ${sessionScope.mensaje}
+            </div>
+        </c:if>
+
+        <!-- Elimina el mensaje después de mostrarlo -->
+        <c:if test="${not empty sessionScope.mensaje}">
+            <c:remove var="mensaje" scope="session"/>
+        </c:if>
         <p>Encargado: ${sessionScope.nombre_usuario} ${sessionScope.apellido_usuario} </p>
         <img src="img/espera.gif" alt="gif solicitud en espera" width="10%" height="10%">
         <div class="row" id="product-cards-container">
@@ -86,6 +97,8 @@
                             <h3 class="card-title">ID SOLICITUD: ${s.id_solicitud}</h3>
                             <p class="card-text">ID CARRITO: ${s.carrito.id_carrito}</p>
                             <p class="card-text">ID USUARIO: ${s.usuario.idUsuario}</p>
+                            <p class="card-text">Correo del usuario: ${s.usuario.correo}</p>
+                            <p class="card-text">Nombre: ${s.usuario.persona.nombre}</p>
                             <p class="card-text">Fecha: ${s.fecha}</p>
                             <p class="card-text">TOTAL A PAGAR: ${s.total}</p>
                             <div class="container" id="cajaBoton">
@@ -119,7 +132,11 @@
                                                         </div>
                                                     </c:forEach>
                                                 <div class="modal-footer">
-                                                    <button type="button" class="btn btn-secondary botonesApp" data-bs-dismiss="modal">Aceptar</button>
+                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                                                    <form method="post" action="tomarSolicitud">
+                                                        <input type="hidden" name="id_solicitud" value="${s.id_solicitud}">
+                                                        <button type="submit" class="btn btn-primary botonesApp">Confirmar</button>
+                                                    </form>
                                                 </div>
                                             </div>
                                         </div>

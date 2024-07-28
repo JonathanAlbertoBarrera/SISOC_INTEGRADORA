@@ -95,8 +95,11 @@ public class SolicitudDao {
     //obtener todas las solicitudes pendientes
     public List<Solicitud> getAllPendientes() {
         List<Solicitud> listaSolicitudes = new ArrayList<>();
-        String query = "SELECT * FROM solicitud WHERE estado = 'Pendiente'";
-
+        String query = "SELECT s.*, u.correo, p.nombre, p.apellidos " +
+                "FROM solicitud s " +
+                "JOIN usuario u ON s.id_usuario = u.id_usuario " +
+                "JOIN persona p ON u.id_persona = p.id_persona " +
+                "WHERE s.estado = 'Pendiente'";
 
         try (Connection con = DatabaseConnectionManager.getConnection();
              PreparedStatement ps = con.prepareStatement(query)) {
@@ -108,11 +111,20 @@ public class SolicitudDao {
                     solicitud.setTotal(rs.getDouble("total"));
                     solicitud.setFecha(rs.getDate("fecha"));
                     solicitud.setEstado(rs.getString("estado"));
+
                     Carrito carrito = new Carrito();
                     carrito.setId_carrito(rs.getInt("id_carrito"));
                     solicitud.setCarrito(carrito);
-                    Usuario usuario=new Usuario();
+
+                    Usuario usuario = new Usuario();
                     usuario.setIdUsuario(rs.getInt("id_usuario"));
+                    usuario.setCorreo(rs.getString("correo"));
+
+                    Persona persona = new Persona();
+                    persona.setNombre(rs.getString("nombre"));
+                    persona.setApellidos(rs.getString("apellidos"));
+                    usuario.setPersona(persona);
+
                     solicitud.setUsuario(usuario);
 
                     listaSolicitudes.add(solicitud);
@@ -124,4 +136,5 @@ public class SolicitudDao {
 
         return listaSolicitudes;
     }
+
 }

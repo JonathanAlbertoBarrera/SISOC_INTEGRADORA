@@ -10,10 +10,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6f44def4-2bd3-4c79-8a6b-cc536cc2ffae" name="Changes" comment="se cargan solicitudes Pendientes al administrador">
+    <list default="true" id="6f44def4-2bd3-4c79-8a6b-cc536cc2ffae" name="Changes" comment="se cargan detalles de las solicitudes pendientes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/controller/SolicitudesJSTLServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/controller/SolicitudesJSTLServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/dao/CarritoProductoDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/dao/CarritoProductoDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/dao/SolicitudDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/dao/SolicitudDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/utils/filtroParaSolicitudesPendientes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/utils/filtroParaSolicitudesPendientes.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/indexEncargado.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/indexEncargado.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -27,8 +28,8 @@
       <list>
         <option value="JavaScript File" />
         <option value="Interface" />
-        <option value="Jsp File" />
         <option value="Class" />
+        <option value="Jsp File" />
       </list>
     </option>
   </component>
@@ -254,15 +255,7 @@
       <workItem from="1721852314672" duration="16828000" />
       <workItem from="1721931773968" duration="24361000" />
       <workItem from="1722015146526" duration="36507000" />
-      <workItem from="1722105233282" duration="44188000" />
-    </task>
-    <task id="LOCAL-00018" summary="OTMAR PAGINA ACCESO DENEGADO">
-      <option name="closed" value="true" />
-      <created>1721270691509</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1721270691509</updated>
+      <workItem from="1722105233282" duration="49715000" />
     </task>
     <task id="LOCAL-00019" summary="FREDY TABLAS ADMIN USUARIOS">
       <option name="closed" value="true" />
@@ -648,14 +641,21 @@
       <option name="project" value="LOCAL" />
       <updated>1722149011381</updated>
     </task>
-    <option name="localTasksCounter" value="67" />
+    <task id="LOCAL-00067" summary="se cargan detalles de las solicitudes pendientes">
+      <option name="closed" value="true" />
+      <created>1722155534772</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1722155534772</updated>
+    </task>
+    <option name="localTasksCounter" value="68" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Correccion para permitir input tipo number, numeros decimales" />
     <MESSAGE value="mostrarTabla con crud de Productos" />
     <MESSAGE value="no se que agregamos pero fueron cambios peque;os" />
     <MESSAGE value="funcion en el dao y servlet para DESACTIVAR UN PRODUCTO" />
@@ -680,6 +680,7 @@
     <MESSAGE value="Solicitudes ya viendo los detalles (productos en la solicitud)" />
     <MESSAGE value="cambios peque;os botones" />
     <MESSAGE value="se cargan solicitudes Pendientes al administrador" />
-    <option name="LAST_COMMIT_MESSAGE" value="se cargan solicitudes Pendientes al administrador" />
+    <MESSAGE value="se cargan detalles de las solicitudes pendientes" />
+    <option name="LAST_COMMIT_MESSAGE" value="se cargan detalles de las solicitudes pendientes" />
   </component>
 </project>

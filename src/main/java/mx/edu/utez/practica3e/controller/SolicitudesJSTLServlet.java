@@ -8,8 +8,11 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import mx.edu.utez.practica3e.dao.CarritoProductoDao;
 import mx.edu.utez.practica3e.dao.SolicitudDao;
+import mx.edu.utez.practica3e.dao.SolicitudEncargadoDao;
 import mx.edu.utez.practica3e.model.Carrito_Producto;
 import mx.edu.utez.practica3e.model.Solicitud;
+import mx.edu.utez.practica3e.model.Solicitud_Encargado;
+import mx.edu.utez.practica3e.model.Usuario;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -38,9 +41,15 @@ public class SolicitudesJSTLServlet extends HttpServlet {
             productosPorCarrito.put(solicitud.getCarrito().getId_carrito(), productos);
         }
 
+        Usuario encargado = (Usuario) req.getSession().getAttribute("usuario");
+        SolicitudEncargadoDao seDao = new SolicitudEncargadoDao();
+        List<Solicitud_Encargado> solicitudesEncargado = seDao.obtenerSolicitudesPorEncargado(encargado.getIdUsuario());
+
+
         // Establecer las solicitudes y los productos del carrito como atributos de la sesión
-        session.setAttribute("solicitudes", listaSolis);
-        session.setAttribute("productosPorCarrito", productosPorCarrito);
+        session.setAttribute("solicitudes", listaSolis);//solicitudes pendientes
+        session.setAttribute("solicitudesEncargado", solicitudesEncargado);//por encargado
+        session.setAttribute("productosPorCarrito", productosPorCarrito);//productos de solicitudes pendientes
 
     }
 }

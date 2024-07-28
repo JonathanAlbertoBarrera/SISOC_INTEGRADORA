@@ -11,7 +11,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebFilter({"/indexEncargado.jsp"})
+@WebFilter({"/indexEncargado.jsp","/controlSolicitudes.jsp"})
 public class filtroParaSolicitudesPendientes implements Filter {
 
     @Override
