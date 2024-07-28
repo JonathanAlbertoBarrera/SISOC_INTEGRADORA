@@ -47,10 +47,6 @@
             display:none;
         }
 
-        #btnProceso{
-            display: none;
-        }
-
     </style>
 </head>
 <body>
@@ -99,10 +95,10 @@
     <img src="img/orden.png" width="5%" height="5%">
     <br>
     <div class="text-center">
-        <button type="button" class="btn botonesApp" id="btnHistorial" onclick="mostrarHistorialSolis()">
+        <button type="button" class="btn btn-success" id="btnHistorial" onclick="mostrarHistorialSolis()">
             Ver todo mi historial
         </button>
-        <button type="button" class="btn botonesApp" id="btnProceso" onclick="mostrarProcesoSolis()">
+        <button type="button" class="btn btn-success" id="btnProceso" onclick="mostrarProcesoSolis()">
             Ver solicitudes pendientes/proceso
         </button>
     </div>
@@ -282,14 +278,10 @@
 <script src="JS/bootstrap.js"></script>
 <script>
     function mostrarHistorialSolis() {
-        document.getElementById('btnHistorial').style.display = "none";
-        document.getElementById('btnProceso').style.display = "block";
         document.getElementById('tablaSolicitudesPendientes').style.display = "none";
         document.getElementById('tablaTodasSolis').style.display = "block";
     }
     function mostrarProcesoSolis(){
-        document.getElementById('btnProceso').style.display = "none";
-        document.getElementById('btnHistorial').style.display = "block";
         document.getElementById('tablaTodasSolis').style.display = "none";
         document.getElementById('tablaSolicitudesPendientes').style.display = "block";
     }
