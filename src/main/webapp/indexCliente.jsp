@@ -50,13 +50,19 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav mx-auto">
-                    <a class="nav-link active" aria-current="page"  href="indexCliente.jsp">Inicio</a>
+                    <a class="nav-link active" aria-current="page" href="indexCliente.jsp">Inicio</a>
                     <a class="nav-link" href="carrito.jsp">
                         <img src="img/carritoLogo.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top"> Carrito de compra
                     </a>
-                    <a class="nav-link" href="solicitudes.jsp">
-                        <img src="img/orden.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top"> Solicitudes
-                    </a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <img src="img/orden.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top"> Solicitudes
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="solicitudes.jsp">Pendientes/En proceso</a></li>
+                            <li><a class="dropdown-item" href="miHistorialSolicitudes.jsp">Mi historial</a></li>
+                        </ul>
+                    </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             <img src="img/login.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top"> ${sessionScope.nombre_usuario != null ? sessionScope.nombre_usuario : 'Cuenta'}

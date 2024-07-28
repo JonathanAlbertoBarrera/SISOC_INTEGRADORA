@@ -88,21 +88,20 @@
     // Obtiene el ID del usuario de la sesión
     Integer idUsuario = (Integer) session.getAttribute("id_usuario");
     SolicitudDao solicitudDao = new SolicitudDao();
-    List<Solicitud> listaSolicitudesPendientes = solicitudDao.getSolicitudesPendientesPorUsuario(idUsuario);
     List<Solicitud> listaSolicitudes = solicitudDao.getAllPorUsuario(idUsuario);
 %>
 
 <main>
-    <h3>Solicitudes Pendientes/En proceso</h3>
-    <img src="img/start.gif" width="5%" height="5%">
+    <h3>Mi historial de Solicitudes</h3>
+    <img src="img/folder.gif" width="5%" height="5%">
     <br>
 
 
-    <!-- TABLA SOLICITUDES PENDIENTES O EN PROCESO -->
-    <div class="table-responsive" id="tablaSolicitudesPendientes">
-        <p>Cliente: ${sessionScope.nombre_usuario} ${sessionScope.apellido_usuario} </p>
+    <!-- TABLA TODAS LAS SOLICITUDES -->
+    <div class="table-responsive" id="tablaTodasSolis">
+        <p>Cliente: ${sessionScope.nombre_usuario} ${sessionScope.apellidos_usuario} </p>
 
-        <table id="tablaPendientes" class="table table-striped table-hover table-responsive table-light table-borderless" style="width: 100%">
+        <table id="example3" class="table table-striped table-hover table-responsive table-light table-borderless" style="width: 100%">
             <thead>
             <tr>
                 <th>ID_SOLICITUD</th>
@@ -113,21 +112,21 @@
             </tr>
             </thead>
             <tbody>
-            <% for (Solicitud s : listaSolicitudesPendientes) { %>
+            <% for (Solicitud s : listaSolicitudes) { %>
             <tr>
                 <td><%= s.getId_solicitud() %></td>
                 <td><%= s.getTotal()%></td>
                 <td><%= s.getFecha() %></td>
                 <td><%= s.getEstado() %></td>
                 <td>
-                    <button type="button" class="btn botonesApp" data-bs-toggle="modal" data-bs-target="#modalProductos-<%= s.getId_solicitud() %>">
+                    <button type="button" class="btn botonesApp" data-bs-toggle="modal" data-bs-target="#modalProductos2-<%= s.getId_solicitud() %>">
                         Ver mas detalles (productos)
                     </button>
-                    <div class="modal fade" id="modalProductos-<%= s.getId_solicitud() %>" tabindex="-1" aria-labelledby="exampleModalLabel-<%= s.getId_solicitud() %>" aria-hidden="true">
+                    <div class="modal fade" id="modalProductos2-<%= s.getId_solicitud() %>" tabindex="-1" aria-labelledby="exampleModalLabel2-<%= s.getId_solicitud() %>" aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h1 class="modal-title fs-5" id="desacModalLabel-<%= s.getId_solicitud() %>">Detalles</h1>
+                                    <h1 class="modal-title fs-5" id="desacModalLabel2-<%= s.getId_solicitud() %>">Detalles</h1>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
@@ -169,7 +168,6 @@
             </tbody>
         </table>
     </div>
-
 </main>
 
 <script src="${pageContext.request.contextPath}/JS/bootstrap.js"></script>
@@ -178,8 +176,8 @@
 <script src="${pageContext.request.contextPath}/JS/dataTables.bootstrap5.js"></script>
 <script src="${pageContext.request.contextPath}/JS/es-MX.json"></script>
 <script>
-    const tablePendientes = document.getElementById('tablaPendientes');
-    new DataTable(tablePendientes, {
+    const table3 = document.getElementById('example3');
+    new DataTable(table3, {
         language: {
             url: '${pageContext.request.contextPath}/JS/es-MX.json'
         }
@@ -192,3 +190,4 @@
 %>
 </body>
 </html>
+

@@ -10,9 +10,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6f44def4-2bd3-4c79-8a6b-cc536cc2ffae" name="Changes" comment="gestion de toma de solicitudes, cambio de estado y cancelacion (con regreso de unidades al stock)">
+    <list default="true" id="6f44def4-2bd3-4c79-8a6b-cc536cc2ffae" name="Changes" comment="pequenos cambios">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/indexEncargado.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/indexEncargado.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/img/chilaquilesVerdes.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/img/chokis.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/img/coca.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/img/doritos.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/img/emperador.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/img/fanta.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/img/start.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/img/tortaJamon.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/indexCliente.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/indexCliente.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/solicitudes.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/solicitudes.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,8 +34,8 @@
       <list>
         <option value="JavaScript File" />
         <option value="Interface" />
-        <option value="Jsp File" />
         <option value="Class" />
+        <option value="Jsp File" />
       </list>
     </option>
   </component>
@@ -253,15 +262,7 @@
       <workItem from="1721931773968" duration="24361000" />
       <workItem from="1722015146526" duration="36507000" />
       <workItem from="1722105233282" duration="49978000" />
-      <workItem from="1722190355325" duration="11471000" />
-    </task>
-    <task id="LOCAL-00022" summary="Agregamos modales antes de cambiar estatus de un usuario. Se modificaron el contenido de las tablas segun los requerimientos. Solo se puede ver y desactivar a los clientes, de igual forma para los encargados pero a ellos si se les puede hacer modificaciones">
-      <option name="closed" value="true" />
-      <created>1721345726967</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1721345726967</updated>
+      <workItem from="1722190355325" duration="14611000" />
     </task>
     <task id="LOCAL-00023" summary="se agrego en el dao una funcion para obtener a los usuarios excepto al administrador, la cual se usa para llenar la tabla de todos los usuarios en la vista del index del administrador. para asi cumplir el requerimiento que nos dio el cliente de visualizar a todos los usuarios menos el admin">
       <option name="closed" value="true" />
@@ -647,14 +648,21 @@
       <option name="project" value="LOCAL" />
       <updated>1722201390243</updated>
     </task>
-    <option name="localTasksCounter" value="71" />
+    <task id="LOCAL-00071" summary="pequenos cambios">
+      <option name="closed" value="true" />
+      <created>1722202405289</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1722202405289</updated>
+    </task>
+    <option name="localTasksCounter" value="72" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="pequenos cambios para Datatables" />
     <MESSAGE value="creacion de jsp de compras del admin y colocacion de enlaces en las barras de navegacion" />
     <MESSAGE value="modificacion del filtro para que cargue los datos tambien en compras, ademas de que el servlet tambien mande lista de productos" />
     <MESSAGE value="mostrando productos en lista" />
@@ -679,6 +687,7 @@
     <MESSAGE value="se ven las solicitudes que ha tomado el encargado" />
     <MESSAGE value="se ven los productos de las solicitudes que toma el encargado" />
     <MESSAGE value="gestion de toma de solicitudes, cambio de estado y cancelacion (con regreso de unidades al stock)" />
-    <option name="LAST_COMMIT_MESSAGE" value="gestion de toma de solicitudes, cambio de estado y cancelacion (con regreso de unidades al stock)" />
+    <MESSAGE value="pequenos cambios" />
+    <option name="LAST_COMMIT_MESSAGE" value="pequenos cambios" />
   </component>
 </project>
