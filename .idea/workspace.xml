@@ -10,10 +10,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6f44def4-2bd3-4c79-8a6b-cc536cc2ffae" name="Changes" comment="cambios peque;os botones">
-      <change beforePath="$PROJECT_DIR$/.idea/webContexts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
+    <list default="true" id="6f44def4-2bd3-4c79-8a6b-cc536cc2ffae" name="Changes" comment="se cargan solicitudes Pendientes al administrador">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/dao/SolicitudDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/dao/SolicitudDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/controller/SolicitudesJSTLServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/controller/SolicitudesJSTLServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/dao/CarritoProductoDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/dao/CarritoProductoDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/indexEncargado.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/indexEncargado.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -254,15 +254,7 @@
       <workItem from="1721852314672" duration="16828000" />
       <workItem from="1721931773968" duration="24361000" />
       <workItem from="1722015146526" duration="36507000" />
-      <workItem from="1722105233282" duration="37811000" />
-    </task>
-    <task id="LOCAL-00017" summary="MAS CORRECION DE MENSAJES DE ERROR REZAGADOS">
-      <option name="closed" value="true" />
-      <created>1721186164090</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1721186164090</updated>
+      <workItem from="1722105233282" duration="44188000" />
     </task>
     <task id="LOCAL-00018" summary="OTMAR PAGINA ACCESO DENEGADO">
       <option name="closed" value="true" />
@@ -648,14 +640,21 @@
       <option name="project" value="LOCAL" />
       <updated>1722141776717</updated>
     </task>
-    <option name="localTasksCounter" value="66" />
+    <task id="LOCAL-00066" summary="se cargan solicitudes Pendientes al administrador">
+      <option name="closed" value="true" />
+      <created>1722149011381</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1722149011381</updated>
+    </task>
+    <option name="localTasksCounter" value="67" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="registro de Producto ya correcto, tanto url como los demas datos. Correcion del dao y modelo de producto" />
     <MESSAGE value="Correccion para permitir input tipo number, numeros decimales" />
     <MESSAGE value="mostrarTabla con crud de Productos" />
     <MESSAGE value="no se que agregamos pero fueron cambios peque;os" />
@@ -680,6 +679,7 @@
     <MESSAGE value="Modificamos el servlet para que si agregas el mismo producto 2 veces, no haga el chequeo de stock individualmente. Como es el mismo producto, debe checar sumando ambas cantidades" />
     <MESSAGE value="Solicitudes ya viendo los detalles (productos en la solicitud)" />
     <MESSAGE value="cambios peque;os botones" />
-    <option name="LAST_COMMIT_MESSAGE" value="cambios peque;os botones" />
+    <MESSAGE value="se cargan solicitudes Pendientes al administrador" />
+    <option name="LAST_COMMIT_MESSAGE" value="se cargan solicitudes Pendientes al administrador" />
   </component>
 </project>

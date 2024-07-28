@@ -1,40 +1,46 @@
 package mx.edu.utez.practica3e.controller;
 
-import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
-import mx.edu.utez.practica3e.dao.CategoriaDao;
-import mx.edu.utez.practica3e.dao.MarcaDao;
-import mx.edu.utez.practica3e.dao.ProductoDao;
+import mx.edu.utez.practica3e.dao.CarritoProductoDao;
 import mx.edu.utez.practica3e.dao.SolicitudDao;
-import mx.edu.utez.practica3e.model.*;
+import mx.edu.utez.practica3e.model.Carrito_Producto;
+import mx.edu.utez.practica3e.model.Solicitud;
 
 import java.io.IOException;
-import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
-@WebServlet(name="SolicitudesJSTLServlet",value = "/darSolicitudes")
+@WebServlet(name = "SolicitudesJSTLServlet", value = "/darSolicitudes")
 public class SolicitudesJSTLServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         HttpSession session = req.getSession();
 
-        //Creacion de listas
-        List<Solicitud> listaSolis = new ArrayList<>();
-
-        //Creacion de daos
+        // Creación de daos
         SolicitudDao sdao = new SolicitudDao();
+        CarritoProductoDao carritoProductoDao = new CarritoProductoDao();
 
-        //se rellenan las listas con los correspondientes daos
-        listaSolis = sdao.getAllPendientes();//solicitudes pendientes.
+        // Obtener solicitudes pendientes
+        List<Solicitud> listaSolis = sdao.getAllPendientes();
 
+        // Crear un mapa para almacenar los productos del carrito por ID de carrito
+        Map<Integer, List<Carrito_Producto>> productosPorCarrito = new HashMap<>();
 
-        session.setAttribute("solicitudes",listaSolis);
+        // Para cada solicitud, obtener los productos del carrito asociado
+        for (Solicitud solicitud : listaSolis) {
+            List<Carrito_Producto> productos = carritoProductoDao.obtenerProductosPorCarrito(solicitud.getCarrito().getId_carrito());
+            productosPorCarrito.put(solicitud.getCarrito().getId_carrito(), productos);
+        }
 
+        // Establecer las solicitudes y los productos del carrito como atributos de la sesión
+        session.setAttribute("solicitudes", listaSolis);
+        session.setAttribute("productosPorCarrito", productosPorCarrito);
 
     }
 }

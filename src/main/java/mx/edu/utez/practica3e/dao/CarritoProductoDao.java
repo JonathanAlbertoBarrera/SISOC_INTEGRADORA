@@ -90,7 +90,10 @@ public class CarritoProductoDao {
     //obtener productos de un carrito especifico
     public List<Carrito_Producto> obtenerProductosPorCarrito(int id_carrito) {
         List<Carrito_Producto> productosEnCarrito = new ArrayList<>();
-        String query = "SELECT * FROM carrito_producto WHERE id_carrito = ?";
+        String query = "SELECT cp.*, p.nombre, p.descripcion, p.precio as producto_precio " +
+                "FROM carrito_producto cp " +
+                "JOIN producto p ON cp.sku = p.sku " +
+                "WHERE cp.id_carrito = ?";
         try (Connection con = DatabaseConnectionManager.getConnection();
              PreparedStatement ps = con.prepareStatement(query)) {
             ps.setInt(1, id_carrito);
@@ -104,9 +107,12 @@ public class CarritoProductoDao {
 
                     Producto producto = new Producto();
                     producto.setSku(rs.getString("sku"));
+                    producto.setNombre(rs.getString("nombre"));
+                    producto.setDescripcion(rs.getString("descripcion"));
+                    producto.setPrecio(rs.getDouble("producto_precio"));
                     cp.setProducto(producto);
 
-                    Carrito carrito=new Carrito();
+                    Carrito carrito = new Carrito();
                     carrito.setId_carrito(rs.getInt("id_carrito"));
                     cp.setCarrito(carrito);
 
@@ -118,4 +124,5 @@ public class CarritoProductoDao {
         }
         return productosEnCarrito;
     }
+
 }

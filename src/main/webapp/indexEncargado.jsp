@@ -1,3 +1,6 @@
+<%@ page import="mx.edu.utez.practica3e.model.Carrito_Producto" %>
+<%@ page import="java.util.List" %>
+<%@ page import="mx.edu.utez.practica3e.dao.CarritoProductoDao" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
@@ -34,10 +37,7 @@
         .row #icAddCar{
             width: 40%;
         }
-
-
     </style>
-
 </head>
 <body>
 <!-- BARRA NAVEGACION -->
@@ -73,18 +73,17 @@
 </header>
 
 <main>
-
     <div class="container mt-2">
         <h2 id="titSeccion">Solicitudes Pendientes</h2>
         <p>Encargado: ${sessionScope.nombre_usuario} ${sessionScope.apellido_usuario} </p>
         <img src="img/espera.gif" alt="gif solicitud en espera" width="10%" height="10%">
         <div class="row" id="product-cards-container">
-            <!-- Aquí iran las solicitudes -->
+            <!-- Aquí irán las solicitudes -->
             <c:forEach items="${solicitudes}" var="s">
                 <div class="col-md-3 mb-2">
                     <div class="card h-100 text-center align-content-center">
                         <div class="card-body">
-                            <h3 class="card-title">ID SOLICITUD:${s.id_solicitud}</h3>
+                            <h3 class="card-title">ID SOLICITUD: ${s.id_solicitud}</h3>
                             <p class="card-text">ID CARRITO: ${s.carrito.id_carrito}</p>
                             <p class="card-text">ID USUARIO: ${s.usuario.idUsuario}</p>
                             <p class="card-text">Fecha: ${s.fecha}</p>
@@ -93,8 +92,9 @@
                                 <div class="row flex-column text-center">
                                     <img src="img/start.gif" alt="gif agregar al carrito" class="mx-auto" id="icAddCar">
                                     <a class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#modalTomarSoli-${s.id_solicitud}">Tomar Solicitud</a>
-
-                                    <!-- Modal para cantidad-->
+                                </div>
+                            </div>
+                                    <!-- Modal para mostrar los productos de la solicitud -->
                                     <div class="modal fade" id="modalTomarSoli-${s.id_solicitud}" tabindex="-1" aria-labelledby="exampleModalLabel-${s.id_solicitud}" aria-hidden="true">
                                         <div class="modal-dialog modal-dialog-centered">
                                             <div class="modal-content">
@@ -103,14 +103,28 @@
                                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                 </div>
                                                 <div class="modal-body">
+                                                    <p><b>Total a pagar: ${s.total}.</b></p>
                                                     Productos de la solicitud:
-                                                </div>
+                                                    <div class="row">
+                                                    <c:forEach items="${productosPorCarrito[s.carrito.id_carrito]}" var="producto">
+                                                        <div class="col-6 mb-3">
+                                                            <div class="card h-100">
+                                                                <div class="text-center">
+                                                                    <img src="<%= request.getContextPath() %>/image?sku=${producto.producto.sku}" >
+                                                                </div>
+                                                                <p>Producto: ${producto.producto.nombre}, SKU:${producto.producto.sku} </p>
+                                                                <p>Cantidad: ${producto.cantidad}, PRECIO: ${producto.precio} </p>
+                                                                <p><b>Total producto: ${producto.totalProducto}</b></p>
+                                                            </div>
+                                                        </div>
+                                                    </c:forEach>
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-secondary botonesApp" data-bs-dismiss="modal">Aceptar</button>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
+                                    <!-- Fin del Modal -->
                                 </div>
                             </div>
                         </div>
@@ -119,7 +133,6 @@
             </c:forEach>
         </div>
     </div>
-
 </main>
 
 <footer class="bg-body-tertiary text-black text-center py-3 barra">
@@ -131,6 +144,5 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js"></script>
 <script src="js/bootstrap.js"></script>
-
 </body>
 </html>
