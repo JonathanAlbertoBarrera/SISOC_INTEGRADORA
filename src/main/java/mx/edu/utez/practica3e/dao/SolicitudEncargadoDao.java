@@ -68,7 +68,7 @@ public class SolicitudEncargadoDao {
     //obtener solicitudes por encargado
     public List<Solicitud_Encargado> obtenerSolicitudesPorEncargado(int id_encargado) {
         List<Solicitud_Encargado> listaSolicitudesEncargado = new ArrayList<>();
-        String query = "SELECT se.id_sc, s.id_solicitud, s.total, s.fecha, s.estado, " +
+        String query = "SELECT se.id_sc, s.id_solicitud, s.id_carrito, s.total, s.fecha, s.estado, " +
                 "u.id_usuario, u.correo, p.nombre, p.apellidos " +
                 "FROM solicitud_encargado se " +
                 "JOIN solicitud s ON se.id_solicitud = s.id_solicitud " +
@@ -90,11 +90,15 @@ public class SolicitudEncargadoDao {
                     solicitud.setFecha(rs.getDate("fecha"));
                     solicitud.setEstado(rs.getString("estado"));
 
+                    Carrito carrito = new Carrito();
+                    carrito.setId_carrito(rs.getInt("id_carrito"));
+                    solicitud.setCarrito(carrito);
+
                     Usuario usuario = new Usuario();
                     usuario.setIdUsuario(rs.getInt("id_usuario"));
                     usuario.setCorreo(rs.getString("correo"));
 
-                    Persona persona=new Persona();
+                    Persona persona = new Persona();
                     persona.setNombre(rs.getString("nombre"));
                     persona.setApellidos(rs.getString("apellidos"));
                     usuario.setPersona(persona);
@@ -111,4 +115,5 @@ public class SolicitudEncargadoDao {
 
         return listaSolicitudesEncargado;
     }
+
 }

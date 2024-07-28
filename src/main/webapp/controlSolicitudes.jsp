@@ -83,16 +83,24 @@
                 <div class="col-md-3 mb-2">
                     <div class="card h-100 text-center align-content-center">
                         <div class="card-body">
-                            <h3 class="card-title">ID SOLICITUD: ${se.solicitud.id_solicitud}</h3>
+                            <h3>ESTADO: ${se.solicitud.estado}</h3>
+                            <p class="card-title">ID SOLICITUD: ${se.solicitud.id_solicitud}</p>
                             <p class="card-text">Correo del usuario: ${se.solicitud.usuario.correo}</p>
                             <p class="card-text">Nombre: ${se.solicitud.usuario.persona.nombre}</p>
                             <p class="card-text">Fecha: ${se.solicitud.fecha}</p>
                             <p class="card-text">TOTAL A PAGAR: ${se.solicitud.total}</p>
                             <div class="container" id="cajaBoton">
                                 <div class="row flex-column text-center">
-                                    <img src="img/start.gif" alt="gif agregar al carrito" class="mx-auto" id="icAddCar">
-                                    <!-- Agrega botones u otras acciones aquí si es necesario -->
+                                    <img src="img/checklist.gif" alt="gif lista" class="mx-auto" id="icAddCar">
+                                    <!-- Lista de productos -->
+                                    <p><b>Productos.</b></p>
+                                    <ul>
+                                        <c:forEach var="producto" items="${productosPorCarritoEncargado[se.solicitud.carrito.id_carrito]}">
+                                            <li><b>${producto.producto.nombre}</b> - Cantidad: ${producto.cantidad}</li>
+                                        </c:forEach>
+                                    </ul>
                                 </div>
+                                <a class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#modalCambiarEstadoSoli-${se.solicitud.id_solicitud}">Cambiar estado</a>
                             </div>
                         </div>
                     </div>
