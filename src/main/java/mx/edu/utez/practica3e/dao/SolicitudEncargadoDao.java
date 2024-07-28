@@ -74,7 +74,7 @@ public class SolicitudEncargadoDao {
                 "JOIN solicitud s ON se.id_solicitud = s.id_solicitud " +
                 "JOIN usuario u ON s.id_usuario = u.id_usuario " +
                 "JOIN persona p ON u.id_persona = p.id_persona " +
-                "WHERE se.id_encargado = ?";
+                "WHERE se.id_encargado = ? AND s.estado != 'Entregada' AND s.estado != 'Cancelada'";
 
         try (Connection con = DatabaseConnectionManager.getConnection();
              PreparedStatement ps = con.prepareStatement(query)) {
@@ -115,5 +115,6 @@ public class SolicitudEncargadoDao {
 
         return listaSolicitudesEncargado;
     }
+
 
 }

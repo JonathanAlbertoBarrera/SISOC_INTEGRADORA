@@ -137,4 +137,59 @@ public class SolicitudDao {
         return listaSolicitudes;
     }
 
+    //para cambiar el estado de la solicitud a Lista o Entregada
+    public boolean cambiarEstadoSolicitud(int id_solicitud, String nuevoEstado) {
+        String query = "UPDATE solicitud SET estado = ? WHERE id_solicitud = ?";
+        try (Connection con = DatabaseConnectionManager.getConnection();
+             PreparedStatement ps = con.prepareStatement(query)) {
+            ps.setString(1, nuevoEstado);
+            ps.setInt(2, id_solicitud);
+            return ps.executeUpdate() > 0;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    // Método para cancelar la solicitud y restaurar el stock de los productos
+    public boolean cancelarSolicitud(int idSolicitud) {
+        String updateSolicitudQuery = "UPDATE solicitud SET estado = 'Cancelada' WHERE id_solicitud = ?";
+        String selectProductosQuery = "SELECT cp.sku, cp.cantidad FROM carrito_producto cp " +
+                "JOIN solicitud s ON cp.id_carrito = s.id_carrito " +
+                "WHERE s.id_solicitud = ?";
+        String updateProductoQuery = "UPDATE producto SET cantidad = cantidad + ? WHERE sku = ?";
+        boolean exito = false;
+
+        try (Connection con = DatabaseConnectionManager.getConnection()) {
+            // Actualizar el estado de la solicitud
+            try (PreparedStatement ps = con.prepareStatement(updateSolicitudQuery)) {
+                ps.setInt(1, idSolicitud);
+                ps.executeUpdate();
+            }
+
+            // Obtener los productos y cantidades del carrito asociado a la solicitud
+            try (PreparedStatement ps = con.prepareStatement(selectProductosQuery)) {
+                ps.setInt(1, idSolicitud);
+                try (ResultSet rs = ps.executeQuery()) {
+                    while (rs.next()) {
+                        String sku = rs.getString("sku");
+                        int cantidad = rs.getInt("cantidad");
+
+                        // Restaurar el stock del producto
+                        try (PreparedStatement psUpdate = con.prepareStatement(updateProductoQuery)) {
+                            psUpdate.setInt(1, cantidad);
+                            psUpdate.setString(2, sku);
+                            psUpdate.executeUpdate();
+                        }
+                    }
+                }
+            }
+
+            exito = true;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return exito;
+    }
 }

@@ -10,11 +10,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6f44def4-2bd3-4c79-8a6b-cc536cc2ffae" name="Changes" comment="se ven las solicitudes que ha tomado el encargado">
+    <list default="true" id="6f44def4-2bd3-4c79-8a6b-cc536cc2ffae" name="Changes" comment="se ven los productos de las solicitudes que toma el encargado">
+      <change beforePath="$PROJECT_DIR$/.idea/webContexts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/controller/SolicitudesJSTLServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/controller/SolicitudesJSTLServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/dao/SolicitudDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/dao/SolicitudDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/dao/SolicitudEncargadoDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/dao/SolicitudEncargadoDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/controlSolicitudes.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/controlSolicitudes.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/indexEncargado.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/indexEncargado.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,8 +29,8 @@
       <list>
         <option value="JavaScript File" />
         <option value="Interface" />
-        <option value="Class" />
         <option value="Jsp File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -255,15 +257,7 @@
       <workItem from="1721931773968" duration="24361000" />
       <workItem from="1722015146526" duration="36507000" />
       <workItem from="1722105233282" duration="49978000" />
-      <workItem from="1722190355325" duration="3812000" />
-    </task>
-    <task id="LOCAL-00020" summary="FREDY, JONA FUNCION CAMBIAR ESTADO">
-      <option name="closed" value="true" />
-      <created>1721276837711</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1721276837711</updated>
+      <workItem from="1722190355325" duration="10761000" />
     </task>
     <task id="LOCAL-00021" summary="TABLA TODOS LOS USUARIOS Y BOTONES CON JS PARA MOSTRAR LA TABLA DESEADA">
       <option name="closed" value="true" />
@@ -649,14 +643,21 @@
       <option name="project" value="LOCAL" />
       <updated>1722160926749</updated>
     </task>
-    <option name="localTasksCounter" value="69" />
+    <task id="LOCAL-00069" summary="se ven los productos de las solicitudes que toma el encargado">
+      <option name="closed" value="true" />
+      <created>1722194395816</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1722194395817</updated>
+    </task>
+    <option name="localTasksCounter" value="70" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="no se que agregamos pero fueron cambios peque;os" />
     <MESSAGE value="funcion en el dao y servlet para DESACTIVAR UN PRODUCTO" />
     <MESSAGE value="pequenos cambios para Datatables" />
     <MESSAGE value="creacion de jsp de compras del admin y colocacion de enlaces en las barras de navegacion" />
@@ -681,6 +682,7 @@
     <MESSAGE value="se cargan solicitudes Pendientes al administrador" />
     <MESSAGE value="se cargan detalles de las solicitudes pendientes" />
     <MESSAGE value="se ven las solicitudes que ha tomado el encargado" />
-    <option name="LAST_COMMIT_MESSAGE" value="se ven las solicitudes que ha tomado el encargado" />
+    <MESSAGE value="se ven los productos de las solicitudes que toma el encargado" />
+    <option name="LAST_COMMIT_MESSAGE" value="se ven los productos de las solicitudes que toma el encargado" />
   </component>
 </project>
