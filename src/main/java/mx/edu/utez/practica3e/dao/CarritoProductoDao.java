@@ -98,7 +98,7 @@ public class CarritoProductoDao {
                 while (rs.next()) {
                     Carrito_Producto cp = new Carrito_Producto();
                     cp.setId_carrito_producto(rs.getInt("id_carrito_producto"));
-                    cp.setPrecio(rs.getInt("precio"));
+                    cp.setPrecio(rs.getDouble("precio"));
                     cp.setCantidad(rs.getInt("cantidad"));
                     cp.setTotalProducto(rs.getDouble("totalProducto"));
 

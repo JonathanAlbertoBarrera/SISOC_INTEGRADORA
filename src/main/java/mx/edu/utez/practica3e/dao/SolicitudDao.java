@@ -26,4 +26,63 @@ public class SolicitudDao {
         }
         return resultado;
     }
+
+    //OBTENER LAS SOLICITUDES SEGUN EL USUARIO CORRESPONDIENTE (SIN IMPORTAR ESTADO)
+    public List<Solicitud> getAllPorUsuario(int idUsuario) {
+        List<Solicitud> listaSolicitudes = new ArrayList<>();
+        String query = "SELECT * FROM solicitud WHERE id_usuario = ?";
+
+        try (Connection con = DatabaseConnectionManager.getConnection();
+             PreparedStatement ps = con.prepareStatement(query)) {
+            ps.setInt(1, idUsuario);
+            try (ResultSet rs = ps.executeQuery()) {
+                while (rs.next()) {
+                    Solicitud solicitud = new Solicitud();
+                    solicitud.setId_solicitud(rs.getInt("id_solicitud"));
+                    solicitud.setTotal(rs.getDouble("total"));
+                    solicitud.setFecha(rs.getDate("fecha"));
+                    solicitud.setEstado(rs.getString("estado"));
+                    Carrito carrito = new Carrito();
+                    carrito.setId_carrito(rs.getInt("id_carrito"));
+                    solicitud.setCarrito(carrito);
+
+                    listaSolicitudes.add(solicitud);
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return listaSolicitudes;
+    }
+
+    // PARA OBTENER SOLICITUDES PENDIENTES O EN PROCESO
+    public List<Solicitud> getSolicitudesPendientesPorUsuario(int idUsuario) {
+        List<Solicitud> listaSolicitudes = new ArrayList<>();
+        String query = "SELECT * FROM solicitud WHERE id_usuario = ? AND estado != 'Entregada' AND estado != 'Cancelada'";
+
+
+        try (Connection con = DatabaseConnectionManager.getConnection();
+             PreparedStatement ps = con.prepareStatement(query)) {
+            ps.setInt(1, idUsuario);
+            try (ResultSet rs = ps.executeQuery()) {
+                while (rs.next()) {
+                    Solicitud solicitud = new Solicitud();
+                    solicitud.setId_solicitud(rs.getInt("id_solicitud"));
+                    solicitud.setTotal(rs.getDouble("total"));
+                    solicitud.setFecha(rs.getDate("fecha"));
+                    solicitud.setEstado(rs.getString("estado"));
+                    Carrito carrito = new Carrito();
+                    carrito.setId_carrito(rs.getInt("id_carrito"));
+                    solicitud.setCarrito(carrito);
+
+                    listaSolicitudes.add(solicitud);
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return listaSolicitudes;
+    }
 }

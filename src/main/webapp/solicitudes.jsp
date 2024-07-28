@@ -1,10 +1,11 @@
-<%@ page import="mx.edu.utez.practica3e.dao.CarritoDao" %>
-<%@ page import="mx.edu.utez.practica3e.dao.CarritoProductoDao" %>
-<%@ page import="mx.edu.utez.practica3e.model.Carrito" %>
-<%@ page import="mx.edu.utez.practica3e.model.Carrito_Producto" %>
-<%@ page import="java.util.List" %>
 <%@ page import="mx.edu.utez.practica3e.dao.SolicitudDao" %>
 <%@ page import="mx.edu.utez.practica3e.model.Solicitud" %>
+<%@ page import="java.util.List" %>
+<%@ page import="mx.edu.utez.practica3e.model.Carrito_Producto" %>
+<%@ page import="mx.edu.utez.practica3e.dao.CarritoProductoDao" %>
+<%@ page import="mx.edu.utez.practica3e.model.Producto" %>
+<%@ page import="mx.edu.utez.practica3e.dao.ProductoDao" %>
+<%@ page import="mx.edu.utez.practica3e.dao.CarritoDao" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
@@ -31,17 +32,25 @@
         .hidden {
             display: none;
         }
-        .botonesApp{
+        .botonesApp {
             background-color: #F4AB2C;
             border-color:#F4AB2C;
         }
-        .imgProductos{
+        .imgProductos {
             width: 60%;
         }
-
-        .row #icAddCar{
+        .row #icAddCar {
             width: 40%;
         }
+
+        #tablaTodasSolis{
+            display:none;
+        }
+
+        #btnProceso{
+            display: none;
+        }
+
     </style>
 </head>
 <body>
@@ -81,21 +90,105 @@
     // Obtiene el ID del usuario de la sesión
     Integer idUsuario = (Integer) session.getAttribute("id_usuario");
     SolicitudDao solicitudDao = new SolicitudDao();
+    List<Solicitud> listaSolicitudesPendientes = solicitudDao.getSolicitudesPendientesPorUsuario(idUsuario);
     List<Solicitud> listaSolicitudes = solicitudDao.getAllPorUsuario(idUsuario);
-
 %>
 
 <main>
-    <!-- TABLA TODAS LAS SOLICITUDES -->
-    <div class="table-responsive" id="tablaCarrito">
-        <h3>Mis solicitudes</h3>
-        <img src="img/orden.png" width="5%" height="5%">
+    <h3>Solicitudes</h3>
+    <img src="img/orden.png" width="5%" height="5%">
+    <br>
+    <div class="text-center">
+        <button type="button" class="btn botonesApp" id="btnHistorial" onclick="mostrarHistorialSolis()">
+            Ver todo mi historial
+        </button>
+        <button type="button" class="btn botonesApp" id="btnProceso" onclick="mostrarProcesoSolis()">
+            Ver solicitudes pendientes/proceso
+        </button>
+    </div>
 
+    <!-- TABLA SOLICITUDES PENDIENTES O EN PROCESO -->
+    <div class="table-responsive" id="tablaSolicitudesPendientes">
+        <h3>Solicitudes Pendientes o en Proceso</h3>
+        <br>
+        <br>
+        <p>Cliente: ${sessionScope.nombre_usuario} ${sessionScope.apellido_usuario} </p>
+
+        <table id="tablaPendientes" class="table table-striped table-hover table-responsive table-light table-borderless" style="width: 100%">
+            <thead>
+            <tr>
+                <th>ID_SOLICITUD</th>
+                <th>Total a pagar</th>
+                <th>Fecha</th>
+                <th>Estado de la solicitud</th>
+                <th>Detalles</th>
+            </tr>
+            </thead>
+            <tbody>
+            <% for (Solicitud s : listaSolicitudesPendientes) { %>
+            <tr>
+                <td><%= s.getId_solicitud() %></td>
+                <td><%= s.getTotal()%></td>
+                <td><%= s.getFecha() %></td>
+                <td><%= s.getEstado() %></td>
+                <td>
+                    <button type="button" class="btn botonesApp" data-bs-toggle="modal" data-bs-target="#modalProductos-<%= s.getId_solicitud() %>">
+                        Ver mas detalles (productos)
+                    </button>
+                    <div class="modal fade" id="modalProductos-<%= s.getId_solicitud() %>" tabindex="-1" aria-labelledby="exampleModalLabel-<%= s.getId_solicitud() %>" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="desacModalLabel-<%= s.getId_solicitud() %>">Detalles</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="form-group mb-3">
+                                        <!-- Aqui se obtienen los productos de carrito_producto mediante el id_carrito-->
+                                        <%
+                                            CarritoProductoDao carritoProductoDao = new CarritoProductoDao();
+                                            List<Carrito_Producto> listaProductos = carritoProductoDao.obtenerProductosPorCarrito(s.getCarrito().getId_carrito());
+                                            Producto pro = new Producto();
+                                            ProductoDao proDao = new ProductoDao();
+                                        %>
+                                        <h3>Total de la solicitud: <%= s.getTotal() %></h3>
+                                        <div class="row">
+                                            <% for (Carrito_Producto cp : listaProductos) { %>
+                                            <div class="col-6 mb-3">
+                                                <div class="card h-100">
+                                                    <img src="<%= request.getContextPath() %>/image?sku=<%= cp.getProducto().getSku() %>" class="card-img-top img-fluid" alt="<%= cp.getProducto().getSku() %>">
+                                                    <div class="card-body p-2">
+                                                        <h5 class="card-title" style="font-size: 1rem;"><%= proDao.getProductoBySku(cp.getProducto().getSku()).getNombre() %></h5>
+                                                        <p class="card-text" style="font-size: 0.875rem;">Cantidad: <%= cp.getCantidad() %></p>
+                                                        <p class="card-text" style="font-size: 0.875rem;">Precio: <%= cp.getPrecio() %></p>
+                                                        <p class="card-text" style="font-size: 0.875rem;">Total: <%= cp.getTotalProducto() %></p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <% } %>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">OK</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <% } %>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- TABLA TODAS LAS SOLICITUDES -->
+    <div class="table-responsive" id="tablaTodasSolis">
+        <h3>Historial mis solicitudes</h3>
         <br>
         <br>
         <p>Cliente: ${sessionScope.nombre_usuario} ${sessionScope.apellidos_usuario} </p>
 
-        <!--TABLA DE SOLICITUDES -->
         <table id="example3" class="table table-striped table-hover table-responsive table-light table-borderless" style="width: 100%">
             <thead>
             <tr>
@@ -113,28 +206,47 @@
                 <td><%= s.getTotal()%></td>
                 <td><%= s.getFecha() %></td>
                 <td><%= s.getEstado() %></td>
-                <!-- td para ver productos de la solicitud-->
                 <td>
-                    <button type="button" class="btn botonesApp" data-bs-toggle="modal" data-bs-target="#modalProductos-<%= s.getCarrito().getId_carrito() %>">
+                    <button type="button" class="btn botonesApp" data-bs-toggle="modal" data-bs-target="#modalProductos2-<%= s.getId_solicitud() %>">
                         Ver mas detalles (productos)
                     </button>
-                    <!-- Modal -->
-                    <div class="modal fade" id="modalProductos-<%= s.getCarrito().getId_carrito() %>" tabindex="-1" aria-labelledby="exampleModalLabel-<%= s.getCarrito().getId_carrito() %>" aria-hidden="true">
+                    <div class="modal fade" id="modalProductos2-<%= s.getId_solicitud() %>" tabindex="-1" aria-labelledby="exampleModalLabel2-<%= s.getId_solicitud() %>" aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h1 class="modal-title fs-5" id="desacModalLabel-<%= s.getCarrito().getId_carrito() %>">Detallles</h1>
+                                    <h1 class="modal-title fs-5" id="desacModalLabel2-<%= s.getId_solicitud() %>">Detalles</h1>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
-
-                                    <div class="modal-body">
-                                        <div class="form-group mb-3">
-                                            <!-- Aqui se obtienen los productos de carrito_producto mediante el id_carrito-->
+                                <div class="modal-body">
+                                    <div class="form-group mb-3">
+                                        <!-- Aqui se obtienen los productos de carrito_producto mediante el id_carrito-->
+                                        <%
+                                            CarritoProductoDao carritoProductoDao = new CarritoProductoDao();
+                                            List<Carrito_Producto> listaProductos = carritoProductoDao.obtenerProductosPorCarrito(s.getCarrito().getId_carrito());
+                                            Producto pro = new Producto();
+                                            ProductoDao proDao = new ProductoDao();
+                                        %>
+                                        <h3>Total de la solicitud: <%= s.getTotal() %></h3>
+                                        <div class="row">
+                                            <% for (Carrito_Producto cp : listaProductos) { %>
+                                            <div class="col-6 mb-3">
+                                                <div class="card h-100">
+                                                    <img src="<%= request.getContextPath() %>/image?sku=<%= cp.getProducto().getSku() %>" class="card-img-top img-fluid" alt="<%= cp.getProducto().getSku() %>">
+                                                    <div class="card-body p-2">
+                                                        <h5 class="card-title" style="font-size: 1rem;"><%= proDao.getProductoBySku(cp.getProducto().getSku()).getNombre() %></h5>
+                                                        <p class="card-text" style="font-size: 0.875rem;">Cantidad: <%= cp.getCantidad() %></p>
+                                                        <p class="card-text" style="font-size: 0.875rem;">Precio: <%= cp.getPrecio() %></p>
+                                                        <p class="card-text" style="font-size: 0.875rem;">Total: <%= cp.getTotalProducto() %></p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <% } %>
                                         </div>
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">OK</button>
                                     </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -143,7 +255,6 @@
             <% } %>
             </tbody>
         </table>
-
     </div>
 </main>
 
@@ -153,6 +264,13 @@
 <script src="${pageContext.request.contextPath}/JS/dataTables.bootstrap5.js"></script>
 <script src="${pageContext.request.contextPath}/JS/es-MX.json"></script>
 <script>
+    const tablePendientes = document.getElementById('tablaPendientes');
+    new DataTable(tablePendientes, {
+        language: {
+            url: '${pageContext.request.contextPath}/JS/es-MX.json'
+        }
+    });
+
     const table3 = document.getElementById('example3');
     new DataTable(table3, {
         language: {
@@ -162,10 +280,22 @@
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js"></script>
 <script src="JS/bootstrap.js"></script>
+<script>
+    function mostrarHistorialSolis() {
+        document.getElementById('btnHistorial').style.display = "none";
+        document.getElementById('btnProceso').style.display = "block";
+        document.getElementById('tablaSolicitudesPendientes').style.display = "none";
+        document.getElementById('tablaTodasSolis').style.display = "block";
+    }
+    function mostrarProcesoSolis(){
+        document.getElementById('btnProceso').style.display = "none";
+        document.getElementById('btnHistorial').style.display = "block";
+        document.getElementById('tablaTodasSolis').style.display = "none";
+        document.getElementById('tablaSolicitudesPendientes').style.display = "block";
+    }
+</script>
 <%
-    // Elimina el mensaje de la sesión después de usarlo
     session.removeAttribute("mensaje2A");
 %>
-
 </body>
 </html>
