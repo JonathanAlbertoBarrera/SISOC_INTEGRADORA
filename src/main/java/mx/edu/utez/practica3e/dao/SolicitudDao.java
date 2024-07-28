@@ -45,6 +45,9 @@ public class SolicitudDao {
                     Carrito carrito = new Carrito();
                     carrito.setId_carrito(rs.getInt("id_carrito"));
                     solicitud.setCarrito(carrito);
+                    Usuario usuario=new Usuario();
+                    usuario.setIdUsuario(rs.getInt("id_usuario"));
+                    solicitud.setUsuario(usuario);
 
                     listaSolicitudes.add(solicitud);
                 }
@@ -56,7 +59,7 @@ public class SolicitudDao {
         return listaSolicitudes;
     }
 
-    // PARA OBTENER SOLICITUDES PENDIENTES O EN PROCESO
+    // PARA OBTENER SOLICITUDES que no esten entregadas o canceladas
     public List<Solicitud> getSolicitudesPendientesPorUsuario(int idUsuario) {
         List<Solicitud> listaSolicitudes = new ArrayList<>();
         String query = "SELECT * FROM solicitud WHERE id_usuario = ? AND estado != 'Entregada' AND estado != 'Cancelada'";
@@ -75,6 +78,42 @@ public class SolicitudDao {
                     Carrito carrito = new Carrito();
                     carrito.setId_carrito(rs.getInt("id_carrito"));
                     solicitud.setCarrito(carrito);
+                    Usuario usuario=new Usuario();
+                    usuario.setIdUsuario(rs.getInt("id_usuario"));
+                    solicitud.setUsuario(usuario);
+
+                    listaSolicitudes.add(solicitud);
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return listaSolicitudes;
+    }
+
+    //obtener todas las solicitudes pendientes
+    public List<Solicitud> getAllPendientes() {
+        List<Solicitud> listaSolicitudes = new ArrayList<>();
+        String query = "SELECT * FROM solicitud WHERE estado = 'Pendiente'";
+
+
+        try (Connection con = DatabaseConnectionManager.getConnection();
+             PreparedStatement ps = con.prepareStatement(query)) {
+
+            try (ResultSet rs = ps.executeQuery()) {
+                while (rs.next()) {
+                    Solicitud solicitud = new Solicitud();
+                    solicitud.setId_solicitud(rs.getInt("id_solicitud"));
+                    solicitud.setTotal(rs.getDouble("total"));
+                    solicitud.setFecha(rs.getDate("fecha"));
+                    solicitud.setEstado(rs.getString("estado"));
+                    Carrito carrito = new Carrito();
+                    carrito.setId_carrito(rs.getInt("id_carrito"));
+                    solicitud.setCarrito(carrito);
+                    Usuario usuario=new Usuario();
+                    usuario.setIdUsuario(rs.getInt("id_usuario"));
+                    solicitud.setUsuario(usuario);
 
                     listaSolicitudes.add(solicitud);
                 }

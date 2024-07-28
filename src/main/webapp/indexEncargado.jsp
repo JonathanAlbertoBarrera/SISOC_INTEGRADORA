@@ -50,7 +50,13 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav mx-auto">
-                    <a class="nav-link active" aria-current="page"  href="index.jsp">Inicio</a>
+                    <a class="nav-link active" aria-current="page"  href="indexEncargado.jsp">Inicio</a>
+                    <a class="nav-link" href="controlSolicitudes.jsp">
+                        <img src="img/orden.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top"> Mis Solicitudes
+                    </a>
+                    <a class="nav-link" href="controlSolicitudes.jsp">
+                        <img src="img/orden.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top"> Mis Ventas
+                    </a>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             <img src="img/login.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top"> ${sessionScope.nombre_usuario != null ? sessionScope.nombre_usuario : 'Cuenta'}
@@ -67,6 +73,53 @@
 </header>
 
 <main>
+
+    <div class="container mt-2">
+        <h2 id="titSeccion">Solicitudes Pendientes</h2>
+        <p>Encargado: ${sessionScope.nombre_usuario} ${sessionScope.apellido_usuario} </p>
+        <img src="img/espera.gif" alt="gif solicitud en espera" width="10%" height="10%">
+        <div class="row" id="product-cards-container">
+            <!-- Aquí iran las solicitudes -->
+            <c:forEach items="${solicitudes}" var="s">
+                <div class="col-md-3 mb-2">
+                    <div class="card h-100 text-center align-content-center">
+                        <div class="card-body">
+                            <h3 class="card-title">ID SOLICITUD:${s.id_solicitud}</h3>
+                            <p class="card-text">ID CARRITO: ${s.carrito.id_carrito}</p>
+                            <p class="card-text">ID USUARIO: ${s.usuario.idUsuario}</p>
+                            <p class="card-text">Fecha: ${s.fecha}</p>
+                            <p class="card-text">TOTAL A PAGAR: ${s.total}</p>
+                            <div class="container" id="cajaBoton">
+                                <div class="row flex-column text-center">
+                                    <img src="img/start.gif" alt="gif agregar al carrito" class="mx-auto" id="icAddCar">
+                                    <a class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#modalTomarSoli-${s.id_solicitud}">Tomar Solicitud</a>
+
+                                    <!-- Modal para cantidad-->
+                                    <div class="modal fade" id="modalTomarSoli-${s.id_solicitud}" tabindex="-1" aria-labelledby="exampleModalLabel-${s.id_solicitud}" aria-hidden="true">
+                                        <div class="modal-dialog modal-dialog-centered">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h1 class="modal-title fs-5" id="desacModalLabel-${s.id_solicitud}">Tomar Solicitud</h1>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    Productos de la solicitud:
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary botonesApp" data-bs-dismiss="modal">Aceptar</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </c:forEach>
+        </div>
+    </div>
+
 </main>
 
 <footer class="bg-body-tertiary text-black text-center py-3 barra">
