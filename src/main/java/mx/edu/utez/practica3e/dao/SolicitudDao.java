@@ -192,4 +192,51 @@ public class SolicitudDao {
 
         return exito;
     }
+
+    //obtener solicitudes entregadas
+    public List<Solicitud> obtenerSolicitudesEntregadas() {
+        List<Solicitud> listaSolicitudes = new ArrayList<>();
+        String query = "SELECT s.id_solicitud, s.id_carrito, s.id_usuario, s.total, s.fecha, s.estado, " +
+                "u.id_usuario, u.correo, p.nombre, p.apellidos " +
+                "FROM solicitud s " +
+                "JOIN usuario u ON s.id_usuario = u.id_usuario " +
+                "JOIN persona p ON u.id_persona = p.id_persona " +
+                "WHERE s.estado = 'Entregada'";
+
+        try (Connection con = DatabaseConnectionManager.getConnection();
+             PreparedStatement ps = con.prepareStatement(query);
+             ResultSet rs = ps.executeQuery()) {
+
+            while (rs.next()) {
+                Solicitud solicitud = new Solicitud();
+                solicitud.setId_solicitud(rs.getInt("id_solicitud"));
+                solicitud.setTotal(rs.getDouble("total"));
+                solicitud.setFecha(rs.getDate("fecha"));
+                solicitud.setEstado(rs.getString("estado"));
+
+                // Carrito
+                Carrito carrito = new Carrito();
+                carrito.setId_carrito(rs.getInt("id_carrito"));
+                solicitud.setCarrito(carrito);
+
+                // Usuario (cliente)
+                Usuario cliente = new Usuario();
+                cliente.setIdUsuario(rs.getInt("id_usuario"));
+                cliente.setCorreo(rs.getString("correo"));
+
+                Persona personaCliente = new Persona();
+                personaCliente.setNombre(rs.getString("nombre"));
+                personaCliente.setApellidos(rs.getString("apellidos"));
+                cliente.setPersona(personaCliente);
+
+                solicitud.setUsuario(cliente);
+
+                listaSolicitudes.add(solicitud);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return listaSolicitudes;
+    }
 }

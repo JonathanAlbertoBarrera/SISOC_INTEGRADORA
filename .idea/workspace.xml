@@ -12,11 +12,9 @@
   <component name="ChangeListManager">
     <list default="true" id="6f44def4-2bd3-4c79-8a6b-cc536cc2ffae" name="Changes" comment="historial de solicitudes en su propia pagina y borrado de imagenes rezagadas">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/categorias.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/categorias.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/comprasAdmin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/comprasAdmin.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/indexAdmin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/indexAdmin.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/marcas.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/marcas.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/productosAdmin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/productosAdmin.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/dao/SolicitudDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/dao/SolicitudDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/solicitudes.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/solicitudes.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/ventasAdmin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/ventasAdmin.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,7 +65,7 @@
     "Tomcat Server.Tomcat 10.1.8.executor": "Run",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/adrian jacobo/Documents/3CuatriUTEZ/APLICACIONES WEB/versionesIntegradora/SISOC_INTEGRADORA/src/main/webapp/img",
+    "last_opened_file_path": "C:/Users/adrian jacobo/Documents/3CuatriUTEZ/APLICACIONES WEB/versionesIntegradora/SISOC_INTEGRADORA",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -258,6 +256,7 @@
       <workItem from="1722015146526" duration="36507000" />
       <workItem from="1722105233282" duration="49978000" />
       <workItem from="1722190355325" duration="20097000" />
+      <workItem from="1722222565967" duration="2031000" />
     </task>
     <task id="LOCAL-00024" summary="funcion modificar Encargado, mediante modal y agregacion de su correspondiente funcion en el dao ademas de su servlet">
       <option name="closed" value="true" />

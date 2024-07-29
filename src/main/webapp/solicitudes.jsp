@@ -94,7 +94,7 @@
 
 <main>
     <h3>Solicitudes Pendientes/En proceso</h3>
-    <img src="img/start.gif" width="5%" height="5%">
+    <img src="img/loading.gif" width="5%" height="5%">
     <br>
 
 
