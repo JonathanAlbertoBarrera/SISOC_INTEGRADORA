@@ -15,6 +15,14 @@
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel="stylesheet" href="css/bootstrap.css">
     <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+        .content {
+            min-height: calc(100vh - 56px); /* Ajusta la altura del contenido para dejar espacio para el footer */
+        }
+
         .barra {
             background-color:#F4AB2C;
         }
@@ -54,8 +62,14 @@
                     <a class="nav-link" href="controlSolicitudes.jsp">
                         <img src="img/orden.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top"> Mis Solicitudes
                     </a>
-                    <a class="nav-link" href="controlSolicitudes.jsp">
-                        <img src="img/orden.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top"> Mis Ventas
+                    <a class="nav-link" href="productosEncargado.jsp">
+                        <img src="img/iconoProductos.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top"> Productos
+                    </a>
+                    <a class="nav-link" href="carritoEncargado.jsp">
+                        <img src="img/carritoLogo.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top"> Carrito de compra
+                    </a>
+                    <a class="nav-link" href="ventasEncargado.jsp">
+                        <img src="img/iconoVentas.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top"> Mis Ventas
                     </a>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -72,7 +86,7 @@
     </nav>
 </header>
 
-<main>
+<main class="content">
     <div class="container mt-2">
         <h2 id="titSeccion">Solicitudes Pendientes</h2>
         <!-- Mostrar el mensaje -->
@@ -160,6 +174,6 @@
 </footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js"></script>
-<script src="js/bootstrap.js"></script>
+<script src="JS/bootstrap.js"></script>
 </body>
 </html>

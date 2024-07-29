@@ -61,8 +61,14 @@
                     <a class="nav-link" href="controlSolicitudes.jsp">
                         <img src="img/orden.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top"> Mis Solicitudes
                     </a>
-                    <a class="nav-link" href="controlSolicitudes.jsp">
-                        <img src="img/orden.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top"> Mis Ventas
+                    <a class="nav-link" href="productosEncargado.jsp">
+                        <img src="img/iconoProductos.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top"> Productos
+                    </a>
+                    <a class="nav-link" href="carritoEncargado.jsp">
+                        <img src="img/carritoLogo.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top"> Carrito de compra
+                    </a>
+                    <a class="nav-link" href="ventasEncargado.jsp">
+                        <img src="img/iconoVentas.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top"> Mis Ventas
                     </a>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
