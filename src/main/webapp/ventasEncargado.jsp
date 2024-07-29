@@ -1,6 +1,11 @@
 <%@ page import="mx.edu.utez.practica3e.model.Carrito_Producto" %>
 <%@ page import="java.util.List" %>
 <%@ page import="mx.edu.utez.practica3e.dao.CarritoProductoDao" %>
+<%@ page import="mx.edu.utez.practica3e.dao.SolicitudDao" %>
+<%@ page import="mx.edu.utez.practica3e.dao.SolicitudEncargadoDao" %>
+<%@ page import="mx.edu.utez.practica3e.model.Solicitud" %>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="mx.edu.utez.practica3e.dao.ProductoDao" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
@@ -95,8 +100,94 @@
 <main class="content">
     <div class="container mt-2">
         <h2 id="titSeccion">Mis ventas en punto de venta</h2>
-
     </div>
+
+    <!-- TABLA TODAS LAS VENTAS (ENTREGADAS) -->
+    <div class="table-responsive" id="tablaCategorias">
+
+        <%
+            HttpSession sesion1 = request.getSession();
+            String mensaje2A = (String) sesion1.getAttribute("mensaje2A");
+
+            if(mensaje2A != null){ %>
+        <p class="text-danger"><%=mensaje2A%></p>
+        <% } %>
+
+        <!--TABLA DE VENTAS ENTREGADAS -->
+        <table id="example3" class="table table-striped table-hover" style="width: 100%">
+            <thead>
+            <tr>
+                <th>ID Solicitud</th>
+                <th>ID carrito</th>
+                <th>Fecha</th>
+                <th>Total</th>
+                <th>Ver detalles</th>
+            </tr>
+            </thead>
+            <tbody>
+            <%
+                SolicitudDao dao = new SolicitudDao();
+                SolicitudEncargadoDao dao2=new SolicitudEncargadoDao();
+                Integer idUsuario = (Integer) session.getAttribute("id_usuario");
+                ArrayList<Solicitud> lista = (ArrayList<Solicitud>) dao.getAllVentasPuntoVentaEncargado(idUsuario);
+                for(Solicitud s : lista) {
+            %>
+            <tr>
+                <td><%= s.getId_solicitud() %></td>
+                <td><%= s.getCarrito().getId_carrito() %></td>
+                <td><%= s.getFecha() %></td>
+                <td><%= s.getTotal()%></td>
+                <!-- td detalles-->
+                <td>
+                    <button type="button" class="btn botonesApp" data-bs-toggle="modal" data-bs-target="#modalProductos2-<%= s.getId_solicitud() %>">
+                        Ver mas detalles (productos)
+                    </button>
+                    <div class="modal fade" id="modalProductos2-<%= s.getId_solicitud() %>" tabindex="-1" aria-labelledby="exampleModalLabel2-<%= s.getId_solicitud() %>" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="desacModalLabel2-<%= s.getId_solicitud() %>">Detalles</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="form-group mb-3">
+                                        <!-- Aqui se obtienen los productos de carrito_producto mediante el id_carrito-->
+                                        <%
+                                            CarritoProductoDao carritoProductoDao = new CarritoProductoDao();
+                                            List<Carrito_Producto> listaProductos = carritoProductoDao.obtenerProductosPorCarrito(s.getCarrito().getId_carrito());
+                                            ProductoDao proDao = new ProductoDao();
+                                        %>
+                                        <h3>Total de la solicitud: <%= s.getTotal() %></h3>
+                                        <div class="row">
+                                            <% for (Carrito_Producto cp : listaProductos) { %>
+                                            <div class="col-6 mb-3">
+                                                <div class="card h-100">
+                                                    <img src="<%= request.getContextPath() %>/image?sku=<%= cp.getProducto().getSku() %>" class="card-img-top img-fluid" alt="<%= cp.getProducto().getSku() %>">
+                                                    <div class="card-body p-2">
+                                                        <h5 class="card-title" style="font-size: 1rem;"><%= proDao.getProductoBySku(cp.getProducto().getSku()).getNombre() %></h5>
+                                                        <p class="card-text" style="font-size: 0.875rem;">Cantidad: <%= cp.getCantidad() %></p>
+                                                        <p class="card-text" style="font-size: 0.875rem;">Precio: <%= cp.getPrecio() %></p>
+                                                        <p class="card-text" style="font-size: 0.875rem;">Total: <%= cp.getTotalProducto() %></p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <% } %>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">OK</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <% } %>
+            </tbody>
+        </table>
+    </div>
+
 </main>
 
 <footer class="bg-body-tertiary text-black text-center py-3 barra">
@@ -106,8 +197,24 @@
     </div>
 </footer>
 
+<script src="${pageContext.request.contextPath}/JS/bootstrap.js"></script>
+<script src="${pageContext.request.contextPath}/JS/jquery-3.7.0.js"></script>
+<script src="${pageContext.request.contextPath}/JS/datatables.js"></script>
+<script src="${pageContext.request.contextPath}/JS/dataTables.bootstrap5.js"></script>
+<script src="${pageContext.request.contextPath}/JS/es-MX.json"></script>
+<script>
+    const table3 = document.getElementById('example3');
+    new DataTable(table3, {
+        language: {
+            url: '${pageContext.request.contextPath}/JS/es-MX.json'
+        }
+    });
+</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js"></script>
 <script src="JS/bootstrap.js"></script>
+<%
+    sesion1.removeAttribute("mensaje2A");
+%>
 </body>
 </html>
 

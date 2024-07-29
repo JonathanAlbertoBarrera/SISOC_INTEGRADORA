@@ -99,7 +99,7 @@
     <h3>Ventas</h3>
     <img src="img/iconoVentas.png" width="5%" height="5%">
 
-    <!-- TABLA TODAS LAS CATEGORIAS -->
+    <!-- TABLA TODAS LAS VENTAS (ENTREGADAS) -->
     <div class="table-responsive" id="tablaCategorias">
 
         <%

@@ -59,6 +59,38 @@ public class SolicitudDao {
         return listaSolicitudes;
     }
 
+    //OBTENER LAS SOLICITUDES SEGUN EL USUARIO CORRESPONDIENTE (ENTREGADAS) PARA MOSTRAR EN VENTAS ENCARGADO
+    public List<Solicitud> getAllVentasPuntoVentaEncargado(int idUsuario) {
+        List<Solicitud> listaSolicitudes = new ArrayList<>();
+        String query = "SELECT * FROM solicitud WHERE id_usuario = ? AND estado = 'Entregada' ";
+
+        try (Connection con = DatabaseConnectionManager.getConnection();
+             PreparedStatement ps = con.prepareStatement(query)) {
+            ps.setInt(1, idUsuario);
+            try (ResultSet rs = ps.executeQuery()) {
+                while (rs.next()) {
+                    Solicitud solicitud = new Solicitud();
+                    solicitud.setId_solicitud(rs.getInt("id_solicitud"));
+                    solicitud.setTotal(rs.getDouble("total"));
+                    solicitud.setFecha(rs.getDate("fecha"));
+                    solicitud.setEstado(rs.getString("estado"));
+                    Carrito carrito = new Carrito();
+                    carrito.setId_carrito(rs.getInt("id_carrito"));
+                    solicitud.setCarrito(carrito);
+                    Usuario usuario=new Usuario();
+                    usuario.setIdUsuario(rs.getInt("id_usuario"));
+                    solicitud.setUsuario(usuario);
+
+                    listaSolicitudes.add(solicitud);
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return listaSolicitudes;
+    }
+
     // PARA OBTENER SOLICITUDES que no esten entregadas o canceladas
     public List<Solicitud> getSolicitudesPendientesPorUsuario(int idUsuario) {
         List<Solicitud> listaSolicitudes = new ArrayList<>();
