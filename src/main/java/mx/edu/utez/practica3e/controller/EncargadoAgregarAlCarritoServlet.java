@@ -13,8 +13,8 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import java.io.IOException;
 
-@WebServlet(name="AgregarAlCarritoServlet", value="/agregarCarrito")
-public class AgregarAlCarritoServlet extends HttpServlet {
+@WebServlet(name="EncargadoAgregarAlCarritoServlet", value="/agregarCarritoEncargado")
+public class EncargadoAgregarAlCarritoServlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         int id_usuario = Integer.parseInt(request.getParameter("id_usuario"));
@@ -54,6 +54,6 @@ public class AgregarAlCarritoServlet extends HttpServlet {
         carritoProductoDAO.agregarProductoAlCarrito(carritoProducto);
 
         // Redirigir al index.jsp
-        response.sendRedirect("indexCliente.jsp");
+        response.sendRedirect("productosEncargado.jsp");
     }
 }

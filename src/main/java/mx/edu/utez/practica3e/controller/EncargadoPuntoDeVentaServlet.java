@@ -14,8 +14,8 @@ import java.io.IOException;
 import java.sql.Date;
 import java.util.List;
 
-@WebServlet(name="AgregarSolicitudServlet", value="/hacerSolicitud")
-public class AgregarSolicitudServlet extends HttpServlet {
+@WebServlet(name="EncargadoPuntoDeVentaServlet", value="/hacerSolicitudEncargado")
+public class EncargadoPuntoDeVentaServlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Usuario usuario = (Usuario) request.getSession().getAttribute("usuario");
@@ -24,7 +24,7 @@ public class AgregarSolicitudServlet extends HttpServlet {
 
         if (carrito == null) {
             request.setAttribute("mensaje", "No hay carrito para hacer la solicitud.");
-            request.getRequestDispatcher("carrito.jsp").forward(request, response);
+            request.getRequestDispatcher("carritoEncargado.jsp").forward(request, response);
             return;
         }
 
@@ -55,13 +55,13 @@ public class AgregarSolicitudServlet extends HttpServlet {
                         .append(" solo tiene ")
                         .append(producto.getCantidad())
                         .append(" unidades disponibles. ");
-                break;  // No hay suficiente stock
+                break;  // no hay suficiente stock
             }
         }
 
         if (!stockSuficiente) {
             request.setAttribute("mensaje", mensajeError.toString());
-            request.getRequestDispatcher("carrito.jsp").forward(request, response);
+            request.getRequestDispatcher("carritoEncargado.jsp").forward(request, response);
             return;
         }
 
@@ -79,7 +79,7 @@ public class AgregarSolicitudServlet extends HttpServlet {
         solicitud.setCarrito(carrito);
         solicitud.setUsuario(usuario);
         solicitud.setFecha(new Date(System.currentTimeMillis()));
-        solicitud.setEstado("Pendiente");
+        solicitud.setEstado("Entregada");
         solicitud.setTotal(totalSolicitud);
 
         SolicitudDao solicitudDao = new SolicitudDao();
@@ -88,11 +88,11 @@ public class AgregarSolicitudServlet extends HttpServlet {
         if (solicitudGuardada) {
             carrito.setConfirmado(true);
             carritoDao.actualizarCarrito(carrito);
-            request.setAttribute("mensaje", "Solicitud realizada con éxito.");
+            request.setAttribute("mensaje", "Venta realizada con éxito.");
         } else {
-            request.setAttribute("mensaje", "Error al confirmar la solicitud.");
+            request.setAttribute("mensaje", "Error al realizar la venta.");
         }
 
-        request.getRequestDispatcher("carrito.jsp").forward(request, response);
+        request.getRequestDispatcher("carritoEncargado.jsp").forward(request, response);
     }
 }

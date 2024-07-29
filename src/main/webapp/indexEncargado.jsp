@@ -117,7 +117,7 @@
                             <p class="card-text">TOTAL A PAGAR: ${s.total}</p>
                             <div class="container" id="cajaBoton">
                                 <div class="row flex-column text-center">
-                                    <img src="img/start.gif" alt="gif agregar al carrito" class="mx-auto" id="icAddCar">
+                                    <img src="img/ordern.gif" alt="gif agregar al carrito" class="mx-auto" id="icAddCar">
                                     <a class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#modalTomarSoli-${s.id_solicitud}">Tomar Solicitud</a>
                                 </div>
                             </div>
