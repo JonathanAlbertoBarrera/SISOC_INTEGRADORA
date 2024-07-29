@@ -10,14 +10,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6f44def4-2bd3-4c79-8a6b-cc536cc2ffae" name="Changes" comment="nueva barra para encargado. nuevos jsp ya adaptados para el responsive en caso de no que no haya solicitudes el footer se queda abajo ya">
+    <list default="true" id="6f44def4-2bd3-4c79-8a6b-cc536cc2ffae" name="Changes" comment="punto de venta. se hace la venta directamente, es decir la solicitud se registra como entregada">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/controller/AgregarAlCarritoServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/controller/AgregarAlCarritoServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/controller/AgregarSolicitudServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/controller/AgregarSolicitudServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/utils/filtroParaCargarServletSelects.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/utils/filtroParaCargarServletSelects.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/carritoEncargado.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/carritoEncargado.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/controlSolicitudes.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/controlSolicitudes.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/indexEncargado.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/indexEncargado.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/productosEncargado.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/productosEncargado.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/ventasEncargado.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/ventasEncargado.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,8 +29,8 @@
       <list>
         <option value="JavaScript File" />
         <option value="Interface" />
-        <option value="Jsp File" />
         <option value="Class" />
+        <option value="Jsp File" />
       </list>
     </option>
   </component>
@@ -259,15 +258,7 @@
       <workItem from="1722015146526" duration="36507000" />
       <workItem from="1722105233282" duration="49978000" />
       <workItem from="1722190355325" duration="20097000" />
-      <workItem from="1722222565967" duration="7626000" />
-    </task>
-    <task id="LOCAL-00026" summary="funcion para agregar Encargados mediante modal ademas de iconos para barra de navegacion">
-      <option name="closed" value="true" />
-      <created>1721368721167</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1721368721167</updated>
+      <workItem from="1722222565967" duration="9301000" />
     </task>
     <task id="LOCAL-00027" summary="correcion icono marca y jsp para crud de marcas">
       <option name="closed" value="true" />
@@ -653,14 +644,21 @@
       <option name="project" value="LOCAL" />
       <updated>1722227190123</updated>
     </task>
-    <option name="localTasksCounter" value="75" />
+    <task id="LOCAL-00075" summary="punto de venta. se hace la venta directamente, es decir la solicitud se registra como entregada">
+      <option name="closed" value="true" />
+      <created>1722230897956</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1722230897956</updated>
+    </task>
+    <option name="localTasksCounter" value="76" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="POR FIN SIRVEN LAS IMAGENES. SE MODIFICO EL MODELO Y DAO CONSIDERANDO QUE EN LA BD SE GUARDA DE TIPO BLOB. SE HIZO EL SERVLET DE REGISTRAR  Y MODIFICAR AL PRODUCTO INCLUYENDO LA IMAGEN EN AMBOS" />
     <MESSAGE value="SELECTS QUE SIRVEN PARA FILTRO DE CATEGORIA Y MARCA. SIN FUNCIONALIDAD, SOLO LLENADO DESDE LA BD" />
     <MESSAGE value="pusimos la tabla de crud por defecto para mostrar los mensajes de las operaciones directamente, y agregar producto none por defecto" />
     <MESSAGE value="nada" />
@@ -685,6 +683,7 @@
     <MESSAGE value="historial de solicitudes en su propia pagina y borrado de imagenes rezagadas" />
     <MESSAGE value="consulta de ventas en el admisnitrador. se toma en cuenta solo las entregadas" />
     <MESSAGE value="nueva barra para encargado. nuevos jsp ya adaptados para el responsive en caso de no que no haya solicitudes el footer se queda abajo ya" />
-    <option name="LAST_COMMIT_MESSAGE" value="nueva barra para encargado. nuevos jsp ya adaptados para el responsive en caso de no que no haya solicitudes el footer se queda abajo ya" />
+    <MESSAGE value="punto de venta. se hace la venta directamente, es decir la solicitud se registra como entregada" />
+    <option name="LAST_COMMIT_MESSAGE" value="punto de venta. se hace la venta directamente, es decir la solicitud se registra como entregada" />
   </component>
 </project>

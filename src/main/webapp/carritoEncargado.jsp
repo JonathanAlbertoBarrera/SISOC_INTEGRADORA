@@ -71,9 +71,15 @@
                     <a class="nav-link" href="carritoEncargado.jsp">
                         <img src="img/carritoLogo.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top"> Carrito de compra
                     </a>
-                    <a class="nav-link" href="ventasEncargado.jsp">
-                        <img src="img/iconoVentas.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top"> Mis Ventas
-                    </a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <img src="img/iconoVentas.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top"> Mis ventas
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="ventasEncargado.jsp" >Punto de venta</a></li>
+                            <li><a class="dropdown-item" href="ventasEncargadoSolis.jsp">Solicitudes</a></li>
+                        </ul>
+                    </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             <img src="img/login.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top"> ${sessionScope.nombre_usuario != null ? sessionScope.nombre_usuario : 'Cuenta'}

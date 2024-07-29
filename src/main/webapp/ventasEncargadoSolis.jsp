@@ -94,7 +94,7 @@
 
 <main class="content">
     <div class="container mt-2">
-        <h2 id="titSeccion">Mis ventas en punto de venta</h2>
+        <h2 id="titSeccion">Mis ventas por solicitudes tomadas</h2>
 
     </div>
 </main>
@@ -110,4 +110,5 @@
 <script src="JS/bootstrap.js"></script>
 </body>
 </html>
+
 
