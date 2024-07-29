@@ -111,42 +111,110 @@
 
 <main>
 
-    <div class="table-responsive" id="tablaCategorias">
-        <h3>Comprar inventario</h3>
-        <img src="img/iconoCompras.png" width="5%" height="5%">
+    <h3>Comprar inventario</h3>
+    <img src="img/iconoCompras.png" width="5%" height="5%">
 
-            <%
+    <div class="table-responsive" id="tablaCategorias">
+        <%
             HttpSession sesion1 = request.getSession();
             String mensaje2 = (String) sesion1.getAttribute("mensaje2");
 
-            if(mensaje2 != null){ %>
-        <p class="text-danger"><%=mensaje2%></p>
-            <% } %>
+            if (mensaje2 != null) { %>
+        <p class="text-danger"><%= mensaje2 %></p>
+        <% } %>
 
-            <%
+        <%
             sesion1.removeAttribute("mensaje2");
         %>
-
-
-        <div class="container mt-5">
-            <h1 class="mb-4">Lista de Productos</h1>
-            <form id="Listaproduct" action="" method="POST">
-                <div class="form-group">
-                    <c:forEach items="${productos}" var="p">
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="productosSeleccionados" value="${p.sku}" id="producto_${p.sku}">
-                            <label class="form-check-label" for="producto_${p.sku}">
-                                    ${p.nombre}
-                            </label>
+        <!--TABLA DE PRODUCTOS -->
+        <table id="example3" class="table table-striped table-hover table-dark" style="width: 100%">
+            <thead>
+            <tr>
+                <th>Imagen</th>
+                <th>SKU</th>
+                <th>Nombre</th>
+                <th>Descripción</th>
+                <th>Precio</th>
+                <th>Stock</th>
+                <th>Actualizar Cantidad</th>
+            </tr>
+            </thead>
+            <tbody>
+            <%
+                ProductoDao productoDao = new ProductoDao();
+                ArrayList<Producto> productos = (ArrayList<Producto>) productoDao.getAll();
+                for (Producto p : productos) {
+            %>
+            <tr>
+                <td><img src="<%= request.getContextPath() %>/image?sku=<%= p.getSku() %>" width="20%" alt="<%= p.getNombre() %>"></td>
+                <td><%= p.getSku() %></td>
+                <td><%= p.getNombre() %></td>
+                <td><%= p.getDescripcion() %></td>
+                <td><%= p.getPrecio() %></td>
+                <td><%= p.getCantidad() %></td>
+                <td>
+                    <button type="button" class="btn btn-dark botonesApp" data-bs-toggle="modal" data-bs-target="#modalModiCantidad-<%= p.getSku() %>">
+                        Comprar unidades
+                    </button>
+                    <!-- Modal PARA MODIFICAR CANTIDAD-->
+                    <div class="modal fade" id="modalModiCantidad-<%= p.getSku() %>" tabindex="-1" aria-labelledby="exampleModalLabel-<%= p.getSku() %>" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="modiModalLabel-<%= p.getSku() %>">Agregar unidades</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <form method="post" action="modiCantidadProducto">
+                                        <div class="container">
+                                            <div class="row justify-content-center">
+                                                <div class="col-md-6 text-bg-dark">
+                                                    <h2 class="text-center mt-5">Aumentar stock</h2>
+                                                    <div class="form-group mb-3">
+                                                        <label>Cantidad:</label>
+                                                        <input type="number" class="form-control"  name="cantidad" min="1" required>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                            <input type="hidden" name="sku" value="<%= p.getSku() %>">
+                                            <button type="submit" class="btn btn-primary botonesApp">Guardar cambios</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
                         </div>
-                    </c:forEach>
-                </div>
-                <button type="submit" class="btn btn-primary botonesApp">Agregar Seleccionados</button>
-            </form>
-        </div>
+                    </div>
+                </td>
+            </tr>
+            <%
+                }
+            %>
+            </tbody>
+        </table>
+    </div>
+
 
 </main>
+<script src="${pageContext.request.contextPath}/JS/bootstrap.js"></script>
+<script src="${pageContext.request.contextPath}/JS/jquery-3.7.0.js"></script>
+<script src="${pageContext.request.contextPath}/JS/datatables.js"></script>
+<script src="${pageContext.request.contextPath}/JS/dataTables.bootstrap5.js"></script>
+<script src="${pageContext.request.contextPath}/JS/es-MX.json"></script>
+<script>
+    const table3 = document.getElementById('example3');
+    new DataTable(table3, {
+        language: {
+            url: '${pageContext.request.contextPath}/JS/es-MX.json'
+        }
+    });
+</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js"></script>
 <script src="JS/bootstrap.js"></script>
+<%
+    sesion1.removeAttribute("mensaje2");
+%>
 </body>
 </html>

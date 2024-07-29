@@ -10,10 +10,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6f44def4-2bd3-4c79-8a6b-cc536cc2ffae" name="Changes" comment="ventas por punto de venta encargado">
+    <list default="true" id="6f44def4-2bd3-4c79-8a6b-cc536cc2ffae" name="Changes" comment="ventas por solicitudes Encargado">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/dao/SolicitudEncargadoDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/dao/SolicitudEncargadoDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/ventasEncargadoSolis.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/ventasEncargadoSolis.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/dao/ProductoDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/dao/ProductoDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/comprasAdmin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/comprasAdmin.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,8 +26,8 @@
       <list>
         <option value="JavaScript File" />
         <option value="Interface" />
-        <option value="Class" />
         <option value="Jsp File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -255,15 +255,7 @@
       <workItem from="1722015146526" duration="36507000" />
       <workItem from="1722105233282" duration="49978000" />
       <workItem from="1722190355325" duration="20097000" />
-      <workItem from="1722222565967" duration="12314000" />
-    </task>
-    <task id="LOCAL-00029" summary="modelo y dao de categoria">
-      <option name="closed" value="true" />
-      <created>1721441001043</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1721441001043</updated>
+      <workItem from="1722222565967" duration="16283000" />
     </task>
     <task id="LOCAL-00030" summary="se empezo categorias jsp">
       <option name="closed" value="true" />
@@ -649,14 +641,21 @@
       <option name="project" value="LOCAL" />
       <updated>1722233809081</updated>
     </task>
-    <option name="localTasksCounter" value="78" />
+    <task id="LOCAL-00078" summary="ventas por solicitudes Encargado">
+      <option name="closed" value="true" />
+      <created>1722236056075</created>
+      <option name="number" value="00078" />
+      <option name="presentableId" value="LOCAL-00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1722236056075</updated>
+    </task>
+    <option name="localTasksCounter" value="79" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="nada" />
     <MESSAGE value="ya se muestran en el index los productos de La base de datos" />
     <MESSAGE value="cambio para que solo sea un boton agregar, y despues indicar la cantidad para procesar esa agregacion al carrito de compra" />
     <MESSAGE value="dando acceso al index correspondiente, se dejo al index por defecto como el de cliente 0 donde solo puede ver y registrarse o inciar sesion. si el usuario es cliente ya manda al indexcliente donde si puede hacer sus funciones. igual en administrador y encargado" />
@@ -681,6 +680,7 @@
     <MESSAGE value="punto de venta. se hace la venta directamente, es decir la solicitud se registra como entregada" />
     <MESSAGE value="nueva barra de ventas encargado" />
     <MESSAGE value="ventas por punto de venta encargado" />
-    <option name="LAST_COMMIT_MESSAGE" value="ventas por punto de venta encargado" />
+    <MESSAGE value="ventas por solicitudes Encargado" />
+    <option name="LAST_COMMIT_MESSAGE" value="ventas por solicitudes Encargado" />
   </component>
 </project>

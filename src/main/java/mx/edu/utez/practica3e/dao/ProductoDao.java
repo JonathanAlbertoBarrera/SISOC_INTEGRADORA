@@ -191,4 +191,26 @@ public class ProductoDao {
         return flag;
     }
 
+
+    // para aumentar stock
+    public boolean updateCantidad(String sku, int cantidad) {
+        boolean flag = false;
+        // Consulta SQL para actualizar la cantidad del producto sumando la nueva cantidad
+        String query = "UPDATE producto SET cantidad = cantidad + ? WHERE sku = ?";
+        try (Connection con = DatabaseConnectionManager.getConnection();
+             PreparedStatement ps = con.prepareStatement(query)) {
+
+            // Establecer los parámetros de la consulta
+            ps.setInt(1, cantidad);  // La cantidad que se sumará a la cantidad actual
+            ps.setString(2, sku);    // El SKU del producto a actualizar
+
+            // Ejecutar la actualización
+            if (ps.executeUpdate() > 0) {
+                flag = true;  // La actualización fue exitosa
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return flag;
+    }
 }
