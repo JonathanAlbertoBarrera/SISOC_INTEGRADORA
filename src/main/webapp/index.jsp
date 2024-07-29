@@ -166,7 +166,7 @@
 </footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js"></script>
-<script src="js/bootstrap.js"></script>
+<script src="JS/bootstrap.js"></script>
 
 </body>
 </html>

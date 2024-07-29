@@ -10,10 +10,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6f44def4-2bd3-4c79-8a6b-cc536cc2ffae" name="Changes" comment="ventas por solicitudes Encargado">
+    <list default="true" id="6f44def4-2bd3-4c79-8a6b-cc536cc2ffae" name="Changes" comment="JS CORREGIDO">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/dao/ProductoDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/dao/ProductoDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/comprasAdmin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/comprasAdmin.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/controlSolicitudes.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/controlSolicitudes.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,7 +64,7 @@
     "Tomcat Server.Tomcat 10.1.8.executor": "Run",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/adrian jacobo/Documents/3CuatriUTEZ/APLICACIONES WEB/versionesIntegradora/SISOC_INTEGRADORA/src/main/webapp/img",
+    "last_opened_file_path": "C:/Users/adrian jacobo/Documents/3CuatriUTEZ/APLICACIONES WEB/versionesIntegradora/SISOC_INTEGRADORA",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -255,15 +255,8 @@
       <workItem from="1722015146526" duration="36507000" />
       <workItem from="1722105233282" duration="49978000" />
       <workItem from="1722190355325" duration="20097000" />
-      <workItem from="1722222565967" duration="16283000" />
-    </task>
-    <task id="LOCAL-00030" summary="se empezo categorias jsp">
-      <option name="closed" value="true" />
-      <created>1721441658969</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1721441658969</updated>
+      <workItem from="1722222565967" duration="16914000" />
+      <workItem from="1722280185735" duration="2298000" />
     </task>
     <task id="LOCAL-00031" summary="links de menu">
       <option name="closed" value="true" />
@@ -649,15 +642,21 @@
       <option name="project" value="LOCAL" />
       <updated>1722236056075</updated>
     </task>
-    <option name="localTasksCounter" value="79" />
+    <task id="LOCAL-00079" summary="admin agregar al stock de productos">
+      <option name="closed" value="true" />
+      <created>1722239695219</created>
+      <option name="number" value="00079" />
+      <option name="presentableId" value="LOCAL-00079" />
+      <option name="project" value="LOCAL" />
+      <updated>1722239695219</updated>
+    </task>
+    <option name="localTasksCounter" value="80" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="ya se muestran en el index los productos de La base de datos" />
-    <MESSAGE value="cambio para que solo sea un boton agregar, y despues indicar la cantidad para procesar esa agregacion al carrito de compra" />
     <MESSAGE value="dando acceso al index correspondiente, se dejo al index por defecto como el de cliente 0 donde solo puede ver y registrarse o inciar sesion. si el usuario es cliente ya manda al indexcliente donde si puede hacer sus funciones. igual en administrador y encargado" />
     <MESSAGE value="filtros para no poder acceder a jsp o servlets que no correspondan a los tipos de sesion" />
     <MESSAGE value="si" />
@@ -681,6 +680,8 @@
     <MESSAGE value="nueva barra de ventas encargado" />
     <MESSAGE value="ventas por punto de venta encargado" />
     <MESSAGE value="ventas por solicitudes Encargado" />
-    <option name="LAST_COMMIT_MESSAGE" value="ventas por solicitudes Encargado" />
+    <MESSAGE value="admin agregar al stock de productos" />
+    <MESSAGE value="JS CORREGIDO" />
+    <option name="LAST_COMMIT_MESSAGE" value="JS CORREGIDO" />
   </component>
 </project>
