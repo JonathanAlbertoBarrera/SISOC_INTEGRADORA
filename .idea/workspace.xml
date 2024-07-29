@@ -10,18 +10,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6f44def4-2bd3-4c79-8a6b-cc536cc2ffae" name="Changes" comment="pequenos cambios">
+    <list default="true" id="6f44def4-2bd3-4c79-8a6b-cc536cc2ffae" name="Changes" comment="historial de solicitudes en su propia pagina y borrado de imagenes rezagadas">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/img/chilaquilesVerdes.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/img/chokis.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/img/coca.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/img/doritos.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/img/emperador.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/img/fanta.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/img/start.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/img/tortaJamon.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/indexCliente.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/indexCliente.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/solicitudes.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/solicitudes.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/categorias.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/categorias.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/comprasAdmin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/comprasAdmin.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/indexAdmin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/indexAdmin.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/marcas.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/marcas.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/productosAdmin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/productosAdmin.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -262,15 +257,7 @@
       <workItem from="1721931773968" duration="24361000" />
       <workItem from="1722015146526" duration="36507000" />
       <workItem from="1722105233282" duration="49978000" />
-      <workItem from="1722190355325" duration="14611000" />
-    </task>
-    <task id="LOCAL-00023" summary="se agrego en el dao una funcion para obtener a los usuarios excepto al administrador, la cual se usa para llenar la tabla de todos los usuarios en la vista del index del administrador. para asi cumplir el requerimiento que nos dio el cliente de visualizar a todos los usuarios menos el admin">
-      <option name="closed" value="true" />
-      <created>1721346858992</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1721346858992</updated>
+      <workItem from="1722190355325" duration="20097000" />
     </task>
     <task id="LOCAL-00024" summary="funcion modificar Encargado, mediante modal y agregacion de su correspondiente funcion en el dao ademas de su servlet">
       <option name="closed" value="true" />
@@ -656,14 +643,21 @@
       <option name="project" value="LOCAL" />
       <updated>1722202405289</updated>
     </task>
-    <option name="localTasksCounter" value="72" />
+    <task id="LOCAL-00072" summary="historial de solicitudes en su propia pagina y borrado de imagenes rezagadas">
+      <option name="closed" value="true" />
+      <created>1722208550641</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1722208550642</updated>
+    </task>
+    <option name="localTasksCounter" value="73" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="creacion de jsp de compras del admin y colocacion de enlaces en las barras de navegacion" />
     <MESSAGE value="modificacion del filtro para que cargue los datos tambien en compras, ademas de que el servlet tambien mande lista de productos" />
     <MESSAGE value="mostrando productos en lista" />
     <MESSAGE value="POR FIN SIRVEN LAS IMAGENES. SE MODIFICO EL MODELO Y DAO CONSIDERANDO QUE EN LA BD SE GUARDA DE TIPO BLOB. SE HIZO EL SERVLET DE REGISTRAR  Y MODIFICAR AL PRODUCTO INCLUYENDO LA IMAGEN EN AMBOS" />
@@ -688,6 +682,7 @@
     <MESSAGE value="se ven los productos de las solicitudes que toma el encargado" />
     <MESSAGE value="gestion de toma de solicitudes, cambio de estado y cancelacion (con regreso de unidades al stock)" />
     <MESSAGE value="pequenos cambios" />
-    <option name="LAST_COMMIT_MESSAGE" value="pequenos cambios" />
+    <MESSAGE value="historial de solicitudes en su propia pagina y borrado de imagenes rezagadas" />
+    <option name="LAST_COMMIT_MESSAGE" value="historial de solicitudes en su propia pagina y borrado de imagenes rezagadas" />
   </component>
 </project>

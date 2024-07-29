@@ -1,10 +1,7 @@
 <%@ page import="mx.edu.utez.practica3e.dao.CategoriaDao" %>
 <%@ page import="mx.edu.utez.practica3e.model.Categoria" %>
 <%@ page import="java.util.ArrayList" %>
-<%@ page import="mx.edu.utez.practica3e.dao.ProductoDao" %>
-<%@ page import="mx.edu.utez.practica3e.model.Producto" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,10 +14,10 @@
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel="stylesheet" href="css/bootstrap.css">
     <style>
-        .si{
-            color: #ffffff;
-        }
 
+        .si{
+            color:#ffffff;
+        }
         .barra a:hover{
             color:#F4AB2C;
         }
@@ -52,21 +49,9 @@
             color: white; /* Texto blanco para el botón activo */
         }
 
-        .form-check {
-            display: flex;
-            align-items: center;
-        }
-
-        .form-check-input {
-            width: 1.5em;
-            height: 1.5em;
-        }
-
-        .form-check-label {
-            margin-left: 0.5em;
-        }
 
     </style>
+
 </head>
 <body>
 <header>
@@ -110,43 +95,18 @@
 </header>
 
 <main>
+    <h3>Ventas</h3>
+    <img src="img/iconoVentas.png" width="5%" height="5%">
+    <!--BOTON NUEVA MARCA -->
+    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalNuevaCategoria">
+        Agregar una nueva Categoria
+    </button>
 
-    <div class="table-responsive" id="tablaCategorias">
-        <h3>Comprar inventario</h3>
-        <img src="img/iconoCompras.png" width="5%" height="5%">
-
-            <%
-            HttpSession sesion1 = request.getSession();
-            String mensaje2 = (String) sesion1.getAttribute("mensaje2");
-
-            if(mensaje2 != null){ %>
-        <p class="text-danger"><%=mensaje2%></p>
-            <% } %>
-
-            <%
-            sesion1.removeAttribute("mensaje2");
-        %>
-
-
-        <div class="container mt-5">
-            <h1 class="mb-4">Lista de Productos</h1>
-            <form id="Listaproduct" action="" method="POST">
-                <div class="form-group">
-                    <c:forEach items="${productos}" var="p">
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="productosSeleccionados" value="${p.sku}" id="producto_${p.sku}">
-                            <label class="form-check-label" for="producto_${p.sku}">
-                                    ${p.nombre}
-                            </label>
-                        </div>
-                    </c:forEach>
-                </div>
-                <button type="submit" class="btn btn-primary botonesApp">Agregar Seleccionados</button>
-            </form>
-        </div>
 
 </main>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js"></script>
 <script src="JS/bootstrap.js"></script>
 </body>
 </html>
+
