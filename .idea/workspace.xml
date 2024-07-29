@@ -10,11 +10,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6f44def4-2bd3-4c79-8a6b-cc536cc2ffae" name="Changes" comment="nueva barra de ventas encargado">
+    <list default="true" id="6f44def4-2bd3-4c79-8a6b-cc536cc2ffae" name="Changes" comment="ventas por punto de venta encargado">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/dao/SolicitudDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/dao/SolicitudDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/ventasAdmin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/ventasAdmin.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/ventasEncargado.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/ventasEncargado.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/dao/SolicitudEncargadoDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/dao/SolicitudEncargadoDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/ventasEncargadoSolis.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/ventasEncargadoSolis.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -256,15 +255,7 @@
       <workItem from="1722015146526" duration="36507000" />
       <workItem from="1722105233282" duration="49978000" />
       <workItem from="1722190355325" duration="20097000" />
-      <workItem from="1722222565967" duration="10784000" />
-    </task>
-    <task id="LOCAL-00028" summary="Se agrega el modelo y dao de Marca, con ello se hizo su jsp donde se hace su CRUD,con ello se agregan tambien los servlets para modificar, registrar y desactivar a una marca">
-      <option name="closed" value="true" />
-      <created>1721431297891</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1721431297891</updated>
+      <workItem from="1722222565967" duration="12314000" />
     </task>
     <task id="LOCAL-00029" summary="modelo y dao de categoria">
       <option name="closed" value="true" />
@@ -650,14 +641,21 @@
       <option name="project" value="LOCAL" />
       <updated>1722232252189</updated>
     </task>
-    <option name="localTasksCounter" value="77" />
+    <task id="LOCAL-00077" summary="ventas por punto de venta encargado">
+      <option name="closed" value="true" />
+      <created>1722233809081</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1722233809081</updated>
+    </task>
+    <option name="localTasksCounter" value="78" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="pusimos la tabla de crud por defecto para mostrar los mensajes de las operaciones directamente, y agregar producto none por defecto" />
     <MESSAGE value="nada" />
     <MESSAGE value="ya se muestran en el index los productos de La base de datos" />
     <MESSAGE value="cambio para que solo sea un boton agregar, y despues indicar la cantidad para procesar esa agregacion al carrito de compra" />
@@ -682,6 +680,7 @@
     <MESSAGE value="nueva barra para encargado. nuevos jsp ya adaptados para el responsive en caso de no que no haya solicitudes el footer se queda abajo ya" />
     <MESSAGE value="punto de venta. se hace la venta directamente, es decir la solicitud se registra como entregada" />
     <MESSAGE value="nueva barra de ventas encargado" />
-    <option name="LAST_COMMIT_MESSAGE" value="nueva barra de ventas encargado" />
+    <MESSAGE value="ventas por punto de venta encargado" />
+    <option name="LAST_COMMIT_MESSAGE" value="ventas por punto de venta encargado" />
   </component>
 </project>
