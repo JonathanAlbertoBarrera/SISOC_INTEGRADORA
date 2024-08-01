@@ -271,4 +271,34 @@ public class SolicitudDao {
 
         return listaSolicitudes;
     }
+    public Solicitud obtenerSolicitudPorId(int id) {
+        Solicitud solicitud = null;
+        String query = "SELECT s.id_solicitud, s.fecha, s.total, s.estado, u.id_usuario, u.correo " +
+                "FROM solicitud s " +
+                "JOIN usuario u ON s.id_usuario = u.id_usuario " +
+                "WHERE s.id_solicitud = ?";
+
+        try (Connection connection = DatabaseConnectionManager.getConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement(query)) {
+
+            preparedStatement.setInt(1, id);
+            try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                if (resultSet.next()) {
+                    solicitud = new Solicitud();
+                    solicitud.setId_solicitud(resultSet.getInt("id_solicitud"));
+                    solicitud.setFecha(resultSet.getDate("fecha"));
+                    solicitud.setTotal(resultSet.getDouble("total"));
+                    solicitud.setEstado(resultSet.getString("estado"));
+
+                    Usuario usuario = new Usuario();
+                    usuario.setIdUsuario(resultSet.getInt("id_usuario"));
+                    usuario.setCorreo(resultSet.getString("correo"));
+                    solicitud.setUsuario(usuario);
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return solicitud;
+    }
 }

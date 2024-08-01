@@ -399,5 +399,23 @@ public class UsuarioDao {
         }
         return flag;
     }
+    public String obtenerEmailPorId(int idUsuario) {
+        String email = null;
+        String query = "SELECT correo FROM usuario WHERE id_usuario = ?";
+
+        try (Connection connection = DatabaseConnectionManager.getConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement(query)) {
+
+            preparedStatement.setInt(1, idUsuario);
+            try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                if (resultSet.next()) {
+                    email = resultSet.getString("correo");
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return email;
+    }
 
 }
