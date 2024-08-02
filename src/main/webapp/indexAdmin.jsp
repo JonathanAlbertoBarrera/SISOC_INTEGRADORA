@@ -143,9 +143,12 @@
                 <td><%= u.getPersona().getTelefono() %></td>
                 <td><%= u.isEstatus() ? "Activo" : "Inactivo" %></td>
                 <td>
-                    <img src="img/iconoCambiarEstatus.png" width="10%" height="10%">
-                    <button type="button" class="btn btn-dark botonesApp" data-bs-toggle="modal" data-bs-target="#modalDesac-<%= u.getIdUsuario() %>">
-                        <%= u.isEstatus() ? "Desactivar" : "Activar" %>
+                    <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#modalDesac-<%= u.getIdUsuario() %>">
+                        <% if (u.isEstatus()) { %>
+                        <img src="img/activobtn.png" alt="Desactivar" width="10%" height="10%">
+                        <% } else { %>
+                        <img src="img/inactivobtn.png" alt="Activar" width="10%" height="10%">
+                        <% } %>
                     </button>
                     <!-- Modal -->
                     <div class="modal fade" id="modalDesac-<%= u.getIdUsuario() %>" tabindex="-1" aria-labelledby="exampleModalLabel-<%= u.getIdUsuario() %>" aria-hidden="true">
@@ -220,9 +223,12 @@
                 <td><%= u.getPersona().getTelefono() %></td>
                 <td><%=u.isEstatus() ? "Activo" : "Inactivo"%></td>
                 <td>
-                    <img src="img/iconoCambiarEstatus.png" width="20%" height="20%">
-                    <button type="button" class="btn btn-dark botonesApp" data-bs-toggle="modal" data-bs-target="#modalDesac2-<%= u.getIdUsuario() %>">
-                        <%= u.isEstatus() ? "Desactivar" : "Activar" %>
+                    <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#modalDesac2-<%= u.getIdUsuario() %>">
+                        <% if (u.isEstatus()) { %>
+                        <img src="img/activobtn.png" alt="Desactivar" width="50%" height="30%">
+                        <% } else { %>
+                        <img src="img/inactivobtn.png" alt="Activar" width="50%" height="30%">
+                        <% } %>
                     </button>
                     <!-- Modal -->
                     <div class="modal fade" id="modalDesac2-<%= u.getIdUsuario() %>" tabindex="-1" aria-labelledby="exampleModalLabel-<%= u.getIdUsuario() %>" aria-hidden="true">
@@ -369,9 +375,8 @@
                 <td><%= u.getRol().getTipoRol() %></td>
                 <td><%=u.isEstatus() ? "Activo" : "Inactivo"%></td>
                 <td>
-                    <img src="img/iconoModificar.png" width="20%" height="20%">
-                    <button type="button" class="btn btn-dark botonesApp" data-bs-toggle="modal" data-bs-target="#modalModiEncargado-<%= u.getIdUsuario() %>">
-                        Actualizar
+                    <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#modalModiEncargado-<%= u.getIdUsuario() %>">
+                        <img src="img/boton-editar.png" alt="Actualizar" style="height: 25%; width: 25%;">
                     </button>
                     <!-- Modal PARA MODIFICAR ENCARGADO-->
                     <div class="modal fade" id="modalModiEncargado-<%= u.getIdUsuario() %>" tabindex="-1" aria-labelledby="exampleModalLabel-<%= u.getIdUsuario() %>" aria-hidden="true">
@@ -430,9 +435,13 @@
                     </div>
                 </td>
                 <td>
-                    <img src="img/iconoCambiarEstatus.png" width="20%" height="20%">
-                    <button type="button" class="btn btn-dark botonesApp" data-bs-toggle="modal" data-bs-target="#modalDesac3-<%= u.getIdUsuario() %>">
-                        <%= u.isEstatus() ? "Desactivar" : "Activar" %>
+
+                    <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#modalDesac3-<%= u.getIdUsuario() %>">
+                        <% if (u.isEstatus()) { %>
+                        <img src="img/activobtn.png" alt="Desactivar" width="50%" height="30%">
+                        <% } else { %>
+                        <img src="img/inactivobtn.png" alt="Activar" width="50%" height="30%">
+                        <% } %>
                     </button>
                     <!-- Modal PARA ESTATUS -->
                     <div class="modal fade" id="modalDesac3-<%= u.getIdUsuario() %>" tabindex="-1" aria-labelledby="exampleModalLabel-<%= u.getIdUsuario() %>" aria-hidden="true">

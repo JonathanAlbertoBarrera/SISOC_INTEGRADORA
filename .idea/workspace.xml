@@ -10,14 +10,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6f44def4-2bd3-4c79-8a6b-cc536cc2ffae" name="Changes" comment="JS CORREGIDO">
+    <list default="true" id="6f44def4-2bd3-4c79-8a6b-cc536cc2ffae" name="Changes" comment="envio de correo">
       <change afterPath="$PROJECT_DIR$/src/main/resources/credentials.json" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/resources/tokens/StoredCredential" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/img/activobtn.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/img/boton-editar.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/img/inactivobtn.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/controller/EncargadoCambiarEstadoSoliServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/controller/EncargadoCambiarEstadoSoliServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/controller/EncargadoTomarSolicitudServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/controller/EncargadoTomarSolicitudServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/dao/SolicitudDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/dao/SolicitudDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/dao/UsuarioDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/dao/UsuarioDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/img/iconoCambiarEstatus.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/indexAdmin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/indexAdmin.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,7 +69,7 @@
     "Tomcat Server.Tomcat 10.1.8.executor": "Run",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/adrian jacobo/Documents/3CuatriUTEZ/APLICACIONES WEB/versionesIntegradora/SISOC_INTEGRADORA/src/main",
+    "last_opened_file_path": "C:/Users/adrian jacobo/Documents/3CuatriUTEZ/APLICACIONES WEB/versionesIntegradora/SISOC_INTEGRADORA/src/main/webapp/img",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -82,8 +83,8 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\adrian jacobo\Documents\3CuatriUTEZ\APLICACIONES WEB\versionesIntegradora\SISOC_INTEGRADORA\src\main" />
       <recent name="C:\Users\adrian jacobo\Documents\3CuatriUTEZ\APLICACIONES WEB\versionesIntegradora\SISOC_INTEGRADORA\src\main\webapp\img" />
+      <recent name="C:\Users\adrian jacobo\Documents\3CuatriUTEZ\APLICACIONES WEB\versionesIntegradora\SISOC_INTEGRADORA\src\main" />
       <recent name="C:\Users\adrian jacobo\Documents\3CuatriUTEZ\APLICACIONES WEB\versionesIntegradora\SISOC_INTEGRADORA\src\main\webapp" />
       <recent name="C:\Users\adrian jacobo\Documents\3CuatriUTEZ\APLICACIONES WEB\versionesIntegradora\SISOC_INTEGRADORA\src\main\webapp\js" />
       <recent name="C:\Users\adrian jacobo\Documents\3CuatriUTEZ\APLICACIONES WEB\versionesIntegradora\SISOC_INTEGRADORA\src\main\java" />
@@ -261,15 +262,8 @@
       <workItem from="1722190355325" duration="20097000" />
       <workItem from="1722222565967" duration="16914000" />
       <workItem from="1722280185735" duration="6629000" />
-      <workItem from="1722363089497" duration="8061000" />
-    </task>
-    <task id="LOCAL-00032" summary="CRUD DE CATEGORIAS (3 SERVLETS:DESACTIVAR,MODIFICAR Y REGISTRAR) Y CORRECCION DE COMENTARIOS EN OTROS ARCHIVOS Y REMOVE A COMENTARIO DE LA TABLA DE USUARIOS DE TIPO ENCARGADO">
-      <option name="closed" value="true" />
-      <created>1721448955069</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1721448955069</updated>
+      <workItem from="1722363089497" duration="10013000" />
+      <workItem from="1722546479082" duration="5685000" />
     </task>
     <task id="LOCAL-00033" summary="Agregamos el jsp de productos mas el link en los menus">
       <option name="closed" value="true" />
@@ -655,14 +649,21 @@
       <option name="project" value="LOCAL" />
       <updated>1722284357687</updated>
     </task>
-    <option name="localTasksCounter" value="81" />
+    <task id="LOCAL-00081" summary="envio de correo">
+      <option name="closed" value="true" />
+      <created>1722478848741</created>
+      <option name="number" value="00081" />
+      <option name="presentableId" value="LOCAL-00081" />
+      <option name="project" value="LOCAL" />
+      <updated>1722478848741</updated>
+    </task>
+    <option name="localTasksCounter" value="82" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="dando acceso al index correspondiente, se dejo al index por defecto como el de cliente 0 donde solo puede ver y registrarse o inciar sesion. si el usuario es cliente ya manda al indexcliente donde si puede hacer sus funciones. igual en administrador y encargado" />
     <MESSAGE value="filtros para no poder acceder a jsp o servlets que no correspondan a los tipos de sesion" />
     <MESSAGE value="si" />
     <MESSAGE value="Funcion de agregar productos al  carrito. Con ello el servlet que ocupa la funcion del carritodao para saber si hay un carrito no confirmado,en ese caso agrega los productos en ese carrito usando la funcion del carritoproductodao. Si no tiene alguno por confirmar, lo crea y apartir de ese carrito registra" />
@@ -687,6 +688,7 @@
     <MESSAGE value="ventas por solicitudes Encargado" />
     <MESSAGE value="admin agregar al stock de productos" />
     <MESSAGE value="JS CORREGIDO" />
-    <option name="LAST_COMMIT_MESSAGE" value="JS CORREGIDO" />
+    <MESSAGE value="envio de correo" />
+    <option name="LAST_COMMIT_MESSAGE" value="envio de correo" />
   </component>
 </project>
