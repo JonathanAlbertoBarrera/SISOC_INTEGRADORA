@@ -2,6 +2,7 @@
 <%@ page import="mx.edu.utez.practica3e.model.Categoria" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -102,6 +103,12 @@
         Agregar una nueva Categoria
     </button>
 
+    <c:if test="${not empty sessionScope.mensaje2C}">
+        <div class="alert alert-success">
+                ${sessionScope.mensaje2C}
+        </div>
+    </c:if>
+
     <!-- TABLA TODAS LAS CATEGORIAS -->
     <div class="table-responsive" id="tablaCategorias">
 
@@ -139,13 +146,6 @@
                 </div>
             </div>
         </div>
-        <%
-            HttpSession sesion1 = request.getSession();
-            String mensaje2A = (String) sesion1.getAttribute("mensaje2A");
-
-            if(mensaje2A != null){ %>
-        <p class="text-danger"><%=mensaje2A%></p>
-        <% } %>
 
         <!--TABLA DE CATEGORIAS -->
         <table id="example3" class="table table-striped table-hover" style="width: 100%">
@@ -172,9 +172,8 @@
                 <td><%= c.isEstatus() ? "Activo" : "Inactivo" %></td>
                 <!-- td para modificar categoria-->
                 <td>
-                    <img src="img/iconoModificar.png" width="8%" height="8%">
-                    <button type="button" class="btn btn-dark botonesApp" data-bs-toggle="modal" data-bs-target="#modalModiMarca-<%= c.getId_categoria() %>">
-                        Actualizar categoria
+                    <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#modalModiMarca-<%= c.getId_categoria() %>">
+                        <img src="img/boton-editar.png" alt="Actualizar" style="height: 25%; width: 25%;">
                     </button>
                     <!-- Modal PARA MODIFICAR CATEGORIA-->
                     <div class="modal fade" id="modalModiMarca-<%= c.getId_categoria() %>" tabindex="-1" aria-labelledby="exampleModalLabel-<%= c.getId_categoria() %>" aria-hidden="true">
@@ -214,9 +213,12 @@
                 </td>
                 <!-- td para cambiar estatus-->
                 <td>
-                    <img src="img/iconoCambiarEstatus.png" width="10%" height="10%">
-                    <button type="button" class="btn btn-dark botonesApp" data-bs-toggle="modal" data-bs-target="#modalDesac-<%= c.getId_categoria() %>">
-                        <%= c.isEstatus() ? "Desactivar" : "Activar" %>
+                    <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#modalDesac-<%= c.getId_categoria() %>">
+                        <% if (c.isEstatus()) { %>
+                        <img src="img/activobtn.png" alt="Desactivar" width="50%" height="30%">
+                        <% } else { %>
+                        <img src="img/inactivobtn.png" alt="Activar" width="50%" height="30%">
+                        <% } %>
                     </button>
                     <!-- Modal -->
                     <div class="modal fade" id="modalDesac-<%= c.getId_categoria() %>" tabindex="-1" aria-labelledby="exampleModalLabel-<%= c.getId_categoria() %>" aria-hidden="true">
@@ -265,7 +267,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js"></script>
 <script src="JS/bootstrap.js"></script>
 <%
-    sesion1.removeAttribute("mensaje2A");
+    session.removeAttribute("mensaje2C");
 %>
 </body>
 </html>

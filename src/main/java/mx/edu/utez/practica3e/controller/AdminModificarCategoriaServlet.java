@@ -34,15 +34,15 @@ public class AdminModificarCategoriaServlet extends HttpServlet {
             boolean actualizado = categoriaDao.updateCategoria(categoria);
 
             if (actualizado) {
-                req.getSession().setAttribute("mensaje2A", "Categoría actualizada exitosamente");
+                req.getSession().setAttribute("mensaje2C", "Categoría "+nombre+ " actualizada exitosamente");
             } else {
-                req.getSession().setAttribute("mensaje2A", "Error al actualizar la categoría");
+                req.getSession().setAttribute("mensaje2C", "Error al actualizar la categoría "+nombre);
             }
 
         } catch (NumberFormatException e) {
-            req.getSession().setAttribute("mensaje2A", "Error al convertir el ID");
+            req.getSession().setAttribute("mensaje2C", "Error al convertir el ID");
         } catch (Exception e) {
-            req.getSession().setAttribute("mensaje2A", "Error inesperado: " + e.getMessage());
+            req.getSession().setAttribute("mensaje2C", "Error inesperado: " + e.getMessage());
         }
 
         // Redireccionar de vuelta a la pagina de categorias

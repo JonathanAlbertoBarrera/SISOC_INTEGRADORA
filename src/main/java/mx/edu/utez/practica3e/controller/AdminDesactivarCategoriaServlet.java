@@ -24,11 +24,11 @@ public class AdminDesactivarCategoriaServlet extends HttpServlet {
         CategoriaDao dao = new CategoriaDao();
         if(dao.desactivar(c)){
             // Si se hizo el update de estado
+            req.getSession().setAttribute("mensaje2C", "Se cambió el estatus de la categoría con id "+id_categoria);
             resp.sendRedirect("categorias.jsp");
-            req.getSession().setAttribute("mensaje2A", "Se cambió el estatus de la categoría");
         } else {
             // No se pudo cambiar el estado, mando un error
-            req.getSession().setAttribute("mensaje2A", "No se pudo cambiar el estado de la categoría");
+            req.getSession().setAttribute("mensaje2C", "No se pudo cambiar el estado de la categoría con id "+id_categoria);
             resp.sendRedirect("categorias.jsp");
         }
     }

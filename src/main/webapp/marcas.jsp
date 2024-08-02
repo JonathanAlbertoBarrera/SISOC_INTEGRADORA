@@ -148,6 +148,7 @@
             </div>
         </c:if>
 
+
         <!--TABLA DE MARCAS -->
         <table id="example3" class="table table-striped table-hover container" style="width: 100%">
             <thead>
