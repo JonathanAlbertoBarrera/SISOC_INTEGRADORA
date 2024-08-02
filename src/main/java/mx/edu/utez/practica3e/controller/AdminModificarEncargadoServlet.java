@@ -42,9 +42,9 @@ public class AdminModificarEncargadoServlet extends HttpServlet {
             boolean actualizado = usuarioDao.updateUsuario(usuario);
 
             if (actualizado) {
-                req.getSession().setAttribute("mensaje2A", "Usuario actualizado exitosamente");
+                req.getSession().setAttribute("mensaje2A", "Encargado "+nombre+" "+apellidos+ " actualizado exitosamente");
             } else {
-                req.getSession().setAttribute("mensaje2A", "Error al actualizar el usuario");
+                req.getSession().setAttribute("mensaje2A", "Error al actualizar al encargado "+nombre+" "+apellidos);
             }
 
         } catch (NumberFormatException e) {

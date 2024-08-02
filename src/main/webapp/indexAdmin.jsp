@@ -2,6 +2,7 @@
 <%@ page import="mx.edu.utez.practica3e.model.Usuario" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -109,7 +110,11 @@
         <button class="btn btn-dark botonesApp" id="opcEncargados" onclick="mostrarTablaEncargados()">Ver encargados</button>
         <button class="btn btn-dark botonesApp" id="opcClientes" onclick="mostrarTablaClientes()">Ver clientes</button>
     </div>
-
+    <c:if test="${not empty sessionScope.mensaje2A}">
+        <div class="alert alert-success">
+                ${sessionScope.mensaje2A}
+        </div>
+    </c:if>
 
     <!-- TABLA TODOS LOS USUARIOS -->
     <div class="table-responsive" id="tablaAllUsuarios">
@@ -175,16 +180,6 @@
                         </div>
                     </div>
                 </td>
-                <%
-                    HttpSession sesion = request.getSession();
-                    String mensaje = (String) sesion.getAttribute("mensaje");
-                    if (mensaje != null) {
-                %>
-                <p style="color: red;"><%= mensaje %></p>
-                <%
-                        sesion.removeAttribute("mensaje");
-                    }
-                %>
             </tr>
             <% } %>
             </tbody>
@@ -255,16 +250,6 @@
                         </div>
                     </div>
                 </td>
-                <%
-                    HttpSession sesion = request.getSession();
-                    String mensaje = (String) sesion.getAttribute("mensaje");
-                    if (mensaje != null) {
-                %>
-                <p style="color: red;"><%= mensaje %></p>
-                <%
-                        sesion.removeAttribute("mensaje");
-                    }
-                %>
             </tr>
             <% } %>
             </tbody>
@@ -337,16 +322,6 @@
                 </div>
             </div>
         </div>
-        <%
-            HttpSession sesion1 = request.getSession();
-            String mensaje2A = (String) sesion1.getAttribute("mensaje2A");
-
-            if(mensaje2A != null){ %>
-        <p class="text-danger"><%=mensaje2A%></p>
-        <% } %>
-        <%
-            sesion1.removeAttribute("mensaje2A");
-        %>
 
         <table id="example" class="table table-striped table-hover" style="width: 100%">
             <thead>
@@ -468,16 +443,6 @@
                         </div>
                     </div>
                 </td>
-                <%
-                    HttpSession sesion = request.getSession();
-                    String mensaje = (String) sesion.getAttribute("mensaje");
-                    if (mensaje != null) {
-                %>
-                <p style="color: red;"><%= mensaje %></p>
-                <%
-                        sesion.removeAttribute("mensaje");
-                    }
-                %>
             </tr>
             <% } %>
             </tbody>
@@ -546,5 +511,8 @@
         document.getElementById(botonId).classList.add('activo'); // Añadir clase 'activo' al botón correspondiente
     }
 </script>
+<%
+    session.removeAttribute("mensaje2A");
+%>
 </body>
 </html>

@@ -2,6 +2,7 @@
 <%@ page import="mx.edu.utez.practica3e.model.Marca" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -104,7 +105,7 @@
         Agregar una nueva Marca
     </button>
     <!-- TABLA TODOS LAS MARCAS -->
-    <div class="table-responsive" id="tablaMarcas">
+    <div class="table-responsive container" id="tablaMarcas">
 
         <!-- Modal PARA AGREGAR MARCA-->
         <div class="modal fade" id="modalNuevaMarca" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -140,20 +141,19 @@
                 </div>
             </div>
         </div>
-        <%
-            HttpSession sesion1 = request.getSession();
-            String mensaje2A = (String) sesion1.getAttribute("mensaje2A");
 
-            if(mensaje2A != null){ %>
-        <p class="text-danger"><%=mensaje2A%></p>
-        <% } %>
+        <c:if test="${not empty sessionScope.mensaje2A}">
+            <div class="alert alert-success">
+                    ${sessionScope.mensaje2A}
+            </div>
+        </c:if>
 
         <!--TABLA DE MARCAS -->
-        <table id="example3" class="table table-striped table-hover" style="width: 100%">
+        <table id="example3" class="table table-striped table-hover container" style="width: 100%">
             <thead>
             <tr>
                 <th>ID marca</th>
-                <th>Nombre</th>
+                <th >Nombre</th>
                 <th>Descripción</th>
                 <th>Estatus</th>
                 <th>Actualizar</th>
@@ -173,9 +173,8 @@
                 <td><%= m.isEstatus() ? "Activo" : "Inactivo" %></td>
                 <!-- td para modificar marca-->
                 <td>
-                    <img src="img/iconoModificar.png" width="8%" height="8%">
-                    <button type="button" class="btn btn-dark botonesApp" data-bs-toggle="modal" data-bs-target="#modalModiMarca-<%= m.getId_marca() %>">
-                        Actualizar marca
+                    <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#modalModiMarca-<%= m.getId_marca() %>">
+                        <img src="img/boton-editar.png" alt="Actualizar" style="width: 25%; height: 25%;">
                     </button>
                     <!-- Modal PARA MODIFICAR ENCARGADO-->
                     <div class="modal fade" id="modalModiMarca-<%= m.getId_marca() %>" tabindex="-1" aria-labelledby="exampleModalLabel-<%= m.getId_marca() %>" aria-hidden="true">
@@ -215,9 +214,12 @@
                 </td>
                 <!-- td para cambiar estatus-->
                 <td>
-                    <img src="img/iconoCambiarEstatus.png" width="10%" height="10%">
-                    <button type="button" class="btn btn-dark botonesApp" data-bs-toggle="modal" data-bs-target="#modalDesac-<%= m.getId_marca() %>">
-                        <%= m.isEstatus() ? "Desactivar" : "Activar" %>
+                    <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#modalDesac-<%= m.getId_marca() %>">
+                        <% if (m.isEstatus()) { %>
+                        <img src="img/activobtn.png" alt="Desactivar" width="50%" height="30%">
+                        <% } else { %>
+                        <img src="img/inactivobtn.png" alt="Activar" width="50%" height="30%">
+                        <% } %>
                     </button>
                     <!-- Modal -->
                     <div class="modal fade" id="modalDesac-<%= m.getId_marca() %>" tabindex="-1" aria-labelledby="exampleModalLabel-<%= m.getId_marca() %>" aria-hidden="true">
@@ -266,7 +268,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js"></script>
 <script src="JS/bootstrap.js"></script>
 <%
-    sesion1.removeAttribute("mensaje2A");
+    session.removeAttribute("mensaje2A");
 %>
 </body>
 </html>

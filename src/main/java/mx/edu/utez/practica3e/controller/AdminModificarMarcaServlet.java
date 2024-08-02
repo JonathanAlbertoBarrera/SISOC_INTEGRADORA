@@ -33,9 +33,9 @@ public class AdminModificarMarcaServlet extends HttpServlet {
             boolean actualizado = marcaDao.updateMarca(marca);
 
             if (actualizado) {
-                req.getSession().setAttribute("mensaje2A", "Marca actualizada exitosamente");
+                req.getSession().setAttribute("mensaje2A", "Marca "+nombre+ " actualizada exitosamente");
             } else {
-                req.getSession().setAttribute("mensaje2A", "Error al actualizar la marca");
+                req.getSession().setAttribute("mensaje2A", "Error al actualizar la marca "+nombre);
             }
 
         } catch (NumberFormatException e) {

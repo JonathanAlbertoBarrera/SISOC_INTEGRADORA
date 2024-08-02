@@ -24,10 +24,11 @@ public class AdminEliminarUsuarioServlet extends HttpServlet {
         UsuarioDao dao = new UsuarioDao();
         if(dao.desactivar(u)){
             // Si se hizo el update de estado
+            req.getSession().setAttribute("mensaje2A", "Se cambió el estado al usuario con id: "+id);
             resp.sendRedirect("indexAdmin.jsp");
         } else {
             // No se pudo cambiar el estado, mando un error
-            req.getSession().setAttribute("mensaje", "No se pudo cambiar el estado");
+            req.getSession().setAttribute("mensaje2A", "No se pudo cambiar el estado al usuario con id: "+id);
             resp.sendRedirect("indexAdmin.jsp");
         }
     }

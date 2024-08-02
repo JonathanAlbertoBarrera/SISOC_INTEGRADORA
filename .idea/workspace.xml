@@ -10,15 +10,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6f44def4-2bd3-4c79-8a6b-cc536cc2ffae" name="Changes" comment="envio de correo">
+    <list default="true" id="6f44def4-2bd3-4c79-8a6b-cc536cc2ffae" name="Changes" comment="index del admin con dise;o ya con iconos en lugar de botones y responsive al 100">
       <change afterPath="$PROJECT_DIR$/src/main/resources/credentials.json" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/resources/tokens/StoredCredential" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/img/activobtn.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/img/boton-editar.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/img/inactivobtn.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/img/iconoCambiarEstatus.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/controller/AdminDesactivarMarcaServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/controller/AdminDesactivarMarcaServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/controller/AdminEliminarUsuarioServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/controller/AdminEliminarUsuarioServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/controller/AdminModificarEncargadoServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/controller/AdminModificarEncargadoServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/controller/AdminModificarMarcaServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/controller/AdminModificarMarcaServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/indexAdmin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/indexAdmin.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/marcas.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/marcas.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -263,15 +264,7 @@
       <workItem from="1722222565967" duration="16914000" />
       <workItem from="1722280185735" duration="6629000" />
       <workItem from="1722363089497" duration="10013000" />
-      <workItem from="1722546479082" duration="5685000" />
-    </task>
-    <task id="LOCAL-00033" summary="Agregamos el jsp de productos mas el link en los menus">
-      <option name="closed" value="true" />
-      <created>1721526087675</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1721526087675</updated>
+      <workItem from="1722546479082" duration="14089000" />
     </task>
     <task id="LOCAL-00034" summary="cards opciones productos">
       <option name="closed" value="true" />
@@ -657,14 +650,21 @@
       <option name="project" value="LOCAL" />
       <updated>1722478848741</updated>
     </task>
-    <option name="localTasksCounter" value="82" />
+    <task id="LOCAL-00082" summary="index del admin con dise;o ya con iconos en lugar de botones y responsive al 100">
+      <option name="closed" value="true" />
+      <created>1722569052489</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1722569052490</updated>
+    </task>
+    <option name="localTasksCounter" value="83" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="filtros para no poder acceder a jsp o servlets que no correspondan a los tipos de sesion" />
     <MESSAGE value="si" />
     <MESSAGE value="Funcion de agregar productos al  carrito. Con ello el servlet que ocupa la funcion del carritodao para saber si hay un carrito no confirmado,en ese caso agrega los productos en ese carrito usando la funcion del carritoproductodao. Si no tiene alguno por confirmar, lo crea y apartir de ese carrito registra" />
     <MESSAGE value="Agregar al carrito pero con detalles, falta boton hacer solicitud, opciones cambiar cantidad, eliminar del carrito, corregir precio porque sale mal. checar decimales, y cambiar en el index el boton de agregar por eliminar una vez esten en el carrito" />
@@ -689,6 +689,7 @@
     <MESSAGE value="admin agregar al stock de productos" />
     <MESSAGE value="JS CORREGIDO" />
     <MESSAGE value="envio de correo" />
-    <option name="LAST_COMMIT_MESSAGE" value="envio de correo" />
+    <MESSAGE value="index del admin con dise;o ya con iconos en lugar de botones y responsive al 100" />
+    <option name="LAST_COMMIT_MESSAGE" value="index del admin con dise;o ya con iconos en lugar de botones y responsive al 100" />
   </component>
 </project>

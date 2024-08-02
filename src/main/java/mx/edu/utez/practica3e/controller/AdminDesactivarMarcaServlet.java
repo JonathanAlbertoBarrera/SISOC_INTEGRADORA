@@ -25,10 +25,10 @@ public class AdminDesactivarMarcaServlet extends HttpServlet {
         if(dao.desactivar(m)){
             // Si se hizo el update de estado
             resp.sendRedirect("marcas.jsp");
-            req.getSession().setAttribute("mensaje2A", "Se cambió el estatus de la marca");
+            req.getSession().setAttribute("mensaje2A", "Se cambió el estatus de la marca con id "+id_marca);
         } else {
             // No se pudo cambiar el estado, mando un error
-            req.getSession().setAttribute("mensaje2A", "No se pudo cambiar el estado de la marca");
+            req.getSession().setAttribute("mensaje2A", "No se pudo cambiar el estado de la marca con id "+id_marca);
             resp.sendRedirect("marcas.jsp");
         }
     }
