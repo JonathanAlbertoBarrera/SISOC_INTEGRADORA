@@ -10,14 +10,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6f44def4-2bd3-4c79-8a6b-cc536cc2ffae" name="Changes" comment="botones para marcas y alerts para marcas e index con tablas de usuario">
+    <list default="true" id="6f44def4-2bd3-4c79-8a6b-cc536cc2ffae" name="Changes" comment="botones Y ALERTS para categorias">
       <change afterPath="$PROJECT_DIR$/src/main/resources/credentials.json" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/resources/tokens/StoredCredential" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/controller/AdminDesactivarCategoriaServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/controller/AdminDesactivarCategoriaServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/controller/AdminModificarCategoriaServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/controller/AdminModificarCategoriaServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/categorias.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/categorias.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/marcas.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/marcas.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/controller/AdminDesactivarProductoServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/controller/AdminDesactivarProductoServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/productosAdmin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/productosAdmin.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,7 +66,7 @@
     "Tomcat Server.Tomcat 10.1.8.executor": "Run",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/adrian jacobo/Documents/3CuatriUTEZ/APLICACIONES WEB/versionesIntegradora/SISOC_INTEGRADORA/src/main/webapp/img",
+    "last_opened_file_path": "C:/Users/adrian jacobo/Documents/3CuatriUTEZ/APLICACIONES WEB/versionesIntegradora/SISOC_INTEGRADORA",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -262,15 +260,8 @@
       <workItem from="1722222565967" duration="16914000" />
       <workItem from="1722280185735" duration="6629000" />
       <workItem from="1722363089497" duration="10013000" />
-      <workItem from="1722546479082" duration="16074000" />
-    </task>
-    <task id="LOCAL-00035" summary="js para opciones productos">
-      <option name="closed" value="true" />
-      <created>1721535548696</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1721535548696</updated>
+      <workItem from="1722546479082" duration="16435000" />
+      <workItem from="1722630071788" duration="1372000" />
     </task>
     <task id="LOCAL-00036" summary="iniciando formulario de productos">
       <option name="closed" value="true" />
@@ -656,14 +647,21 @@
       <option name="project" value="LOCAL" />
       <updated>1722577734867</updated>
     </task>
-    <option name="localTasksCounter" value="84" />
+    <task id="LOCAL-00084" summary="botones Y ALERTS para categorias">
+      <option name="closed" value="true" />
+      <created>1722579586747</created>
+      <option name="number" value="00084" />
+      <option name="presentableId" value="LOCAL-00084" />
+      <option name="project" value="LOCAL" />
+      <updated>1722579586747</updated>
+    </task>
+    <option name="localTasksCounter" value="85" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Funcion de agregar productos al  carrito. Con ello el servlet que ocupa la funcion del carritodao para saber si hay un carrito no confirmado,en ese caso agrega los productos en ese carrito usando la funcion del carritoproductodao. Si no tiene alguno por confirmar, lo crea y apartir de ese carrito registra" />
     <MESSAGE value="Agregar al carrito pero con detalles, falta boton hacer solicitud, opciones cambiar cantidad, eliminar del carrito, corregir precio porque sale mal. checar decimales, y cambiar en el index el boton de agregar por eliminar una vez esten en el carrito" />
     <MESSAGE value="cambios para hacer crud de carrito, tanto en modelos, daos,servlets y jsp carrito" />
     <MESSAGE value="ya se hacen las solicitudes. Si no hay carrito para hacer solicitud, se manda mensaje de error. Si hay carrito, se verifica que el stock por producto sea suficiente, se manda mensaje indicando cuanto hay. Si hay suficiente stock, se convierte el carrito en confirmado y se crea la solicitud con estado de pendiente y en su campo total se suma todos los totales de los productos del carrito." />
@@ -688,6 +686,7 @@
     <MESSAGE value="envio de correo" />
     <MESSAGE value="index del admin con dise;o ya con iconos en lugar de botones y responsive al 100" />
     <MESSAGE value="botones para marcas y alerts para marcas e index con tablas de usuario" />
-    <option name="LAST_COMMIT_MESSAGE" value="botones para marcas y alerts para marcas e index con tablas de usuario" />
+    <MESSAGE value="botones Y ALERTS para categorias" />
+    <option name="LAST_COMMIT_MESSAGE" value="botones Y ALERTS para categorias" />
   </component>
 </project>

@@ -25,10 +25,10 @@ public class AdminDesactivarProductoServlet extends HttpServlet {
         if(dao.desactivar(p)){
             // Si se hizo el update de estado
             resp.sendRedirect("productosAdmin.jsp");
-            req.getSession().setAttribute("mensaje2A", "Se cambió el estatus del producto");
+            req.getSession().setAttribute("mensaje2", "Se cambió el estatus del producto "+sku);
         } else {
             // No se pudo cambiar el estado, mando un error
-            req.getSession().setAttribute("mensaje2A", "No se pudo cambiar el estado del producto");
+            req.getSession().setAttribute("mensaje2", "No se pudo cambiar el estado del producto "+sku);
             resp.sendRedirect("productosAdmin.jsp");
         }
     }

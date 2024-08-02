@@ -129,17 +129,12 @@
             </div>
         </div>
 
-        <%
-            HttpSession sesion1 = request.getSession();
-            String mensaje2 = (String) sesion1.getAttribute("mensaje2");
-
-            if(mensaje2 != null){ %>
-        <p class="text-danger"><%=mensaje2%></p>
-        <% } %>
-
-        <%
-            sesion1.removeAttribute("mensaje2");
-        %>
+        <br>
+        <c:if test="${not empty sessionScope.mensaje2}">
+            <div class="alert alert-success">
+                    ${sessionScope.mensaje2}
+            </div>
+        </c:if>
 
         <!--VISTA PARA AGREGAR PRODUCTO -->
         <div id="vistaAddProducto">
@@ -212,13 +207,6 @@
         <div id="vistaCrudProducto">
             <br>
             <h3>Productos en existencia</h3>
-            <%
-                HttpSession sesion = request.getSession();
-                String mensaje2A = (String) sesion.getAttribute("mensaje2A");
-
-                if(mensaje2A != null){ %>
-            <p class="text-danger"><%=mensaje2A%></p>
-            <% } %>
 
             <!-- TABLA DE PRODUCTOS -->
             <table id="example3" class="table table-striped table-hover" style="width: 100%">
@@ -251,9 +239,8 @@
                     <td><%= p.isEstatus() ? "Activo" : "Inactivo" %></td>
                     <!-- td para modificar PRODUCTO-->
                     <td>
-                        <img src="img/iconoModificar.png" width="14%" height="14%">
-                        <button type="button" class="btn btn-dark botonesApp" data-bs-toggle="modal" data-bs-target="#modalModiProducto-<%= p.getSku() %>">
-                            Actualizar Producto
+                        <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#modalModiProducto-<%= p.getSku() %>">
+                            <img src="img/boton-editar.png" alt="Actualizar" style="height: 25%; width: 25%;">
                         </button>
 
                         <!-- Modal PARA MODIFICAR PRODUCTO-->
@@ -328,9 +315,12 @@
                     </td>
                     <!-- td para cambiar estatus-->
                     <td>
-                        <img src="img/iconoCambiarEstatus.png" width="10%" height="10%">
-                        <button type="button" class="btn btn-dark botonesApp" data-bs-toggle="modal" data-bs-target="#modalDesac-<%= p.getSku() %>">
-                            <%= p.isEstatus() ? "Desactivar" : "Activar" %>
+                        <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#modalDesac-<%= p.getSku() %>">
+                            <% if (p.isEstatus()) { %>
+                            <img src="img/activobtn.png" alt="Desactivar" width="50%" height="30%">
+                            <% } else { %>
+                            <img src="img/inactivobtn.png" alt="Activar" width="50%" height="30%">
+                            <% } %>
                         </button>
                         <!-- Modal -->
                         <div class="modal fade" id="modalDesac-<%= p.getSku() %>" tabindex="-1" aria-labelledby="exampleModalLabel-<%= p.getSku() %>" aria-hidden="true">
@@ -406,7 +396,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js"></script>
 <script src="JS/bootstrap.js"></script>
 <%
-    sesion.removeAttribute("mensaje2A");
+    session.removeAttribute("mensaje2");
 %>
 
 </body>
