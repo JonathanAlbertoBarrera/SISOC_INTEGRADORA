@@ -127,7 +127,7 @@
             sesion1.removeAttribute("mensaje2");
         %>
         <!--TABLA DE PRODUCTOS -->
-        <table id="example3" class="table table-striped table-hover table-dark" style="width: 100%">
+        <table id="example3" class="table table-striped table-hover table-light" style="width: 100%">
             <thead>
             <tr>
                 <th>Imagen</th>
@@ -136,7 +136,7 @@
                 <th>Descripción</th>
                 <th>Precio</th>
                 <th>Stock</th>
-                <th>Actualizar Cantidad</th>
+                <th>Aumentar Stock</th>
             </tr>
             </thead>
             <tbody>
@@ -153,8 +153,8 @@
                 <td><%= p.getPrecio() %></td>
                 <td><%= p.getCantidad() %></td>
                 <td>
-                    <button type="button" class="btn btn-dark botonesApp" data-bs-toggle="modal" data-bs-target="#modalModiCantidad-<%= p.getSku() %>">
-                        Comprar unidades
+                    <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#modalModiCantidad-<%= p.getSku() %>">
+                        <img src="img/aumentopro.png" alt="Comprar unidades" style="height: 10%; width: 10%;">
                     </button>
                     <!-- Modal PARA MODIFICAR CANTIDAD-->
                     <div class="modal fade" id="modalModiCantidad-<%= p.getSku() %>" tabindex="-1" aria-labelledby="exampleModalLabel-<%= p.getSku() %>" aria-hidden="true">
