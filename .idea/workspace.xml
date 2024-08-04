@@ -10,15 +10,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6f44def4-2bd3-4c79-8a6b-cc536cc2ffae" name="Changes" comment="botones y alerts PARA COMPRAS">
+    <list default="true" id="6f44def4-2bd3-4c79-8a6b-cc536cc2ffae" name="Changes" comment="cambios en jsp de encargados para que en opciones de cuenta en lugar de registrarse aparezca cambiar contrase;a">
       <change afterPath="$PROJECT_DIR$/src/main/resources/credentials.json" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/resources/tokens/StoredCredential" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/carritoEncargado.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/carritoEncargado.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/controller/UsuarioServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/controller/UsuarioServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/carrito.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/carrito.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/controlSolicitudes.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/controlSolicitudes.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/indexCliente.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/indexCliente.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/indexEncargado.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/indexEncargado.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/productosEncargado.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/productosEncargado.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/ventasEncargado.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/ventasEncargado.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -265,15 +266,7 @@
       <workItem from="1722363089497" duration="10013000" />
       <workItem from="1722546479082" duration="16435000" />
       <workItem from="1722630071788" duration="5936000" />
-      <workItem from="1722797887627" duration="3508000" />
-    </task>
-    <task id="LOCAL-00039" summary="modelo de producto y funcion getAll en el dao de producto">
-      <option name="closed" value="true" />
-      <created>1721622970161</created>
-      <option name="number" value="00039" />
-      <option name="presentableId" value="LOCAL-00039" />
-      <option name="project" value="LOCAL" />
-      <updated>1721622970161</updated>
+      <workItem from="1722797887627" duration="4841000" />
     </task>
     <task id="LOCAL-00040" summary="agregue descripcion en el dao y modelo de producto">
       <option name="closed" value="true" />
@@ -659,14 +652,21 @@
       <option name="project" value="LOCAL" />
       <updated>1722802223609</updated>
     </task>
-    <option name="localTasksCounter" value="88" />
+    <task id="LOCAL-00088" summary="cambios en jsp de encargados para que en opciones de cuenta en lugar de registrarse aparezca cambiar contrase;a">
+      <option name="closed" value="true" />
+      <created>1722803958079</created>
+      <option name="number" value="00088" />
+      <option name="presentableId" value="LOCAL-00088" />
+      <option name="project" value="LOCAL" />
+      <updated>1722803958079</updated>
+    </task>
+    <option name="localTasksCounter" value="89" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Modificamos el servlet para que si agregas el mismo producto 2 veces, no haga el chequeo de stock individualmente. Como es el mismo producto, debe checar sumando ambas cantidades" />
     <MESSAGE value="Solicitudes ya viendo los detalles (productos en la solicitud)" />
     <MESSAGE value="cambios peque;os botones" />
     <MESSAGE value="se cargan solicitudes Pendientes al administrador" />
@@ -691,6 +691,7 @@
     <MESSAGE value="botones Y ALERTS para productos" />
     <MESSAGE value="botones PARA COMPRAS" />
     <MESSAGE value="botones y alerts PARA COMPRAS" />
-    <option name="LAST_COMMIT_MESSAGE" value="botones y alerts PARA COMPRAS" />
+    <MESSAGE value="cambios en jsp de encargados para que en opciones de cuenta en lugar de registrarse aparezca cambiar contrase;a" />
+    <option name="LAST_COMMIT_MESSAGE" value="cambios en jsp de encargados para que en opciones de cuenta en lugar de registrarse aparezca cambiar contrase;a" />
   </component>
 </project>

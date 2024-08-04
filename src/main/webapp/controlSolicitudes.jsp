@@ -212,7 +212,7 @@
 <footer class="bg-body-tertiary text-black text-center py-3 barra">
     <div class="container">
         <p>&copy; 2024 Mi Cafetería. Todos los derechos reservados.</p>
-        <p>Contáctanos: info@micafeteria.com</p>
+        <p>Contáctanos: sistemasdeordenesdecafeteria@gmail.com</p>
     </div>
 </footer>
 
