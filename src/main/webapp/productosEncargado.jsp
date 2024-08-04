@@ -83,7 +83,7 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="${pageContext.request.contextPath}/logout" >Cerrar Sesión</a></li>
-                            <li><a class="dropdown-item" href="registrarUsuario.jsp">Registrarse</a></li>
+                            <li><a class="dropdown-item" href="solicitudRecuperacion.jsp">Cambiar contraseña</a></li>
                         </ul>
                     </li>
                 </div>
