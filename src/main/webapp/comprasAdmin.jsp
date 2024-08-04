@@ -114,18 +114,16 @@
     <h3>Comprar inventario</h3>
     <img src="img/iconoCompras.png" width="5%" height="5%">
 
+    <br>
+    <c:if test="${not empty sessionScope.mensaje2}">
+        <div class="alert alert-success">
+                ${sessionScope.mensaje2}
+        </div>
+    </c:if>
+
+
     <div class="table-responsive" id="tablaCategorias">
-        <%
-            HttpSession sesion1 = request.getSession();
-            String mensaje2 = (String) sesion1.getAttribute("mensaje2");
 
-            if (mensaje2 != null) { %>
-        <p class="text-danger"><%= mensaje2 %></p>
-        <% } %>
-
-        <%
-            sesion1.removeAttribute("mensaje2");
-        %>
         <!--TABLA DE PRODUCTOS -->
         <table id="example3" class="table table-striped table-hover table-light" style="width: 100%">
             <thead>
@@ -154,7 +152,7 @@
                 <td><%= p.getCantidad() %></td>
                 <td>
                     <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#modalModiCantidad-<%= p.getSku() %>">
-                        <img src="img/aumentopro.png" alt="Comprar unidades" style="height: 10%; width: 10%;">
+                        <img src="img/aumentopro.png" alt="Comprar unidades" style="height: 40%; width: 20%;">
                     </button>
                     <!-- Modal PARA MODIFICAR CANTIDAD-->
                     <div class="modal fade" id="modalModiCantidad-<%= p.getSku() %>" tabindex="-1" aria-labelledby="exampleModalLabel-<%= p.getSku() %>" aria-hidden="true">
@@ -214,7 +212,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js"></script>
 <script src="JS/bootstrap.js"></script>
 <%
-    sesion1.removeAttribute("mensaje2");
+    session.removeAttribute("mensaje2");
 %>
 </body>
 </html>

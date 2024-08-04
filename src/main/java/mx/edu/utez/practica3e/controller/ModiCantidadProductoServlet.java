@@ -24,9 +24,11 @@ public class ModiCantidadProductoServlet extends HttpServlet {
 
             // Redirigir o mostrar un mensaje de éxito
             if (actualizado) {
-                response.sendRedirect("comprasAdmin.jsp?mensaje2=Cantidad actualizada con éxito");
+                request.getSession().setAttribute("mensaje2", "El producto "+sku+ " aumento su stock "+cantidad+" unidades");
+                response.sendRedirect("comprasAdmin.jsp");
             } else {
-                response.sendRedirect("comprasAdmin.jsp?mensaje2=Error al actualizar la cantidad");
+                request.getSession().setAttribute("mensaje2", "El producto "+sku+ " no pudo aumentar su stock correctamente");
+                response.sendRedirect("comprasAdmin.jsp");
             }
         } catch (Exception e) {
             e.printStackTrace();

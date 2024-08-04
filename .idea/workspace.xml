@@ -10,11 +10,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6f44def4-2bd3-4c79-8a6b-cc536cc2ffae" name="Changes" comment="botones Y ALERTS para productos">
+    <list default="true" id="6f44def4-2bd3-4c79-8a6b-cc536cc2ffae" name="Changes" comment="botones PARA COMPRAS">
       <change afterPath="$PROJECT_DIR$/src/main/resources/credentials.json" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/resources/tokens/StoredCredential" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/img/aumentopro.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/controller/ModiCantidadProductoServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/controller/ModiCantidadProductoServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/comprasAdmin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/comprasAdmin.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -66,7 +66,7 @@
     "Tomcat Server.Tomcat 10.1.8.executor": "Run",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/adrian jacobo/Documents/3CuatriUTEZ/APLICACIONES WEB/versionesIntegradora/SISOC_INTEGRADORA/src/main/webapp/img",
+    "last_opened_file_path": "C:/Users/adrian jacobo/Documents/3CuatriUTEZ/APLICACIONES WEB/versionesIntegradora/SISOC_INTEGRADORA",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -261,15 +261,8 @@
       <workItem from="1722280185735" duration="6629000" />
       <workItem from="1722363089497" duration="10013000" />
       <workItem from="1722546479082" duration="16435000" />
-      <workItem from="1722630071788" duration="4378000" />
-    </task>
-    <task id="LOCAL-00037" summary="carga de marcas y categorias pero falta corregir detalles">
-      <option name="closed" value="true" />
-      <created>1721608008390</created>
-      <option name="number" value="00037" />
-      <option name="presentableId" value="LOCAL-00037" />
-      <option name="project" value="LOCAL" />
-      <updated>1721608008390</updated>
+      <workItem from="1722630071788" duration="5936000" />
+      <workItem from="1722797887627" duration="2321000" />
     </task>
     <task id="LOCAL-00038" summary="se hizo el filtro para corregir errores en el llenado de los selects, con el filtro se asegura que el servlet llene los selects sin tener que ejecutar manualmente el servlet">
       <option name="closed" value="true" />
@@ -655,14 +648,21 @@
       <option name="project" value="LOCAL" />
       <updated>1722633913522</updated>
     </task>
-    <option name="localTasksCounter" value="86" />
+    <task id="LOCAL-00086" summary="botones PARA COMPRAS">
+      <option name="closed" value="true" />
+      <created>1722646710514</created>
+      <option name="number" value="00086" />
+      <option name="presentableId" value="LOCAL-00086" />
+      <option name="project" value="LOCAL" />
+      <updated>1722646710514</updated>
+    </task>
+    <option name="localTasksCounter" value="87" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="cambios para hacer crud de carrito, tanto en modelos, daos,servlets y jsp carrito" />
     <MESSAGE value="ya se hacen las solicitudes. Si no hay carrito para hacer solicitud, se manda mensaje de error. Si hay carrito, se verifica que el stock por producto sea suficiente, se manda mensaje indicando cuanto hay. Si hay suficiente stock, se convierte el carrito en confirmado y se crea la solicitud con estado de pendiente y en su campo total se suma todos los totales de los productos del carrito." />
     <MESSAGE value="Modificamos el servlet para que si agregas el mismo producto 2 veces, no haga el chequeo de stock individualmente. Como es el mismo producto, debe checar sumando ambas cantidades" />
     <MESSAGE value="Solicitudes ya viendo los detalles (productos en la solicitud)" />
@@ -687,6 +687,7 @@
     <MESSAGE value="botones para marcas y alerts para marcas e index con tablas de usuario" />
     <MESSAGE value="botones Y ALERTS para categorias" />
     <MESSAGE value="botones Y ALERTS para productos" />
-    <option name="LAST_COMMIT_MESSAGE" value="botones Y ALERTS para productos" />
+    <MESSAGE value="botones PARA COMPRAS" />
+    <option name="LAST_COMMIT_MESSAGE" value="botones PARA COMPRAS" />
   </component>
 </project>
