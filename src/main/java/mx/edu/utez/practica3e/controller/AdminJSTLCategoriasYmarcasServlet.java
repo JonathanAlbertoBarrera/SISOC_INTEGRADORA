@@ -37,7 +37,7 @@ public class AdminJSTLCategoriasYmarcasServlet extends HttpServlet {
         //se rellenan las listas con los correspondientes daos
         lista = dao.getAll();//las categorias
         lista2=dao2.getAll();//las marcas
-        lista3=dao3.getAll();
+        lista3=dao3.getAllActivos();
 
         session.setAttribute("categorias",lista);
         session.setAttribute("marcas",lista2);

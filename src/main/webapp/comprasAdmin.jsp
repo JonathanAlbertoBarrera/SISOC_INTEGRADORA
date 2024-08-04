@@ -140,7 +140,7 @@
             <tbody>
             <%
                 ProductoDao productoDao = new ProductoDao();
-                ArrayList<Producto> productos = (ArrayList<Producto>) productoDao.getAll();
+                ArrayList<Producto> productos = (ArrayList<Producto>) productoDao.getAllActivos();
                 for (Producto p : productos) {
             %>
             <tr>

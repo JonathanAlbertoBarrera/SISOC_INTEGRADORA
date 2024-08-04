@@ -10,16 +10,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6f44def4-2bd3-4c79-8a6b-cc536cc2ffae" name="Changes" comment="cambios en jsp de encargados para que en opciones de cuenta en lugar de registrarse aparezca cambiar contrase;a">
+    <list default="true" id="6f44def4-2bd3-4c79-8a6b-cc536cc2ffae" name="Changes" comment="cambio en todos los footer para que salga el correo creado para el proyecto y validacion de inicio de sesion de usuario inactivo">
       <change afterPath="$PROJECT_DIR$/src/main/resources/credentials.json" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/resources/tokens/StoredCredential" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/controller/UsuarioServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/controller/UsuarioServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/carrito.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/carrito.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/controlSolicitudes.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/controlSolicitudes.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/controller/AdminJSTLCategoriasYmarcasServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/controller/AdminJSTLCategoriasYmarcasServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/dao/ProductoDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/dao/ProductoDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/comprasAdmin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/comprasAdmin.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/indexCliente.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/indexCliente.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/indexEncargado.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/indexEncargado.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/productosEncargado.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/productosEncargado.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -266,15 +266,7 @@
       <workItem from="1722363089497" duration="10013000" />
       <workItem from="1722546479082" duration="16435000" />
       <workItem from="1722630071788" duration="5936000" />
-      <workItem from="1722797887627" duration="4841000" />
-    </task>
-    <task id="LOCAL-00040" summary="agregue descripcion en el dao y modelo de producto">
-      <option name="closed" value="true" />
-      <created>1721624659603</created>
-      <option name="number" value="00040" />
-      <option name="presentableId" value="LOCAL-00040" />
-      <option name="project" value="LOCAL" />
-      <updated>1721624659603</updated>
+      <workItem from="1722797887627" duration="7457000" />
     </task>
     <task id="LOCAL-00041" summary="registro de Producto ya correcto, tanto url como los demas datos. Correcion del dao y modelo de producto">
       <option name="closed" value="true" />
@@ -660,14 +652,21 @@
       <option name="project" value="LOCAL" />
       <updated>1722803958079</updated>
     </task>
-    <option name="localTasksCounter" value="89" />
+    <task id="LOCAL-00089" summary="cambio en todos los footer para que salga el correo creado para el proyecto y validacion de inicio de sesion de usuario inactivo">
+      <option name="closed" value="true" />
+      <created>1722805392178</created>
+      <option name="number" value="00089" />
+      <option name="presentableId" value="LOCAL-00089" />
+      <option name="project" value="LOCAL" />
+      <updated>1722805392178</updated>
+    </task>
+    <option name="localTasksCounter" value="90" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Solicitudes ya viendo los detalles (productos en la solicitud)" />
     <MESSAGE value="cambios peque;os botones" />
     <MESSAGE value="se cargan solicitudes Pendientes al administrador" />
     <MESSAGE value="se cargan detalles de las solicitudes pendientes" />
@@ -692,6 +691,7 @@
     <MESSAGE value="botones PARA COMPRAS" />
     <MESSAGE value="botones y alerts PARA COMPRAS" />
     <MESSAGE value="cambios en jsp de encargados para que en opciones de cuenta en lugar de registrarse aparezca cambiar contrase;a" />
-    <option name="LAST_COMMIT_MESSAGE" value="cambios en jsp de encargados para que en opciones de cuenta en lugar de registrarse aparezca cambiar contrase;a" />
+    <MESSAGE value="cambio en todos los footer para que salga el correo creado para el proyecto y validacion de inicio de sesion de usuario inactivo" />
+    <option name="LAST_COMMIT_MESSAGE" value="cambio en todos los footer para que salga el correo creado para el proyecto y validacion de inicio de sesion de usuario inactivo" />
   </component>
 </project>

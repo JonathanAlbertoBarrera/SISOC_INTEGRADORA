@@ -79,72 +79,44 @@
 </header>
 
 <main>
-    <!-- DIV PARA BUSCAR y FILTROS -->
-    <div class="container mt-3">
-        <div class="row justify-content-center">
-            <div class="col-md-3 mb-2 d-flex">
-                <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
-                <button class="btn" type="submit"><img src="img/search.png" alt="Icono de Busqueda" width="30" height="24"></button>
-            </div>
-            <div class="col-md-3 mb-2">
-                <select name="categorias" id="categorias" class="form-select bg-dark text-white" >
-                    <option value="" selected disabled>Selecciona una categoría</option>
-                    <c:forEach items="${categorias}" var="c">
-                        <option value="${c.id_categoria}">${c.nombre}</option>
-                    </c:forEach>
-                </select>
-            </div>
-            <div class="col-md-3 mb-2 ">
-                <select name="marcas" id="marcas" class="form-select bg-dark text-white" required>
-                    <option value="" selected disabled>Selecciona una marca</option>
-                    <c:forEach items="${marcas}" var="m">
-                        <option value="${m.id_marca}" >${m.nombre}</option>
-                    </c:forEach>
-                </select>
-            </div>
-        </div>
-    </div>
-
     <!-- DIV PRODUCTOS -->
     <div class="container mt-2">
         <h2 id="titSeccion">Productos</h2>
+        <div class="row mb-3 justify-content-center">
+            <div class="col-md-6 text-center">
+                <input type="text" id="search-input" class="form-control" placeholder="Buscar productos...">
+            </div>
+        </div>
         <div class="row" id="product-cards-container">
             <!-- Aquí se añadirán dinámicamente las tarjetas de productos -->
             <c:forEach items="${productos}" var="p">
-            <div class="col-md-3 mb-2">
-                <div class="card h-100 text-center align-content-center">
-                    <img src="<%= request.getContextPath() %>/image?sku=${p.sku}" class="card-img-top mx-auto" height="60%" alt="${p.nombre}">
-                    <div class="card-body">
-                        <h3 class="card-title">${p.nombre}</h3>
-                        <p class="card-text">$${p.precio}</p>
-                        <p class="card-text">${p.descripcion}</p>
-                        <div class="container" id="cajaBoton">
-                            <div class="row flex-column text-center">
-                                <img src="img/gifAddCarrito.gif" alt="gif agregar al carrito" class="mx-auto" id="icAddCar">
-                                <a class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#modalcantProducto-${p.sku}">Agregar al Carrito</a>
+                <div class="col-md-3 mb-2 product-card" data-name="${p.nombre}" data-description="${p.descripcion}">
+                    <div class="card h-100 text-center align-content-center">
+                        <img src="<%= request.getContextPath() %>/image?sku=${p.sku}" class="card-img-top mx-auto" height="60%" alt="${p.nombre}">
+                        <div class="card-body">
+                            <h3 class="card-title">${p.nombre}</h3>
+                            <p class="card-text">$${p.precio}</p>
+                            <p class="card-text">${p.descripcion}</p>
+                            <div class="container" id="cajaBoton">
+                                <div class="row flex-column text-center">
+                                    <img src="img/gifAddCarrito.gif" alt="gif agregar al carrito" class="mx-auto" id="icAddCar">
+                                    <a class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#modalcantProducto-${p.sku}">Agregar al Carrito</a>
 
-                                <!-- Modal para cantidad-->
-                                <div class="modal fade" id="modalcantProducto-${p.sku}" tabindex="-1" aria-labelledby="exampleModalLabel-${p.sku}" aria-hidden="true">
-                                    <div class="modal-dialog modal-dialog-centered">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h1 class="modal-title fs-5" id="desacModalLabel-${p.sku}">Agregar al carrito</h1>
-                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    <!-- Modal para cantidad-->
+                                    <div class="modal fade" id="modalcantProducto-${p.sku}" tabindex="-1" aria-labelledby="exampleModalLabel-${p.sku}" aria-hidden="true">
+                                        <div class="modal-dialog modal-dialog-centered">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h1 class="modal-title fs-5" id="desacModalLabel-${p.sku}">Agregar al carrito</h1>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    Lo sentimos, para poder agregar productos al carrito necesitas registrarte.
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary botonesApp" data-bs-dismiss="modal">OK</button>
+                                                </div>
                                             </div>
-                                            <form method="post" action="agregarCarrito">
-                                            <div class="modal-body">
-                                                Ingresa la cantidad que quieres agregar de tu producto ${p.nombre}:
-
-                                                    <input type="number" name="addCant" min="1" required>
-                                                    <input type="hidden" name="id_usuario" value="${sessionScope.id_usuario}">
-                                                    <input type="hidden" name="precio" value="${p.precio}" step="0.01">
-                                                    <input type="hidden" name="sku" value="${p.sku}">
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                                                    <button type="submit" class="btn btn-primary botonesApp">Confirmar</button>
-                                            </div>
-                                            </form>
                                         </div>
                                     </div>
                                 </div>
@@ -152,30 +124,28 @@
                         </div>
                     </div>
                 </div>
-            </div>
             </c:forEach>
         </div>
     </div>
 
-    <!-- PAGINACIÓN -->
-    <nav aria-label="...">
-        <br>
-        <br>
-        <h6>Ver más</h6>
-        <ul class="pagination justify-content-center">
-            <li class="page-item disabled">
-                <span class="page-link">Previous</span>
-            </li>
-            <li class="page-item active"><a class="page-link" href="#">1</a></li>
-            <li class="page-item" aria-current="page">
-                <span class="page-link">2</span>
-            </li>
-            <li class="page-item"><a class="page-link" href="#">3</a></li>
-            <li class="page-item">
-                <a class="page-link" href="#">Next</a>
-            </li>
-        </ul>
-    </nav>
+    <script>
+        document.getElementById('search-input').addEventListener('keyup', function() {
+            var searchQuery = this.value.toLowerCase();
+            var productCards = document.querySelectorAll('.product-card');
+
+            productCards.forEach(function(card) {
+                var productName = card.getAttribute('data-name').toLowerCase();
+                var productDescription = card.getAttribute('data-description').toLowerCase();
+
+                if (productName.includes(searchQuery) || productDescription.includes(searchQuery)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+    </script>
+
 </main>
 
 <footer class="bg-body-tertiary text-black text-center py-3 barra">
