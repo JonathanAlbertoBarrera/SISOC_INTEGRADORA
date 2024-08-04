@@ -110,12 +110,20 @@
                                                     <h1 class="modal-title fs-5" id="desacModalLabel-${p.sku}">Agregar al carrito</h1>
                                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                 </div>
-                                                <div class="modal-body">
-                                                    Lo sentimos, para poder agregar productos al carrito necesitas registrarte.
-                                                </div>
-                                                <div class="modal-footer">
-                                                    <button type="button" class="btn btn-secondary botonesApp" data-bs-dismiss="modal">OK</button>
-                                                </div>
+                                                <form method="post" action="agregarCarrito">
+                                                    <div class="modal-body">
+                                                        Ingresa la cantidad que quieres agregar de tu producto ${p.nombre}:
+
+                                                        <input type="number" name="addCant" min="1" required>
+                                                        <input type="hidden" name="id_usuario" value="${sessionScope.id_usuario}">
+                                                        <input type="hidden" name="precio" value="${p.precio}" step="0.01">
+                                                        <input type="hidden" name="sku" value="${p.sku}">
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                                                        <button type="submit" class="btn btn-primary botonesApp">Confirmar</button>
+                                                    </div>
+                                                </form>
                                             </div>
                                         </div>
                                     </div>
