@@ -10,11 +10,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6f44def4-2bd3-4c79-8a6b-cc536cc2ffae" name="Changes" comment="barra de busqueda para buscar productos por nombre o descripcion del mismo. Ademas de uso de llenado de la lista para mostrar productos usando funcion del dao que verifica si tanto el producto, categoria y  marca estan activas">
+    <list default="true" id="6f44def4-2bd3-4c79-8a6b-cc536cc2ffae" name="Changes" comment="correccion modales">
       <change afterPath="$PROJECT_DIR$/src/main/resources/credentials.json" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/resources/tokens/StoredCredential" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/indexCliente.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/indexCliente.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/dao/SolicitudDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/dao/SolicitudDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/ventasEncargado.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/ventasEncargado.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/ventasEncargadoSolis.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/ventasEncargadoSolis.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -261,15 +263,15 @@
       <workItem from="1722363089497" duration="10013000" />
       <workItem from="1722546479082" duration="16435000" />
       <workItem from="1722630071788" duration="5936000" />
-      <workItem from="1722797887627" duration="8853000" />
-    </task>
-    <task id="LOCAL-00042" summary="Correccion para permitir input tipo number, numeros decimales">
-      <option name="closed" value="true" />
-      <created>1721702854847</created>
-      <option name="number" value="00042" />
-      <option name="presentableId" value="LOCAL-00042" />
-      <option name="project" value="LOCAL" />
-      <updated>1721702854847</updated>
+      <workItem from="1722797887627" duration="16611000" />
+      <workItem from="1722895063970" duration="5845000" />
+      <workItem from="1723002917070" duration="2615000" />
+      <workItem from="1723179854072" duration="1128000" />
+      <workItem from="1723224231533" duration="5695000" />
+      <workItem from="1723485373421" duration="2365000" />
+      <workItem from="1723579717340" duration="590000" />
+      <workItem from="1723664062204" duration="3471000" />
+      <workItem from="1723760198400" duration="5665000" />
     </task>
     <task id="LOCAL-00043" summary="mostrarTabla con crud de Productos">
       <option name="closed" value="true" />
@@ -655,14 +657,21 @@
       <option name="project" value="LOCAL" />
       <updated>1722807892164</updated>
     </task>
-    <option name="localTasksCounter" value="91" />
+    <task id="LOCAL-00091" summary="correccion modales">
+      <option name="closed" value="true" />
+      <created>1722810631191</created>
+      <option name="number" value="00091" />
+      <option name="presentableId" value="LOCAL-00091" />
+      <option name="project" value="LOCAL" />
+      <updated>1722810631191</updated>
+    </task>
+    <option name="localTasksCounter" value="92" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="se cargan solicitudes Pendientes al administrador" />
     <MESSAGE value="se cargan detalles de las solicitudes pendientes" />
     <MESSAGE value="se ven las solicitudes que ha tomado el encargado" />
     <MESSAGE value="se ven los productos de las solicitudes que toma el encargado" />
@@ -687,6 +696,7 @@
     <MESSAGE value="cambios en jsp de encargados para que en opciones de cuenta en lugar de registrarse aparezca cambiar contrase;a" />
     <MESSAGE value="cambio en todos los footer para que salga el correo creado para el proyecto y validacion de inicio de sesion de usuario inactivo" />
     <MESSAGE value="barra de busqueda para buscar productos por nombre o descripcion del mismo. Ademas de uso de llenado de la lista para mostrar productos usando funcion del dao que verifica si tanto el producto, categoria y  marca estan activas" />
-    <option name="LAST_COMMIT_MESSAGE" value="barra de busqueda para buscar productos por nombre o descripcion del mismo. Ademas de uso de llenado de la lista para mostrar productos usando funcion del dao que verifica si tanto el producto, categoria y  marca estan activas" />
+    <MESSAGE value="correccion modales" />
+    <option name="LAST_COMMIT_MESSAGE" value="correccion modales" />
   </component>
 </project>

@@ -116,7 +116,7 @@
             <thead>
             <tr>
                 <th>ID Solicitud</th>
-                <th>ID carrito</th>
+                <th>Cliente</th>
                 <th>Fecha</th>
                 <th>Total</th>
                 <th>Ver detalles</th>
@@ -131,7 +131,7 @@
             %>
             <tr>
                 <td><%= s.getSolicitud().getId_solicitud() %></td>
-                <td><%= s.getSolicitud().getCarrito().getId_carrito() %></td>
+                <td><%= s.getSolicitud().getUsuario().getPersona().getNombre()%> <%= s.getSolicitud().getUsuario().getPersona().getApellidos()%></td>
                 <td><%= s.getSolicitud().getFecha()%></td>
                 <td><%= s.getSolicitud().getTotal()%></td>
                 <!-- td detalles-->

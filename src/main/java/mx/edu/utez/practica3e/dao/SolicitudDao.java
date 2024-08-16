@@ -62,7 +62,11 @@ public class SolicitudDao {
     //OBTENER LAS SOLICITUDES SEGUN EL USUARIO CORRESPONDIENTE (ENTREGADAS) PARA MOSTRAR EN VENTAS ENCARGADO
     public List<Solicitud> getAllVentasPuntoVentaEncargado(int idUsuario) {
         List<Solicitud> listaSolicitudes = new ArrayList<>();
-        String query = "SELECT * FROM solicitud WHERE id_usuario = ? AND estado = 'Entregada' ";
+        String query = "SELECT s.*, p.nombre, p.apellidos " +
+                "FROM solicitud s " +
+                "JOIN usuario u ON s.id_usuario = u.id_usuario " +
+                "JOIN persona p ON u.id_persona = p.id_persona " +
+                "WHERE s.id_usuario = ? AND s.estado = 'Entregada'";
 
         try (Connection con = DatabaseConnectionManager.getConnection();
              PreparedStatement ps = con.prepareStatement(query)) {
@@ -74,11 +78,21 @@ public class SolicitudDao {
                     solicitud.setTotal(rs.getDouble("total"));
                     solicitud.setFecha(rs.getDate("fecha"));
                     solicitud.setEstado(rs.getString("estado"));
+
                     Carrito carrito = new Carrito();
                     carrito.setId_carrito(rs.getInt("id_carrito"));
                     solicitud.setCarrito(carrito);
-                    Usuario usuario=new Usuario();
+
+                    Usuario usuario = new Usuario();
                     usuario.setIdUsuario(rs.getInt("id_usuario"));
+
+                    // Verifica si persona es null y la inicializa si es necesario
+                    if (usuario.getPersona() == null) {
+                        usuario.setPersona(new Persona());
+                    }
+
+                    usuario.getPersona().setNombre(rs.getString("nombre"));
+                    usuario.getPersona().setApellidos(rs.getString("apellidos"));
                     solicitud.setUsuario(usuario);
 
                     listaSolicitudes.add(solicitud);
@@ -90,6 +104,7 @@ public class SolicitudDao {
 
         return listaSolicitudes;
     }
+
 
     // PARA OBTENER SOLICITUDES que no esten entregadas o canceladas
     public List<Solicitud> getSolicitudesPendientesPorUsuario(int idUsuario) {
