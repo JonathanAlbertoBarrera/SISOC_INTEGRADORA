@@ -10,13 +10,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6f44def4-2bd3-4c79-8a6b-cc536cc2ffae" name="Changes" comment="correccion modales">
+    <list default="true" id="6f44def4-2bd3-4c79-8a6b-cc536cc2ffae" name="Changes" comment="modificacion de tablas de encargado. se quito id carrito, y se mostro en ventas por toma de solicitudes el nombre y apellido del cliente, por eso se modifico el la funcion del dao correspondiente">
       <change afterPath="$PROJECT_DIR$/src/main/resources/credentials.json" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/resources/tokens/StoredCredential" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/controller/EncargadoCambiarEstadoSoliServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/controller/EncargadoCambiarEstadoSoliServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/controller/EncargadoTomarSolicitudServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/controller/EncargadoTomarSolicitudServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/dao/SolicitudDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/dao/SolicitudDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/ventasEncargado.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/ventasEncargado.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/ventasEncargadoSolis.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/ventasEncargadoSolis.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -271,15 +271,7 @@
       <workItem from="1723485373421" duration="2365000" />
       <workItem from="1723579717340" duration="590000" />
       <workItem from="1723664062204" duration="3471000" />
-      <workItem from="1723760198400" duration="5665000" />
-    </task>
-    <task id="LOCAL-00043" summary="mostrarTabla con crud de Productos">
-      <option name="closed" value="true" />
-      <created>1721707095732</created>
-      <option name="number" value="00043" />
-      <option name="presentableId" value="LOCAL-00043" />
-      <option name="project" value="LOCAL" />
-      <updated>1721707095732</updated>
+      <workItem from="1723760198400" duration="9182000" />
     </task>
     <task id="LOCAL-00044" summary="no se que agregamos pero fueron cambios peque;os">
       <option name="closed" value="true" />
@@ -665,14 +657,21 @@
       <option name="project" value="LOCAL" />
       <updated>1722810631191</updated>
     </task>
-    <option name="localTasksCounter" value="92" />
+    <task id="LOCAL-00092" summary="modificacion de tablas de encargado. se quito id carrito, y se mostro en ventas por toma de solicitudes el nombre y apellido del cliente, por eso se modifico el la funcion del dao correspondiente">
+      <option name="closed" value="true" />
+      <created>1723840230700</created>
+      <option name="number" value="00092" />
+      <option name="presentableId" value="LOCAL-00092" />
+      <option name="project" value="LOCAL" />
+      <updated>1723840230701</updated>
+    </task>
+    <option name="localTasksCounter" value="93" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="se cargan detalles de las solicitudes pendientes" />
     <MESSAGE value="se ven las solicitudes que ha tomado el encargado" />
     <MESSAGE value="se ven los productos de las solicitudes que toma el encargado" />
     <MESSAGE value="gestion de toma de solicitudes, cambio de estado y cancelacion (con regreso de unidades al stock)" />
@@ -697,6 +696,7 @@
     <MESSAGE value="cambio en todos los footer para que salga el correo creado para el proyecto y validacion de inicio de sesion de usuario inactivo" />
     <MESSAGE value="barra de busqueda para buscar productos por nombre o descripcion del mismo. Ademas de uso de llenado de la lista para mostrar productos usando funcion del dao que verifica si tanto el producto, categoria y  marca estan activas" />
     <MESSAGE value="correccion modales" />
-    <option name="LAST_COMMIT_MESSAGE" value="correccion modales" />
+    <MESSAGE value="modificacion de tablas de encargado. se quito id carrito, y se mostro en ventas por toma de solicitudes el nombre y apellido del cliente, por eso se modifico el la funcion del dao correspondiente" />
+    <option name="LAST_COMMIT_MESSAGE" value="modificacion de tablas de encargado. se quito id carrito, y se mostro en ventas por toma de solicitudes el nombre y apellido del cliente, por eso se modifico el la funcion del dao correspondiente" />
   </component>
 </project>

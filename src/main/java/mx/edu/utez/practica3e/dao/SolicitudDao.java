@@ -288,7 +288,7 @@ public class SolicitudDao {
     }
     public Solicitud obtenerSolicitudPorId(int id) {
         Solicitud solicitud = null;
-        String query = "SELECT s.id_solicitud, s.fecha, s.total, s.estado, u.id_usuario, u.correo " +
+        String query = "SELECT s.id_solicitud, s.fecha, s.total, s.estado, s.id_carrito, u.id_usuario, u.correo " +
                 "FROM solicitud s " +
                 "JOIN usuario u ON s.id_usuario = u.id_usuario " +
                 "WHERE s.id_solicitud = ?";
@@ -304,6 +304,9 @@ public class SolicitudDao {
                     solicitud.setFecha(resultSet.getDate("fecha"));
                     solicitud.setTotal(resultSet.getDouble("total"));
                     solicitud.setEstado(resultSet.getString("estado"));
+                    Carrito carrito=new Carrito();
+                    carrito.setId_carrito(resultSet.getInt("id_carrito"));
+                    solicitud.setCarrito(carrito);
 
                     Usuario usuario = new Usuario();
                     usuario.setIdUsuario(resultSet.getInt("id_usuario"));
