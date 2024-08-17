@@ -104,12 +104,7 @@ public class UsuarioDao {
     //get all pero solo encargados
     public List<Usuario> getAllEncargados() {
         List<Usuario> usuarios = new ArrayList<>();
-        String query = "SELECT u.id_usuario, u.correo, u.contrasena, u.estatus, " +
-                "p.id_persona, p.nombre, p.apellidos, p.telefono, p.sexo, " +
-                "r.id, r.tipoRol " +
-                "FROM usuario u " +
-                "JOIN persona p ON u.id_persona = p.id_persona " +
-                "JOIN roles r ON u.id_rol = r.id WHERE u.id_rol=3"; //el id 3 de rol corresponde a encargados
+        String query = "SELECT * FROM getAllEncargados"; //el id 3 de rol corresponde a encargados
 
         try (Connection con = DatabaseConnectionManager.getConnection();
              PreparedStatement ps = con.prepareStatement(query);
@@ -147,12 +142,7 @@ public class UsuarioDao {
     //get all pero solo clientes
     public List<Usuario> getAllClientes() {
         List<Usuario> usuarios = new ArrayList<>();
-        String query = "SELECT u.id_usuario, u.correo, u.contrasena, u.estatus, " +
-                "p.id_persona, p.nombre, p.apellidos, p.telefono, p.sexo, " +
-                "r.id, r.tipoRol " +
-                "FROM usuario u " +
-                "JOIN persona p ON u.id_persona = p.id_persona " +
-                "JOIN roles r ON u.id_rol = r.id WHERE u.id_rol=2"; //el id 2 de rol corresponde a clientes
+        String query = "SELECT * FROM getAllClientes";
 
         try (Connection con = DatabaseConnectionManager.getConnection();
              PreparedStatement ps = con.prepareStatement(query);
@@ -190,12 +180,7 @@ public class UsuarioDao {
     //get all pero sin usuario Administrador
     public List<Usuario> getAllSinAdmin() {
         List<Usuario> usuarios = new ArrayList<>();
-        String query = "SELECT u.id_usuario, u.correo, u.contrasena, u.estatus, " +
-                "p.id_persona, p.nombre, p.apellidos, p.telefono, p.sexo, " +
-                "r.id, r.tipoRol " +
-                "FROM usuario u " +
-                "JOIN persona p ON u.id_persona = p.id_persona " +
-                "JOIN roles r ON u.id_rol = r.id WHERE u.id_rol!=1"; //el id 2 de rol corresponde a clientes
+        String query = "SELECT * FROM getAllSinAdmin";
 
         try (Connection con = DatabaseConnectionManager.getConnection();
              PreparedStatement ps = con.prepareStatement(query);
