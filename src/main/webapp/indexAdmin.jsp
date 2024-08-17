@@ -281,11 +281,11 @@
                                         <h3 class="text-center mt-5">Datos personales</h3>
                                         <div class="form-group mb-3">
                                             <label for="nombre">Nombre(s):</label>
-                                            <input type="text" class="form-control"  name="nombre" required>
+                                            <input type="text" class="form-control"  name="nombre" required maxlength="50">
                                         </div>
                                         <div class="form-group mb-3">
                                             <label for="apellidos">Apellidos:</label>
-                                            <input type="text" class="form-control"  name="apellidos" required>
+                                            <input type="text" class="form-control"  name="apellidos" required maxlength="50">
                                         </div>
                                         <div class="form-group mb-3">
                                             <label for="telefono">Número de teléfono:</label>
@@ -370,11 +370,11 @@
                                                     <h3 class="text-center mt-5">Datos personales</h3>
                                                     <div class="form-group mb-3">
                                                         <label for="nombre">Nombre(s):</label>
-                                                        <input type="text" class="form-control" id="nombre" name="nombre" value="<%= u.getPersona().getNombre() %>" required>
+                                                        <input type="text" class="form-control" id="nombre" name="nombre" value="<%= u.getPersona().getNombre() %>" required maxlength="50">
                                                     </div>
                                                     <div class="form-group mb-3">
                                                         <label for="apellidos">Apellidos:</label>
-                                                        <input type="text" class="form-control" id="apellidos" name="apellidos" value="<%= u.getPersona().getApellidos() %>" required>
+                                                        <input type="text" class="form-control" id="apellidos" name="apellidos" value="<%= u.getPersona().getApellidos() %>" required maxlength="50">
                                                     </div>
                                                     <div class="form-group mb-3">
                                                         <label for="telefono">Número de teléfono:</label>

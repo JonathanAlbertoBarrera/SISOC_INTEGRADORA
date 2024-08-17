@@ -148,11 +148,11 @@
                         <form method="post" action="addProducto"  enctype="multipart/form-data" class="mt-4">
                             <div class="form-group mb-3">
                                 <label for="sku">SKU (ID) producto:</label>
-                                <input type="text" class="form-control bg-dark text-white" id="sku" name="sku" required>
+                                <input type="text" class="form-control bg-dark text-white" id="sku" name="sku" required maxlength="50">
                             </div>
                             <div class="form-group mb-3">
                                 <label for="nombre">Nombre del producto:</label>
-                                <input type="text" class="form-control bg-dark text-white" id="nombre" name="nombre" required>
+                                <input type="text" class="form-control bg-dark text-white" id="nombre" name="nombre" required maxlength="50">
                             </div>
                             <div class="form-group mb-3">
                                 <label for="imagen_producto">Subir imagen del producto:</label>
@@ -180,7 +180,7 @@
                             </div>
                             <div class="form-group mb-3">
                                 <label for="descripcion">Descripción:</label>
-                                <input type="text" class="form-control bg-dark text-white" id="descripcion" name="descripcion" required>
+                                <input type="text" class="form-control bg-dark text-white" id="descripcion" name="descripcion" required maxlength="100">
                             </div>
                             <div class="form-group mb-3">
                                 <label for="precio">Precio del producto:</label>
