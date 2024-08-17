@@ -110,6 +110,13 @@
         <p class="text-danger"><%=mensaje2A%></p>
         <% } %>
 
+        <%
+            SolicitudDao dao = new SolicitudDao();
+            SolicitudEncargadoDao dao2=new SolicitudEncargadoDao();
+            double ventasHoy=dao.getTotalVentasDiaActual();
+        %>
+
+        <h3>Total de ventas de hoy: <%= ventasHoy %></h3>
         <!--TABLA DE VENTAS ENTREGADAS -->
         <table id="example3" class="table table-striped table-hover" style="width: 100%">
             <thead>
@@ -124,8 +131,6 @@
             </thead>
             <tbody>
             <%
-                SolicitudDao dao = new SolicitudDao();
-                SolicitudEncargadoDao dao2=new SolicitudEncargadoDao();
                 ArrayList<Solicitud> lista = (ArrayList<Solicitud>) dao.obtenerSolicitudesEntregadas();
                 for(Solicitud s : lista) {
             %>

@@ -10,12 +10,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6f44def4-2bd3-4c79-8a6b-cc536cc2ffae" name="Changes" comment="modificacion de query usando vistas">
+    <list default="true" id="6f44def4-2bd3-4c79-8a6b-cc536cc2ffae" name="Changes" comment="validacion tamaño en inputs text segun tamaño en bd">
       <change afterPath="$PROJECT_DIR$/src/main/resources/credentials.json" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/resources/tokens/StoredCredential" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/indexAdmin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/indexAdmin.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/productosAdmin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/productosAdmin.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/dao/SolicitudDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/dao/SolicitudDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/ventasAdmin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/ventasAdmin.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -270,15 +270,7 @@
       <workItem from="1723485373421" duration="2365000" />
       <workItem from="1723579717340" duration="590000" />
       <workItem from="1723664062204" duration="3471000" />
-      <workItem from="1723760198400" duration="17920000" />
-    </task>
-    <task id="LOCAL-00046" summary="pequenos cambios para Datatables">
-      <option name="closed" value="true" />
-      <created>1721791889057</created>
-      <option name="number" value="00046" />
-      <option name="presentableId" value="LOCAL-00046" />
-      <option name="project" value="LOCAL" />
-      <updated>1721791889057</updated>
+      <workItem from="1723760198400" duration="20822000" />
     </task>
     <task id="LOCAL-00047" summary="creacion de jsp de compras del admin y colocacion de enlaces en las barras de navegacion">
       <option name="closed" value="true" />
@@ -664,14 +656,21 @@
       <option name="project" value="LOCAL" />
       <updated>1723863916740</updated>
     </task>
-    <option name="localTasksCounter" value="95" />
+    <task id="LOCAL-00095" summary="validacion tamaño en inputs text segun tamaño en bd">
+      <option name="closed" value="true" />
+      <created>1723866946683</created>
+      <option name="number" value="00095" />
+      <option name="presentableId" value="LOCAL-00095" />
+      <option name="project" value="LOCAL" />
+      <updated>1723866946683</updated>
+    </task>
+    <option name="localTasksCounter" value="96" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="gestion de toma de solicitudes, cambio de estado y cancelacion (con regreso de unidades al stock)" />
     <MESSAGE value="pequenos cambios" />
     <MESSAGE value="historial de solicitudes en su propia pagina y borrado de imagenes rezagadas" />
     <MESSAGE value="consulta de ventas en el admisnitrador. se toma en cuenta solo las entregadas" />
@@ -696,6 +695,7 @@
     <MESSAGE value="modificacion de tablas de encargado. se quito id carrito, y se mostro en ventas por toma de solicitudes el nombre y apellido del cliente, por eso se modifico el la funcion del dao correspondiente" />
     <MESSAGE value="se muestran los productos en el correo" />
     <MESSAGE value="modificacion de query usando vistas" />
-    <option name="LAST_COMMIT_MESSAGE" value="modificacion de query usando vistas" />
+    <MESSAGE value="validacion tamaño en inputs text segun tamaño en bd" />
+    <option name="LAST_COMMIT_MESSAGE" value="validacion tamaño en inputs text segun tamaño en bd" />
   </component>
 </project>

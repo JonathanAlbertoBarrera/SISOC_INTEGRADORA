@@ -319,4 +319,28 @@ public class SolicitudDao {
         }
         return solicitud;
     }
+
+    //se llama a procedimiento almacenado para mostrar el total de ventas del dia actual
+    public double getTotalVentasDiaActual() {
+        double totalVentas = 0.0;
+        String query = "{CALL obtenerTotalVentasDiaActual(?)}";
+
+        try (Connection con = DatabaseConnectionManager.getConnection();
+             CallableStatement stmt = con.prepareCall(query)) {
+
+            // Registrar el parámetro de salida
+            stmt.registerOutParameter(1, Types.DOUBLE);
+
+            // Ejecutar el procedimiento
+            stmt.execute();
+
+            // Obtener el valor del parámetro de salida
+            totalVentas = stmt.getDouble(1);
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return totalVentas;
+    }
+
 }
