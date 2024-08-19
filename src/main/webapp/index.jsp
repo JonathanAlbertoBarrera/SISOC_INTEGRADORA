@@ -82,7 +82,7 @@
             <c:forEach items="${productos}" var="p">
                 <div class="col-md-3 mb-2 product-card" data-name="${p.nombre}" data-description="${p.descripcion}">
                     <div class="card h-100 text-center align-content-center">
-                        <img src="<%= request.getContextPath() %>/image?sku=${p.sku}" class="card-img-top mx-auto" height="60%" alt="${p.nombre}">
+                        <img src="${pageContext.request.contextPath}/image?sku=${p.sku}" class="card-img-top mx-auto" height="60%" alt="${p.nombre}">
                         <div class="card-body">
                             <h3 class="card-title">${p.nombre}</h3>
                             <p class="card-text">$${p.precio}</p>

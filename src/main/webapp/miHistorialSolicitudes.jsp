@@ -143,7 +143,7 @@
                                             <% for (Carrito_Producto cp : listaProductos) { %>
                                             <div class="col-6 mb-3">
                                                 <div class="card h-100">
-                                                    <img src="<%= request.getContextPath() %>/image?sku=<%= cp.getProducto().getSku() %>" class="card-img-top img-fluid" alt="<%= cp.getProducto().getSku() %>">
+                                                    <img src="${pageContext.request.contextPath}/image?sku=<%= cp.getProducto().getSku() %>" class="card-img-top img-fluid" alt="<%= cp.getProducto().getSku() %>">
                                                     <div class="card-body p-2">
                                                         <h5 class="card-title" style="font-size: 1rem;"><%= proDao.getProductoBySku(cp.getProducto().getSku()).getNombre() %></h5>
                                                         <p class="card-text" style="font-size: 0.875rem;">Cantidad: <%= cp.getCantidad() %></p>

@@ -230,7 +230,7 @@
                     for (Producto p : lista) {
                 %>
                 <tr>
-                    <td><img src="<%= request.getContextPath() %>/image?sku=<%= p.getSku() %>" alt="imagen del producto" width="100%"></td>
+                    <td><img src="${pageContext.request.contextPath}/image?sku=<%= p.getSku() %>" alt="imagen del producto" width="100%"></td>
                     <td><%= p.getSku() %></td>
                     <td><%= p.getNombre() %></td>
                     <td><%= p.getDescripcion() %></td>
@@ -264,7 +264,7 @@
                                                         </div>
                                                         <div class="form-group mb-3">
                                                             <label for="imagen_actual">Imagen actual:</label>
-                                                            <img src="<%= request.getContextPath() %>/image?sku=<%= p.getSku() %>" alt="imagen del producto" class="img-thumbnail" id="imagen_actual">
+                                                            <img src="${pageContext.request.contextPath}/image?sku=<%= p.getSku() %>" alt="imagen del producto" class="img-thumbnail" id="imagen_actual">
                                                             <label for="imagen_producto2">Cambiar imagen del producto:</label>
                                                             <input type="file" class="form-control bg-dark text-white" id="imagen_producto2" name="imagen_producto2" accept=".png,.jpeg,.jpg,.gif">
                                                         </div>

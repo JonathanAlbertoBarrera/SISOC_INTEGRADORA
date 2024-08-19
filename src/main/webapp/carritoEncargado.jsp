@@ -154,7 +154,7 @@
 
             <% for (Carrito_Producto cp : lista) { %>
             <tr>
-                <td> <img src="<%= request.getContextPath() %>/image?sku=<%= cp.getProducto().getSku() %>" class="imgProductos" alt="<%= cp.getProducto().getNombre() %>"></td>
+                <td> <img src="${pageContext.request.contextPath}/image?sku=<%= cp.getProducto().getSku() %>" class="imgProductos" alt="<%= cp.getProducto().getNombre() %>"></td>
                 <td><%= cp.getProducto().getSku() %></td>
                 <td><%= cp.getProducto().getNombre() %></td>
                 <td><%= cp.getProducto().getDescripcion() %></td>

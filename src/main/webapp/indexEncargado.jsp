@@ -143,7 +143,7 @@
                                                         <div class="col-6 mb-3">
                                                             <div class="card h-100">
                                                                 <div class="text-center">
-                                                                    <img src="<%= request.getContextPath() %>/image?sku=${producto.producto.sku}" >
+                                                                    <img src="${pageContext.request.contextPath}/image?sku=${producto.producto.sku}" >
                                                                 </div>
                                                                 <p>Producto: ${producto.producto.nombre}, SKU:${producto.producto.sku} </p>
                                                                 <p>Cantidad: ${producto.cantidad}, PRECIO: ${producto.precio} </p>

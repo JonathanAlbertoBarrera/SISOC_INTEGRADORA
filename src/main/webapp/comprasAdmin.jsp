@@ -144,7 +144,7 @@
                 for (Producto p : productos) {
             %>
             <tr>
-                <td><img src="<%= request.getContextPath() %>/image?sku=<%= p.getSku() %>" width="20%" alt="<%= p.getNombre() %>"></td>
+                <td><img src="${pageContext.request.contextPath}/image?sku=<%= p.getSku() %>" width="20%" alt="<%= p.getNombre() %>"></td>
                 <td><%= p.getSku() %></td>
                 <td><%= p.getNombre() %></td>
                 <td><%= p.getDescripcion() %></td>

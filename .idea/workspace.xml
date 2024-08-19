@@ -10,12 +10,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6f44def4-2bd3-4c79-8a6b-cc536cc2ffae" name="Changes" comment="actualizacion final de filtros">
+    <list default="true" id="6f44def4-2bd3-4c79-8a6b-cc536cc2ffae" name="Changes" comment="se pide motivo de cancelacion de orden y se indica por correo al usuario">
       <change afterPath="$PROJECT_DIR$/src/main/resources/credentials.json" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/resources/tokens/StoredCredential" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/controller/EncargadoCancelarSoliServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/controller/EncargadoCancelarSoliServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/controlSolicitudes.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/controlSolicitudes.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/carrito.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/carrito.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/carritoEncargado.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/carritoEncargado.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/comprasAdmin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/comprasAdmin.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/indexCliente.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/indexCliente.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/indexEncargado.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/indexEncargado.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/miHistorialSolicitudes.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/miHistorialSolicitudes.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/productosAdmin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/productosAdmin.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/productosEncargado.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/productosEncargado.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/solicitudes.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/solicitudes.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/ventasEncargado.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/ventasEncargado.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/ventasEncargadoSolis.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/ventasEncargadoSolis.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -271,15 +281,7 @@
       <workItem from="1723579717340" duration="590000" />
       <workItem from="1723664062204" duration="3471000" />
       <workItem from="1723760198400" duration="21894000" />
-      <workItem from="1724026854371" duration="4768000" />
-    </task>
-    <task id="LOCAL-00051" summary="SELECTS QUE SIRVEN PARA FILTRO DE CATEGORIA Y MARCA. SIN FUNCIONALIDAD, SOLO LLENADO DESDE LA BD">
-      <option name="closed" value="true" />
-      <created>1721873672009</created>
-      <option name="number" value="00051" />
-      <option name="presentableId" value="LOCAL-00051" />
-      <option name="project" value="LOCAL" />
-      <updated>1721873672009</updated>
+      <workItem from="1724026854371" duration="6354000" />
     </task>
     <task id="LOCAL-00052" summary="pusimos la tabla de crud por defecto para mostrar los mensajes de las operaciones directamente, y agregar producto none por defecto">
       <option name="closed" value="true" />
@@ -665,14 +667,21 @@
       <option name="project" value="LOCAL" />
       <updated>1724034223150</updated>
     </task>
-    <option name="localTasksCounter" value="100" />
+    <task id="LOCAL-00100" summary="se pide motivo de cancelacion de orden y se indica por correo al usuario">
+      <option name="closed" value="true" />
+      <created>1724035893042</created>
+      <option name="number" value="00100" />
+      <option name="presentableId" value="LOCAL-00100" />
+      <option name="project" value="LOCAL" />
+      <updated>1724035893042</updated>
+    </task>
+    <option name="localTasksCounter" value="101" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="nueva barra para encargado. nuevos jsp ya adaptados para el responsive en caso de no que no haya solicitudes el footer se queda abajo ya" />
     <MESSAGE value="punto de venta. se hace la venta directamente, es decir la solicitud se registra como entregada" />
     <MESSAGE value="nueva barra de ventas encargado" />
     <MESSAGE value="ventas por punto de venta encargado" />
@@ -697,6 +706,7 @@
     <MESSAGE value="procedimiento almacenado para obtener el total de ventas del dia actual" />
     <MESSAGE value="todos los inputs validan y dejan escribir hasta el tamano que tienen en la bd, ademas de que se agrego el atributo accept para permitir solo subir archivos de tipo imagen" />
     <MESSAGE value="actualizacion final de filtros" />
-    <option name="LAST_COMMIT_MESSAGE" value="actualizacion final de filtros" />
+    <MESSAGE value="se pide motivo de cancelacion de orden y se indica por correo al usuario" />
+    <option name="LAST_COMMIT_MESSAGE" value="se pide motivo de cancelacion de orden y se indica por correo al usuario" />
   </component>
 </project>
