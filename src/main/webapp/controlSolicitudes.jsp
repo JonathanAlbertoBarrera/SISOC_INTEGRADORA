@@ -184,16 +184,19 @@
                                                         <h1 class="modal-title fs-5" id="desacModalLabel2-${se.solicitud.id_solicitud}">Cancelar Solicitud</h1>
                                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                     </div>
+                                                    <form method="post" action="cancelarSoli">
                                                     <div class="modal-body">
                                                         ¿Estás seguro de que deseas cancelar la solicitud ${se.solicitud.id_solicitud}?
+                                                        Ingresa el motivo
+                                                        <textarea required name="motivo" maxlength="150"></textarea>
                                                     </div>
                                                     <div class="modal-footer">
                                                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                                                        <form method="post" action="cancelarSoli">
+
                                                             <input type="hidden" name="id_solicitud" value="${se.solicitud.id_solicitud}">
                                                             <button type="submit" class="btn btn-primary botonesApp">Confirmar</button>
-                                                        </form>
                                                     </div>
+                                                    </form>
                                                 </div>
                                             </div>
                                         </div>

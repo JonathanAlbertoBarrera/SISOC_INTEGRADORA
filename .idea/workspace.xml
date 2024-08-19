@@ -10,13 +10,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6f44def4-2bd3-4c79-8a6b-cc536cc2ffae" name="Changes" comment="todos los inputs validan y dejan escribir hasta el tamano que tienen en la bd, ademas de que se agrego el atributo accept para permitir solo subir archivos de tipo imagen">
+    <list default="true" id="6f44def4-2bd3-4c79-8a6b-cc536cc2ffae" name="Changes" comment="actualizacion final de filtros">
       <change afterPath="$PROJECT_DIR$/src/main/resources/credentials.json" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/resources/tokens/StoredCredential" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/utils/FiltroAdminSesion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/utils/FiltroAdminSesion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/utils/FiltroClienteSesion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/utils/FiltroClienteSesion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/utils/FiltroEncargadoSesion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/utils/FiltroEncargadoSesion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/controller/EncargadoCancelarSoliServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/controller/EncargadoCancelarSoliServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/controlSolicitudes.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/controlSolicitudes.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -272,15 +271,7 @@
       <workItem from="1723579717340" duration="590000" />
       <workItem from="1723664062204" duration="3471000" />
       <workItem from="1723760198400" duration="21894000" />
-      <workItem from="1724026854371" duration="3312000" />
-    </task>
-    <task id="LOCAL-00050" summary="POR FIN SIRVEN LAS IMAGENES. SE MODIFICO EL MODELO Y DAO CONSIDERANDO QUE EN LA BD SE GUARDA DE TIPO BLOB. SE HIZO EL SERVLET DE REGISTRAR  Y MODIFICAR AL PRODUCTO INCLUYENDO LA IMAGEN EN AMBOS">
-      <option name="closed" value="true" />
-      <created>1721863815596</created>
-      <option name="number" value="00050" />
-      <option name="presentableId" value="LOCAL-00050" />
-      <option name="project" value="LOCAL" />
-      <updated>1721863815597</updated>
+      <workItem from="1724026854371" duration="4768000" />
     </task>
     <task id="LOCAL-00051" summary="SELECTS QUE SIRVEN PARA FILTRO DE CATEGORIA Y MARCA. SIN FUNCIONALIDAD, SOLO LLENADO DESDE LA BD">
       <option name="closed" value="true" />
@@ -666,14 +657,21 @@
       <option name="project" value="LOCAL" />
       <updated>1724033766132</updated>
     </task>
-    <option name="localTasksCounter" value="99" />
+    <task id="LOCAL-00099" summary="actualizacion final de filtros">
+      <option name="closed" value="true" />
+      <created>1724034223150</created>
+      <option name="number" value="00099" />
+      <option name="presentableId" value="LOCAL-00099" />
+      <option name="project" value="LOCAL" />
+      <updated>1724034223150</updated>
+    </task>
+    <option name="localTasksCounter" value="100" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="consulta de ventas en el admisnitrador. se toma en cuenta solo las entregadas" />
     <MESSAGE value="nueva barra para encargado. nuevos jsp ya adaptados para el responsive en caso de no que no haya solicitudes el footer se queda abajo ya" />
     <MESSAGE value="punto de venta. se hace la venta directamente, es decir la solicitud se registra como entregada" />
     <MESSAGE value="nueva barra de ventas encargado" />
@@ -698,6 +696,7 @@
     <MESSAGE value="validacion tamaño en inputs text segun tamaño en bd" />
     <MESSAGE value="procedimiento almacenado para obtener el total de ventas del dia actual" />
     <MESSAGE value="todos los inputs validan y dejan escribir hasta el tamano que tienen en la bd, ademas de que se agrego el atributo accept para permitir solo subir archivos de tipo imagen" />
-    <option name="LAST_COMMIT_MESSAGE" value="todos los inputs validan y dejan escribir hasta el tamano que tienen en la bd, ademas de que se agrego el atributo accept para permitir solo subir archivos de tipo imagen" />
+    <MESSAGE value="actualizacion final de filtros" />
+    <option name="LAST_COMMIT_MESSAGE" value="actualizacion final de filtros" />
   </component>
 </project>
