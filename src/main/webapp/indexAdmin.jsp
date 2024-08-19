@@ -301,7 +301,7 @@
                                                 <option value="NA">Prefiero no especificarlo</option>
                                             </select>
                                         </div>
-                                        <h3 class="text-center mt-5">Datos de la cuenta</h3>
+                                        <h3 class="text-center mt-5">Datos de la cuenta </h3>
                                         <div class="form-group mb-3">
                                             <label for="correo">Correo:</label>
                                             <input type="email" class="form-control"  name="correo" required maxlength="50">

@@ -188,7 +188,7 @@
                                         <div class="container">
                                             <div class="row justify-content-center">
                                                 <div class="col-md-6">
-                                                    <h2 class="text-center mt-5">Modificar Categoria</h2>
+                                                    <h2 class="text-center mt-5">Modificar Categoria </h2>
                                                     <div class="form-group mb-3">
                                                         <label for="nombre">Nombre:</label>
                                                         <input type="text" class="form-control" id="nombre" name="nombre" value="<%= c.getNombre() %>" required maxlength="50">

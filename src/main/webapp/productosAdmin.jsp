@@ -287,7 +287,7 @@
                                                             </select>
                                                         </div>
                                                         <div class="form-group mb-3">
-                                                            <label for="descripcion">Descripción:</label>
+                                                            <label for="descripcion">Descripción: </label>
                                                             <textarea type="text" class="form-control bg-dark text-white" id="descripcion2" name="descripcion2" maxlength="100" required><%= p.getDescripcion() %></textarea>
                                                         </div>
                                                         <div class="form-group mb-3">

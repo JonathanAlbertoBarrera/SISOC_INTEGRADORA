@@ -61,7 +61,7 @@
                     <input type="password" class="form-control" id="pass1" name="pass1" maxlength="64" value="<%= request.getAttribute("pass1") != null ? request.getAttribute("pass1") : "" %>" required>
                 </div>
                 <div class="form-group mb-3">
-                    <label for="pass2">Confirme su contraseña:</label>
+                    <label for="pass2">Confirme su contraseña: </label>
                     <input type="password" class="form-control" id="pass2" name="pass2" maxlength="64" value="<%= request.getAttribute("pass2") != null ? request.getAttribute("pass2") : "" %>" required>
                 </div>
                 <%
