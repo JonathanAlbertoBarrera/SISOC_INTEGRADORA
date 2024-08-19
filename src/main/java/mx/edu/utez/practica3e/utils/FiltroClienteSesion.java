@@ -9,7 +9,9 @@ import java.io.IOException;
 
 @WebFilter(urlPatterns = {
         "/indexCliente.jsp",
-        "/carrito.jsp"
+        "/carrito.jsp",
+        "/solicitudes.jsp",
+        "/miHistorialSolicitudes.jsp"
 }) //Direcciones que va a proteger este filtro
 public class FiltroClienteSesion implements Filter{
     @Override

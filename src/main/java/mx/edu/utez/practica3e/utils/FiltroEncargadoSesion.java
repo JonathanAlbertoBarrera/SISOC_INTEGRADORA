@@ -8,7 +8,12 @@ import jakarta.servlet.http.HttpSession;
 import java.io.IOException;
 
 @WebFilter(urlPatterns = {
-        "/indexEncargado.jsp"
+        "/indexEncargado.jsp",
+        "/controlSolicitudes.jsp",
+        "/productosEncargado.jsp",
+        "/carritoEncargado.jsp",
+        "/ventasEncargado.jsp",
+        "/ventasEncargadoSolis.jsp"
 }) //Direcciones que va a proteger este filtro
 public class FiltroEncargadoSesion implements Filter{
     @Override

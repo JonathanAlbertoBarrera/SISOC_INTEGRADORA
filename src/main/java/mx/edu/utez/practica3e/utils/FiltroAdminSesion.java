@@ -13,6 +13,7 @@ import java.io.IOException;
         "/categorias.jsp",
         "/productosAdmin.jsp",
         "/comprasAdmin.jsp",
+        "/ventasAdmin.jsp",
         "/AdminEliminarUsuarioServlet",
         "/AdminDesactivarMarcaServlet",
         "/AdminDesactivarCategoriaServlet",
