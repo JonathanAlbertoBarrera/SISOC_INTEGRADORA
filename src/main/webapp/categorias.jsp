@@ -128,11 +128,11 @@
                                         <h2 class="text-center mt-5">Agregar Categoria</h2>
                                         <div class="form-group mb-3">
                                             <label for="nombre">Nombre:</label>
-                                            <input type="text" class="form-control"  name="nombre" required>
+                                            <input type="text" class="form-control"  name="nombre" required maxlength="50">
                                         </div>
                                         <div class="form-group mb-3">
                                             <label>Descripción:</label>
-                                            <textarea name="descripcion" required></textarea>
+                                            <textarea name="descripcion" required maxlength="100"></textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -191,11 +191,11 @@
                                                     <h2 class="text-center mt-5">Modificar Categoria</h2>
                                                     <div class="form-group mb-3">
                                                         <label for="nombre">Nombre:</label>
-                                                        <input type="text" class="form-control" id="nombre" name="nombre" value="<%= c.getNombre() %>" required>
+                                                        <input type="text" class="form-control" id="nombre" name="nombre" value="<%= c.getNombre() %>" required maxlength="50">
                                                     </div>
                                                     <div class="form-group mb-3">
                                                         <label>Descripción:</label>
-                                                        <textarea name="descripcion" required><%= c.getDescripcion() %></textarea>
+                                                        <textarea name="descripcion" required maxlength="100"><%= c.getDescripcion() %></textarea>
                                                     </div>
                                                 </div>
                                             </div>

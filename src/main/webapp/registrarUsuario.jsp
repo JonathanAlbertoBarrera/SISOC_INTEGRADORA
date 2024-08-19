@@ -31,15 +31,15 @@
                 <h3 class="text-center mt-5">Datos personales</h3>
                 <div class="form-group mb-3">
                     <label for="correo">Ingrese su nombre(s):</label>
-                    <input type="text" class="form-control" id="nombre" name="nombre" value="<%= request.getAttribute("nombre") != null ? request.getAttribute("nombre") : "" %>" required>
+                    <input type="text" class="form-control" id="nombre" name="nombre" value="<%= request.getAttribute("nombre") != null ? request.getAttribute("nombre") : "" %>" required maxlength="50">
                 </div>
                 <div class="form-group mb-3">
                     <label for="apellidos">Ingrese sus apellidos:</label>
-                    <input type="text" class="form-control" id="apellidos" name="apellidos" value="<%= request.getAttribute("apellidos") != null ? request.getAttribute("apellidos") : "" %>" required>
+                    <input type="text" class="form-control" id="apellidos" name="apellidos" maxlength="50" value="<%= request.getAttribute("apellidos") != null ? request.getAttribute("apellidos") : "" %>" required>
                 </div>
                 <div class="form-group mb-3">
                     <label for="telefono">Ingrese su número de teléfono:</label>
-                    <input type="text" class="form-control" id="telefono" name="telefono" value="<%= request.getAttribute("telefono") != null ? request.getAttribute("telefono") : "" %>" required>
+                    <input type="text" class="form-control" id="telefono" name="telefono" maxlength="15" value="<%= request.getAttribute("telefono") != null ? request.getAttribute("telefono") : "" %>" required>
                 </div>
                 <div class="form-group mb-3">
                     <label for="telefono">Ingrese su sexo (opcional):</label>
@@ -58,11 +58,11 @@
                 </div>
                 <div class="form-group mb-3">
                     <label for="pass1">Ingrese su contraseña:</label>
-                    <input type="password" class="form-control" id="pass1" name="pass1" value="<%= request.getAttribute("pass1") != null ? request.getAttribute("pass1") : "" %>" required>
+                    <input type="password" class="form-control" id="pass1" name="pass1" maxlength="64" value="<%= request.getAttribute("pass1") != null ? request.getAttribute("pass1") : "" %>" required>
                 </div>
                 <div class="form-group mb-3">
                     <label for="pass2">Confirme su contraseña:</label>
-                    <input type="password" class="form-control" id="pass2" name="pass2" value="<%= request.getAttribute("pass2") != null ? request.getAttribute("pass2") : "" %>" required>
+                    <input type="password" class="form-control" id="pass2" name="pass2" maxlength="64" value="<%= request.getAttribute("pass2") != null ? request.getAttribute("pass2") : "" %>" required>
                 </div>
                 <%
                     HttpSession sesion1 = request.getSession();

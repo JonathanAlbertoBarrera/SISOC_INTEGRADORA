@@ -289,7 +289,7 @@
                                         </div>
                                         <div class="form-group mb-3">
                                             <label for="telefono">Número de teléfono:</label>
-                                            <input type="text" class="form-control" name="telefono" required>
+                                            <input type="text" class="form-control" name="telefono" required maxlength="15">
                                         </div>
                                         <div class="form-group mb-3">
                                             <label>Sexo:</label>
@@ -304,11 +304,11 @@
                                         <h3 class="text-center mt-5">Datos de la cuenta</h3>
                                         <div class="form-group mb-3">
                                             <label for="correo">Correo:</label>
-                                            <input type="email" class="form-control"  name="correo" required>
+                                            <input type="email" class="form-control"  name="correo" required maxlength="50">
                                         </div>
                                         <div class="form-group mb-3">
                                             <label for="pass1">Contraseña:</label>
-                                            <input type="password" class="form-control" id="pass1" name="pass1" required>
+                                            <input type="password" class="form-control" id="pass1" name="pass1" required maxlength="64">
                                         </div>
                                     </div>
                                 </div>
@@ -378,7 +378,7 @@
                                                     </div>
                                                     <div class="form-group mb-3">
                                                         <label for="telefono">Número de teléfono:</label>
-                                                        <input type="text" class="form-control" id="telefono" name="telefono"  value="<%= u.getPersona().getTelefono() %>" required>
+                                                        <input type="text" class="form-control" id="telefono" name="telefono"  value="<%= u.getPersona().getTelefono() %>" required maxlength="15">
                                                     </div>
                                                     <div class="form-group mb-3">
                                                         <label>Sexo:</label>
@@ -393,7 +393,7 @@
                                                     <h3 class="text-center mt-5">Datos de la cuenta</h3>
                                                     <div class="form-group mb-3">
                                                         <label for="correo">Correo:</label>
-                                                        <input type="email" class="form-control" id="correo" name="correo" value="<%= u.getCorreo() %>" required>
+                                                        <input type="email" class="form-control" id="correo" name="correo" value="<%= u.getCorreo() %>" required maxlength="50">
                                                     </div>
                                                 </div>
                                             </div>

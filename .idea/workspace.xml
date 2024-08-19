@@ -10,12 +10,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6f44def4-2bd3-4c79-8a6b-cc536cc2ffae" name="Changes" comment="validacion tamaño en inputs text segun tamaño en bd">
+    <list default="true" id="6f44def4-2bd3-4c79-8a6b-cc536cc2ffae" name="Changes" comment="procedimiento almacenado para obtener el total de ventas del dia actual">
       <change afterPath="$PROJECT_DIR$/src/main/resources/credentials.json" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/resources/tokens/StoredCredential" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/dao/SolicitudDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mx/edu/utez/practica3e/dao/SolicitudDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/ventasAdmin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/ventasAdmin.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/categorias.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/categorias.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/indexAdmin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/indexAdmin.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/productosAdmin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/productosAdmin.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/registrarUsuario.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/registrarUsuario.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -270,15 +272,8 @@
       <workItem from="1723485373421" duration="2365000" />
       <workItem from="1723579717340" duration="590000" />
       <workItem from="1723664062204" duration="3471000" />
-      <workItem from="1723760198400" duration="20822000" />
-    </task>
-    <task id="LOCAL-00047" summary="creacion de jsp de compras del admin y colocacion de enlaces en las barras de navegacion">
-      <option name="closed" value="true" />
-      <created>1721797407070</created>
-      <option name="number" value="00047" />
-      <option name="presentableId" value="LOCAL-00047" />
-      <option name="project" value="LOCAL" />
-      <updated>1721797407070</updated>
+      <workItem from="1723760198400" duration="21894000" />
+      <workItem from="1724026854371" duration="2623000" />
     </task>
     <task id="LOCAL-00048" summary="modificacion del filtro para que cargue los datos tambien en compras, ademas de que el servlet tambien mande lista de productos">
       <option name="closed" value="true" />
@@ -664,14 +659,21 @@
       <option name="project" value="LOCAL" />
       <updated>1723866946683</updated>
     </task>
-    <option name="localTasksCounter" value="96" />
+    <task id="LOCAL-00096" summary="procedimiento almacenado para obtener el total de ventas del dia actual">
+      <option name="closed" value="true" />
+      <created>1723877304552</created>
+      <option name="number" value="00096" />
+      <option name="presentableId" value="LOCAL-00096" />
+      <option name="project" value="LOCAL" />
+      <updated>1723877304552</updated>
+    </task>
+    <option name="localTasksCounter" value="97" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="pequenos cambios" />
     <MESSAGE value="historial de solicitudes en su propia pagina y borrado de imagenes rezagadas" />
     <MESSAGE value="consulta de ventas en el admisnitrador. se toma en cuenta solo las entregadas" />
     <MESSAGE value="nueva barra para encargado. nuevos jsp ya adaptados para el responsive en caso de no que no haya solicitudes el footer se queda abajo ya" />
@@ -696,6 +698,7 @@
     <MESSAGE value="se muestran los productos en el correo" />
     <MESSAGE value="modificacion de query usando vistas" />
     <MESSAGE value="validacion tamaño en inputs text segun tamaño en bd" />
-    <option name="LAST_COMMIT_MESSAGE" value="validacion tamaño en inputs text segun tamaño en bd" />
+    <MESSAGE value="procedimiento almacenado para obtener el total de ventas del dia actual" />
+    <option name="LAST_COMMIT_MESSAGE" value="procedimiento almacenado para obtener el total de ventas del dia actual" />
   </component>
 </project>

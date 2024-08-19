@@ -156,7 +156,7 @@
                             </div>
                             <div class="form-group mb-3">
                                 <label for="imagen_producto">Subir imagen del producto:</label>
-                                <input type="file" class="form-control bg-dark text-white" id="imagen_producto" name="imagen_producto"  required>
+                                <input type="file" class="form-control bg-dark text-white" id="imagen_producto" name="imagen_producto" accept=".png,.jpeg,.jpg,.gif" required>
                             </div>
                             <div class="form-group mb-3">
                                 <label>Categoría:</label>
@@ -180,7 +180,7 @@
                             </div>
                             <div class="form-group mb-3">
                                 <label for="descripcion">Descripción:</label>
-                                <input type="text" class="form-control bg-dark text-white" id="descripcion" name="descripcion" required maxlength="100">
+                                <textarea type="text" class="form-control bg-dark text-white" id="descripcion" name="descripcion" required maxlength="100"></textarea>
                             </div>
                             <div class="form-group mb-3">
                                 <label for="precio">Precio del producto:</label>
@@ -260,13 +260,13 @@
 
                                                         <div class="form-group mb-3">
                                                             <label for="nombre">Nombre del producto:</label>
-                                                            <input type="text" class="form-control bg-dark text-white" id="nombre2" name="nombre2" value="<%= p.getNombre() %>" required>
+                                                            <input type="text" class="form-control bg-dark text-white" id="nombre2" name="nombre2" value="<%= p.getNombre() %>" required maxlength="50">
                                                         </div>
                                                         <div class="form-group mb-3">
                                                             <label for="imagen_actual">Imagen actual:</label>
                                                             <img src="<%= request.getContextPath() %>/image?sku=<%= p.getSku() %>" alt="imagen del producto" class="img-thumbnail" id="imagen_actual">
                                                             <label for="imagen_producto2">Cambiar imagen del producto:</label>
-                                                            <input type="file" class="form-control bg-dark text-white" id="imagen_producto2" name="imagen_producto2">
+                                                            <input type="file" class="form-control bg-dark text-white" id="imagen_producto2" name="imagen_producto2" accept=".png,.jpeg,.jpg,.gif">
                                                         </div>
                                                         <div class="form-group mb-3">
                                                             <label>Categoría:</label>
@@ -288,7 +288,7 @@
                                                         </div>
                                                         <div class="form-group mb-3">
                                                             <label for="descripcion">Descripción:</label>
-                                                            <input type="text" class="form-control bg-dark text-white" id="descripcion2" name="descripcion2" value="<%= p.getDescripcion() %>" required>
+                                                            <textarea type="text" class="form-control bg-dark text-white" id="descripcion2" name="descripcion2" maxlength="100" required><%= p.getDescripcion() %></textarea>
                                                         </div>
                                                         <div class="form-group mb-3">
                                                             <label for="precio">Precio del producto:</label>
